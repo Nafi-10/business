@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Missile Tracking &amp; Security System | Kazi Jawad</title>
+  <meta name="description" content="A hands-on Arduino simulation connecting object detection, access control, and visual feedback.">
+  <meta name="theme-color" content="#f5f6f8">
+  <meta property="og:title" content="Missile Tracking &amp; Security System">
+  <meta property="og:description" content="A hands-on Arduino simulation connecting object detection, access control, and visual feedback.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../css/article-reader.css">
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="reader-nav">
+    <a class="reader-brand" href="../../"><span class="brand-mark" aria-hidden="true">KJ</span>Kazi Jawad</a>
+    <a class="reader-back" href="../../#articles">← All projects</a>
+  </header>
+  <main class="reader-surface">
+    <article class="reader-article" id="article">
+      <header>
+        <p class="reader-kicker">Articles &amp; Projects / 02</p>
+        <h1>Missile Tracking &amp; Security System</h1>
+        <p class="reader-deck">A hands-on Arduino simulation connecting object detection, access control, and visual feedback.</p>
+        <div class="reader-meta">
+          <div class="reader-author">
+            <img src="../../assets/img/author.jpg" alt="" width="38" height="38">
+            <div><span>Written by</span><strong>MD Kazi Jawadul Islam</strong></div>
+          </div>
+          <div class="reader-tags"><span class="reader-tag">Embedded Systems</span><span class="reader-tag">3 min read</span></div>
+        </div>
+      </header>
+      <figure class="reader-hero reader-hero--portrait">
+        <img src="../../assets/img/projects/security-system.jpg" alt="The educational Arduino prototype displayed beside a laptop, with a model building, gate, sensor assembly, and toy aircraft" fetchpriority="high">
+        <figcaption>The physical demonstration model pictured in the project documentation.</figcaption>
+      </figure>
+      <div class="reader-copy">
+        <p>This project brings two Arduino learning exercises into one physical demonstration: an ultrasonic sensing and servo-motion model, and a keypad-controlled security model. LEDs, a buzzer, and moving components make changes in system state visible to an observer.</p>
+<p>Despite the project’s title, the documented build is an educational scale-model simulation. The tracking and launch effects are represented through servo movement, light, and sound. The article describes that learning prototype and its access-control demonstration.</p>
+        <section><h2>1. Two subsystems, one demonstration</h2><p>The model contains two independent Arduino sketches. One explores ultrasonic object sensing with servo movement and feedback. The other handles keypad input, infrared perimeter sensing, and simulated gate access. They share the physical display while retaining separate control logic.</p>
+<p>Keeping the subsystems distinct makes their roles easier to explain and test. A visitor can see how the sensing model responds to an object and how the security model responds to an access attempt without treating them as a single production system.</p></section>
+<section><h2>2. Making sensor states visible</h2><p>The ultrasonic subsystem connects distance readings to a small servo assembly and a sequence of demonstration states. LEDs and buzzer feedback help communicate what the controller is doing, while the Serial Monitor provides another way to observe the sketch during development.</p>
+<p>The learning focus is the relationship between an input, a software state, and an output. The physical model makes those relationships tangible: sensing changes the controller’s state, and that change produces an observable response.</p></section>
+<section><h2>3. A simple access-control flow</h2><p>The security subsystem combines a keypad with infrared sensing around the model. A correct password temporarily pauses perimeter monitoring to represent permitted entry through the gate. Monitoring returns after the access interval, while incorrect attempts produce an alarm response.</p>
+<p>This flow demonstrates the difference between an armed state, an authorized-entry state, and an alarm state. It also creates a practical setting for handling user input and coordinating timed behavior with sensor feedback.</p></section>
+<section><h2>4. What the build brings together</h2><p>The documented components include Arduino boards, an ultrasonic sensor, servos, a keypad, infrared sensors, LEDs, and a buzzer. The model building, gate, and display turn these electronic parts into a demonstration that can be understood visually.</p>
+<p>Working with these elements involves several core embedded-system skills: reading sensor input, organizing control logic, managing state transitions, and giving users clear feedback. The project documentation includes the fuller component descriptions, diagrams, and implementation notes.</p></section>
+<section><h2>5. Further learning opportunities</h2><p>The documentation proposes additions such as a local display, persistent password settings, and wireless monitoring. These would extend the user interface and configuration of the educational model.</p>
+<p>The current build is best understood as a hands-on exploration of sensing and control. Its value lies in connecting code to physical behavior and explaining how the separate parts of an embedded prototype work together.</p></section>
+        <aside class="reader-source" aria-label="Original documentation">
+          <p>Explore the complete diagrams and technical notes in the original project documentation.</p>
+          <a href="../documents/Missile_Tracking_Security_System_Documentation.pdf">Read the original PDF <span>↗ 9 pages</span></a>
+        </aside>
+        <nav class="reader-pagination" aria-label="More project articles">
+          <a href="../nexora/"><span>← Previous project</span><strong>NEXORA</strong></a>
+          <a href="../flipbook-catalogue/"><span>Next project →</span><strong>3D Flipbook Catalogue</strong></a>
+        </nav>
+      </div>
+    </article>
+    <footer class="reader-footer">Kazi Jawad · Ideas, experiments &amp; projects</footer>
+  </main>
+</body>
+</html>

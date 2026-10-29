@@ -1,0 +1,110 @@
+html { scroll-behavior: smooth; background: #080f1e; }
+body { margin: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+#cs-motion { background: #f5f7fc; }
+#cs-motion .cs-toolbar { display: none; }
+#cs-motion .cs-world { border-radius: 0; overflow: clip; perspective: none; }
+#cs-motion .cs-page { padding: 0; }
+#cs-motion .cs-glass-hero {
+  min-height: 100svh;
+  padding: 0;
+  border-radius: 0;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 76% 30%, #06376d88 0%, transparent 53%),
+    radial-gradient(ellipse at 15% 0%, #442a6f35, transparent 55%),
+    linear-gradient(155deg, #0b142a 0%, #091730 50%, #080f1e 94%);
+}
+#cs-motion .cs-hero-shell { width: min(100%, 1600px); padding: 0 clamp(24px, 5.2vw, 88px); min-height: 100svh; margin: auto; display: grid; grid-template-rows: auto 1fr auto; }
+#cs-motion .cs-nav { max-width: none; width: 100%; margin: 0; height: 100px; padding: 0; gap: 36px; background: none; border: none; border-radius: 0; box-shadow: none; position: relative; z-index: 5; mix-blend-mode: screen; }
+#cs-motion .cs-logo { width: 149px; height: 53px; flex: 0 0 149px; border-radius: 0; background: transparent; mix-blend-mode: screen; }
+#cs-motion .cs-logo img { width: 182px; max-width: none; top: -60px; left: -17px; filter: contrast(1.2); }
+#cs-motion .cs-nav-links { gap: clamp(20px, 2.7vw, 42px); margin-left: auto; font-size: 12px; font-weight: 400; color: #c5cddd; }
+#cs-motion .cs-nav .cs-btn { border-radius: 30px; font-weight: 600; font-size: 12px; padding: 11px 21px; background: #b5f5f7; color: #081a29; box-shadow: 0 0 22px #00dceb0c; }
+#cs-motion .cs-menu { background: #132842; color: #e5f5ff; border: 1px solid #526b914a; }
+#cs-motion .cs-mobile-links { z-index: 6; top: 80px; background: #101e35; border: 1px solid #ffffff20; color: #eef5ff; }
+#cs-motion .cs-hero-stage { display: grid; grid-template-columns: 1.08fr 1fr; align-items: center; gap: 0; min-width: 0; padding: 25px 0 28px; }
+#cs-motion .cs-hero-copy { text-align: left; width: 100%; max-width: none; padding: 0; position: relative; z-index: 2; }
+#cs-motion .cs-hero-copy .cs-hero-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 10px; letter-spacing: 2px; line-height: 1.5; color: #aab9d3; margin: 0 0 25px; max-width: none; }
+#cs-motion .cs-hero-eyebrow > span { width: 5px; height: 5px; border-radius: 50%; background: #00dceb; box-shadow: 0 0 12px #00dceb80; }
+#cs-motion .cs-hero h1 { margin: 0; max-width: none; font-size: clamp(43px, 4.35vw, 72px); font-weight: 500; letter-spacing: -.055em; line-height: 1.12; color: #f4f5fa; }
+#cs-motion .cs-brand-gradient { background-image: linear-gradient(105deg, #e0c5ff 0%, #a387fb 28%, #7792ff 52%, #32b6f5 78%, #00dceb 100%); }
+#cs-motion .cs-hero-copy .cs-hero-description { max-width: none; margin: 26px 0 0; font-size: clamp(13px, 1.12vw, 17px); line-height: 1.8; color: #9eadc6; }
+#cs-motion .cs-hero .cs-actions { justify-content: flex-start; gap: 22px; margin: 29px 0 0; }
+#cs-motion .cs-hero .cs-actions .cs-btn { display: inline-flex; align-items: center; justify-content: center; gap: 20px; border-radius: 30px; padding: 14px 24px; font-size: 12px; font-weight: 600; text-decoration: none; transition: background .2s, transform .2s, box-shadow .2s; }
+#cs-motion .cs-hero .cs-actions > .cs-btn:first-child { background: #b5f5f7; color: #071c2a; box-shadow: 0 0 25px #00dceb08; }
+#cs-motion .cs-hero .cs-actions > .cs-btn:first-child:hover { background: #d9ffff; transform: translateY(-2px); box-shadow: 0 8px 25px #00dceb18; }
+#cs-motion .cs-hero .cs-actions .cs-hero-demo { border: none; background: transparent; padding-left: 0; padding-right: 0; color: #e6ebf5; box-shadow: none; }
+#cs-motion .cs-hero .cs-actions .cs-hero-demo:hover { color: #00dceb; }
+#cs-motion .cs-hero-copy .cs-hero-detail { max-width: none; margin: 26px 0 0; font-size: 10px; color: #8393b0; }
+#cs-motion .cs-hero-detail span { padding: 0 5px; color: #55729a; }
+#cs-motion .cs-cube-wrap { position: relative; min-width: 0; width: 100%; height: clamp(350px, 54svh, 650px); display: flex; flex-direction: column; justify-content: center; align-items: center; }
+#cs-motion .cs-cube-glow { position: absolute; width: 85%; height: 72%; border-radius: 50%; background: radial-gradient(ellipse, #007dff16, transparent 70%); pointer-events: none; }
+#cs-motion .cs-cube-stage { width: 100%; height: 100%; min-height: 0; position: relative; }
+#cs-motion #cs-glass-cube { display: block; width: 100%; height: 100%; touch-action: pan-y; cursor: grab; outline-offset: -6px; border-radius: 16px; }
+#cs-motion #cs-glass-cube:active { cursor: grabbing; }
+#cs-motion .cs-cube-controls { display: flex; align-items: center; justify-content: center; gap: 13px; color: #6d86ac; font-size: 8px; letter-spacing: 1.7px; position: absolute; bottom: 0; left: 0; right: 0; }
+#cs-motion .cs-cube-divider { width: 20px; height: 1px; background: #47628a6b; }
+#cs-motion .cs-cube-pause { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid #6b8fb433; border-radius: 50%; background: transparent; color: #a1b6d5; font-size: 11px; padding: 0; }
+#cs-motion .cs-cube-pause:hover { border-color: #00dceb; color: #00dceb; }
+#cs-motion .cs-hero-bottom { padding: 25px 0 20px; text-align: center; }
+#cs-motion .cs-hero-bottom > p { margin: 0 0 25px; font-size: 9px; letter-spacing: 1.6px; color: #7d91b0; }
+#cs-motion .cs-hero-industries { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 15px clamp(24px, 4vw, 62px); color: #b2bfd3; font-size: clamp(12px, 1.05vw, 15px); letter-spacing: -.25px; }
+#cs-motion .cs-hero-baseline { display: flex; justify-content: space-between; gap: 20px; text-align: left; margin-top: 40px; padding-top: 15px; border-top: 1px solid #8ea7cd13; color: #627796; font-size: 9px; }
+#cs-motion .cs-hero-baseline a { color: #93a8c5; text-decoration: none; }
+#cs-motion .cs-hero-baseline a > span { margin-left: 10px; color: #00dceb; }
+#cs-motion .cs-cube-fallback { position: absolute; inset: 24%; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; transform: rotate(-22deg) skew(7deg, 7deg); opacity: .75; pointer-events: none; }
+#cs-motion .cs-cube-fallback > div { background: linear-gradient(140deg, #a3ffff, #2384d695 15%, #01468c66 65%, #6460d1c4); border: 1px solid #87dfff70; box-shadow: inset 8px 8px 15px #62d5f366, inset -5px -5px 12px #0a1c6b, 8px 12px 25px #02081f60; border-radius: 8px; }
+#cs-motion .cs-cube-ready .cs-cube-fallback { display: none; }
+#cs-motion .cs-panel-shade { position: fixed; z-index: 20; overflow-y: auto; padding: 25px 16px; background: #030918b8; backdrop-filter: blur(12px); }
+#cs-motion .cs-panel { margin: max(20px, 5svh) auto !important; }
+#cs-motion :focus-visible { outline: 2px solid #00dceb; outline-offset: 5px; }
+@media (min-width: 1500px) { #cs-motion .cs-hero-stage { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 1050px) { #cs-motion .cs-nav { height: 86px; } #cs-motion .cs-hero-shell { padding-inline: 36px; } #cs-motion .cs-cube-wrap { height: clamp(340px, 49svh, 530px); } #cs-motion .cs-hero h1 { font-size: clamp(40px, 4.6vw, 50px); } #cs-motion .cs-nav-links { gap: 24px; } }
+@media (max-width: 760px) {
+  #cs-motion .cs-hero-shell { padding-inline: 24px; }
+  #cs-motion .cs-nav { height: 78px; gap: 15px; }
+  #cs-motion .cs-logo { width: 122px; height: 43px; flex-basis: 122px; }
+  #cs-motion .cs-logo img { width: 150px; top: -49px; left: -14px; }
+  #cs-motion .cs-nav-links { display: none; }
+  #cs-motion .cs-menu { display: flex; margin-left: auto; }
+  #cs-motion .cs-hero-stage { grid-template-columns: 1fr; padding: 28px 0 0; align-content: center; }
+  #cs-motion .cs-hero-copy { max-width: 560px; margin: 0 auto; }
+  #cs-motion .cs-hero h1 { font-size: clamp(39px, 7.3vw, 57px); letter-spacing: -.05em; }
+  #cs-motion .cs-hero-copy .cs-hero-eyebrow { margin-bottom: 19px; font-size: 8px; letter-spacing: 1.7px; }
+  #cs-motion .cs-hero-copy .cs-hero-description { margin-top: 20px; font-size: 13px; }
+  #cs-motion .cs-hero .cs-actions { margin-top: 23px; gap: 20px; flex-wrap: wrap; }
+  #cs-motion .cs-hero .cs-actions .cs-btn { font-size: 11px; padding: 12px 20px; gap: 12px; }
+  #cs-motion .cs-hero .cs-actions .cs-hero-demo { padding-inline: 0; }
+  #cs-motion .cs-hero-copy .cs-hero-detail { font-size: 9px; margin-top: 20px; }
+  #cs-motion .cs-cube-wrap { width: min(100%, 440px); height: clamp(220px, 29svh, 330px); margin: 0 auto; }
+  #cs-motion .cs-cube-controls { bottom: 5px; }
+  #cs-motion .cs-hero-bottom { padding-top: 22px; }
+  #cs-motion .cs-hero-bottom > p { font-size: 8px; margin-bottom: 16px; }
+  #cs-motion .cs-hero-industries { gap: 10px 20px; font-size: 11px; }
+  #cs-motion .cs-hero-baseline { margin-top: 16px; font-size: 8px; }
+}
+@media (max-width: 380px) {
+  #cs-motion .cs-hero-shell { padding-inline: 20px; }
+  #cs-motion .cs-hero h1 { font-size: 36px; }
+  #cs-motion .cs-hero-copy .cs-hero-description { font-size: 11px; }
+  #cs-motion .cs-hero-copy .cs-hero-detail { font-size: 8px; }
+  #cs-motion .cs-hero .cs-actions { gap: 17px; }
+  #cs-motion .cs-hero .cs-actions .cs-btn { font-size: 10px; padding-inline: 18px; }
+  #cs-motion .cs-hero .cs-actions .cs-hero-demo { padding-inline: 0; }
+}
+@media (min-width: 761px) and (max-height: 670px) {
+  #cs-motion .cs-nav { height: 76px; }
+  #cs-motion .cs-hero-stage { padding-block: 12px; }
+  #cs-motion .cs-cube-wrap { height: 320px; }
+  #cs-motion .cs-hero h1 { font-size: clamp(38px, 4vw, 56px); }
+  #cs-motion .cs-hero-copy .cs-hero-eyebrow { margin-bottom: 16px; }
+  #cs-motion .cs-hero-copy .cs-hero-description { margin-top: 18px; }
+  #cs-motion .cs-hero-bottom { padding-top: 14px; }
+  #cs-motion .cs-hero-baseline { margin-top: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

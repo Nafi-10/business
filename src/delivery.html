@@ -1,0 +1,72 @@
+<section class="cs-delivery" id="cs-delivery" aria-labelledby="ds-title">
+  <svg class="ds-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="ds-file" viewBox="0 0 24 24"><path d="M14 2H5v20h14V7zM14 2v6h5M8 13h8M8 17h6"/></symbol>
+    <symbol id="ds-book" viewBox="0 0 24 24"><path d="M12 5c-3-3-7-3-10-1v16c3-2 7-2 10 1 3-3 7-3 10-1V4c-3-2-7-2-10 1v16"/></symbol>
+    <symbol id="ds-headset" viewBox="0 0 24 24"><path d="M3 14v-3a9 9 0 0 1 18 0v7c0 3-3 4-6 4M3 12h3v7H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2ZM21 12h-3v7h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2Z"/></symbol>
+    <symbol id="ds-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M1 22v-3a8 8 0 0 1 16 0v3M17 3a4 4 0 0 1 0 8M19 14a6 6 0 0 1 4 6v2"/></symbol>
+    <symbol id="ds-settings" viewBox="0 0 24 24"><path d="m9 2-1 3-3 1-3 3 2 3-2 3 3 3 3 1 1 3h6l1-3 3-1 3-3-2-3 2-3-3-3-3-1-1-3Z"/><circle cx="12" cy="12" r="4"/></symbol>
+    <symbol id="ds-chat" viewBox="0 0 24 24"><path d="M3 3h18v14H9l-6 5V3Z"/></symbol>
+  </defs></svg>
+  <div class="ds-shell">
+    <header class="ds-heading">
+      <div><p class="ds-eyebrow">DELIVERY &amp; SUPPORT</p><h2 id="ds-title">Built with care.<br><em>Delivered with clarity.</em></h2></div>
+      <div class="ds-journey-choice">
+        <p>A clear path to launch.<br class="ds-mobile-break"> A plan for what follows.</p>
+        <div class="ds-switch" role="group" aria-label="Choose a delivery journey">
+          <button type="button" data-ds-journey="ready" aria-pressed="false">Ready-made products</button>
+          <button type="button" data-ds-journey="custom" aria-pressed="true">Custom projects</button>
+        </div>
+      </div>
+    </header>
+    <div class="ds-workspace">
+      <div class="ds-timeline-row">
+        <div class="ds-timeline" role="tablist" aria-label="Custom project delivery steps">
+          <button type="button" role="tab" id="ds-step-0" aria-controls="ds-stage" aria-selected="false" tabindex="-1" data-ds-step="0"><span class="ds-step-number">01</span><span data-ds-step-label>Discover</span></button>
+          <button type="button" role="tab" id="ds-step-1" aria-controls="ds-stage" aria-selected="false" tabindex="-1" data-ds-step="1"><span class="ds-step-number">02</span><span data-ds-step-label>Design &amp; build</span></button>
+          <button type="button" role="tab" id="ds-step-2" aria-controls="ds-stage" aria-selected="true" tabindex="0" data-ds-step="2"><span class="ds-step-number">03</span><span data-ds-step-label>Launch</span></button>
+          <button type="button" role="tab" id="ds-step-3" aria-controls="ds-stage" aria-selected="false" tabindex="-1" data-ds-step="3"><span class="ds-step-number">04</span><span data-ds-step-label>Support &amp; evolve</span></button>
+        </div>
+        <p class="ds-hint">Select a step<br>to explore <span aria-hidden="true">↙</span></p>
+      </div>
+      <div class="ds-stage" id="ds-stage" role="tabpanel" aria-labelledby="ds-step-2" tabindex="0">
+        <div class="ds-copy" data-ds-copy>
+          <p class="ds-stage-eyebrow" data-ds-eyebrow>03 / LAUNCH &amp; HANDOVER</p>
+          <h3 data-ds-title>Ready for your<br>next chapter.</h3>
+          <p class="ds-description" data-ds-description>Review the agreed deliverables, get familiar with your workspace, and plan a confident launch.</p>
+          <ul class="ds-checks" data-ds-checks><li>Project walkthrough</li><li>Access and documentation</li><li>Your next steps, explained</li></ul>
+          <button type="button" class="ds-outline" data-ds-open aria-haspopup="dialog" aria-controls="ds-pack-dialog"><span data-ds-action>Explore the handover</span><span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="ds-art" data-ds-art aria-hidden="true">
+          <div class="ds-art-orbit"></div><div class="ds-art-floor"></div>
+          <div class="ds-folder" data-ds-folder>
+            <div class="ds-folder-back"></div>
+            <div class="ds-document ds-document-one"><svg><use href="#ds-file"/></svg><span data-ds-document>Project files</span><i></i><i></i><i></i><b>01</b></div>
+            <div class="ds-document ds-document-two"><svg><use href="#ds-book"/></svg><span data-ds-document>Getting-started guide</span><i></i><i></i><i></i><b>02</b></div>
+            <div class="ds-document ds-document-three"><svg><use href="#ds-headset"/></svg><span data-ds-document>Support plan</span><i></i><i></i><i></i><b>03</b></div>
+            <div class="ds-folder-front"><div><span data-ds-pack-title>Your launch pack</span><small>EXAMPLE DELIVERABLES</small></div></div>
+            <div class="ds-folder-badge"><i></i><span data-ds-badge>A thoughtful handover</span></div>
+          </div>
+          <span class="ds-art-caption">CONSIDERED AT EVERY STEP</span>
+        </div>
+      </div>
+    </div>
+    <div class="ds-beyond">
+      <div class="ds-support-intro"><h3>Beyond launch.<br><em>Still connected.</em></h3><p>Choose the support<br>your project needs.</p></div>
+      <div class="ds-support-grid">
+        <details class="ds-support-card"><summary><span class="ds-support-icon"><svg aria-hidden="true"><use href="#ds-people"/></svg></span><span><strong>Setup &amp; onboarding</strong><small>A guided start for your team.</small></span><i aria-hidden="true">↗</i></summary><div class="ds-support-detail"><p>Get familiar with your solution through the agreed setup guidance, walkthrough or team training.</p><ul><li>Installation or access guidance</li><li>Documentation and team walkthroughs</li><li>Assisted setup, where included or agreed</li></ul></div></details>
+        <details class="ds-support-card"><summary><span class="ds-support-icon"><svg aria-hidden="true"><use href="#ds-settings"/></svg></span><span><strong>Updates &amp; maintenance</strong><small>Keep your solution moving forward.</small></span><i aria-hidden="true">↗</i></summary><div class="ds-support-detail"><p>Choose a care arrangement that suits your product, infrastructure and business needs.</p><ul><li>Updates under your product licence</li><li>Maintenance within your agreed scope</li><li>New features quoted separately</li></ul></div></details>
+        <details class="ds-support-card"><summary><span class="ds-support-icon"><svg aria-hidden="true"><use href="#ds-chat"/></svg></span><span><strong>Project support</strong><small>A clear route to the right help.</small></span><i aria-hidden="true">↗</i></summary><div class="ds-support-detail"><p>Bring your questions or share an issue through the support channel agreed for your solution.</p><ul><li>Help with covered product issues</li><li>A clear record of your request</li><li>Coverage and response terms agreed upfront</li></ul></div></details>
+      </div>
+    </div>
+    <div class="ds-bottom"><p>Delivery dates and support coverage are agreed per product or project.</p><a class="ds-primary" href="#cs-contact" data-ds-contact>Discuss your project <span aria-hidden="true">↗</span></a></div>
+    <p class="ds-sr" role="status" data-ds-status></p>
+  </div>
+  <dialog class="ds-dialog" id="ds-pack-dialog" aria-labelledby="ds-dialog-title" aria-describedby="ds-dialog-note">
+    <div class="ds-dialog-top"><span>DELIVERY &amp; SUPPORT</span><button type="button" data-ds-close aria-label="Close delivery details">×</button></div>
+    <p class="ds-stage-eyebrow" data-ds-dialog-eyebrow>03 / LAUNCH &amp; HANDOVER</p>
+    <h3 id="ds-dialog-title">Your launch pack</h3>
+    <p id="ds-dialog-note">An example of what we discuss at this stage. Your included deliverables are confirmed in your product details or project agreement.</p>
+    <ol class="ds-pack-list" data-ds-pack-list></ol>
+    <a class="ds-primary" href="#cs-contact" data-ds-contact>Let’s plan your project <span aria-hidden="true">↗</span></a>
+  </dialog>
+</section>

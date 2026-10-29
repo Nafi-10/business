@@ -1,0 +1,167 @@
+[
+  {
+    "id": "nexora",
+    "title": "NEXORA — Multi-Business Operating Platform",
+    "shortTitle": "NEXORA",
+    "tagline": "One workspace for multiple businesses, connected operations, and accountable decisions.",
+    "keywords": ["Multi-entity ERP", "React", "Governance"],
+    "excerpt": "Explore a frontend ERP prototype that brings finance, operations, and business governance into one interface.",
+    "category": "Software & Business Systems",
+    "hero": "nexora.png",
+    "heroAlt": "NEXORA project cover showing its multi-business platform identity and frontend prototype scope",
+    "heroCaption": "NEXORA platform overview from the project documentation.",
+    "pdf": "NEXORA_Project_Documentation.pdf",
+    "pages": 19,
+    "intro": [
+      "Running several businesses means moving between different teams, currencies, records, and approval processes. NEXORA explores how those separate operations can fit into a shared workspace while preserving each business’s identity and access boundaries.",
+      "The project is a browser-based ERP frontend prototype. It brings together a group overview, entity-specific workspaces, operational modules, and governance workflows. Its seeded companies and transactions demonstrate the experience; they are fictional examples rather than live business records."
+    ],
+    "sections": [
+      {
+        "title": "A group view with room for each business",
+        "paragraphs": [
+          "The Group Command Center gives group-level users a consolidated view of multiple entities. Each business also has its own operational context, including its currency, modules, and records. The demo covers manufacturing, retail, and advisory services across three example companies.",
+          "This structure makes it possible to explore two related questions: how an individual company is operating, and how the group looks as a whole. Entity switching is central to the interface, so users can understand which business they are working in before acting on its data."
+        ]
+      },
+      {
+        "title": "Connected operational workflows",
+        "paragraphs": [
+          "NEXORA groups finance, inventory, sales, procurement, and people operations into a common application. The finance area includes accounts, journals, and customer and supplier invoices. Other modules explore warehouses, purchasing, payroll, leave, and approvals.",
+          "The intercompany workspace models transactions between entities. A trade creates linked records on both sides, supporting balance comparison, reconciliation, dispute handling, and group-level eliminations. Nexora Studio extends the concept with onboarding templates for different types of business."
+        ]
+      },
+      {
+        "title": "Governance as part of the experience",
+        "paragraphs": [
+          "Access Passport demonstrates entity access requests, approval states, and time-limited access. Role and field-level controls explore how different people should see and use the same system. A purchase-order workflow also illustrates separation of duties by preventing the creator from approving their own order.",
+          "Audit Vault uses a SHA-256 hash chain to demonstrate tamper detection, with a verifier and a tampering simulation. These are learning and interface features in a client-side prototype. Because the browser owns both the data and the code, they do not provide the protection of a server-enforced permission system or a protected audit store."
+        ]
+      },
+      {
+        "title": "How the prototype is structured",
+        "paragraphs": [
+          "The interface uses React, TypeScript, Vite, and Tailwind CSS, with Lucide icons and Motion for interaction. An application shell and shared provider coordinate the active entity, role, and module state. Seed data and localStorage support the demonstration without a backend.",
+          "Modules connect through shared state and workflows instead of calling one another directly. This keeps the prototype’s responsibilities understandable and provides a starting point for introducing real services later."
+        ]
+      },
+      {
+        "title": "The path beyond the prototype",
+        "paragraphs": [
+          "The documentation identifies a substantial production roadmap: a backend API, a persistent database with tenant isolation, real identity and session management, server-side authorization, and a protected append-only audit system.",
+          "Financial workflows would also need rigorous accounting rules, reconciliation, period closing, currency handling, reporting, and automated validation. NEXORA’s current contribution is a connected product experience that makes those future requirements visible and reviewable."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "security-system",
+    "title": "Missile Tracking & Security System",
+    "shortTitle": "Tracking & Security System",
+    "tagline": "A hands-on Arduino simulation connecting object detection, access control, and visual feedback.",
+    "keywords": ["Arduino", "Sensors", "Access control"],
+    "excerpt": "A physical learning model combining ultrasonic sensing and a separate keypad-controlled security subsystem.",
+    "category": "Embedded Systems",
+    "hero": "security-system.jpg",
+    "heroAlt": "The educational Arduino prototype displayed beside a laptop, with a model building, gate, sensor assembly, and toy aircraft",
+    "heroCaption": "The physical demonstration model pictured in the project documentation.",
+    "pdf": "Missile_Tracking_Security_System_Documentation.pdf",
+    "pages": 9,
+    "intro": [
+      "This project brings two Arduino learning exercises into one physical demonstration: an ultrasonic sensing and servo-motion model, and a keypad-controlled security model. LEDs, a buzzer, and moving components make changes in system state visible to an observer.",
+      "Despite the project’s title, the documented build is an educational scale-model simulation. The tracking and launch effects are represented through servo movement, light, and sound. The article describes that learning prototype and its access-control demonstration."
+    ],
+    "sections": [
+      {
+        "title": "Two subsystems, one demonstration",
+        "paragraphs": [
+          "The model contains two independent Arduino sketches. One explores ultrasonic object sensing with servo movement and feedback. The other handles keypad input, infrared perimeter sensing, and simulated gate access. They share the physical display while retaining separate control logic.",
+          "Keeping the subsystems distinct makes their roles easier to explain and test. A visitor can see how the sensing model responds to an object and how the security model responds to an access attempt without treating them as a single production system."
+        ]
+      },
+      {
+        "title": "Making sensor states visible",
+        "paragraphs": [
+          "The ultrasonic subsystem connects distance readings to a small servo assembly and a sequence of demonstration states. LEDs and buzzer feedback help communicate what the controller is doing, while the Serial Monitor provides another way to observe the sketch during development.",
+          "The learning focus is the relationship between an input, a software state, and an output. The physical model makes those relationships tangible: sensing changes the controller’s state, and that change produces an observable response."
+        ]
+      },
+      {
+        "title": "A simple access-control flow",
+        "paragraphs": [
+          "The security subsystem combines a keypad with infrared sensing around the model. A correct password temporarily pauses perimeter monitoring to represent permitted entry through the gate. Monitoring returns after the access interval, while incorrect attempts produce an alarm response.",
+          "This flow demonstrates the difference between an armed state, an authorized-entry state, and an alarm state. It also creates a practical setting for handling user input and coordinating timed behavior with sensor feedback."
+        ]
+      },
+      {
+        "title": "What the build brings together",
+        "paragraphs": [
+          "The documented components include Arduino boards, an ultrasonic sensor, servos, a keypad, infrared sensors, LEDs, and a buzzer. The model building, gate, and display turn these electronic parts into a demonstration that can be understood visually.",
+          "Working with these elements involves several core embedded-system skills: reading sensor input, organizing control logic, managing state transitions, and giving users clear feedback. The project documentation includes the fuller component descriptions, diagrams, and implementation notes."
+        ]
+      },
+      {
+        "title": "Further learning opportunities",
+        "paragraphs": [
+          "The documentation proposes additions such as a local display, persistent password settings, and wireless monitoring. These would extend the user interface and configuration of the educational model.",
+          "The current build is best understood as a hands-on exploration of sensing and control. Its value lies in connecting code to physical behavior and explaining how the separate parts of an embedded prototype work together."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "flipbook-catalogue",
+    "title": "Interactive 3D Flipbook Product Catalogue",
+    "shortTitle": "3D Flipbook Catalogue",
+    "tagline": "Turn a static catalogue into an interactive, page-turning web experience.",
+    "keywords": ["React", "3D interaction", "Catalogue"],
+    "excerpt": "A customizable digital catalogue with page turns, search, thumbnails, zoom, and fullscreen reading.",
+    "category": "Web & Interaction Design",
+    "hero": "flipbook-catalogue.jpg",
+    "heroAlt": "Concept illustration of a large spiral-bound digital furniture catalogue displayed in a design studio",
+    "heroCaption": "A catalogue concept illustration from the documentation; this is a concept render, not a screenshot of the running interface.",
+    "pdf": "Flipbook_Catalogue_Project_Documentation.pdf",
+    "pages": 17,
+    "intro": [
+      "A product catalogue can do more than present a sequence of flat images. This project explores a book-like web experience in which readers turn pages, browse a visual index, and move between an overview and the details of a product.",
+      "The Interactive 3D Flipbook Product Catalogue is a customizable frontend template built with React and TypeScript. Its sample content uses a ten-page furniture catalogue, while the underlying structure is intended to support other brands and industries."
+    ],
+    "sections": [
+      {
+        "title": "Reading with the feel of a book",
+        "paragraphs": [
+          "A custom page-turn engine uses CSS 3D transforms and animation frames to give pages a curved, turning appearance. The book stage and spiral binding form the visual center of the experience, with page artwork displayed inside that structure.",
+          "Readers can navigate using buttons, keyboard controls, or pointer gestures. Optional page-turn sound, autoplay, zoom, and fullscreen modes add different ways to explore the same content. These interactions share a current-page state so the controls stay connected."
+        ]
+      },
+      {
+        "title": "Helping readers find the right page",
+        "paragraphs": [
+          "The template combines the browsing experience with practical navigation tools. A searchable index and thumbnail view let readers jump to relevant content without turning every page. Help and contextual controls support the more detailed interactions.",
+          "This combination gives the catalogue two reading modes: a slower, visual journey through the book and a direct route to a particular product or section. The same page model supports both."
+        ]
+      },
+      {
+        "title": "A template that can change brands",
+        "paragraphs": [
+          "Brand settings, page configuration, and image assets provide the main customization points. A page can be represented by an image or a custom React component, allowing a catalogue to mix designed artwork with more flexible layouts.",
+          "The documentation also identifies sample branding that remains hard-coded in parts of the interface. A complete rebrand therefore involves reviewing those components alongside the central configuration, page images, descriptions, and social metadata."
+        ]
+      },
+      {
+        "title": "A focused frontend architecture",
+        "paragraphs": [
+          "React, TypeScript, and Vite support the application, with Tailwind CSS, Motion, and Lucide providing styling, interaction, and icons. The main application coordinates the page and viewing state without a separate router or remote data layer.",
+          "The project is designed for static hosting and does not require a database or API keys. Its page-turn implementation is custom, making the book stage and page behavior part of the project’s own interface code."
+        ]
+      },
+      {
+        "title": "What is ready for further work",
+        "paragraphs": [
+          "The source review records several unfinished integrations. The enquiry form displays a confirmation but does not send a message. Page-specific sharing links are generated, but the corresponding startup URL parsing is not implemented. Image descriptions and generic social metadata also need to match the final catalogue.",
+          "The documentation is based on source review rather than a recorded runtime test. These observations define useful next steps: connect enquiries to a delivery service, complete direct page linking, and validate the finished branded catalogue across devices."
+        ]
+      }
+    ]
+  }
+]

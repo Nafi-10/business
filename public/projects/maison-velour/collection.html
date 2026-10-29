@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#644b3e">
+  <title>The Collection — Maison Velour</title><meta name="description" content="Fifteen distinctive fragrances from exceptional houses. Explore the Maison Velour demo collection.">
+  <link rel="icon" href="./assets/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./product-inspector.css"><link rel="stylesheet" href="./collection.css"><script type="module" src="./collection.js"></script>
+<link rel="stylesheet" href="./layout.css">
+<link rel="stylesheet" href="./site-menu.css"><script type="module" src="./site-menu.js"></script>
+</head>
+<body class="collection-page">
+  <svg class="svg-defs" aria-hidden="true"><defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.1"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.6 4.9a5.6 5.6 0 0 0-8 0l-.6.6-.6-.6a5.6 5.6 0 0 0-8 8L12 21l8.6-8.1a5.6 5.6 0 0 0 0-8Z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 7.5h14l1 14H4l1-14Z"/><path d="M8.5 8V5a3.5 3.5 0 0 1 7 0v3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M5 5v5h5M5.5 10a7.5 7.5 0 1 1-.3 5"/></symbol>
+  </defs></svg>
+  <a href="#collection-main" class="skip-link">Skip to collection</a>
+  <div class="announcement">An intimate world of exceptional fragrance.</div>
+  <header class="collection-header">
+    <a class="back-to-maison" href="./#brands" aria-label="Back to the maison"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg><span>Back to the maison</span></a>
+    <a href="./" class="wordmark" aria-label="Maison Velour home"><span>MAISON VELOUR</span><span class="wordmark-subtitle">PARFUMERIE</span></a>
+    <div class="utilities"><button class="icon-button" data-dialog="wishlist" aria-label="Open wishlist"><svg class="icon"><use href="#i-heart"/></svg><span class="wishlist-dot" hidden></span></button><button class="icon-button bag-button" data-dialog="cart" aria-label="Open shopping bag, 0 items"><svg class="icon"><use href="#i-bag"/></svg><span class="bag-count">0</span></button></div>
+  </header>
+  <main id="collection-main">
+    <section class="collection-intro" aria-labelledby="collection-heading">
+      <div class="collection-intro-copy"><p class="eyebrow">THE MAISON VELOUR COLLECTION / VOL. 01</p><h1 id="collection-heading">A world of scent.<br><em>Entirely yours.</em></h1><p>From the first spark of citrus to the last whisper of wood.<br>Fifteen fragrances, each with a story to tell.</p><a class="collection-jump" href="#fragrances">Find your next signature <span>↓</span></a></div>
+      <div class="collection-intro-art"><img src="./assets/tom-ford.webp" alt="Tom Ford Oud Wood in warm afternoon light"><span class="collection-art-caption">THE BEAUTY OF A LASTING IMPRESSION</span></div>
+      <span class="collection-volume">15 SCENTS / 14 HOUSES</span>
+    </section>
+    <section class="collection-shop" id="fragrances" aria-label="Browse the collection">
+      <div class="collection-shop-heading"><div><p class="eyebrow">FIND THE ONE THAT FEELS LIKE YOU</p><h2>The fragrance <em>library.</em></h2></div><p id="collection-count" role="status">15 fragrances to discover</p></div>
+      <div class="collection-filterbar"><label class="collection-search"><svg class="icon"><use href="#i-search"/></svg><input id="collection-search" type="search" placeholder="A name, a house, a note…" aria-label="Search collection"></label><label class="collection-select"><span>HOUSE</span><select id="collection-brand" aria-label="Filter by brand"><option value="all">All houses</option></select></label><label class="collection-select"><span>ORDER BY</span><select id="collection-sort" aria-label="Sort collection"><option value="curated">The maison edit</option><option value="az">Name, A–Z</option><option value="price-low">Price, low to high</option><option value="price-high">Price, high to low</option></select></label></div>
+      <div class="collection-families" role="group" aria-label="Filter by fragrance family"><button data-family="all" aria-pressed="true">All fragrances <span>15</span></button><button data-family="Floral" aria-pressed="false">Floral</button><button data-family="Woody" aria-pressed="false">Woody</button><button data-family="Fresh / Citrus" aria-pressed="false">Fresh & citrus</button><button data-family="Oriental / Amber" aria-pressed="false">Amber</button><button data-family="Gourmand" aria-pressed="false">Gourmand</button><button class="clear-filters" data-clear hidden>Clear filters ×</button></div>
+      <div class="collection-grid" id="collection-grid"></div>
+      <div class="collection-empty" hidden><h3>A new direction, perhaps?</h3><p>No fragrances match those choices. Explore the full collection to find your next signature.</p><button class="primary-button" data-clear>View all fragrances <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+      <div class="collection-end"><span>THE END OF THIS CHAPTER. THE START OF YOURS.</span><a href="./#maison">Step inside the virtual boutique <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+    </section>
+  </main>
+  <footer class="collection-footer"><a class="wordmark" href="./"><span>MAISON VELOUR</span><span class="wordmark-subtitle">THE ART OF FRAGRANCE</span></a><p>A curated demo collection of real fragrances.<br>Illustrative USD prices. Checkout is not connected.</p><a href="./#brands">Meet the fragrance houses ↗</a></footer>
+  <dialog id="boutique-dialog" aria-labelledby="dialog-title"><button class="icon-button dialog-close" aria-label="Close dialog"><svg class="icon"><use href="#i-close"/></svg></button><div id="dialog-content"></div></dialog>
+  <div class="toast" role="status"></div>
+</body>
+</html>

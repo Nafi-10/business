@@ -1,0 +1,168 @@
+/* Landing-page navigation and editorial finishing touches. */
+:root{--brand-row-height:111px;--nav-clearance:84px;--header-bottom:210px}
+.landing-page{--reading-ink:#715644}
+.landing-page .site-header{position:sticky;top:calc(-1 * var(--brand-row-height));z-index:40;background:#f8f5ef;transition:box-shadow .25s}
+.landing-page .site-header.is-pinned{box-shadow:0 5px 24px #38291d12}
+.landing-page .main-nav{height:66px;gap:clamp(20px,2.3vw,42px);padding-inline:3%;border-bottom:1px solid #644b3e20}
+.landing-page .nav-item{font-size:13px;letter-spacing:.05px}
+.landing-page .nav-item:after{bottom:14px}
+.landing-page .mobile-wishlist{display:none}
+.landing-page .header-panel{max-height:calc(100dvh - var(--header-bottom) - 16px);overflow:auto;overscroll-behavior:contain;box-shadow:0 18px 32px #37291c18}
+.landing-page .panel-backdrop{inset:var(--header-bottom) 0 0;z-index:35}
+.landing-page main>section[id],.landing-page #main{scroll-margin-top:var(--nav-clearance)}
+.landing-page .skip-link{z-index:50}
+.landing-page .mega-menu h2{font-size:12px;letter-spacing:1.1px;line-height:1.7}
+.landing-page .mega-menu button{font-size:14px;padding-block:8px}
+.landing-page .search-panel .eyebrow,.landing-page .search-caption{font-size:11px}
+.landing-page .search-result small{font-size:10px;line-height:1.6}
+
+/* A readable scale for the existing sections, without changing their art direction. */
+.landing-page .announcement{font-size:11px}
+.landing-page .brand-aside{font-size:10px;letter-spacing:1.5px}
+.landing-page .hero{min-height:710px}
+.landing-page .hero-content{width:min(640px,48%);padding-top:60px}
+.landing-page h1{font-size:clamp(68px,6vw,94px);line-height:1;letter-spacing:-2.2px;margin:23px 0}
+.landing-page .hero-description{font-size:16px;line-height:1.85;max-width:430px;color:#624a3a;margin-bottom:25px}
+.landing-page .hero-eyebrow{font-size:11px;letter-spacing:2px}
+.landing-page .primary-button{font-size:13px;min-height:50px;line-height:1.5}
+.landing-page .text-button{font-size:13px;line-height:1.6}
+.landing-page .scent-link{margin-top:12px;padding-block:10px}
+.landing-page .hero-footnote{font-size:10px;margin-top:26px;letter-spacing:1.5px}
+.landing-page .fragrance-caption{min-width:310px;max-width:400px;padding:20px;gap:16px;background:#f8f3ebed}
+.landing-page .fragrance-brand{font-size:10px;letter-spacing:1.5px}
+.landing-page .fragrance-caption h2{font-size:31px}
+.landing-page .fragrance-caption p{font-size:11px;line-height:1.6;max-width:260px}
+.landing-page .carousel-controls{bottom:25px}
+.landing-page .slide-count{font-size:11px}
+.landing-page .maison-promises{min-height:84px;height:auto;padding-block:20px}
+.landing-page .maison-promises>div{font-size:12px;line-height:1.7}
+.landing-page .arrivals-heading-aside p,.landing-page .brand-gallery-heading>p,.landing-page .brand-feature p,.landing-page .gifting-intro,.landing-page .offer-description{font-size:14px;line-height:1.85}
+.landing-page .arrivals-heading-aside p,.landing-page .gifting-intro,.landing-page .offer-description{color:var(--reading-ink)}
+.landing-page .arrival-description{font-size:14px;line-height:1.85;color:#ecdfd2;max-width:360px}
+.landing-page .arrival-copy{padding-bottom:150px}
+.landing-page .arrival-format{font-size:11px;letter-spacing:1px;line-height:1.7;flex-wrap:wrap}
+.landing-page .arrival-profile li{font-size:12px;line-height:2}
+.landing-page #arrival-character{font-size:11px;line-height:1.7;color:#e2cfba}
+.landing-page .arrival-profile .eyebrow,.landing-page .arrival-edition{font-size:9px;letter-spacing:1.4px}
+.landing-page .arrivals-heading-row .eyebrow,.landing-page .brand-gallery .eyebrow,.landing-page .gifting-copy>.eyebrow,.landing-page .offers-heading-row .eyebrow{font-size:10px;letter-spacing:1.6px;line-height:1.7}
+.landing-page .arrival-selector{min-height:118px}
+.landing-page .selector-label small{font-size:9px;color:var(--reading-ink);letter-spacing:.3px}
+.landing-page .selector-label strong{font-size:22px}
+.landing-page .selector-number{font-size:10px;opacity:1;color:var(--reading-ink)}
+.landing-page .arrival-section-foot{font-size:10px;line-height:1.7;color:var(--reading-ink)}
+.landing-page .arrival-section-foot>span:last-child{font-size:10px;letter-spacing:.7px}
+.landing-page .brand-index{font-size:10px;letter-spacing:.7px}
+.landing-page .brand-discover{font-size:12px}
+.landing-page .brand-feature-copy,.landing-page .brand-feature:nth-child(even) .brand-feature-copy{min-height:215px}
+.landing-page .brand-gallery-foot p span{font-size:12px}
+.landing-page .gifting-intro{max-width:400px}
+.landing-page .gifting-topline{font-size:10px;line-height:1.7;letter-spacing:1.2px}
+.landing-page .gifting-topline>span:last-child,.landing-page .gift-edit-label,.landing-page .gift-fragrance>div>span{font-size:10px;line-height:1.7;color:var(--reading-ink);letter-spacing:1px}
+.landing-page .gift-choice{opacity:1}
+.landing-page .gift-choice>span,.landing-page .gift-choice small{font-size:10px;color:var(--reading-ink);letter-spacing:.3px}
+.landing-page .gift-choice strong{font-size:23px;white-space:normal}
+.landing-page .gift-reveal-button,.landing-page .gift-page-link,.landing-page .gift-discover{font-size:13px;line-height:1.7}
+.landing-page .gift-fragrance p{font-size:12px;line-height:1.7;color:var(--reading-ink)}
+.landing-page .gifting-footer>div>span{font-size:10px;max-width:170px;letter-spacing:.4px}
+.landing-page .gifting-footer>small{font-size:10px;color:var(--reading-ink);white-space:normal}
+.landing-page .offer-brand{font-size:11px;letter-spacing:1.8px}
+.landing-page .offer-format{font-size:12px;color:var(--reading-ink);line-height:1.7}
+.landing-page .offer-clock-label,.landing-page .offer-time-unit>span,.landing-page .offer-deadline,.landing-page .offer-saving-label{font-size:10px;color:var(--reading-ink);letter-spacing:.7px}
+.landing-page .offer-selectors small{font-size:9px;line-height:1.8;letter-spacing:.7px;color:var(--reading-ink)}
+.landing-page .offers-footnote{font-size:11px;color:var(--reading-ink)}
+.landing-page .offers-footnote a{font-size:13px;white-space:normal;line-height:1.7}
+
+/* A quiet, generous closing chapter. All links lead to an existing experience. */
+.maison-footer{position:relative;isolation:isolate;overflow:clip;background:#3d2c24;color:#f5e8d8;padding:75px 6% 25px;scroll-margin-top:var(--nav-clearance)}
+.maison-footer:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 85% 5%,#76523d44,transparent 48%)}
+.footer-invitation{max-width:1440px;margin:auto;display:grid;grid-template-columns:1.3fr .7fr;gap:8%;padding-bottom:65px;border-bottom:1px solid #d7b79544}
+.footer-kicker{font-size:10px;letter-spacing:2px;line-height:1.7;color:#d8bfa3;margin:0 0 24px}
+.footer-invitation h2{font:400 clamp(62px,6.4vw,98px)/.95 var(--serif);letter-spacing:-2px;margin:0 0 26px}
+.footer-invitation h2 em{font-weight:400;color:#dbc2a7}
+.footer-invitation-copy>p:not(.footer-kicker){font-size:14px;line-height:1.9;color:#e0cdbb;max-width:540px;margin-bottom:29px}
+.footer-actions{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.footer-button{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;background:#e6d4be;color:#49352a;padding:17px 21px;font-size:13px;min-height:52px;transition:background .25s}
+.footer-button:hover{background:#f7e9d7}
+.footer-quiz,.footer-atelier>button{display:inline-flex;align-items:center;gap:20px;border-bottom:1px solid #d3b18a99;padding:12px 0;font-size:13px;color:#f5e8d8;line-height:1.7}
+.maison-footer button:hover{color:#fff7e9}
+.maison-footer .icon{width:19px;height:19px}
+.footer-atelier{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.footer-seal{width:190px;height:215px;border:1px solid #c7a67d7a;border-radius:100px 100px 5px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;box-shadow:inset 0 0 0 8px #3d2c24,inset 0 0 0 9px #c7a67d40}
+.footer-seal>span{font-size:7px;letter-spacing:1.8px;color:#e4c9a7;margin-top:17px}
+.footer-seal strong{font:400 83px/.95 var(--serif);letter-spacing:-11px;padding-right:10px;margin:20px 0 10px;color:#e2c5a0}
+.footer-seal i{font:italic 19px var(--serif);color:#d4b591}
+.footer-atelier>p{font:30px/1.15 var(--serif);margin:24px 0 10px;color:#ead8bf}
+.footer-atelier>p em{font-weight:400}
+.footer-atelier>button{font-size:12px}
+.footer-directory{max-width:1440px;margin:auto;padding:48px 0 45px;display:grid;grid-template-columns:1.4fr .8fr 1fr 1.1fr;gap:5%}
+.footer-about .footer-kicker{font-size:9px;line-height:1.8;letter-spacing:1.4px;margin-bottom:17px;max-width:230px}
+.footer-about>p:not(.footer-kicker){font-size:13px;line-height:1.95;color:#dfccba;max-width:285px;margin:0 0 15px}
+.footer-about>span{font:italic 20px/1.4 var(--serif);color:#d8bfa3}
+.footer-directory h3{font:400 25px/1.2 var(--serif);margin:0 0 20px;color:#fff0df}
+.footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+.footer-links h3{margin-bottom:7px}
+.footer-links a,.footer-links button{font-size:12px;line-height:1.6;color:#e3d0bd;padding:0;text-align:left}
+.footer-links a:hover,.footer-links button:hover{text-decoration:underline;text-underline-offset:5px}
+.footer-contact>p{font-size:12px;line-height:1.9;color:#dfccba;margin:0 0 17px}
+.footer-contact>a{display:inline-flex;gap:15px;align-items:center;border-bottom:1px solid #d7b79577;padding-bottom:9px;font-size:13px;line-height:1.6}
+.footer-contact>span{display:block;font-size:12px;letter-spacing:.8px;margin-top:13px;color:#d8bfa3}
+.footer-signature{display:block;max-width:1440px;margin:5px auto 30px;padding-top:24px;text-align:center;white-space:nowrap;font:400 clamp(50px,10.5vw,170px)/1.1 var(--serif);letter-spacing:clamp(1px,.5vw,8px);color:#cfb395;border-top:1px solid #d7b79544}
+.footer-signature>span{display:block;font:9px/1.7 var(--sans);letter-spacing:3.2px;margin-top:13px;color:#d6bfa6}
+.footer-bottom{max-width:1440px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:25px;border-top:1px solid #d7b79544;padding-top:23px;color:#ddc8b2;font-size:10px;line-height:1.8}
+.footer-bottom p{margin:0}
+.footer-bottom>a{display:inline-flex;align-items:center;gap:16px;font-size:12px;color:#f5e8d8}
+.footer-bottom .icon{transform:rotate(-90deg)}
+.maison-footer :focus-visible{outline:2px solid #ead2b3;outline-offset:6px}
+
+@media(min-width:1600px){.landing-page .hero-content{padding-top:66px}.landing-page .hero{min-height:740px}.landing-page .hero-description{font-size:17px}.landing-page .nav-item{font-size:14px}}
+@media(min-width:851px) and (max-width:1100px){.landing-page .main-nav{gap:17px;padding-inline:20px}.landing-page .nav-item{font-size:11px}.landing-page .hero-content{width:48%}.landing-page h1{font-size:68px}.landing-page .hero-footnote{font-size:9px}.landing-page .brand-feature p{font-size:12px}.landing-page .gifting-copy h2{font-size:57px}}
+@media(max-width:1000px){.footer-directory{grid-template-columns:1fr 1fr;gap:38px 9%}.footer-about>p:not(.footer-kicker){max-width:350px}.footer-invitation{gap:35px}.footer-invitation h2{font-size:68px}.footer-actions{gap:10px 24px}.footer-seal{width:160px;height:190px}.footer-seal strong{font-size:70px}.footer-atelier>p{font-size:26px}}
+@media(max-width:850px){.landing-page .site-header{top:0}.landing-page .main-nav{height:auto;gap:0;padding:16px 6% 22px;max-height:calc(100dvh - var(--header-bottom) - 10px)}.landing-page .nav-item{font-size:14px;height:auto;min-height:48px;padding:10px 0;line-height:1.7}.landing-page .nav-item:after{bottom:5px}.landing-page .hero-content{width:49%;padding-top:65px}.landing-page h1{font-size:60px}.landing-page .hero-description{font-size:14px}.landing-page .fragrance-caption{min-width:270px;max-width:330px}.landing-page .fragrance-caption h2{font-size:28px}.landing-page .maison-promises>div{font-size:11px}.landing-page .arrival-description{font-size:13px}.landing-page .arrival-profile li{font-size:11px}.landing-page .brand-feature-copy,.landing-page .brand-feature:nth-child(even) .brand-feature-copy{min-height:205px}.landing-page .gift-choices{gap:15px}.landing-page .gift-discover{max-width:130px}.landing-page .gifting-footer{flex-wrap:wrap}.landing-page .offers-footnote{align-items:flex-start;flex-wrap:wrap}.landing-page .offer-timepiece{padding-inline:20px}}
+@media(max-width:560px){
+  .landing-page .announcement{font-size:9px;min-height:32px;height:auto;line-height:1.6;text-align:center;padding:8px 5%;letter-spacing:.2px}
+  .landing-page .brand-row{height:78px;margin:0 5%;grid-template-columns:30px minmax(0,1fr) 66px;gap:8px}
+  .landing-page .brand-row>.wordmark{position:static;transform:none;justify-self:center;padding:0}
+  .landing-page .wordmark>span:first-child{font-size:22px;letter-spacing:1.5px}
+  .landing-page .wordmark-subtitle{font-size:7px;letter-spacing:2px;margin-top:7px}
+  .landing-page .mobile-menu,.landing-page .utilities{align-self:center;margin:0}
+  .landing-page .utilities{width:auto;gap:6px;justify-self:end}
+  .landing-page .utilities [data-dialog=wishlist]{display:none}
+  .landing-page .utilities .icon-button{width:30px;height:38px}
+  .landing-page .mobile-wishlist{display:flex}
+  .landing-page .mega-menu{column-gap:20px;padding:24px 6%}
+  .landing-page .mega-menu h2{font-size:10px;letter-spacing:.5px}
+  .landing-page .mega-menu button{font-size:12px;line-height:1.7}
+  .landing-page .search-input-row input{font-size:16px}
+  .landing-page .search-result small{font-size:9px}
+  .landing-page .hero{min-height:960px}
+  .landing-page .hero-content{padding-top:33px;margin:0 7%;width:auto}
+  .landing-page h1{font-size:clamp(45px,12.3vw,64px);letter-spacing:-1.3px;line-height:1.02;margin:22px 0}
+  .landing-page .hero-description{font-size:14px;line-height:1.85;margin-bottom:22px}
+  .landing-page .hero-description br{display:none}
+  .landing-page .hero-eyebrow{font-size:9px;letter-spacing:1.4px}
+  .landing-page .primary-button{font-size:12px;min-height:50px;padding-inline:20px}
+  .landing-page .scent-link{font-size:12px;margin-top:8px}
+  .landing-page .hero-images{top:410px;height:calc(100% - 410px)}
+  .landing-page .hero-wash{background:linear-gradient(180deg,#f2e8db 0%,#f2e8db 43%,#f2e8db00 61%)}
+  .landing-page .editorial-seal{top:510px}.landing-page .editorial-seal span{font-size:8px}
+  .landing-page .fragrance-caption{right:6%;left:6%;bottom:74px;max-width:none;min-width:0;padding:16px;gap:12px}
+  .landing-page .fragrance-caption h2{font-size:29px}.landing-page .fragrance-caption p{font-size:10px}
+  .landing-page .fragrance-caption .featured-heart{margin-left:auto;flex:none}
+  .landing-page .carousel-controls{bottom:22px}
+  .landing-page .maison-promises{padding:22px 6%}.landing-page .maison-promises>div{font-size:10px;line-height:1.7;max-width:30%}
+  .landing-page .arrivals-heading-row{display:block}.landing-page .arrivals-heading-aside{margin-top:20px}.landing-page .arrivals-heading-aside .text-button{font-size:12px}
+  .landing-page .arrival-copy{padding:0}.landing-page .arrival-description{font-size:14px}.landing-page .arrival-format{font-size:11px;gap:9px}
+  .landing-page .arrival-profile .eyebrow{font-size:9px}.landing-page #arrival-character{font-size:11px}.landing-page .arrival-profile li{font-size:12px}
+  .landing-page .arrival-selector{flex-basis:180px}.landing-page .selector-label small{font-size:9px}.landing-page .selector-label strong{font-size:23px}
+  .landing-page .arrival-section-foot{flex-direction:column;align-items:flex-start;gap:9px}.landing-page .arrival-section-foot>span:first-child{font-size:17px;max-width:none}.landing-page .arrival-section-foot>span:last-child{font-size:9px;text-align:left}
+  .landing-page .brand-gallery-heading>p,.landing-page .brand-feature p{font-size:13px}.landing-page .brand-feature h3{font-size:28px;line-height:1.1}
+  .landing-page .brand-feature-copy,.landing-page .brand-feature:nth-child(even) .brand-feature-copy{min-height:245px}
+  .landing-page .brand-index{font-size:9px}.landing-page .brand-discover{font-size:11px}.landing-page .brand-gallery-foot p span{font-size:11px}
+  .landing-page .gifting-topline{flex-wrap:wrap;gap:8px}.landing-page .gifting-topline>span:last-child{max-width:none;font-size:9px;text-align:left}
+  .landing-page .gifting-intro{font-size:14px;max-width:none}.landing-page .gift-edit-label{font-size:10px}.landing-page .gift-choice>span,.landing-page .gift-choice small{font-size:9px}.landing-page .gift-choice strong{font-size:21px}
+  .landing-page .gift-fragrance{flex-wrap:wrap;gap:15px}.landing-page .gift-fragrance p{max-width:245px;font-size:12px}.landing-page .gift-fragrance>div>span{font-size:10px}.landing-page .gift-discover{font-size:12px;max-width:none;gap:15px}.landing-page .gifting-footer>div{gap:16px;flex-wrap:wrap}.landing-page .gifting-footer>div>span{font-size:10px;max-width:45%}.landing-page .gifting-footer>small{font-size:10px;text-align:left}
+  .landing-page .offer-description{font-size:14px}.landing-page .offer-format{font-size:12px}.landing-page .offer-notes{flex-wrap:wrap}.landing-page .offer-clock-label,.landing-page .offer-time-unit>span,.landing-page .offer-deadline{font-size:9px}
+  .landing-page .offer-selectors strong{font-size:21px}.landing-page .offer-selectors small{font-size:9px;letter-spacing:.1px}.landing-page .offers-footnote{font-size:11px;gap:20px}.landing-page .offers-footnote a{font-size:13px}
+  .maison-footer{padding:48px 7% 23px}.footer-invitation{grid-template-columns:1fr;gap:36px;padding-bottom:38px}.footer-kicker{font-size:9px;letter-spacing:1.3px;line-height:1.8}.footer-invitation h2{font-size:62px;letter-spacing:-1.6px}.footer-invitation-copy>p:not(.footer-kicker){font-size:13px;line-height:1.9}.footer-invitation-copy>p br{display:none}.footer-actions{gap:14px}.footer-button{font-size:12px;padding:16px 18px}.footer-quiz{font-size:12px}.footer-atelier{display:grid;grid-template-columns:115px 1fr;gap:8px 20px;text-align:left;align-items:center}.footer-seal{width:115px;height:145px;grid-row:1/3}.footer-seal>span{font-size:5px;letter-spacing:.8px;margin-top:10px}.footer-seal strong{font-size:52px;letter-spacing:-7px;padding-right:7px;margin:16px 0 8px}.footer-seal i{font-size:15px}.footer-atelier>p{font-size:24px;line-height:1.2;margin:0;align-self:end}.footer-atelier>button{font-size:11px;gap:8px;align-self:start;text-align:left}.footer-atelier>button .icon{width:16px}.footer-directory{grid-template-columns:1fr 1fr;gap:35px 22px;padding:35px 0}.footer-about{grid-column:1/-1}.footer-about>p:not(.footer-kicker){max-width:none;font-size:13px}.footer-about .footer-kicker{max-width:none}.footer-directory h3{font-size:24px;line-height:1.2}.footer-links{gap:13px}.footer-links a,.footer-links button{font-size:12px}.footer-contact{grid-column:1/-1;padding-top:26px;border-top:1px solid #d7b79533}.footer-contact>p br{display:none}.footer-contact>p{font-size:13px;max-width:280px}.footer-signature{font-size:10.2vw;letter-spacing:1px;margin:0 auto 25px;padding-top:25px}.footer-signature>span{font-size:6px;letter-spacing:1.5px;margin-top:13px}.footer-bottom{font-size:10px;flex-wrap:wrap;gap:14px;padding-top:20px}.footer-bottom p{order:3;flex-basis:100%;font-size:9px}.footer-bottom>a{font-size:11px;gap:9px}
+}
+@media(max-width:360px){.landing-page .brand-row{margin-inline:4%;gap:6px}.landing-page .wordmark>span:first-child{font-size:19px;letter-spacing:1px}.landing-page .wordmark-subtitle{font-size:6px}.landing-page .brand-feature h3{font-size:25px}.landing-page .brand-feature p{font-size:12px}.landing-page .gift-choice strong{font-size:19px}.landing-page .gift-choices{gap:10px}.footer-invitation h2{font-size:53px}.footer-atelier{grid-template-columns:100px 1fr;gap:15px}.footer-seal{width:100px;height:135px}.footer-atelier>p{font-size:22px}.footer-directory{gap:32px 20px}.footer-directory h3{font-size:22px}}

@@ -1,0 +1,11 @@
+.designer-credit strong{font-weight:600;color:#f5e8d8}
+.maison-context-menu{position:fixed;z-index:200;padding:8px;width:min(280px,calc(100vw - 24px));background:#f8f3eb;color:#644b3e;border:1px solid #b39a826b;box-shadow:0 15px 45px #33251d38;font-family:var(--sans);text-align:left;isolation:isolate}
+.context-brand{display:flex;align-items:center;gap:13px;margin:4px 6px 9px;padding:8px 5px 14px;border-bottom:1px solid #644b3e26}
+.context-monogram{display:grid;place-items:center;width:40px;height:45px;border:1px solid #a58a69;border-radius:22px 22px 2px 2px;font:25px var(--serif);letter-spacing:-3px;padding-right:3px}
+.context-brand strong{display:block;font:18px var(--serif);letter-spacing:1.5px}
+.context-brand small{display:block;font-size:8px;letter-spacing:1.6px;margin-top:4px;color:#715644}
+.maison-context-menu [role=menuitem]{display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 13px;font-size:12px;line-height:1.5;text-align:left;color:#644b3e;background:transparent;outline-offset:-3px}
+.maison-context-menu [role=menuitem]:hover,.maison-context-menu [role=menuitem]:focus-visible{background:#e8dbcc;color:#49372e}
+.maison-context-menu [role=menuitem]>span{font-size:16px;color:#967354}
+.context-credit{margin:8px 6px 2px;padding:13px 5px 6px;border-top:1px solid #644b3e26;font-size:9px;line-height:1.7;color:#715644}
+.context-credit strong{display:block;font:21px var(--serif);color:#644b3e;margin-top:2px}

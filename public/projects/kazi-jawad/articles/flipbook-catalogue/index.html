@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive 3D Flipbook Product Catalogue | Kazi Jawad</title>
+  <meta name="description" content="Turn a static catalogue into an interactive, page-turning web experience.">
+  <meta name="theme-color" content="#f5f6f8">
+  <meta property="og:title" content="Interactive 3D Flipbook Product Catalogue">
+  <meta property="og:description" content="Turn a static catalogue into an interactive, page-turning web experience.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../css/article-reader.css">
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="reader-nav">
+    <a class="reader-brand" href="../../"><span class="brand-mark" aria-hidden="true">KJ</span>Kazi Jawad</a>
+    <a class="reader-back" href="../../#articles">← All projects</a>
+  </header>
+  <main class="reader-surface">
+    <article class="reader-article" id="article">
+      <header>
+        <p class="reader-kicker">Articles &amp; Projects / 03</p>
+        <h1>Interactive 3D Flipbook Product Catalogue</h1>
+        <p class="reader-deck">Turn a static catalogue into an interactive, page-turning web experience.</p>
+        <div class="reader-meta">
+          <div class="reader-author">
+            <img src="../../assets/img/author.jpg" alt="" width="38" height="38">
+            <div><span>Written by</span><strong>MD Kazi Jawadul Islam</strong></div>
+          </div>
+          <div class="reader-tags"><span class="reader-tag">Web &amp; Interaction Design</span><span class="reader-tag">3 min read</span></div>
+        </div>
+      </header>
+      <figure class="reader-hero">
+        <img src="../../assets/img/projects/flipbook-catalogue.jpg" alt="Concept illustration of a large spiral-bound digital furniture catalogue displayed in a design studio" fetchpriority="high">
+        <figcaption>A catalogue concept illustration from the documentation; this is a concept render, not a screenshot of the running interface.</figcaption>
+      </figure>
+      <div class="reader-copy">
+        <p>A product catalogue can do more than present a sequence of flat images. This project explores a book-like web experience in which readers turn pages, browse a visual index, and move between an overview and the details of a product.</p>
+<p>The Interactive 3D Flipbook Product Catalogue is a customizable frontend template built with React and TypeScript. Its sample content uses a ten-page furniture catalogue, while the underlying structure is intended to support other brands and industries.</p>
+        <section><h2>1. Reading with the feel of a book</h2><p>A custom page-turn engine uses CSS 3D transforms and animation frames to give pages a curved, turning appearance. The book stage and spiral binding form the visual center of the experience, with page artwork displayed inside that structure.</p>
+<p>Readers can navigate using buttons, keyboard controls, or pointer gestures. Optional page-turn sound, autoplay, zoom, and fullscreen modes add different ways to explore the same content. These interactions share a current-page state so the controls stay connected.</p></section>
+<section><h2>2. Helping readers find the right page</h2><p>The template combines the browsing experience with practical navigation tools. A searchable index and thumbnail view let readers jump to relevant content without turning every page. Help and contextual controls support the more detailed interactions.</p>
+<p>This combination gives the catalogue two reading modes: a slower, visual journey through the book and a direct route to a particular product or section. The same page model supports both.</p></section>
+<section><h2>3. A template that can change brands</h2><p>Brand settings, page configuration, and image assets provide the main customization points. A page can be represented by an image or a custom React component, allowing a catalogue to mix designed artwork with more flexible layouts.</p>
+<p>The documentation also identifies sample branding that remains hard-coded in parts of the interface. A complete rebrand therefore involves reviewing those components alongside the central configuration, page images, descriptions, and social metadata.</p></section>
+<section><h2>4. A focused frontend architecture</h2><p>React, TypeScript, and Vite support the application, with Tailwind CSS, Motion, and Lucide providing styling, interaction, and icons. The main application coordinates the page and viewing state without a separate router or remote data layer.</p>
+<p>The project is designed for static hosting and does not require a database or API keys. Its page-turn implementation is custom, making the book stage and page behavior part of the project’s own interface code.</p></section>
+<section><h2>5. What is ready for further work</h2><p>The source review records several unfinished integrations. The enquiry form displays a confirmation but does not send a message. Page-specific sharing links are generated, but the corresponding startup URL parsing is not implemented. Image descriptions and generic social metadata also need to match the final catalogue.</p>
+<p>The documentation is based on source review rather than a recorded runtime test. These observations define useful next steps: connect enquiries to a delivery service, complete direct page linking, and validate the finished branded catalogue across devices.</p></section>
+        <aside class="reader-source" aria-label="Original documentation">
+          <p>Explore the complete diagrams and technical notes in the original project documentation.</p>
+          <a href="../documents/Flipbook_Catalogue_Project_Documentation.pdf">Read the original PDF <span>↗ 17 pages</span></a>
+        </aside>
+        <nav class="reader-pagination" aria-label="More project articles">
+          <a href="../security-system/"><span>← Previous project</span><strong>Tracking &amp; Security System</strong></a>
+          <a href="../nexora/"><span>Next project →</span><strong>NEXORA</strong></a>
+        </nav>
+      </div>
+    </article>
+    <footer class="reader-footer">Kazi Jawad · Ideas, experiments &amp; projects</footer>
+  </main>
+</body>
+</html>

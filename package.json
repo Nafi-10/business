@@ -1,0 +1,17 @@
+{
+  "name": "canveliqsoft",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CanveliqSoft website with industry collections, project experiences and team cards",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs --watch",
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "pretest": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs"
+  }
+}

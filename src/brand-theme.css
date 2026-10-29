@@ -1,0 +1,132 @@
+/* CanveliqSoft logo palette: midnight, lavender, violet, blue, and cyan. */
+#cs-motion {
+  --cs-ink: #080f1e;
+  --cs-paper: #f5f7fc;
+  --cs-blue: #329cff;
+  --cs-violet: #6d4aff;
+  --cs-cyan: #00dceb;
+  --cs-muted: #58677d;
+  --cs-line: #dce2ed;
+}
+#cs-motion .cs-hero {
+  background: radial-gradient(ellipse at 5% 20%, #6d4aff36, transparent 48%),
+    radial-gradient(ellipse at 96% 78%, #00dceb20, transparent 48%),
+    linear-gradient(135deg, #080f1e, #121d30 54%, #080f1e);
+  color: #f5f7fc;
+}
+#cs-motion .cs-nav {
+  background: #121d30f5;
+  color: #f5f7fc;
+  border-color: #a7b3c833;
+  box-shadow: 0 8px 30px #02050c33;
+}
+#cs-motion .cs-nav-links a:hover { color: #00dceb; }
+#cs-motion .cs-nav .cs-btn,
+#cs-motion .cs-hero .cs-actions > .cs-btn:first-child,
+#cs-motion .cs-footer .cs-btn {
+  background: #00dceb;
+  color: #080f1e;
+}
+#cs-motion .cs-hero .cs-actions > .cs-btn.white {
+  background: #121d30;
+  color: #f5f7fc;
+  box-shadow: inset 0 0 0 1px #a7b3c85c;
+}
+#cs-motion .cs-hero-copy > p { color: #c7d0e1; }
+#cs-motion .cs-hero-foot { color: #a7b3c8; opacity: 1; }
+#cs-motion .cs-hero h1 { color: #f5f7fc; text-shadow: none; }
+#cs-motion .cs-brand-gradient,
+#cs-motion .cs-wordmark {
+  background: linear-gradient(100deg, #e9d9ff 0%, #aa81f5 30%, #7e5aff 47%, #329cff 70%, #00dceb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+#cs-motion .cs-pill {
+  color: #ded5ff;
+  background: #222b44;
+  box-shadow: inset 0 0 0 1px #a991f633, 0 4px 15px #02050c22;
+}
+#cs-motion .cs-pill span { background: #00dceb; color: #080f1e; }
+#cs-motion .cs-spark { color: #00dceb; opacity: .7; }
+#cs-motion .cs-floating { filter: drop-shadow(0 18px 18px #02050c66); }
+#cs-motion .cs-float-object {
+  background: linear-gradient(135deg, #f5f0ff, #ddd3ff 55%, #a697d1);
+  color: #6d4aff;
+  box-shadow: inset 0 2px 2px #ffffffaa, inset -5px -5px 10px #6d4aff24, 3px 7px 0 #9383bc;
+}
+#cs-motion .cs-float-b .cs-float-object,
+#cs-motion .cs-float-d .cs-float-object {
+  background: linear-gradient(135deg, #f0fdff, #bdebf3 55%, #7dbdce);
+  color: #087f9d;
+  box-shadow: inset 0 2px 2px #ffffffaa, inset -5px -5px 10px #329cff24, 3px 7px 0 #6faabc;
+}
+#cs-motion .cs-float-c i { background: #329cff; }
+#cs-motion .cs-float-c i:nth-child(2) { background: #6d4aff; }
+#cs-motion .cs-float-d i { background: linear-gradient(#6d4aff, #aa81f5); }
+#cs-motion .cs-float-d i:nth-child(2) { background: linear-gradient(#00dceb, #329cff); }
+#cs-motion .cs-kicker { color: #65548e; }
+#cs-motion .cs-solution-visual {
+  background: radial-gradient(at 25% 10%, #efe5ff, transparent 65%),
+    linear-gradient(135deg, #dfd5fa, #c6dafa 62%, #b5ecf3);
+}
+#cs-motion .cs-solution:nth-child(2) .cs-solution-visual {
+  background: linear-gradient(135deg, #ede2ff, #d8c8ff 65%, #c4d6fa);
+}
+#cs-motion .cs-solution:nth-child(3) .cs-solution-visual {
+  background: linear-gradient(135deg, #d9edff, #b7dff5 50%, #bbf0f4);
+}
+#cs-motion .cs-object {
+  background: linear-gradient(140deg, #ffffff, #eee7ff);
+  box-shadow: 5px 11px 0 #b8aed5, 15px 22px 20px #3e227e22;
+  color: #6d4aff;
+}
+#cs-motion .cs-object.secondary { color: #6d4aff; }
+#cs-motion .cs-object.third { color: #087e9e; }
+#cs-motion .cs-chip { background: #e8ddff; color: #46347d; }
+#cs-motion .cs-chip:nth-child(2) { background: #dcd5ff; color: #443388; }
+#cs-motion .cs-chip:nth-child(3) { background: #d5e5ff; color: #23497e; }
+#cs-motion .cs-chip:nth-child(4) { background: #cdeaf8; color: #20566f; }
+#cs-motion .cs-chip:nth-child(5) { background: #c6f1f4; color: #165f69; }
+#cs-motion .cs-chip:hover,
+#cs-motion .cs-chip[aria-pressed=true] { box-shadow: 0 5px 0 #6d4aff; }
+#cs-motion .cs-dashboard-wrap {
+  background: radial-gradient(at 0% 0%, #6d4aff88, transparent 65%),
+    radial-gradient(at 100% 100%, #00dceb3d, transparent 60%), #121d30;
+}
+#cs-motion .cs-dash-label { color: #d1d9eb; }
+#cs-motion .cs-product-mini { background: #e7eafa; }
+#cs-motion .cs-product:nth-child(2) .cs-product-mini { background: #eee7ff !important; }
+#cs-motion .cs-product:nth-child(3) .cs-product-mini { background: #e1f4f8 !important; }
+#cs-motion .cs-product:nth-child(3) .cs-mini-line { background: #cce7f0 !important; }
+#cs-motion .cs-filter[aria-pressed=true] { background: #6d4aff; border-color: #6d4aff; }
+#cs-motion .cs-reviews {
+  background: radial-gradient(ellipse at 0% 0%, #6d4aff40, transparent 65%),
+    radial-gradient(ellipse at 100% 100%, #00dceb20, transparent 60%), #080f1e;
+  color: #f5f7fc;
+}
+#cs-motion .cs-reviews > p { color: #a7b3c8; }
+#cs-motion .cs-review { background: #121d30; color: #e2e8f3; }
+#cs-motion .cs-person small { color: #a7b3c8; }
+#cs-motion .cs-avatar { background: #ded2fa; color: #563e83; }
+#cs-motion .cs-review:nth-child(2) .cs-avatar { background: #d5e4ff !important; color: #345d90 !important; }
+#cs-motion .cs-review:nth-child(3) .cs-avatar { background: #c8eff3 !important; color: #28616d !important; }
+#cs-motion .cs-plan.featured { background: #f0ebff; border-color: #b9a2f4; }
+#cs-motion .cs-footer {
+  background: radial-gradient(ellipse at 0% 100%, #6d4aff44, transparent 62%),
+    radial-gradient(ellipse at 100% 15%, #00dceb20, transparent 55%), #080f1e;
+  color: #f5f7fc;
+}
+#cs-motion .cs-footer p,
+#cs-motion .cs-footer-bottom { color: #a7b3c8; }
+#cs-motion .cs-footer-bottom { border-top-color: #a7b3c82b; }
+#cs-motion .cs-intro { background: radial-gradient(ellipse at center, #222344, #080f1e); }
+#cs-motion .cs-intro-label { color: #d7cef4; }
+#cs-motion .cs-menu { color: #f5f7fc; }
+#cs-motion .cs-mobile-links {
+  background: #121d30;
+  box-shadow: 0 8px 30px #02050c66;
+  color: #f5f7fc;
+}
+#cs-motion .cs-mobile-links a,
+#cs-motion .cs-mobile-links button { color: #f5f7fc; }

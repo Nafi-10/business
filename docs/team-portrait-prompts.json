@@ -1,0 +1,21 @@
+{
+  "tool": "Built-in image_gen",
+  "purpose": "Transparent portrait cutouts for The Minds Behind the Canvas",
+  "portraits": [
+    {
+      "name": "mohaimen",
+      "source": "C:/Users/KAZI_J~1/AppData/Local/Temp/codex-clipboard-ee429cdf-e8d3-43ed-a8f2-e5a9cd26b951.png",
+      "prompt": "Use case: background-extraction. Edit the supplied photo: isolate only the man with glasses wearing the light blue suit. Remove the entire purple/blue promotional background, white shapes, all overlaid event text/logos and bottom banner. Preserve this exact person's facial features, glasses, hair, skin, expression, pose, suit and visible hand. Do not beautify or redesign his face. Where text covers the lower jacket, restore plain continuation of the same jacket. Produce a clean centered head-through-waist portrait cutout, very little empty padding around the head and shoulders, fully transparent alpha background with clean hair and clothing edges. No text, backdrop, floor, shadows outside the person, border or extra objects. Intended for a website team card."
+    },
+    {
+      "name": "tazim",
+      "source": "C:/Users/Kazi_Jawad/Downloads/Max_a_Convert_the_image_in.png",
+      "prompt": "Use case: background-extraction. Edit target is the supplied portrait of the man in the black suit and white shirt. Remove ONLY the office background, furniture and all surroundings. Preserve his exact face, identity, skin, hairstyle, expression, body proportions, suit, shirt, watch, hands and pose. Do not redesign, beautify or restyle the person. Produce a clean centered head-through-thighs cutout on genuine transparent alpha, tightly framed with a small margin around the silhouette and head. Accurate hair and clothing edges. No text, backdrop, floor, cast shadow or additional objects. Intended for a website team card."
+    },
+    {
+      "name": "hridita",
+      "source": "C:/Users/KAZI_J~1/AppData/Local/Temp/codex-clipboard-c93d5b9c-4286-4737-bdae-2783fbe54ec2.png",
+      "prompt": "Use case: background-extraction. Edit target is the supplied photo of the woman in the cream sari with colorful orange, yellow, blue and green patterns. Remove ONLY the stairs, buildings, sky, background people and all surroundings. Preserve her exact face, identity, expression, skin, hairstyle, earrings, sari patterns and colors, hands, proportions and pose. Do not beautify or restyle the person. Produce a clean centered cutout of her entire visible figure on genuine transparent alpha, tightly framed with a small margin around the silhouette and head. Preserve natural hair and fabric edges. No text, backdrop, floor, cast shadows or added objects. Intended for a website team card."
+    }
+  ]
+}

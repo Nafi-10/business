@@ -1,0 +1,72 @@
+[
+  {
+    "file": "portrait-in-white.jpg",
+    "title": "In white",
+    "category": "Portraits",
+    "alt": "A portrait in a white panjabi against a warm, softly blurred background.",
+    "caption": "A quiet portrait in white."
+  },
+  {
+    "file": "monochrome-moment.jpg",
+    "title": "A monochrome moment",
+    "category": "Campus",
+    "alt": "A black-and-white portrait in a white shirt and lanyard, with a tall building in the background.",
+    "caption": "A campus moment captured in black and white."
+  },
+  {
+    "file": "golden-hour.jpg",
+    "title": "Golden hour",
+    "category": "Outdoors",
+    "alt": "A seated outdoor portrait beneath a glowing orange sunset sky.",
+    "caption": "Taking a moment under the evening sky."
+  },
+  {
+    "file": "quiet-break.jpg",
+    "title": "A quiet break",
+    "category": "Outdoors",
+    "alt": "Relaxing on a white garden swing surrounded by green trees and leaves.",
+    "caption": "A pause in the shade, surrounded by greenery."
+  },
+  {
+    "file": "campus-days.jpg",
+    "title": "Campus days",
+    "category": "Campus",
+    "alt": "Standing beside a CIS Project Based Learning sign on a brick wall.",
+    "caption": "A snapshot beside the CIS Project Based Learning display."
+  },
+  {
+    "file": "project-in-action.jpg",
+    "title": "Project in action",
+    "category": "Projects",
+    "alt": "Presenting an electronics prototype with sensors, a keypad, model building, and laptop.",
+    "caption": "Bringing code and hardware together in a working project display."
+  },
+  {
+    "file": "on-the-bridge.jpg",
+    "title": "On the bridge",
+    "category": "Outdoors",
+    "alt": "An outdoor portrait in sunglasses and a black hoodie on a suspension bridge.",
+    "caption": "A walk across the bridge, with green surroundings all around."
+  },
+  {
+    "file": "evening-together.jpg",
+    "title": "An evening together",
+    "category": "Friends",
+    "alt": "A large group gathered for an evening photograph beneath warmly lit trees.",
+    "caption": "An evening group photograph under the trees."
+  },
+  {
+    "file": "poolside.jpg",
+    "title": "Poolside",
+    "category": "Outdoors",
+    "alt": "Relaxing in a swimming pool in a blue sports jersey.",
+    "caption": "A refreshing moment in the water."
+  },
+  {
+    "file": "shared-moments.jpg",
+    "title": "Shared moments",
+    "category": "Friends",
+    "alt": "Two people in matching blue sports jerseys, one sitting on the other's shoulders outdoors.",
+    "caption": "A playful moment together in matching jerseys."
+  }
+]

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1428">
+  <meta name="description" content="Explore CanveliqSoft’s industry collections: software, UI/UX design, custom ERP and AI concepts for nine industries.">
+  <title>Collection — CanveliqSoft</title>
+  <link rel="icon" href="./assets/canveliqsoft-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./collection.css"><link rel="stylesheet" href="./navigation.css">
+  <script defer src="./assets/lucide.min.js"></script>
+  <script type="module" src="./collection.js"></script>
+</head><body>
+<div id="cs-motion" data-page="collection">
+  <a class="cl-skip" href="#collection-content">Skip to collections</a>
+  {{COLLECTION_NAVIGATION}}
+  <main class="cs-page" id="collection-content">
+    <section class="cl-intro" aria-labelledby="cl-title">
+      <span class="cl-intro-orbit" aria-hidden="true"></span>
+      <p class="cl-eyebrow">THE CANVELIQSOFT COLLECTION</p>
+      <h1 id="cl-title">Made for <em>your industry.</em></h1>
+      <p class="cl-intro-copy">Software, design, ERP &amp; AI.<br class="cl-mobile-break"> Explore what moves your business forward.</p>
+      <span class="cl-concept"><i aria-hidden="true"></i> A curated collection of possibilities <span>·</span> Sample products</span>
+    </section>
+    <button class="cl-filter-toggle" type="button" data-cl-filter-toggle aria-expanded="false" aria-controls="cl-filter-panel"><i data-lucide="sliders-horizontal" aria-hidden="true"></i> Filters <span data-cl-filter-count hidden>0</span></button>
+    <aside class="cl-discovery cl-filter-panel" id="cl-filter-panel" aria-labelledby="cl-filter-title">
+      <header class="cl-filter-heading"><div><span>MAKE IT YOURS</span><h2 id="cl-filter-title"><i data-lucide="sliders-horizontal" aria-hidden="true"></i> Your collection</h2></div><button type="button" class="cl-filter-close" data-cl-filter-close aria-label="Close collection filters">✕</button></header>
+      <label class="cl-search"><i data-lucide="search" aria-hidden="true"></i><input id="cl-search" type="search" placeholder="Search the collection" aria-label="Search the collection" autocomplete="off"></label>
+      <div class="cl-discovery-top">
+        <h3 class="cl-filter-label">Your industry <span>01</span></h3>
+        <div class="cl-industries" role="group" aria-label="Filter by industry" data-cl-industries></div>
+      </div>
+      <div class="cl-discovery-bottom">
+        <h3 class="cl-filter-label">Solution type <span>02</span></h3>
+        <div class="cl-types" role="group" aria-label="Filter by solution type"><button data-category="all" aria-pressed="true">All solutions</button><button data-category="software" aria-pressed="false">Software</button><button data-category="design" aria-pressed="false">UI/UX design</button><button data-category="erp" aria-pressed="false">ERP systems</button><button data-category="ai" aria-pressed="false">AI &amp; chatbots</button></div>
+        <button class="cl-saved" data-saved-only aria-pressed="false"><i data-lucide="heart" aria-hidden="true"></i> Saved <span data-saved-count>0</span></button>
+      </div>
+      <div class="cl-results-bar"><p data-cl-result-summary>9 industries. One connected collection.</p><button type="button" data-cl-reset hidden>Clear filters <span aria-hidden="true">↗</span></button></div>
+      <button class="cl-filter-done" type="button" data-cl-filter-done>Show results <span aria-hidden="true">↗</span></button>
+    </aside>
+    <p class="cl-sr" data-cl-status role="status" aria-live="polite"></p>
+    <div class="cl-rows" data-cl-rows></div>
+    <div class="cl-empty" data-cl-empty hidden><i data-lucide="search" aria-hidden="true"></i><h2>A different possibility awaits.</h2><p data-empty-message>Try another search or explore the full collection.</p><button class="cl-button" type="button" data-cl-reset>Explore all collections <span aria-hidden="true">↗</span></button></div>
+    <noscript><div class="cl-empty"><h2>Your next project starts here.</h2><p>Enable JavaScript to browse the interactive collection, or talk to us about your industry.</p><a href="./index.html#cs-contact">Discuss your project →</a></div></noscript>
+    <section class="cl-bespoke" aria-labelledby="cl-bespoke-title"><div class="cl-bespoke-mark" aria-hidden="true">✳</div><div><p class="cl-eyebrow">SOMETHING UNIQUELY YOURS</p><h2 id="cl-bespoke-title">Can’t find your fit?<br><em>Let’s build it together.</em></h2></div><p>Every business has its own way of working.<br>Let’s shape the right solution around yours.</p><a class="cl-button cl-button-cyan" href="./index.html#cs-contact">Discuss your project <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="cl-footer"><a href="./index.html#cs-top" aria-label="CanveliqSoft home"><img src="./assets/canveliqsoft-mark.svg" alt="CanveliqSoft" width="112" height="44"></a><p>Where systems and design meet intelligence.</p><a href="#collection-content">Back to top <span aria-hidden="true">↑</span></a></footer>
+</div>
+<dialog class="cl-dialog" aria-labelledby="cl-dialog-title" id="cl-dialog"><div class="cl-dialog-top"><img src="./assets/canveliqsoft-mark.svg" alt="CanveliqSoft" width="100" height="39"><span>THE COLLECTION</span><button type="button" data-cl-close aria-label="Close product details">✕</button></div><div data-cl-detail></div></dialog>
+</body></html>

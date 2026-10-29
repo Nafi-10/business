@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3eee7">
+  <meta name="description" content="Hridita Huq — Fashion Designer. An exploration of fashion, form, and individuality.">
+  <title>Hridita Huq — Fashion Designer</title>
+  <link rel="icon" href="./assets/monogram.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/cormorant-garamond.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/portrait-photo.png" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./collections.css">
+  <link rel="stylesheet" href="./about.css">
+  <link rel="stylesheet" href="./process.css">
+  <link rel="stylesheet" href="./blog.css">
+  <script src="./app.js" defer></script>
+  <script src="./collection-looks.js" defer></script>
+  <script src="./collections.js" defer></script>
+  <script src="./about.js" defer></script>
+  <script src="./process.js" defer></script>
+  <script src="./blog.js" defer></script>
+  <link rel="stylesheet" href="./site-chrome.css">
+  <script src="./site-chrome.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-shell" id="top">
+    <header class="site-header container">
+      <a class="brand" href="#top" aria-label="Hridita Huq, home">
+        <svg viewBox="0 0 62 58" aria-hidden="true"><path d="M9 9h14M16 9v39M9 48h14M36 9h14M43 9v39M36 48h14M16 28h27M24 17h13M30.5 17v39M24 56h13M46 17h13M52.5 17v39M46 56h13M30.5 37h22"/></svg>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <button type="button" data-section="services">Services</button>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#blog">Blog</a>
+        <button type="button" data-section="contact">Contact</button>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#work">Work <span aria-hidden="true">↗</span></a>
+      <button type="button" data-section="services">Services <span aria-hidden="true">↗</span></button>
+      <a href="#about">About <span aria-hidden="true">↗</span></a>
+      <a href="#process">Process <span aria-hidden="true">↗</span></a>
+      <a href="#blog">Blog <span aria-hidden="true">↗</span></a>
+      <button type="button" data-section="contact">Contact <span aria-hidden="true">↗</span></button>
+    </nav>
+
+    <main id="main">
+      <section class="hero container" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="introduction reveal" style="--delay: 80ms"><span class="eyebrow">Hello, I’m</span><span class="signature">Hridita Huq</span></div>
+          <h1 id="hero-title" class="reveal" style="--delay: 160ms">Fashion<br><span>Designer<span class="title-period">.</span></span></h1>
+          <p class="hero-description reveal" style="--delay: 270ms">Thoughtful silhouettes. Expressive details.<br>An exploration of fashion, form, and individuality.</p>
+          <a class="primary-button reveal" href="#work" style="--delay: 360ms"><span>View my work</span><svg viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h25M20 1l6 6-6 6"/></svg></a>
+          <p class="design-note reveal" style="--delay: 460ms"><span class="note-dot" aria-hidden="true"></span>Designed with intention</p>
+        </div>
+
+        <figure class="hero-visual reveal" style="--delay: 180ms">
+          <div class="portrait-frame">
+            <img class="portrait" src="./assets/portrait-photo.png" alt="A woman wearing a pale blue dress and a sheer white wrap, photographed outdoors in soft natural light." width="1365" height="2048" fetchpriority="high">
+            <div class="portrait-shade" aria-hidden="true"></div>
+          </div>
+        </figure>
+      </section>
+
+      <section class="work-preview collections" id="work" aria-labelledby="work-title">
+        <div class="container work-heading"><h2 id="work-title">Work / Collections <span class="work-index">(01—05)</span></h2><span class="runway-label">Five selected looks</span><span class="concept-label">Clothing, colour &amp; detail</span></div>
+        <div class="container collection-experience" role="region" aria-roledescription="carousel" aria-label="Five selected fashion looks">
+          <div class="collection-gallery" tabindex="0" aria-label="Collection slideshow. Use Left and Right to change looks, or Home and End to jump to the first or last look.">
+            <div class="collection-runway">
+              <p class="collection-runway-heading">Hridita Huq <span>Five selected looks</span></p>
+              <div class="collection-models"><a class="collection-model" data-model-look="0" data-slot="0" href="./look-motion.html" aria-label="Open look 01: In motion" tabindex="0" aria-current="true"><img src="./assets/collections/motion-cutout.png" alt="A woman in a navy and pale-blue dress lifting a flowing white wrap outdoors." loading="lazy" decoding="async" draggable="false"></a>
+                <a class="collection-model" data-model-look="1" data-slot="1" href="./look-tailoring.html" aria-label="Select look 02: Defined lines" tabindex="-1"><img src="./assets/collections/tailoring-cutout.png" alt="A woman wearing a mauve tailored jacket with dark piping, collar, and cuffs." loading="lazy" decoding="async" draggable="false"></a>
+                <a class="collection-model" data-model-look="2" data-slot="2" href="./look-colour.html" aria-label="Select look 03: Colour stories" tabindex="-1"><img src="./assets/collections/colour-cutout.png" alt="A woman holding out a cream sari covered in colourful figurative and botanical motifs." loading="lazy" decoding="async" draggable="false"></a>
+                <a class="collection-model" data-model-look="3" data-slot="3" href="./look-ivory.html" aria-label="Select look 04: Soft ivory" tabindex="-1"><img src="./assets/collections/ivory-cutout.png" alt="A woman wearing an ivory dress with sheer floral-lace sleeves and a floral hairpiece." loading="lazy" decoding="async" draggable="false"></a>
+                <a class="collection-model" data-model-look="4" data-slot="4" href="./look-crimson.html" aria-label="Select look 05: Crimson notes" tabindex="-1"><img src="./assets/collections/crimson-cutout.png" alt="A woman in a black and red sari holding a red rose beside her ear." loading="lazy" decoding="async" draggable="false"></a></div>
+              <p class="collection-runway-hint"><span aria-hidden="true">↔</span> Swipe or select a look</p>
+            </div>
+            <div class="collection-details">
+              <article class="collection-scene is-active" data-look="0" role="group" aria-roledescription="slide" aria-label="1 of 5: In motion" aria-hidden="false">
+                <div class="collection-panel-heading"><span>In focus</span><span>01 / 05</span></div>
+                <div class="collection-scene-copy"><p class="collection-lead">Pleated blue dress</p><h3>Motion</h3><p class="collection-summary">A flowing navy dress with pale-blue pleats and a sheer white wrap.</p></div>
+                <dl class="collection-look-notes"><div><dt>The details</dt><dd>Pleated bodice and sheer wrap</dd></div><div><dt>Colour story</dt><dd>Navy / pale blue / soft white</dd></div></dl>
+                <div class="collection-thumbnails">
+                  <a class="collection-tile collection-tile--portrait" data-open-look="0" aria-label="View original photograph: In motion" href="./look-motion.html"><span class="collection-tile-image"><img src="./assets/collections/motion-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">The full look ↗</span></a>
+                  <a class="collection-tile collection-tile--detail" data-open-look="0" aria-label="Explore the details: In motion" href="./look-motion.html"><span class="collection-tile-image"><img src="./assets/collections/motion-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">A closer look ↗</span></a>
+                </div>
+                <a class="collection-explore" data-open-look="0" href="./look-motion.html">View photo &amp; details <span aria-hidden="true">↗</span></a>
+                <p class="collection-scene-credit">Photography · Memory Mirage</p>
+              </article>
+              <article class="collection-scene" data-look="1" role="group" aria-roledescription="slide" aria-label="2 of 5: Defined lines" aria-hidden="true" inert>
+                <div class="collection-panel-heading"><span>In focus</span><span>02 / 05</span></div>
+                <div class="collection-scene-copy"><p class="collection-lead">Tailored jacket</p><h3>Lines</h3><p class="collection-summary">A mauve jacket with curved black piping and contrasting cuffs.</p></div>
+                <dl class="collection-look-notes"><div><dt>The details</dt><dd>Curved piping and contrasting edges</dd></div><div><dt>Colour story</dt><dd>Mauve / charcoal / black</dd></div></dl>
+                <div class="collection-thumbnails">
+                  <a class="collection-tile collection-tile--portrait" data-open-look="1" aria-label="View original photograph: Defined lines" href="./look-tailoring.html"><span class="collection-tile-image"><img src="./assets/collections/tailoring-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">The full look ↗</span></a>
+                  <a class="collection-tile collection-tile--detail" data-open-look="1" aria-label="Explore the details: Defined lines" href="./look-tailoring.html"><span class="collection-tile-image"><img src="./assets/collections/tailoring-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">A closer look ↗</span></a>
+                </div>
+                <a class="collection-explore" data-open-look="1" href="./look-tailoring.html">View photo &amp; details <span aria-hidden="true">↗</span></a>
+                <p class="collection-scene-credit">Original photograph · Look 02</p>
+              </article>
+              <article class="collection-scene" data-look="2" role="group" aria-roledescription="slide" aria-label="3 of 5: Colour stories" aria-hidden="true" inert>
+                <div class="collection-panel-heading"><span>In focus</span><span>03 / 05</span></div>
+                <div class="collection-scene-copy"><p class="collection-lead">Colourful sari</p><h3>Colour</h3><p class="collection-summary">A cream sari with vivid illustrations, floral motifs, and patterned borders.</p></div>
+                <dl class="collection-look-notes"><div><dt>The details</dt><dd>Illustrations, floral motifs, and borders</dd></div><div><dt>Colour story</dt><dd>Cream / orange / blue / pink</dd></div></dl>
+                <div class="collection-thumbnails">
+                  <a class="collection-tile collection-tile--portrait" data-open-look="2" aria-label="View original photograph: Colour stories" href="./look-colour.html"><span class="collection-tile-image"><img src="./assets/collections/colour-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">The full look ↗</span></a>
+                  <a class="collection-tile collection-tile--detail" data-open-look="2" aria-label="Explore the details: Colour stories" href="./look-colour.html"><span class="collection-tile-image"><img src="./assets/collections/colour-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">A closer look ↗</span></a>
+                </div>
+                <a class="collection-explore" data-open-look="2" href="./look-colour.html">View photo &amp; details <span aria-hidden="true">↗</span></a>
+                <p class="collection-scene-credit">Original photograph · Look 03</p>
+              </article>
+              <article class="collection-scene" data-look="3" role="group" aria-roledescription="slide" aria-label="4 of 5: Soft ivory" aria-hidden="true" inert>
+                <div class="collection-panel-heading"><span>In focus</span><span>04 / 05</span></div>
+                <div class="collection-scene-copy"><p class="collection-lead">Ivory lace dress</p><h3>Ivory</h3><p class="collection-summary">An ivory dress with sheer floral-lace sleeves and open shoulders.</p></div>
+                <dl class="collection-look-notes"><div><dt>The details</dt><dd>Floral lace and gathered sleeves</dd></div><div><dt>Colour story</dt><dd>Ivory / cream / pearl</dd></div></dl>
+                <div class="collection-thumbnails">
+                  <a class="collection-tile collection-tile--portrait" data-open-look="3" aria-label="View original photograph: Soft ivory" href="./look-ivory.html"><span class="collection-tile-image"><img src="./assets/collections/ivory-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">The full look ↗</span></a>
+                  <a class="collection-tile collection-tile--detail" data-open-look="3" aria-label="Explore the details: Soft ivory" href="./look-ivory.html"><span class="collection-tile-image"><img src="./assets/collections/ivory-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">A closer look ↗</span></a>
+                </div>
+                <a class="collection-explore" data-open-look="3" href="./look-ivory.html">View photo &amp; details <span aria-hidden="true">↗</span></a>
+                <p class="collection-scene-credit">Original photograph · Look 04</p>
+              </article>
+              <article class="collection-scene" data-look="4" role="group" aria-roledescription="slide" aria-label="5 of 5: Crimson notes" aria-hidden="true" inert>
+                <div class="collection-panel-heading"><span>In focus</span><span>05 / 05</span></div>
+                <div class="collection-scene-copy"><p class="collection-lead">Black &amp; red sari</p><h3>Crimson</h3><p class="collection-summary">A black sari with a patterned crimson border, styled with a red rose.</p></div>
+                <dl class="collection-look-notes"><div><dt>The details</dt><dd>Patterned border and red accents</dd></div><div><dt>Colour story</dt><dd>Black / crimson / deep red</dd></div></dl>
+                <div class="collection-thumbnails">
+                  <a class="collection-tile collection-tile--portrait" data-open-look="4" aria-label="View original photograph: Crimson notes" href="./look-crimson.html"><span class="collection-tile-image"><img src="./assets/collections/crimson-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">The full look ↗</span></a>
+                  <a class="collection-tile collection-tile--detail" data-open-look="4" aria-label="Explore the details: Crimson notes" href="./look-crimson.html"><span class="collection-tile-image"><img src="./assets/collections/crimson-original.png" alt="" loading="lazy" decoding="async"></span><span aria-hidden="true">A closer look ↗</span></a>
+                </div>
+                <a class="collection-explore" data-open-look="4" href="./look-crimson.html">View photo &amp; details <span aria-hidden="true">↗</span></a>
+                <p class="collection-scene-credit">Original photograph · Look 05</p>
+              </article>
+            </div>
+          </div>
+          <div class="runway-controls"><div class="look-counter"><span>Look</span><strong class="current-look">01</strong><span class="counter-total">of 05</span></div>
+            <div class="runway-pagination" aria-label="Choose a look">
+              <button type="button" aria-label="View look 01: In motion" aria-current="true" data-select-look="0"><b aria-hidden="true">01</b><span></span></button>
+              <button type="button" aria-label="View look 02: Defined lines" data-select-look="1"><b aria-hidden="true">02</b><span></span></button>
+              <button type="button" aria-label="View look 03: Colour stories" data-select-look="2"><b aria-hidden="true">03</b><span></span></button>
+              <button type="button" aria-label="View look 04: Soft ivory" data-select-look="3"><b aria-hidden="true">04</b><span></span></button>
+              <button type="button" aria-label="View look 05: Crimson notes" data-select-look="4"><b aria-hidden="true">05</b><span></span></button>
+            </div><div class="runway-buttons"><button class="runway-play" type="button" aria-label="Pause collection slideshow"><span class="play-symbol" aria-hidden="true">Ⅱ</span><span class="play-label">Pause</span></button><span class="control-divider" aria-hidden="true"></span><button class="runway-arrow runway-previous" type="button" aria-label="Previous look"><span aria-hidden="true">←</span><span class="arrow-label">Previous</span></button><a class="runway-full-list" href="./collection.html"><span aria-hidden="true">▦</span> View full list</a><button class="runway-arrow runway-next" type="button" aria-label="Next look"><span class="arrow-label">Next</span><span aria-hidden="true">→</span></button></div>
+          </div><p class="collection-disclaimer">Explore five looks by Hridita Huq. Select a smaller model to bring it forward, or open the featured look for the full photo and details.</p><p class="sr-only runway-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+        </div><noscript><p class="container">Enable JavaScript to explore all five looks.</p></noscript>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <div class="about-heading">
+            <h2 id="about-title">About Hridita <span> / 02</span></h2>
+            <span>Behind the designs</span>
+          </div>
+          <div class="about-layout">
+            <figure class="about-visual" data-about-reveal>
+              <div class="about-triptych">
+                <svg class="about-clip-definitions" width="0" height="0" aria-hidden="true" focusable="false">
+                  <defs>
+                    <clipPath id="about-panel-clip" clipPathUnits="objectBoundingBox">
+                      <rect x="0" y=".095" width=".322" height=".825"/>
+                      <rect x=".349" y="0" width=".302" height="1"/>
+                      <rect x=".678" y=".095" width=".322" height=".825"/>
+                    </clipPath>
+                    <clipPath id="about-portrait-clip" clipPathUnits="objectBoundingBox">
+                      <rect x="0" y=".095" width=".322" height=".825"/>
+                      <rect x=".349" y="0" width=".302" height="1"/>
+                      <rect x=".678" y=".095" width=".322" height=".825"/>
+                      <!-- Keep the face and hair continuous across the panel gaps. -->
+                      <rect x=".12" y=".06" width=".8" height=".49"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+                <div class="about-triptych-backdrop" aria-hidden="true"></div>
+                <div class="about-portrait-mask">
+                  <img src="./assets/about-portrait-cutout.png" alt="Portrait of a woman in a red and beige sari, arranged across three warm orange panels." width="1086" height="1448" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <figcaption><span>A creative point of view</span><span>Form / Detail / Individuality</span></figcaption>
+            </figure>
+            <div class="about-copy">
+              <p class="about-eyebrow" data-about-reveal>A little about me</p>
+              <h3 data-about-reveal>An eye for detail.<br><em>A feeling for form.</em></h3>
+              <!-- User-authorized draft introduction. Replace with Hridita's approved biography when supplied. -->
+              <div class="about-introduction" data-about-reveal>
+                <p class="about-lead">I’m Hridita Huq, a fashion designer exploring the connection between clothing and individuality.</p>
+                <p>For me, a design begins with curiosity. A shape, a texture, a small detail—each can become the starting point for something personal.</p>
+                <p>I’m drawn to the balance of structure and softness, and to pieces that feel as expressive as the people who wear them.</p>
+              </div>
+              <div class="about-signoff" data-about-reveal>
+                <span class="about-signature">Hridita Huq</span>
+                <span class="about-role">Fashion designer</span>
+              </div>
+              <a class="about-work-link" href="#work" data-about-reveal><span>Explore my work</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+            </div>
+          </div>
+          <div class="about-closing" data-about-reveal>
+            <span class="about-closing-label">A thread through it all</span>
+            <p>Thoughtful form <span aria-hidden="true">✳</span> Expressive detail <span aria-hidden="true">✳</span> Individual spirit</p>
+            <a href="#top" aria-label="Back to top">↑</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="studio-journal" id="process" aria-labelledby="studio-title">
+        <div class="container">
+          <div class="studio-section-heading"><h2 id="studio-title">The creative process <span>/ 03</span></h2><span>Hridita Huq · Studio journal</span></div>
+          <div class="studio-intro"><p>Inside the <em>atelier.</em></p><span>From a first thought to a final detail.<br> A journal in seven chapters.</span></div>
+          <div class="studio-experience" role="region" aria-roledescription="carousel" aria-label="Creative process, seven chapters">
+            <nav class="studio-chapters" aria-label="Choose a process chapter">
+<button type="button" data-studio-select="0" aria-controls="studio-chapter-0" aria-current="true"><span>01</span> Sketches</button>
+<button type="button" data-studio-select="1" aria-controls="studio-chapter-1"><span>02</span> Mood boards</button>
+<button type="button" data-studio-select="2" aria-controls="studio-chapter-2"><span>03</span> Fabric swatches</button>
+<button type="button" data-studio-select="3" aria-controls="studio-chapter-3"><span>04</span> Pattern-making</button>
+<button type="button" data-studio-select="4" aria-controls="studio-chapter-4"><span>05</span> Fittings</button>
+<button type="button" data-studio-select="5" aria-controls="studio-chapter-5"><span>06</span> Photoshoot</button>
+<button type="button" data-studio-select="6" aria-controls="studio-chapter-6"><span>07</span> Crafts</button>
+            </nav>
+            <div class="studio-stage" tabindex="0" aria-label="Studio journal. Use the left and right arrow keys to change chapters.">
+<article class="studio-scene studio-scene--sketches is-active" id="studio-chapter-0" data-chapter="0" data-name="Sketches" data-detail="Sketches translate an initial idea into line, shape, and proportion. This illustrative study explores the beginning of a garment, before fabric or construction fixes its form." role="group" aria-roledescription="slide" aria-label="1 of 7: Sketches">
+              <div class="studio-content studio-layer"><p class="studio-kicker studio-layer">An idea takes shape</p><h3 class="studio-title studio-layer" aria-label="First, a line.">First,<br><em>a line.</em></h3><div class="studio-copy studio-layer"><span class="studio-chapter-label">01 / Sketches</span><p>Loose marks, considered proportions, and the first possibility of a silhouette.</p><a class="studio-open" href="./study-sketches.html" aria-label="Explore Sketches">Explore the study <span aria-hidden="true">↗</span></a></div></div>
+              <div class="studio-photo studio-photo-main studio-layer" role="img" aria-label="Illustrative AI image: A pencil drawing garment silhouettes in an open sketchbook."><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:0%;--cell-y:0%" aria-hidden="true"></span></div>
+              <div class="studio-support studio-layer">
+                <div class="studio-thumbnails">
+                  <a class="studio-thumbnail" href="./study-sketches.html" aria-label="Explore Sketches: the study"><span class="studio-photo"><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:0%;--cell-y:0%" aria-hidden="true"></span></span><span>The study ↗</span></a>
+                  <a class="studio-thumbnail" href="./study-sketches.html" aria-label="Explore Sketches: a closer look"><span class="studio-photo"><span class="studio-art studio-art-detail " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:0%;--cell-y:0%" aria-hidden="true"></span></span><span>A closer look ↗</span></a>
+                </div>
+                <p class="studio-materials studio-layer">Graphite / Paper / Possibility</p>
+              </div>
+            </article>
+<article class="studio-scene studio-scene--moodboards" id="studio-chapter-1" data-chapter="1" data-name="Mood boards" data-detail="A mood board gathers visual references into a coherent atmosphere. Architecture, botanical forms, color, and texture suggest the feeling that a collection might carry." role="group" aria-roledescription="slide" aria-label="2 of 7: Mood boards" aria-hidden="true" inert>
+              <div class="studio-content studio-layer"><p class="studio-kicker studio-layer">Collecting a feeling</p><h3 class="studio-title studio-layer" aria-label="A world of inspiration.">A world of<br><em>inspiration.</em></h3><div class="studio-copy studio-layer"><span class="studio-chapter-label">02 / Mood boards</span><p>Images, colors, and textures brought together to find a shared direction.</p><a class="studio-open" href="./study-mood-boards.html" aria-label="Explore Mood boards">Explore the study <span aria-hidden="true">↗</span></a></div></div>
+              <div class="studio-photo studio-photo-main studio-layer" role="img" aria-label="Illustrative AI image: An ivory fashion mood board with architectural prints, paper, and textile references."><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:100%;--cell-y:0%" aria-hidden="true"></span></div>
+              <div class="studio-support studio-layer">
+                <div class="studio-thumbnails">
+                  <a class="studio-thumbnail" href="./study-mood-boards.html" aria-label="Explore Mood boards: the study"><span class="studio-photo"><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:100%;--cell-y:0%" aria-hidden="true"></span></span><span>The study ↗</span></a>
+                  <a class="studio-thumbnail" href="./study-mood-boards.html" aria-label="Explore Mood boards: a closer look"><span class="studio-photo"><span class="studio-art studio-art-detail " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:100%;--cell-y:0%" aria-hidden="true"></span></span><span>A closer look ↗</span></a>
+                </div>
+                <p class="studio-materials studio-layer">References / Color / Atmosphere</p>
+              </div>
+            </article>
+<article class="studio-scene studio-scene--swatches" id="studio-chapter-2" data-chapter="2" data-name="Fabric swatches" data-detail="Fabric studies consider texture, weight, drape, and the relationship between materials. These illustrative swatches explore how a restrained palette can still hold contrast and depth." role="group" aria-roledescription="slide" aria-label="3 of 7: Fabric swatches" aria-hidden="true" inert>
+              <div class="studio-content studio-layer"><p class="studio-kicker studio-layer">A tactile conversation</p><h3 class="studio-title studio-layer" aria-label="Material matters.">Material<br><em>matters.</em></h3><div class="studio-copy studio-layer"><span class="studio-chapter-label">03 / Fabric swatches</span><p>The weight of linen. The softness of silk. The way a fabric catches the light.</p><a class="studio-open" href="./study-fabric-swatches.html" aria-label="Explore Fabric swatches">Explore the study <span aria-hidden="true">↗</span></a></div></div>
+              <div class="studio-photo studio-photo-main studio-layer" role="img" aria-label="Illustrative AI image: Layered swatches of ivory linen, cocoa wool, rose silk, and sheer organza."><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:0%;--cell-y:100%" aria-hidden="true"></span></div>
+              <div class="studio-support studio-layer">
+                <div class="studio-thumbnails">
+                  <a class="studio-thumbnail" href="./study-fabric-swatches.html" aria-label="Explore Fabric swatches: the study"><span class="studio-photo"><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:0%;--cell-y:100%" aria-hidden="true"></span></span><span>The study ↗</span></a>
+                  <a class="studio-thumbnail" href="./study-fabric-swatches.html" aria-label="Explore Fabric swatches: a closer look"><span class="studio-photo"><span class="studio-art studio-art-detail " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:0%;--cell-y:100%" aria-hidden="true"></span></span><span>A closer look ↗</span></a>
+                </div>
+                <p class="studio-materials studio-layer">Texture / Weight / Drape</p>
+              </div>
+            </article>
+<article class="studio-scene studio-scene--patterns" id="studio-chapter-3" data-chapter="3" data-name="Pattern-making" data-detail="Pattern-making turns a drawn silhouette into pieces that can be cut and assembled. Shape, balance, seam placement, and proportion become part of the garment’s underlying structure." role="group" aria-roledescription="slide" aria-label="4 of 7: Pattern-making" aria-hidden="true" inert>
+              <div class="studio-content studio-layer"><p class="studio-kicker studio-layer">The shape beneath</p><h3 class="studio-title studio-layer" aria-label="From line to form.">From line<br><em>to form.</em></h3><div class="studio-copy studio-layer"><span class="studio-chapter-label">04 / Pattern-making</span><p>Flat paper becomes a three-dimensional idea, one measured line at a time.</p><a class="studio-open" href="./study-pattern-making.html" aria-label="Explore Pattern-making">Explore the study <span aria-hidden="true">↗</span></a></div></div>
+              <div class="studio-photo studio-photo-main studio-layer" role="img" aria-label="Illustrative AI image: Paper garment patterns, tailoring shears, a curved ruler, and measuring tape."><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:100%;--cell-y:100%" aria-hidden="true"></span></div>
+              <div class="studio-support studio-layer">
+                <div class="studio-thumbnails">
+                  <a class="studio-thumbnail" href="./study-pattern-making.html" aria-label="Explore Pattern-making: the study"><span class="studio-photo"><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:100%;--cell-y:100%" aria-hidden="true"></span></span><span>The study ↗</span></a>
+                  <a class="studio-thumbnail" href="./study-pattern-making.html" aria-label="Explore Pattern-making: a closer look"><span class="studio-photo"><span class="studio-art studio-art-detail " style="--studio-sheet:url('./assets/process/studies-01.png');--cell-x:100%;--cell-y:100%" aria-hidden="true"></span></span><span>A closer look ↗</span></a>
+                </div>
+                <p class="studio-materials studio-layer">Shape / Balance / Construction</p>
+              </div>
+            </article>
+<article class="studio-scene studio-scene--fittings" id="studio-chapter-4" data-chapter="4" data-name="Fittings" data-detail="A fitting tests how a garment sits, moves, and feels. A muslin toile allows proportions and construction details to be refined before the final fabric is cut." role="group" aria-roledescription="slide" aria-label="5 of 7: Fittings" aria-hidden="true" inert>
+              <div class="studio-content studio-layer"><p class="studio-kicker studio-layer">A dialogue with the body</p><h3 class="studio-title studio-layer" aria-label="Made to move.">Made<br><em>to move.</em></h3><div class="studio-copy studio-layer"><span class="studio-chapter-label">05 / Fittings</span><p>Pin, adjust, and look again. A silhouette finds its balance through fitting.</p><a class="studio-open" href="./study-fittings.html" aria-label="Explore Fittings">Explore the study <span aria-hidden="true">↗</span></a></div></div>
+              <div class="studio-photo studio-photo-main studio-layer" role="img" aria-label="Illustrative AI image: Hands pinning a cream muslin toile onto a dress form."><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-02.png');--cell-x:0%;--cell-y:0%" aria-hidden="true"></span></div>
+              <div class="studio-support studio-layer">
+                <div class="studio-thumbnails">
+                  <a class="studio-thumbnail" href="./study-fittings.html" aria-label="Explore Fittings: the study"><span class="studio-photo"><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-02.png');--cell-x:0%;--cell-y:0%" aria-hidden="true"></span></span><span>The study ↗</span></a>
+                  <a class="studio-thumbnail" href="./study-fittings.html" aria-label="Explore Fittings: a closer look"><span class="studio-photo"><span class="studio-art studio-art-detail " style="--studio-sheet:url('./assets/process/studies-02.png');--cell-x:0%;--cell-y:0%" aria-hidden="true"></span></span><span>A closer look ↗</span></a>
+                </div>
+                <p class="studio-materials studio-layer">Toile / Proportion / Movement</p>
+              </div>
+            </article>
+<article class="studio-scene studio-scene--photoshoot" id="studio-chapter-5" data-chapter="5" data-name="Photoshoot" data-detail="A photoshoot brings the garment, styling, light, and setting together. This illustrative scene shows the collaboration behind a fashion image, from preparation to the final frame." role="group" aria-roledescription="slide" aria-label="6 of 7: Photoshoot" aria-hidden="true" inert>
+              <div class="studio-content studio-layer"><p class="studio-kicker studio-layer">The story comes to life</p><h3 class="studio-title studio-layer" aria-label="Into the frame.">Into<br><em>the frame.</em></h3><div class="studio-copy studio-layer"><span class="studio-chapter-label">06 / Photoshoot</span><p>Light, styling, and movement bring a finished idea into focus.</p><a class="studio-open" href="./study-photoshoot.html" aria-label="Explore Photoshoot">Explore the study <span aria-hidden="true">↗</span></a></div></div>
+              <div class="studio-photo studio-photo-main studio-layer" role="img" aria-label="Illustrative AI image: A photographer creating an editorial image of an adult model in an ivory gown."><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-02.png');--cell-x:100%;--cell-y:0%" aria-hidden="true"></span></div>
+              <div class="studio-support studio-layer">
+                <div class="studio-thumbnails">
+                  <a class="studio-thumbnail" href="./study-photoshoot.html" aria-label="Explore Photoshoot: the study"><span class="studio-photo"><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-02.png');--cell-x:100%;--cell-y:0%" aria-hidden="true"></span></span><span>The study ↗</span></a>
+                  <a class="studio-thumbnail" href="./study-photoshoot.html" aria-label="Explore Photoshoot: a closer look"><span class="studio-photo"><span class="studio-art studio-art-detail " style="--studio-sheet:url('./assets/process/studies-02.png');--cell-x:100%;--cell-y:0%" aria-hidden="true"></span></span><span>A closer look ↗</span></a>
+                </div>
+                <p class="studio-materials studio-layer">Light / Styling / Expression</p>
+              </div>
+            </article>
+<article class="studio-scene studio-scene--crafts" id="studio-chapter-6" data-chapter="6" data-name="Crafts" data-detail="Handwork adds texture and character through individual gestures. Embroidery, embellishment, and considered finishing are opportunities to explore a garment at its most intimate scale." role="group" aria-roledescription="slide" aria-label="7 of 7: Crafts" aria-hidden="true" inert>
+              <div class="studio-content studio-layer"><p class="studio-kicker studio-layer">Made slowly, by hand</p><h3 class="studio-title studio-layer" aria-label="The human touch.">The human<br><em>touch.</em></h3><div class="studio-copy studio-layer"><span class="studio-chapter-label">07 / Crafts</span><p>A stitch, a fold, a carefully placed bead. Small gestures that leave a lasting impression.</p><a class="studio-open" href="./study-crafts.html" aria-label="Explore Crafts">Explore the study <span aria-hidden="true">↗</span></a></div></div>
+              <div class="studio-photo studio-photo-main studio-layer" role="img" aria-label="Illustrative AI image: Hands working fine cream embroidery and beadwork in an embroidery hoop."><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-02.png');--cell-x:0%;--cell-y:100%" aria-hidden="true"></span></div>
+              <div class="studio-support studio-layer">
+                <div class="studio-thumbnails">
+                  <a class="studio-thumbnail" href="./study-crafts.html" aria-label="Explore Crafts: the study"><span class="studio-photo"><span class="studio-art " style="--studio-sheet:url('./assets/process/studies-02.png');--cell-x:0%;--cell-y:100%" aria-hidden="true"></span></span><span>The study ↗</span></a>
+                  <a class="studio-thumbnail" href="./study-crafts.html" aria-label="Explore Crafts: a closer look"><span class="studio-photo"><span class="studio-art studio-art-detail " style="--studio-sheet:url('./assets/process/studies-02.png');--cell-x:0%;--cell-y:100%" aria-hidden="true"></span></span><span>A closer look ↗</span></a>
+                </div>
+                <p class="studio-materials studio-layer">Stitch / Embellishment / Care</p>
+              </div>
+            </article>
+            </div>
+            <div class="studio-controls">
+              <span class="studio-explore-hint"><span aria-hidden="true">↔</span> Drag to turn the page</span>
+              <div class="studio-progress" aria-hidden="true"><span></span></div>
+              <div class="studio-pagination"><button class="studio-play" type="button" aria-label="Play studio journal"><span aria-hidden="true">▷</span><span class="studio-play-label">Play</span></button><button class="studio-prev" type="button" aria-label="Previous process chapter">←</button><button class="studio-next" type="button" aria-label="Next process chapter">→</button><span class="studio-count"><span aria-hidden="true">✳</span><strong>01</strong><span>/ 07</span></span></div>
+            </div>
+            <p class="sr-only studio-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+          </div>
+          <p class="studio-disclaimer">Illustrative studies · AI imagery. Hridita’s own sketches, materials, and process photographs will take their place here.</p>
+          <noscript><p class="studio-no-script">Explore the studies: <a href="./study-sketches.html">Sketches</a> · <a href="./study-mood-boards.html">Mood boards</a> · <a href="./study-fabric-swatches.html">Fabric swatches</a> · <a href="./study-pattern-making.html">Pattern-making</a> · <a href="./study-fittings.html">Fittings</a> · <a href="./study-photoshoot.html">Photoshoot</a> · <a href="./study-crafts.html">Crafts</a>.</p></noscript>
+        </div>
+      </section>
+      <section class="blog" id="blog" aria-labelledby="blog-heading">
+        <div class="container">
+          <div class="blog-section-heading"><h2 id="blog-heading">Blog <span>/ 04</span></h2><span>Ideas, observations &amp; other threads</span></div>
+          <div class="blog-intro"><p>Notes on <em>form.</em></p><span>A closer look at the things<br>that make fashion feel personal.</span></div>
+          <div class="blog-stage" role="region" aria-roledescription="carousel" aria-label="Fashion journal, four draft stories" tabindex="0">
+            <div class="blog-backdrop blog-photo" aria-hidden="true"><span class="blog-art" data-story-art="0"></span></div>
+            <div class="blog-shade" aria-hidden="true"></div>
+            <div class="blog-masthead"><span><span aria-hidden="true">✳</span> The journal</span><span>Fashion &nbsp; / &nbsp; Feeling &nbsp; / &nbsp; Form</span></div>
+            <article class="blog-feature" aria-labelledby="blog-story-title">
+              <p class="blog-meta"><span class="blog-category">Design notes</span><span aria-hidden="true">—</span><span>1 min read</span></p>
+              <h3 id="blog-story-title">The poetry<br>of a pleat.</h3>
+              <p class="blog-excerpt">How a simple fold gives fabric its own rhythm, structure, and sense of movement.</p>
+              <button class="blog-read" type="button"><span class="blog-read-icon" aria-hidden="true">↗</span><span>Read the story</span></button>
+            </article>
+            <div class="blog-cards" aria-label="Choose the next story">
+              <button class="blog-card blog-photo" type="button" data-story="0" data-slot="hidden" tabindex="-1" aria-hidden="true" inert aria-label="Show story: The poetry of a pleat."><span class="blog-art" data-story-art="0" aria-hidden="true"></span><span class="blog-card-shade" aria-hidden="true"></span><span class="blog-card-top">01 <span aria-hidden="true">↗</span></span><span class="blog-card-copy"><span>Design notes</span><strong>The poetry<br>of a pleat.</strong></span></button>
+              <button class="blog-card blog-photo" type="button" data-story="1" data-slot="0" aria-label="Show story: A palette in the everyday."><span class="blog-art" data-story-art="1" aria-hidden="true"></span><span class="blog-card-shade" aria-hidden="true"></span><span class="blog-card-top">02 <span aria-hidden="true">↗</span></span><span class="blog-card-copy"><span>Inspiration</span><strong>A palette in<br>the everyday.</strong></span></button>
+              <button class="blog-card blog-photo" type="button" data-story="2" data-slot="1" aria-label="Show story: A feeling for texture."><span class="blog-art" data-story-art="2" aria-hidden="true"></span><span class="blog-card-shade" aria-hidden="true"></span><span class="blog-card-top">03 <span aria-hidden="true">↗</span></span><span class="blog-card-copy"><span>Material stories</span><strong>A feeling<br>for texture.</strong></span></button>
+              <button class="blog-card blog-photo" type="button" data-story="3" data-slot="2" aria-label="Show story: The quiet art of finishing."><span class="blog-art" data-story-art="3" aria-hidden="true"></span><span class="blog-card-shade" aria-hidden="true"></span><span class="blog-card-top">04 <span aria-hidden="true">↗</span></span><span class="blog-card-copy"><span>Craft &amp; care</span><strong>The quiet art<br>of finishing.</strong></span></button>
+            </div>
+            <div class="blog-controls">
+              <div class="blog-arrows"><button class="blog-prev" type="button" aria-label="Previous blog story">←</button><button class="blog-next" type="button" aria-label="Next blog story">→</button></div>
+              <button class="blog-play" type="button" aria-label="Play blog stories"><span class="blog-play-symbol" aria-hidden="true">▷</span><span class="blog-play-label">Play</span></button>
+              <div class="blog-progress" aria-hidden="true"><span></span></div>
+              <div class="blog-counter"><strong>01</strong><span>/ 04</span></div>
+            </div>
+            <span class="blog-stage-note">An open notebook. A continuing conversation.</span>
+            <p class="sr-only blog-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+          </div>
+          <p class="blog-disclaimer">Draft journal entries · Illustrative AI imagery. Ready for Hridita’s own words and photographs.</p>
+          <noscript><p>Enable JavaScript to browse the four draft stories and open their full text.</p></noscript>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="section-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <button class="dialog-close" type="button" aria-label="Close dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M5 19 19 5"/></svg></button>
+    <span class="dialog-eyebrow">Hridita Huq / Portfolio in progress</span>
+    <span class="dialog-flower" aria-hidden="true">✳</span>
+    <h2 id="dialog-title">A new chapter.</h2>
+    <p id="dialog-description">This part of the portfolio is coming soon.</p>
+    <button class="outline-button dialog-return" type="button">Back to the introduction <span aria-hidden="true">↗</span></button>
+  </dialog>
+<dialog class="blog-dialog" aria-labelledby="blog-dialog-title">
+    <button class="blog-dialog-close" type="button" aria-label="Close blog story">×</button>
+    <div class="blog-dialog-layout">
+      <div class="blog-dialog-photo blog-photo" role="img" aria-label="Illustrative AI fashion photograph"><span class="blog-art" data-story-art="0" aria-hidden="true"></span></div>
+      <article class="blog-dialog-copy"><p class="blog-dialog-meta">Design notes · 1 min read</p><h2 id="blog-dialog-title">The poetry of a pleat.</h2><p class="blog-draft-note">Sample editorial · Draft for review</p><div class="blog-article-body"></div><button class="blog-dialog-return outline-button" type="button">Back to the journal <span aria-hidden="true">↗</span></button></article>
+    </div>
+  </dialog>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-heading">
+      <a class="site-footer-brand" href="./index.html#top">Hridita Huq<span>Fashion, form &amp; individuality.</span></a>
+      <nav class="site-footer-nav" aria-label="Footer navigation"><a href="./collection.html">Collections <span aria-hidden="true">↗</span></a><a href="./index.html#process">Inside the atelier <span aria-hidden="true">↗</span></a></nav>
+    </div>
+    <p class="site-footer-copyright">Copyright act @ 2026. This portfolio is Designed &amp; Build By <a href="https://kazi-jawad.netlify.app/">Kazi Jawad</a> . All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

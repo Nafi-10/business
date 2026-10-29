@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MD Kazi Jawadul Islam - B.Sc Student in CIS, AI Enthusiast, Business Analyst, Cyber Security Interested, IoT Explorer. Portfolio Website.">
+  <meta name="keywords" content="Kazi Jawad, Portfolio, AI, Cyber Security, IoT, DIU, Business Analyst">
+  <meta property="og:title" content="MD Kazi Jawadul Islam | Portfolio">
+  <meta property="og:description" content="Passionate about Technology, Research & Innovation">
+  <meta property="og:image" content="assets/img/profile.jpg">
+  <meta property="og:type" content="website">
+  <title>MD Kazi Jawadul Islam | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS - Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css?v=atelier-milestones-2">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/articles.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body class="frosted-glass-theme">
+
+  <!-- Mesh Gradient Background Elements for Frosted Glass Theme -->
+  <div class="mesh-background">
+    <div class="mesh-orb mesh-orb-indigo"></div>
+    <div class="mesh-orb mesh-orb-emerald"></div>
+    <div class="mesh-orb mesh-orb-rose"></div>
+  </div>
+
+  <!-- Interactive Particles Background Canvas (covers whole site) -->
+  <div id="particles-js"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-logo">Kazi Jawad</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- Back To Top Button -->
+  <button id="back-to-top" aria-label="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- [1] NAVIGATION BAR -->
+  <nav class="navbar">
+    <a href="#hero" class="nav-brand">Kazi Jawad</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#quotes" class="nav-link">Quotes</a></li>
+      <li><a href="#articles" class="nav-link">Articles</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- [2] HERO / BANNER SECTION -->
+  <header id="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <div class="hero-greeting">Hello, I'm 👋</div>
+      <h1 class="hero-name dynamic-name">MD Kazi Jawadul Islam</h1>
+      <div class="hero-typed-wrapper">
+        <span id="typed"></span>
+      </div>
+      <p class="hero-tagline" id="hero-tagline">Passionate about Technology, Research & Innovation</p>
+      <div class="hero-buttons">
+        <a href="assets/documents/MD_Kazi_Jawadul_Islam_CV.pdf" download="MD_Kazi_Jawadul_Islam_CV.pdf" type="application/pdf" class="btn btn-outline" id="cv-download-btn"><i class="fa-solid fa-download"></i> Download CV</a>
+        <a href="#experience" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> View My Work</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to About">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </header>
+
+  <!-- [3] ABOUT ME SECTION -->
+  <section id="about" class="about-redesign" aria-labelledby="about-heading">
+    <div class="about-section-label">
+      <h2 id="about-heading">About Me</h2>
+      <span aria-hidden="true"></span>
+    </div>
+
+    <div class="about-editorial">
+      <figure class="about-portrait">
+        <img src="assets/img/profile.jpg" alt="MD Kazi Jawadul Islam in a navy suit" id="profile-photo-img" width="600" height="800" decoding="async">
+        <figcaption class="about-portrait-caption">
+          <strong class="dynamic-name">MD Kazi Jawadul Islam</strong>
+          <span>Curious mind. Purposeful work.</span>
+        </figcaption>
+      </figure>
+
+      <div class="about-intro">
+        <p class="about-role"><span aria-hidden="true"></span>Data Analyst / AI Enthusiast / ML Engineer</p>
+        <h3 class="about-headline">I build digital <span>experiences</span> that matter.</h3>
+        <div class="about-introduction" id="about-bio-text">
+          <p>I'm MD Kazi Jawadul Islam, a B.Sc student in Computing and Information Systems at Daffodil International University, majoring in Artificial Intelligence.</p>
+          <p>Driven by research and innovation, I'm building my path in technology through practical projects, continuous learning, and thoughtful problem-solving.</p>
+        </div>
+        <div class="about-actions">
+          <a href="#articles" class="about-work-link">View My Work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <a href="#contact" class="about-contact-link">Let's Talk <i class="fa-regular fa-comment-dots" aria-hidden="true"></i></a>
+        </div>
+        <div class="about-social-links" aria-label="Social profiles">
+          <a href="https://github.com/Nafi-10" target="_blank" rel="noopener" class="social-square-btn dynamic-github" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/jawadul-islam-ab6bb4418" target="_blank" rel="noopener" class="social-square-btn dynamic-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/jawadul.islam.14490/" target="_blank" rel="noopener" class="social-square-btn dynamic-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/_jawadul_islam/?hl=en" target="_blank" rel="noopener" class="social-square-btn dynamic-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="mailto:kazijawadulislam@gmail.com" class="social-square-btn dynamic-email" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-details">
+      <div class="about-facts" id="info-cards-container" aria-label="At a glance">
+        <div class="about-fact"><span class="about-fact-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span><div><span class="about-fact-label">Education</span><p class="about-fact-value">DIU, CIS — AI Major</p></div></div>
+        <div class="about-fact"><span class="about-fact-icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span><div><span class="about-fact-label">Current Role</span><p class="about-fact-value">Business Analyst<span>Akand Engineering</span></p></div></div>
+        <div class="about-fact"><span class="about-fact-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span><div><span class="about-fact-label">Based In</span><p class="about-fact-value">Asulia, Savar, Dhaka</p></div></div>
+        <div class="about-fact"><span class="about-fact-icon" aria-hidden="true"><i class="fa-solid fa-music"></i></span><div><span class="about-fact-label">Interests</span><p class="about-fact-value">Music, Research, IoT</p></div></div>
+      </div>
+      <aside class="about-credentials" aria-labelledby="about-credentials-title">
+        <h3 id="about-credentials-title">Certifications &amp; Expos</h3>
+        <ul class="about-credential-list" id="certifications-pills-container">
+          <li><i class="fa-solid fa-award" aria-hidden="true"></i><span>AWS Cloud Foundations</span></li>
+          <li><i class="fa-solid fa-award" aria-hidden="true"></i><span>Destination Expo 2023</span></li>
+          <li><i class="fa-solid fa-award" aria-hidden="true"></i><span>Destination Expo 2024</span></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="about-signoff" aria-hidden="true"><span>Stay curious · Keep learning · Build what matters</span><span class="about-signoff-line"></span><span>Better systems. Brighter possibilities.</span></div>
+  </section>
+
+  <!-- [4] SKILLS & INTERESTS BENTO DASHBOARD SECTION -->
+  <section id="skills">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">My Skills & Interests</h2>
+      <p class="section-subtitle">Interactive proficiency analytics, radar metrics, and domain focus</p>
+    </div>
+
+    <div class="bento-dashboard-grid" data-aos="fade-up">
+      <!-- ROW 1: Card 1 (Dark Flow), Card 2 (Bar Chart), Card 3 (Radar Chart) -->
+
+      <!-- CARD 1: Overall Mastery & Skill Flow (Dark Blue Glass) -->
+      <div class="bento-card bento-card-dark bento-card-flow">
+        <div class="bento-card-header">
+          <div class="bento-title-group">
+            <span class="bento-card-title">Mastery Flow</span>
+            <span class="bento-card-subtitle">Overall Competency</span>
+          </div>
+          <div class="bento-card-badge"><i class="fa-solid fa-microchip"></i></div>
+        </div>
+        <div class="bento-big-value" id="bento-mastery-val">82%</div>
+        <div class="bento-value-label">Average Score</div>
+
+        <div class="bento-sparkline-box">
+          <svg viewBox="0 0 280 70" class="bento-sparkline-svg">
+            <defs>
+              <linearGradient id="glowGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.45"/>
+                <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,50 Q40,15 90,38 T180,20 T280,30 L280,70 L0,70 Z" fill="url(#glowGrad)"/>
+            <path d="M0,50 Q40,15 90,38 T180,20 T280,30" fill="none" stroke="#22d3ee" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="90" cy="38" r="5" fill="#22d3ee" class="bento-spark-dot"/>
+            <circle cx="180" cy="20" r="5" fill="#22d3ee" class="bento-spark-dot"/>
+          </svg>
+          <div class="bento-spark-tag"><i class="fa-solid fa-arrow-trend-up"></i> +12% Growth</div>
+        </div>
+
+        <div class="bento-mini-progress-list" id="bento-mini-skills-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- CARD 2: Technical & Tool Bar Chart (Light Glass) -->
+      <div class="bento-card bento-card-light bento-span-col-2">
+        <div class="bento-card-header">
+          <div class="bento-tabs-nav" id="bento-chart-tabs">
+            <button class="bento-tab active" data-tab="all">All Skills</button>
+            <button class="bento-tab" data-tab="technical">Technical</button>
+            <button class="bento-tab" data-tab="tools">Tools</button>
+          </div>
+          <div class="bento-metric-pill" id="bento-chart-count">10 Skills</div>
+        </div>
+
+        <div class="bento-bar-chart-container" id="bento-bar-chart-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- CARD 3: Skill Radar Structure (Light Glass) -->
+      <div class="bento-card bento-card-light">
+        <div class="bento-card-header">
+          <div class="bento-title-group">
+            <span class="bento-card-title">Structure</span>
+            <span class="bento-card-subtitle">Pillar Radar</span>
+          </div>
+          <div class="bento-icon-pill"><i class="fa-solid fa-compass-drafting"></i></div>
+        </div>
+        <div class="bento-radar-box" id="bento-radar-box">
+          <!-- Populated by JS SVG Radar -->
+        </div>
+      </div>
+
+      <!-- ROW 2: Card 4 (Skill Distribution Donut), Card 5 (Toolbox) -->
+
+      <!-- CARD 4: Skill Distribution Donut (Light Glass) -->
+      <div class="bento-card bento-card-light bento-span-col-2">
+        <div class="bento-card-header">
+          <div class="bento-title-group">
+            <span class="bento-card-title">Skill Breakdown</span>
+            <span class="bento-card-subtitle">Category Distribution</span>
+          </div>
+          <div class="bento-pill-tag"><i class="fa-solid fa-chart-pie"></i> Metrics</div>
+        </div>
+        <div class="bento-donut-content">
+          <div class="bento-donut-graphic-box">
+            <svg viewBox="0 0 120 120" class="bento-donut-svg" id="bento-donut-svg">
+              <!-- Populated by JS -->
+            </svg>
+            <div class="bento-donut-center-info">
+              <span class="donut-center-num" id="bento-donut-center-num">82%</span>
+              <span class="donut-center-lbl">Avg Score</span>
+            </div>
+          </div>
+          <div class="bento-donut-legend-grid" id="bento-donut-legend">
+            <!-- Populated by JS -->
+          </div>
+          <div class="bento-side-stat-badge">
+            <span class="side-badge-val" id="bento-top-skill-score">90%</span>
+            <span class="side-badge-lbl" id="bento-top-skill-name">Communication</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5: Tool & Software Stack (Light Glass) -->
+      <div class="bento-card bento-card-light">
+        <div class="bento-card-header">
+          <div class="bento-title-group">
+            <span class="bento-card-title">Toolbox Stack</span>
+            <span class="bento-card-subtitle">Software & Environment</span>
+          </div>
+          <div class="bento-icon-pill"><i class="fa-solid fa-toolbox"></i></div>
+        </div>
+        <div class="bento-tools-stack-list" id="bento-tools-stack-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- CARD 7: Interests & Domain Specializations (Dark Blue Glass) -->
+      <div class="bento-card bento-card-dark">
+        <div class="bento-card-header">
+          <div class="bento-title-group">
+            <span class="bento-card-title">Interests</span>
+            <span class="bento-card-subtitle">Passions & Focus Areas</span>
+          </div>
+          <div class="bento-card-badge"><i class="fa-solid fa-heart-pulse"></i></div>
+        </div>
+        <div class="bento-interests-container" id="bento-interests-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- ROW 3: Full-width Growth & Learning Curves (Dark Blue Glass) -->
+      <div class="bento-card bento-card-dark bento-span-col-4">
+        <div class="bento-card-header">
+          <div class="bento-title-group">
+            <span class="bento-card-title">Learning Trajectory</span>
+            <span class="bento-card-subtitle">Skill milestones & growth velocity timeline</span>
+          </div>
+          <div class="bento-toggle-switch">
+            <span class="switch-lbl">Velocity Mode</span>
+            <div class="switch-indicator active"></div>
+          </div>
+        </div>
+        <div class="bento-multicurve-container">
+          <svg viewBox="0 0 1000 110" class="bento-multicurve-svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="curveGrad1" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#22d3ee"/>
+                <stop offset="50%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#818cf8"/>
+              </linearGradient>
+              <linearGradient id="curveGrad2" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#818cf8"/>
+                <stop offset="50%" stop-color="#c084fc"/>
+                <stop offset="100%" stop-color="#e879f9"/>
+              </linearGradient>
+            </defs>
+            <line x1="0" y1="25" x2="1000" y2="25" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4"/>
+            <line x1="0" y1="60" x2="1000" y2="60" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4"/>
+            <line x1="0" y1="95" x2="1000" y2="95" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4"/>
+
+            <path d="M10,92 C200,85 350,38 550,45 C750,52 880,22 990,12" fill="none" stroke="url(#curveGrad1)" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M10,102 C180,95 320,68 520,58 C720,48 880,30 990,18" fill="none" stroke="url(#curveGrad2)" stroke-width="3" stroke-linecap="round"/>
+
+            <circle cx="200" cy="72" r="5" fill="#22d3ee" class="curve-glow-dot"/>
+            <circle cx="420" cy="48" r="5" fill="#38bdf8" class="curve-glow-dot"/>
+            <circle cx="680" cy="40" r="5" fill="#818cf8" class="curve-glow-dot"/>
+            <circle cx="920" cy="18" r="5" fill="#c084fc" class="curve-glow-dot"/>
+          </svg>
+          <div class="bento-milestone-tabs">
+            <div class="milestone-item active"><span class="m-year">2023</span><span class="m-label">Foundations & Web</span></div>
+            <div class="milestone-item active"><span class="m-year">2024</span><span class="m-label">Full-Stack Development</span></div>
+            <div class="milestone-item active"><span class="m-year">2025</span><span class="m-label">AI Engineering & IoT</span></div>
+            <div class="milestone-item active"><span class="m-year">2026</span><span class="m-label">Business Analytics & ML</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- [5] EXPERIENCE / TIMELINE SECTION -->
+  <section id="experience">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">My Journey</h2>
+      <p class="section-subtitle">Professional experience, leadership roles, and activities</p>
+    </div>
+    <div class="timeline" id="timeline-container">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- [6] EDUCATION SECTION -->
+  <section id="education">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">Education</h2>
+      <p class="section-subtitle">Academic qualification and educational timeline</p>
+    </div>
+    <div class="education-grid" id="education-container">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- [6.5] PROGRAMMER QUOTES & MINDSET SECTION -->
+  <section id="quotes">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title"><i class="fa-solid fa-terminal" style="color: var(--primary); margin-right: 10px;"></i> Programmer Quotes & Mindset</h2>
+      <p class="section-subtitle">200+ funny, motivational & relatable tech wisdom nuggets</p>
+    </div>
+
+    <div class="quotes-card-wrapper" data-aos="zoom-in">
+      <div class="quote-card-body">
+        <i class="fa-solid fa-quote-left quote-icon-left"></i>
+        <p class="quote-text" id="programmer-quote-text">“It works on my machine” is my love language.</p>
+        <i class="fa-solid fa-quote-right quote-icon-right"></i>
+      </div>
+
+      <div class="quote-card-footer">
+        <div class="quote-author-badge">
+          <i class="fa-solid fa-laptop-code"></i> Developer Wisdom
+        </div>
+        <div class="quote-actions">
+          <button id="quote-copy-btn" class="btn btn-outline btn-sm" aria-label="Copy Quote">
+            <i class="fa-solid fa-copy"></i> Copy Quote
+          </button>
+          <button id="quote-shuffle-btn" class="btn btn-primary btn-sm" aria-label="Get Another Quote">
+            <i class="fa-solid fa-shuffle"></i> Get Another Quote
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- [7] ARTICLES & PROJECTS: INDIVIDUAL DOCUMENTS -->
+  <section id="articles" class="articles-pinterest-section">
+    <div class="section-header" data-aos="fade-up">
+      <div class="storehouse-badge">
+        <span class="storehouse-pulse-dot"></span>
+        <span>Research & Ideas</span>
+      </div>
+      <h2 class="section-title">Articles & Projects</h2>
+      <p class="section-subtitle">Inside the projects: the ideas, the systems, and the details behind them.</p>
+    </div>
+
+    <div class="article-carousel" id="article-carousel" role="region" aria-roledescription="carousel" aria-label="Project documents">
+      <div class="article-carousel-controls">
+        <button class="article-carousel-arrow" id="article-previous" type="button" aria-label="Previous document" aria-controls="article-columns">←</button>
+        <span class="article-carousel-position" id="article-position" aria-hidden="true">01 / 03</span>
+        <button class="article-carousel-arrow" id="article-next" type="button" aria-label="Next document" aria-controls="article-columns">→</button>
+      </div>
+      <div class="article-columns" id="article-columns"></div>
+      <p class="article-sr-only" id="article-announcement" aria-live="polite" aria-atomic="true"></p>
+    </div>
+  </section>
+
+  <!-- [8] GALLERY -->
+  <section id="gallery" class="gallery-section" aria-labelledby="gallery-title">
+    <div class="section-header" data-aos="fade-up">
+      <span class="gallery-eyebrow">Moments &amp; Work</span>
+      <h2 class="section-title" id="gallery-title">Gallery</h2>
+      <p class="section-subtitle">A closer look at my projects, experiments, and the person behind them.</p>
+    </div>
+
+    <div class="gallery-carousel" role="region" aria-roledescription="carousel" aria-label="Portfolio gallery">
+      <div class="gallery-stage" id="gallery-stage">
+        <button class="gallery-card" type="button" data-offset="-2" data-caption="A quiet portrait in white." aria-label="Show image: In white">
+          <img src="assets/img/gallery/portrait-in-white.jpg" alt="A portrait in a white panjabi against a warm, softly blurred background." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Portraits</span><span class="gallery-card-title">In white</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+        <button class="gallery-card" type="button" data-offset="-1" data-caption="A snapshot beside the CIS Project Based Learning display." aria-label="Show image: Campus days">
+          <img src="assets/img/gallery/campus-days.jpg" alt="Standing beside a CIS Project Based Learning sign on a brick wall." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Campus</span><span class="gallery-card-title">Campus days</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+        <button class="gallery-card is-active" type="button" data-offset="0" data-caption="Bringing code and hardware together in a working project display." aria-label="Open image: Project in action">
+          <img src="assets/img/gallery/project-in-action.jpg" alt="Presenting an electronics prototype with sensors, a keypad, model building, and laptop." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Projects</span><span class="gallery-card-title">Project in action</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+        <button class="gallery-card" type="button" data-offset="1" data-caption="A walk across the bridge, with green surroundings all around." aria-label="Show image: On the bridge">
+          <img src="assets/img/gallery/on-the-bridge.jpg" alt="An outdoor portrait in sunglasses and a black hoodie on a suspension bridge." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Outdoors</span><span class="gallery-card-title">On the bridge</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+        <button class="gallery-card" type="button" data-offset="2" data-caption="Taking a moment under the evening sky." aria-label="Show image: Golden hour">
+          <img src="assets/img/gallery/golden-hour.jpg" alt="A seated outdoor portrait beneath a glowing orange sunset sky." loading="lazy" decoding="async">
+          <span class="gallery-card-shade"></span>
+          <span class="gallery-card-copy"><span class="gallery-card-category">Outdoors</span><span class="gallery-card-title">Golden hour</span><span class="gallery-card-action">View image <span aria-hidden="true">↗</span></span></span>
+        </button>
+      </div>
+      <div class="gallery-controls">
+        <button class="gallery-arrow gallery-previous" id="gallery-previous" type="button" aria-label="Previous gallery image" aria-controls="gallery-stage">←</button>
+        <div class="gallery-pagination">
+          <div class="gallery-dots" id="gallery-dots" aria-label="Choose gallery image"></div>
+          <a class="gallery-explore" href="gallery/">Explore More</a>
+        </div>
+        <button class="gallery-arrow gallery-next" id="gallery-next" type="button" aria-label="Next gallery image" aria-controls="gallery-stage">→</button>
+      </div>
+      <p class="gallery-hint">Select a card to explore. Open the center image for a closer look.</p>
+      <p class="gallery-sr-only" id="gallery-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    </div>
+  </section>
+
+  <!-- [9] CONTACT SECTION -->
+  <section id="contact">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Have a query or collaboration proposal? Let's connect!</p>
+    </div>
+    <div class="contact-grid">
+      <!-- Left: Info & Socials -->
+      <div class="contact-info-wrapper" data-aos="fade-right">
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-info-text">
+              <h5>Email Address</h5>
+              <p><a href="mailto:kazijawadulislam@gmail.com" class="dynamic-email">kazijawadulislam@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-info-text">
+              <h5>Phone Number</h5>
+              <p><a href="tel:01410142580" class="dynamic-phone">01410142580</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-info-text">
+              <h5>Location</h5>
+              <p class="dynamic-address">Asulia, Savar, Dhaka</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-socials-box">
+          <h4 class="contact-socials-title"><i class="fa-solid fa-share-nodes"></i> Connect On Social Media</h4>
+          <div class="profile-socials">
+            <a href="https://github.com/Nafi-10" target="_blank" rel="noopener" class="social-icon-btn dynamic-github" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jawadul-islam-ab6bb4418" target="_blank" rel="noopener" class="social-icon-btn dynamic-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/jawadul.islam.14490/" target="_blank" rel="noopener" class="social-icon-btn dynamic-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/_jawadul_islam/?hl=en" target="_blank" rel="noopener" class="social-icon-btn dynamic-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:kazijawadulislam@gmail.com" class="social-icon-btn dynamic-email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="glass-card" data-aos="fade-left">
+        <form class="contact-form" id="portfolio-contact-form" name="contact">
+
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Your Full Name</label>
+            <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Kazi Jawad" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Your Email Address</label>
+            <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. kazijawadulislam@gmail.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Your Message</label>
+            <textarea id="contact-message" name="message" class="form-textarea" placeholder="How can I help you?" required></textarea>
+          </div>
+
+          <div id="contact-form-status" class="form-status" role="status"></div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fa-solid fa-paper-plane"></i> Open Email App
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- [9] FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">Kazi Jawadul Islam</div>
+      <div class="footer-links">
+        <a href="#hero" class="footer-link">Home</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#skills" class="footer-link">Skills</a>
+        <a href="#experience" class="footer-link">Experience</a>
+        <a href="#education" class="footer-link">Education</a>
+        <a href="#quotes" class="footer-link">Quotes</a>
+        <a href="#articles" class="footer-link">Articles</a>
+        <a href="#gallery" class="footer-link">Gallery</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </div>
+      <div class="profile-socials">
+        <a href="https://github.com/Nafi-10" target="_blank" rel="noopener" class="social-icon-btn dynamic-github" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/jawadul-islam-ab6bb4418" target="_blank" rel="noopener" class="social-icon-btn dynamic-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/jawadul.islam.14490/" target="_blank" rel="noopener" class="social-icon-btn dynamic-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/_jawadul_islam/?hl=en" target="_blank" rel="noopener" class="social-icon-btn dynamic-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:kazijawadulislam@gmail.com" class="social-icon-btn dynamic-email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <div class="footer-copyright">
+        <span id="copyright-symbol" class="copyright-symbol" style="cursor: pointer; user-select: none;">©</span> 2025 MD Kazi Jawadul Islam. All rights reserved.
+        <div style="color: red; margin-top: 6px;">
+          I know you're looking at the source code. Just remember: I spent 4 hours on this feature, so if you steal it, you better spend 8 hours trying to figure out why it works.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="gallery-lightbox" id="gallery-lightbox" aria-labelledby="gallery-image-title" aria-describedby="gallery-image-caption">
+    <div class="gallery-lightbox-panel">
+      <button class="gallery-lightbox-close" id="gallery-lightbox-close" type="button" aria-label="Close gallery image" autofocus>×</button>
+      <figure>
+        <img id="gallery-full-image" alt="">
+        <figcaption>
+          <span class="gallery-card-category" id="gallery-image-category"></span>
+          <h3 id="gallery-image-title"></h3>
+          <p id="gallery-image-caption"></p>
+        </figcaption>
+      </figure>
+      <div class="gallery-lightbox-controls">
+        <button class="gallery-arrow" id="gallery-lightbox-previous" type="button" aria-label="Previous full-size image">←</button>
+        <span class="gallery-count" id="gallery-lightbox-count" aria-live="polite"></span>
+        <button class="gallery-arrow" id="gallery-lightbox-next" type="button" aria-label="Next full-size image">→</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Article Reader Modal -->
+  <div id="article-modal-overlay" class="modal-overlay" onclick="closeArticleModal()">
+    <div class="modal-container" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeArticleModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h2 id="modal-article-title" style="margin-bottom: 10px; font-size: 1.6rem;">Article Title</h2>
+      <div id="modal-article-meta" style="color: var(--primary); font-size: 0.85rem; margin-bottom: 20px;">Category • Date</div>
+      <div id="modal-article-body"></div>
+    </div>
+  </div>
+
+  <!-- CDN Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+
+  <!-- Config & Core Logic Scripts -->
+  <script src="js/particles-config.js"></script>
+  <script src="js/typed-config.js"></script>
+  <script src="js/quotes.js"></script>
+  <script src="js/articles.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

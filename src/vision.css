@@ -1,0 +1,132 @@
+/* Suspended portrait badges. Cards only turn after an explicit click. */
+#cs-motion .cs-founder { --vision-ink:#0c162c; --vision-muted:#54617c; --vision-card-height:410px; position:relative; isolation:isolate; overflow:hidden; color:#f0f0fc; background:radial-gradient(ellipse at 18% 55%,#41396e32,transparent 50%),radial-gradient(ellipse at 86% 75%,#00657724,transparent 44%),#080f1e; scroll-margin-top:0; }
+#cs-motion #cs-vision.cs-founder { scroll-margin-top:0; }
+#cs-motion .cs-founder * { box-sizing:border-box; }
+#cs-motion .cs-founder-shell { max-width:1480px; margin:auto; padding:100px clamp(24px,5vw,80px) 24px; }
+#cs-motion .cs-founder-header { display:flex; align-items:end; justify-content:space-between; gap:32px; position:relative; z-index:2; }
+#cs-motion .cs-founder-eyebrow { display:block; margin-bottom:16px; color:#aaaac4; font-size:9px; letter-spacing:2.5px; }
+#cs-motion .cs-founder-header h2 { margin:0; font-size:clamp(42px,4.3vw,66px); line-height:1.03; letter-spacing:-2.5px; font-weight:450; color:#f0f0fc; }
+#cs-motion .cs-founder-header h2 em { font-family:Georgia,'Times New Roman',serif; font-weight:400; color:#bd9df5; }
+#cs-motion .cs-founder-header p { color:#a8b3ca; font-size:14px; line-height:1.8; margin:0 0 3px; }
+#cs-motion .cs-founder-gallery { position:relative; margin:14px -15px 0; padding:0 15px 25px; }
+#cs-motion .cs-founder-wire { position:absolute; top:0; left:0; right:0; height:100px; pointer-events:none; }
+#cs-motion .cs-founder-wire svg { width:100%; height:100%; overflow:visible; }
+#cs-motion .cs-founder-wire path { fill:none; stroke:#7d8aa0; stroke-width:1.2; vector-effect:non-scaling-stroke; }
+#cs-motion .cs-founder-wire .cs-founder-wire-light { stroke:#c1d4ee; stroke-width:.4; transform:translateY(-1px); opacity:.5; }
+#cs-motion .cs-founder-wire>i { position:absolute; top:11px; left:0; height:5px; width:5px; border-radius:50%; background:#a5b8d4; box-shadow:0 0 10px #acb6e466; }
+#cs-motion .cs-founder-wire>i:last-child { left:auto; right:0; }
+#cs-motion .cs-founder-hangers { position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(18px,2.5vw,36px); align-items:start; padding-top:0; }
+#cs-motion .cs-founder-hanger { --hang-top:37px; --cord-height:62px; --card-tilt:-1.2deg; position:relative; min-width:0; padding-top:var(--cord-height); margin-top:var(--hang-top); transform-origin:50% 0; transform:rotate(var(--card-tilt)); }
+#cs-motion .cs-founder-hanger:nth-child(2) { --hang-top:66px; --cord-height:76px; --card-tilt:1.2deg; }
+#cs-motion .cs-founder-hanger:nth-child(3) { --hang-top:66px; --cord-height:48px; --card-tilt:-1deg; }
+#cs-motion .cs-founder-hanger:nth-child(4) { --hang-top:37px; --cord-height:77px; --card-tilt:1.5deg; }
+#cs-motion .cs-founder-cord { position:absolute; width:1px; left:50%; top:0; height:calc(var(--cord-height) + 4px); background:linear-gradient(90deg,#73859c,#b6c3d1); box-shadow:1px 0 1px #0009; }
+#cs-motion .cs-founder-cord::before { content:''; position:absolute; top:-3px; left:-3px; width:7px; height:7px; border:1px solid #9caec3; border-radius:50%; background:#0e1729; }
+#cs-motion .cs-founder-badge { position:relative; height:var(--vision-card-height); perspective:1300px; }
+#cs-motion .cs-founder-clip { position:absolute; z-index:4; left:calc(50% - 8px); top:-22px; width:16px; height:47px; border:2px solid #a3acbb; border-radius:9px 9px 5px 5px; background:linear-gradient(90deg,#a5afbc70,#e3e6ec66 45%,#35415190); box-shadow:inset 1px 0 1px #fff7,2px 2px 3px #0005; pointer-events:none; }
+#cs-motion .cs-founder-clip::after { content:''; position:absolute; width:7px; height:19px; left:2.5px; top:5px; border:1px solid #34445c; border-radius:4px; background:#17243899; }
+#cs-motion .cs-founder-card-inner { position:absolute; inset:0; transform-style:preserve-3d; transition:transform .95s cubic-bezier(.22,.7,.15,1); }
+#cs-motion .cs-founder-hanger.is-flipped .cs-founder-card-inner { transform:rotateY(180deg); }
+#cs-motion .cs-founder-face { position:absolute; inset:0; padding:32px 18px 0; border:1px solid #eef1ffc4; border-radius:13px; background:linear-gradient(140deg,#fff,#edf0fa 70%,#dae6f3); color:var(--vision-ink); backface-visibility:hidden; -webkit-backface-visibility:hidden; box-shadow:inset 0 0 0 4px #ffffff55,2px 9px 0 -6px #6d739a,0 18px 28px -10px #0008; overflow:hidden; display:flex; flex-direction:column; }
+#cs-motion .cs-founder-face::after { content:''; position:absolute; inset:0; background:linear-gradient(115deg,#fff5,transparent 35%,transparent 72%,#fff4); pointer-events:none; }
+#cs-motion .cs-founder-slot { position:absolute; width:39px; height:7px; border-radius:8px; top:13px; left:calc(50% - 19.5px); background:#0d1728; box-shadow:0 1px 0 #fff,0 -1px 1px #708094; }
+#cs-motion .cs-founder-id-top { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:6px; font-weight:600; letter-spacing:1.2px; color:#55627b; margin-bottom:14px; white-space:nowrap; }
+#cs-motion .cs-founder-photo { position:relative; height:228px; flex:1; min-height:0; overflow:hidden; border-radius:6px; background:radial-gradient(ellipse at 70% 12%,#b8daf5,transparent 64%),linear-gradient(125deg,#c7bbef,#e2e5f1 60%,#b0d4da); }
+#cs-motion .cs-founder-photo>span { position:absolute; left:7px; bottom:-25px; font:bold 190px/1 Georgia,serif; letter-spacing:-12px; color:#ffffff45; }
+#cs-motion .cs-founder-photo img { position:absolute; left:50%; top:6px; width:var(--portrait-width,100%); height:auto; max-width:none; transform:translateX(-50%); filter:drop-shadow(5px 3px 4px #1828482b); }
+#cs-motion .cs-founder-mohaimen { --portrait-width:78%; }
+#cs-motion .cs-founder-tazim,#cs-motion .cs-founder-hridita { --portrait-width:110%; }
+#cs-motion .cs-founder-mohaimen .cs-founder-photo { background:radial-gradient(ellipse at 80% 20%,#b9e5ec,transparent 65%),linear-gradient(140deg,#ded4f4,#c6d7e7); }
+#cs-motion .cs-founder-tazim .cs-founder-photo { background:radial-gradient(ellipse at 20% 10%,#d6cbf3,transparent 60%),linear-gradient(125deg,#bfcedf,#badde5); }
+#cs-motion .cs-founder-hridita .cs-founder-photo { background:radial-gradient(ellipse at 85% 20%,#c1e4e9,transparent 65%),linear-gradient(140deg,#d6c8eb,#d8dfef); }
+#cs-motion .cs-founder-id-name { height:100px; flex-shrink:0; padding:13px 0 10px; }
+#cs-motion .cs-founder-id-name h3 { font:500 clamp(22px,1.8vw,27px)/1.08 Georgia,'Times New Roman',serif; margin:0; color:#18213c; letter-spacing:-.6px; }
+#cs-motion .cs-founder-id-name p { margin:7px 0 0; font-size:11px; line-height:1.5; color:#5b6479; }
+#cs-motion .cs-founder-id-bottom { min-height:36px; flex-shrink:0; margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:8px; border-top:1px solid #8d9bb436; color:#526078; font-size:10px; letter-spacing:.2px; }
+#cs-motion .cs-founder-id-bottom>span:first-child { display:flex; align-items:center; gap:5px; }
+#cs-motion .cs-founder-id-bottom i { width:5px; height:5px; border-radius:50%; background:#8661cd; box-shadow:0 0 0 2px #aa8deb20; }
+#cs-motion .cs-founder-id-bottom>span:last-child { font-size:15px; color:#65638e; }
+#cs-motion .cs-founder-back { transform:rotateY(180deg); }
+#cs-motion .cs-team-back { color:#f4f5fa; text-align:center; border-color:transparent; background:linear-gradient(145deg,#111c31,#10192c 62%,#171c34) padding-box,linear-gradient(135deg,#00dceb,#9875ed 36%,#263452 62%,#00dceb 82%,#a387fb) border-box; box-shadow:inset 0 0 0 3px #141e33,0 0 18px #7960df14,2px 9px 0 -6px #243354,0 20px 32px -10px #000a; }
+#cs-motion .cs-team-back::after { background:repeating-linear-gradient(125deg,#b7cbf006 0 1px,transparent 1px 4px),radial-gradient(ellipse at 0 0,#00dceb08,transparent 55%),radial-gradient(ellipse at 100% 100%,#a387fb12,transparent 50%); }
+#cs-motion .cs-team-back .cs-founder-slot { background:#060c16; box-shadow:0 1px 0 #76839c55,0 -1px 2px #000b; }
+#cs-motion .cs-team-back-kicker { flex-shrink:0; margin:3px 0 8px; color:#b6c6ec; font-size:8px; line-height:1.5; letter-spacing:1.5px; font-weight:500; }
+#cs-motion .cs-team-back-statement { flex-shrink:0; margin:0; font:400 clamp(22px,1.75vw,27px)/1.04 Georgia,'Times New Roman',serif; letter-spacing:-.4px; color:#f4f5fa; }
+#cs-motion .cs-team-back-statement em { color:#b99af7; font-weight:400; }
+#cs-motion .cs-team-back-art { position:relative; flex:1; min-height:0; margin:1px -9px 0; isolation:isolate; }
+#cs-motion .cs-team-back-art img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; opacity:.88; mix-blend-mode:screen; }
+#cs-motion .cs-team-back-orbits>span { position:absolute; inset:0; display:grid; place-items:center; font:58px/1 Georgia,serif; letter-spacing:-7px; color:#6582c43d; }
+#cs-motion .cs-team-back-note { flex-shrink:0; margin:0; padding:4px 0 12px; color:#b5c4e3; font-size:9px; line-height:1.5; letter-spacing:.4px; }
+#cs-motion .cs-team-back-person { min-height:76px; flex-shrink:0; display:flex; flex-direction:column; justify-content:center; padding:9px 0; border-top:1px solid #9b92d273; }
+#cs-motion .cs-team-back-person>p { margin:0; color:#f4f5fa; font:400 clamp(19px,1.5vw,23px)/1.05 Georgia,'Times New Roman',serif; letter-spacing:-.3px; }
+#cs-motion .cs-team-back-person>span { display:block; margin-top:5px; color:#b7c8e9; font-size:10px; line-height:1.4; letter-spacing:.3px; }
+#cs-motion .cs-team-back .cs-founder-id-bottom { margin-top:0; justify-content:center; gap:8px; border-color:#9b92d273; }
+#cs-motion .cs-team-back .cs-founder-id-bottom>span:first-child { color:#b5a6ec; font:25px/1 Georgia,serif; }
+#cs-motion .cs-team-back .cs-founder-id-bottom>span:last-child { color:#b6c6e7; font-size:10px; letter-spacing:.4px; }
+#cs-motion .cs-founder-flip { position:absolute; z-index:5; inset:0; width:100%; height:100%; border:0; padding:0; border-radius:13px; background:transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+#cs-motion .cs-founder-hanger:hover .cs-founder-face { border-color:#d5c4ff; }
+#cs-motion .cs-founder-hanger:hover .cs-team-back { border-color:transparent; box-shadow:inset 0 0 0 3px #141e33,0 0 23px #7960df26,2px 9px 0 -6px #243354,0 20px 32px -10px #000a; }
+#cs-motion .cs-founder-footer { display:flex; justify-content:center; align-items:center; gap:24px; padding:14px 0 0; margin-top:16px; border-top:1px solid #95a1c329; }
+#cs-motion .cs-founder-controls { display:flex; align-items:center; gap:20px; }
+#cs-motion .cs-founder-pages { display:flex; gap:6px; }
+#cs-motion .cs-founder-pages button { position:relative; padding:0; border:0; width:31px; height:44px; background:transparent; color:#91a0bc; font-size:9px; font-family:inherit; cursor:pointer; }
+#cs-motion .cs-founder-pages button::before,#cs-motion .cs-founder-pages button i { position:absolute; content:''; bottom:7px; left:0; width:100%; height:2px; background:#34425c; }
+#cs-motion .cs-founder-pages button i { background:linear-gradient(90deg,#b38beb,#52d2e1); transform:scaleX(0); transform-origin:left; }
+#cs-motion .cs-founder-pages button[aria-pressed=true] { color:#e2d6fc; }
+#cs-motion .cs-founder-pages button[aria-pressed=true] i { transform:scaleX(1); }
+#cs-motion .cs-founder-playback { display:flex; gap:6px; }
+#cs-motion .cs-founder-playback button { display:flex; align-items:center; justify-content:center; gap:8px; border:1px solid #3e4b67; border-radius:50%; width:40px; height:40px; padding:0; background:#141e32; color:#ccd7ec; font:15px Arial,sans-serif; cursor:pointer; transition:background .2s,border-color .2s; }
+#cs-motion .cs-founder-playback button:hover { background:#29233f; border-color:#a68acb; }
+#cs-motion .cs-founder button:focus-visible,#cs-motion .cs-founder-gallery:focus-visible { outline:2px solid #88e4f0; outline-offset:5px; }
+#cs-motion .cs-founder-sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); padding:0; margin:-1px; white-space:nowrap; }
+@media(min-width:1151px) and (max-height:900px) {
+  #cs-motion .cs-founder { --vision-card-height:367px; }
+  #cs-motion .cs-founder-shell { padding-top:98px; padding-bottom:16px; }
+  #cs-motion .cs-founder-eyebrow { margin-bottom:10px; font-size:8px; }
+  #cs-motion .cs-founder-header h2 { font-size:44px; }
+  #cs-motion .cs-founder-gallery { margin-top:4px; padding-bottom:10px; }
+  #cs-motion .cs-founder-wire { height:60px; }
+  #cs-motion .cs-founder-hanger { --hang-top:22px; --cord-height:28px; }
+  #cs-motion .cs-founder-hanger:nth-child(2) { --hang-top:40px; --cord-height:32px; }
+  #cs-motion .cs-founder-hanger:nth-child(3) { --hang-top:40px; --cord-height:18px; }
+  #cs-motion .cs-founder-hanger:nth-child(4) { --hang-top:22px; --cord-height:38px; }
+  #cs-motion .cs-founder-face { padding-top:29px; }
+  #cs-motion .cs-founder-id-top { margin-bottom:10px; }
+  #cs-motion .cs-team-back-kicker { margin-bottom:6px; }
+  #cs-motion .cs-team-back-statement { font-size:24px; }
+  #cs-motion .cs-team-back-note { padding-bottom:8px; }
+  #cs-motion .cs-team-back-person { min-height:70px; }
+  #cs-motion .cs-founder-footer { margin-top:10px; padding-top:16px; }
+}
+@media(max-width:1150px) {
+  #cs-motion .cs-founder { --vision-card-height:410px; }
+  #cs-motion .cs-founder-shell { padding:110px 32px 30px; }
+  #cs-motion .cs-founder-header p { font-size:12px; }
+  #cs-motion .cs-founder-gallery { margin-left:-32px; margin-right:-32px; padding:0 32px 28px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scroll-padding-inline:32px; scrollbar-width:thin; scrollbar-color:#70658d #131c2e; }
+  #cs-motion .cs-founder-wire { width:1240px; left:24px; }
+  #cs-motion .cs-founder-hangers { width:1220px; grid-template-columns:repeat(4,278px); gap:28px; padding:0 7px; }
+  #cs-motion .cs-founder-hanger { scroll-snap-align:center; }
+  #cs-motion .cs-team-back-statement { font-size:26px; }
+  #cs-motion .cs-team-back-person>p { font-size:22px; }
+  #cs-motion .cs-founder-footer { grid-template-columns:1fr auto; gap:18px; }
+}
+@media(max-width:600px) {
+  #cs-motion .cs-founder { --vision-card-height:440px; }
+  #cs-motion .cs-founder-shell { padding:96px 24px 24px; }
+  #cs-motion .cs-founder-eyebrow { font-size:7px; letter-spacing:1.7px; margin-bottom:14px; }
+  #cs-motion .cs-founder-header { display:block; }
+  #cs-motion .cs-founder-header h2 { font-size:clamp(35px,8.5vw,48px); letter-spacing:-1.6px; }
+  #cs-motion .cs-founder-header p { margin-top:16px; font-size:12px; line-height:1.7; }
+  #cs-motion .cs-founder-gallery { margin:22px -24px 0; padding:0 24px 25px; scroll-padding-inline:24px; }
+  #cs-motion .cs-founder-hangers { grid-template-columns:repeat(4,268px); width:1180px; gap:26px; padding:0 6px; }
+  #cs-motion .cs-founder-wire { width:1170px; left:24px; }
+  #cs-motion .cs-founder-hanger { --cord-height:35px; }
+  #cs-motion .cs-founder-hanger:nth-child(2) { --cord-height:40px; }
+  #cs-motion .cs-founder-hanger:nth-child(3) { --cord-height:27px; }
+  #cs-motion .cs-founder-hanger:nth-child(4) { --cord-height:52px; }
+  #cs-motion .cs-founder-footer { display:flex; flex-direction:column; gap:16px; align-items:center; padding-top:20px; margin-top:16px; }
+  #cs-motion .cs-founder-controls { gap:20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #cs-motion .cs-founder *,#cs-motion .cs-founder *::before,#cs-motion .cs-founder *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+}

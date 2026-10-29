@@ -1,0 +1,33 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "key": "vision-orbits",
+      "detail": "FIRST CARD: the exquisite thin elliptical cyan, electric blue and violet orbital rings, three bright cyan/white nodes, delicate star-like particles and subtle light trails. Preserve the asymmetrical 3D perspective and refined thin luminous lines. REMOVE the KJ letters; the center should be empty to allow a live monogram in HTML.",
+      "reference": "C:/Users/Kazi_Jawad/.codex/generated_images/01a16030-dade-7410-9406-21f3a04ecd3d/exec-5b466ea3-60d8-43bc-a070-534bc815e88b.png",
+      "prompt": "Use case: background-extraction and precise-object-edit. The attached image is the approved website design reference. Extract and faithfully recreate ONLY the abstract decorative illustration from the FIRST CARD: the exquisite thin elliptical cyan, electric blue and violet orbital rings, three bright cyan/white nodes, delicate star-like particles and subtle light trails. Preserve the asymmetrical 3D perspective and refined thin luminous lines. REMOVE the KJ letters; the center should be empty to allow a live monogram in HTML. Output exactly one isolated illustration, centered, horizontal composition roughly 3:2, use almost all of the width with small clean margins. GENUINE TRANSPARENT ALPHA BACKGROUND. It will be placed over a deep navy #101B30 surface; preserve soft translucent luminous edges. No text, words, numbers, lettering, monograms, card body, frame, hook, wire, borders, labels, surrounding webpage, people or backdrop. No additional motifs. Match the approved illustration's shape, fine detail, color and lighting; this is a production website asset.",
+      "output": "D:/CanveliqSoft/preview/assets/vision/vision-orbits.png"
+    },
+    {
+      "key": "vision-connections",
+      "detail": "SECOND CARD: the elegant branching cyan and lavender network, a luminous turquoise central node and 8 to 10 delicate gracefully curved arc connections leading to small luminous nodes. Some fine dotted paths and very sparse tiny particles. Preserve its organic balanced fan-out silhouette.",
+      "reference": "C:/Users/Kazi_Jawad/.codex/generated_images/01a16030-dade-7410-9406-21f3a04ecd3d/exec-5b466ea3-60d8-43bc-a070-534bc815e88b.png",
+      "prompt": "Use case: background-extraction and precise-object-edit. The attached image is the approved website design reference. Extract and faithfully recreate ONLY the abstract decorative illustration from the SECOND CARD: the elegant branching cyan and lavender network, a luminous turquoise central node and 8 to 10 delicate gracefully curved arc connections leading to small luminous nodes. Some fine dotted paths and very sparse tiny particles. Preserve its organic balanced fan-out silhouette. Output exactly one isolated illustration, centered, horizontal composition roughly 3:2, use almost all of the width with small clean margins. GENUINE TRANSPARENT ALPHA BACKGROUND. It will be placed over a deep navy #101B30 surface; preserve soft translucent luminous edges. No text, words, numbers, lettering, monograms, card body, frame, hook, wire, borders, labels, surrounding webpage, people or backdrop. No additional motifs. Match the approved illustration's shape, fine detail, color and lighting; this is a production website asset.",
+      "output": "D:/CanveliqSoft/preview/assets/vision/vision-connections.png"
+    },
+    {
+      "key": "vision-structure",
+      "detail": "THIRD CARD: the refined isometric transparent wireframe cube network, one large central blue-violet cube, 5 smaller cyan/lavender cubes around it, fine connecting lines and tiny white-cyan glowing corner nodes. Preserve the original crisp dimensional geometry and restrained holographic transparent faces.",
+      "reference": "C:/Users/Kazi_Jawad/.codex/generated_images/01a16030-dade-7410-9406-21f3a04ecd3d/exec-5b466ea3-60d8-43bc-a070-534bc815e88b.png",
+      "prompt": "Use case: background-extraction and precise-object-edit. The attached image is the approved website design reference. Extract and faithfully recreate ONLY the abstract decorative illustration from the THIRD CARD: the refined isometric transparent wireframe cube network, one large central blue-violet cube, 5 smaller cyan/lavender cubes around it, fine connecting lines and tiny white-cyan glowing corner nodes. Preserve the original crisp dimensional geometry and restrained holographic transparent faces. Output exactly one isolated illustration, centered, horizontal composition roughly 3:2, use almost all of the width with small clean margins. GENUINE TRANSPARENT ALPHA BACKGROUND. It will be placed over a deep navy #101B30 surface; preserve soft translucent luminous edges. No text, words, numbers, lettering, monograms, card body, frame, hook, wire, borders, labels, surrounding webpage, people or backdrop. No additional motifs. Match the approved illustration's shape, fine detail, color and lighting; this is a production website asset.",
+      "output": "D:/CanveliqSoft/preview/assets/vision/vision-structure.png"
+    },
+    {
+      "key": "vision-ribbon",
+      "detail": "FOURTH CARD: the sculptural intertwined infinity-loop ribbon made of hundreds of very fine parallel luminous lines, smoothly blending from lavender/purple on the left to cyan and cool blue on the right. Preserve its original premium flowing 3D ribbon shape and central crossover. Subtle glow only.",
+      "reference": "C:/Users/Kazi_Jawad/.codex/generated_images/01a16030-dade-7410-9406-21f3a04ecd3d/exec-5b466ea3-60d8-43bc-a070-534bc815e88b.png",
+      "prompt": "Use case: background-extraction and precise-object-edit. The attached image is the approved website design reference. Extract and faithfully recreate ONLY the abstract decorative illustration from the FOURTH CARD: the sculptural intertwined infinity-loop ribbon made of hundreds of very fine parallel luminous lines, smoothly blending from lavender/purple on the left to cyan and cool blue on the right. Preserve its original premium flowing 3D ribbon shape and central crossover. Subtle glow only. Output exactly one isolated illustration, centered, horizontal composition roughly 3:2, use almost all of the width with small clean margins. GENUINE TRANSPARENT ALPHA BACKGROUND. It will be placed over a deep navy #101B30 surface; preserve soft translucent luminous edges. No text, words, numbers, lettering, monograms, card body, frame, hook, wire, borders, labels, surrounding webpage, people or backdrop. No additional motifs. Match the approved illustration's shape, fine detail, color and lighting; this is a production website asset.",
+      "output": "D:/CanveliqSoft/preview/assets/vision/vision-ribbon.png"
+    }
+  ]
+}

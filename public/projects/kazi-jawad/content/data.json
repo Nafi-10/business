@@ -1,0 +1,255 @@
+{
+  "hero": {
+    "name": "MD Kazi Jawadul Islam",
+    "greeting": "Hello, I'm 👋",
+    "tagline": "Passionate about Technology, Research & Innovation",
+    "typedRoles": [
+      "B.Sc Student in Computing & Information System",
+      "AI Enthusiast",
+      "Cyber Security Interested",
+      "IoT Explorer",
+      "Business Analyst at Akand Engineering",
+      "Graphics Designer",
+      "Campus Ambassador"
+    ]
+  },
+  "about": {
+    "photo": "assets/img/Kazi_Jawad.jpg",
+    "bio": "I am MD Kazi Jawadul Islam, a passionate B.Sc student in Computing and Information Systems (CIS) with a Major in Artificial Intelligence at Daffodil International University. I have a strong aspiration to establish a thriving career in the IT industry. I am dedicated and diligent, always ready to embrace new opportunities and overcome obstacles. I am enthusiastic about learning and possess the ability to quickly grasp new concepts.",
+    "infoCards": [
+      {
+        "icon": "fas fa-graduation-cap",
+        "title": "Education",
+        "text": "DIU, CIS - AI Major"
+      },
+      {
+        "icon": "fas fa-map-marker-alt",
+        "title": "Location",
+        "text": "Asulia, Savar, Dhaka"
+      },
+      {
+        "icon": "fas fa-briefcase",
+        "title": "Current Role",
+        "text": "Business Analyst, Akand Eng."
+      },
+      {
+        "icon": "fas fa-heart",
+        "title": "Hobbies",
+        "text": "Music, Research, IoT"
+      }
+    ],
+    "certifications": [
+      "AWS Cloud Foundations",
+      "Destination Expo 2023",
+      "Destination Expo 2024"
+    ]
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/kazi-jawad",
+    "instagram": "https://www.instagram.com/_jawadul_islam/",
+    "github": "https://github.com/Nafi-10",
+    "facebook": "https://www.facebook.com/jawadul.islam.14490/",
+    "email": "kazijawadulislam@gmail.com"
+  },
+  "skills": {
+    "technical": [
+      {
+        "name": "HTML & CSS",
+        "percent": 85,
+        "color": "cyan"
+      },
+      {
+        "name": "Python Programming",
+        "percent": 75,
+        "color": "purple"
+      },
+      {
+        "name": "MySQL",
+        "percent": 70,
+        "color": "cyan"
+      },
+      {
+        "name": "Problem Solving",
+        "percent": 80,
+        "color": "purple"
+      },
+      {
+        "name": "Communication",
+        "percent": 90,
+        "color": "cyan",
+        "wide": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "Microsoft Word",
+        "percent": 90,
+        "color": "cyan"
+      },
+      {
+        "name": "Microsoft Excel",
+        "percent": 80,
+        "color": "purple"
+      },
+      {
+        "name": "PowerPoint",
+        "percent": 85,
+        "color": "cyan"
+      },
+      {
+        "name": "VS Code",
+        "percent": 88,
+        "color": "purple"
+      },
+      {
+        "name": "Photoshop",
+        "percent": 75,
+        "color": "cyan",
+        "wide": true
+      }
+    ],
+    "interests": [
+      {
+        "icon": "fas fa-microscope",
+        "label": "Research"
+      },
+      {
+        "icon": "fas fa-shield-alt",
+        "label": "Cyber Security"
+      },
+      {
+        "icon": "fas fa-network-wired",
+        "label": "Internet of Things (IoT)"
+      },
+      {
+        "icon": "fas fa-music",
+        "label": "Music"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "role": "Business Analyst",
+      "org": "Akand Engineering",
+      "date": "April 2026 - Present",
+      "desc": "Analyzing business processes and contributing to engineering solutions."
+    },
+    {
+      "role": "Director of Social Circle",
+      "org": "Study Abroad Forum, Bangladesh",
+      "date": "May 2024 - December 2025",
+      "desc": "Led social initiatives and managed community engagement."
+    },
+    {
+      "role": "Executive Member",
+      "org": "Study Abroad Forum, Bangladesh",
+      "date": "2023 - 2025",
+      "desc": "Supported organizational activities and student outreach programs."
+    },
+    {
+      "role": "Campus Ambassador",
+      "org": "Team Matrix - Elite Hackers",
+      "date": "2023 - 2024",
+      "desc": "Represented the cybersecurity team and promoted tech culture on campus."
+    },
+    {
+      "role": "Graphics Designer",
+      "org": "Study Abroad Forum, Bangladesh",
+      "date": "January 2023 - December 2025",
+      "desc": "Created visual content for social media and events."
+    },
+    {
+      "role": "Participant",
+      "org": "Fun with Code 2.0",
+      "date": "2023",
+      "desc": "Participated in competitive coding event."
+    },
+    {
+      "role": "Participant",
+      "org": "Fun with Code",
+      "date": "2022",
+      "desc": "First competitive coding participation."
+    },
+    {
+      "role": "Bassist",
+      "org": "The Unnamed (Band)",
+      "date": "2019 - 2022",
+      "desc": "Performed as bassist in an independent music band."
+    }
+  ],
+  "education": [
+    {
+      "icon": "fas fa-university",
+      "degree": "B.Sc in Computing & Information System",
+      "major": "Major: Artificial Intelligence",
+      "institution": "Daffodil International University",
+      "year": "2022 - Present",
+      "badge": "B.Sc Student"
+    },
+    {
+      "icon": "fas fa-school",
+      "degree": "HSC in Science",
+      "major": "English Version",
+      "institution": "Islamabad Collegiate College, Khulna",
+      "year": "Completed: 2021",
+      "badge": "GPA: 5.00 / 5.00"
+    },
+    {
+      "icon": "fas fa-graduation-cap",
+      "degree": "SSC in Science",
+      "major": "English Version",
+      "institution": "BAF Shaheen School, Jashore",
+      "year": "Completed: 2018",
+      "badge": "GPA: 4.89 / 5.00"
+    }
+  ],
+  "articles": [
+    {
+      "id": "nexora",
+      "title": "NEXORA — Multi-Business Operating Platform",
+      "tagline": "One workspace for multiple businesses, connected operations, and accountable decisions.",
+      "keywords": [
+        "Multi-entity ERP",
+        "React",
+        "Governance"
+      ],
+      "excerpt": "Explore a frontend ERP prototype that brings finance, operations, and business governance into one interface.",
+      "category": "Software & Business Systems",
+      "href": "articles/nexora/"
+    },
+    {
+      "id": "security-system",
+      "title": "Missile Tracking & Security System",
+      "tagline": "A hands-on Arduino simulation connecting object detection, access control, and visual feedback.",
+      "keywords": [
+        "Arduino",
+        "Sensors",
+        "Access control"
+      ],
+      "excerpt": "A physical learning model combining ultrasonic sensing and a separate keypad-controlled security subsystem.",
+      "category": "Embedded Systems",
+      "href": "articles/security-system/"
+    },
+    {
+      "id": "flipbook-catalogue",
+      "title": "Interactive 3D Flipbook Product Catalogue",
+      "tagline": "Turn a static catalogue into an interactive, page-turning web experience.",
+      "keywords": [
+        "React",
+        "3D interaction",
+        "Catalogue"
+      ],
+      "excerpt": "A customizable digital catalogue with page turns, search, thumbnails, zoom, and fullscreen reading.",
+      "category": "Web & Interaction Design",
+      "href": "articles/flipbook-catalogue/"
+    }
+  ],
+  "contact": {
+    "email": "kazijawadulislam@gmail.com",
+    "phone": "01410142580",
+    "location": "Asulia, Savar, Dhaka"
+  },
+  "resume": {
+    "summary": "Diligent and dedicated Computing and Information System student specializing in AI, with professional experience as a Business Analyst at Akand Engineering. Experienced in event management, leadership, graphics design, and cybersecurity campus advocacy."
+  }
+}

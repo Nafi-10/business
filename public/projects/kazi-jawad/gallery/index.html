@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020617">
+  <meta name="description" content="Explore the gallery of MD Kazi Jawadul Islam. Browse images by topic and open any image for a closer look.">
+  <title>Gallery | MD Kazi Jawadul Islam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/gallery.css">
+  <link rel="stylesheet" href="../css/gallery-page.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="../js/particles-config.js" defer></script>
+  <script src="../js/gallery-page.js" defer></script>
+</head>
+<body class="gallery-page">
+  <a class="skip-link" href="#gallery-collection">Skip to images</a>
+  <header class="gallery-page-nav">
+    <a class="gallery-brand" href="../"><span class="brand-mark" aria-hidden="true">KJ<span>.</span></span><span>Kazi Jawad<span class="brand-label">Portfolio / Gallery</span></span></a>
+    <a class="back-link" href="../#gallery">Back to portfolio</a>
+  </header>
+  <main>
+    <div class="gallery-header">
+      <div class="gallery-header-backdrop" id="gallery-header-particles" aria-hidden="true"></div>
+      <div class="gallery-header-content">
+    <div class="gallery-page-heading">
+      <div><p class="page-eyebrow">Moments &amp; perspectives</p><h1>Gallery<span>.</span></h1></div>
+    </div>
+    <div class="collection-toolbar">
+      <div class="topic-filters" role="group" aria-label="Filter images by topic">
+        <button type="button" data-topic="All" aria-pressed="true">All images</button>
+        <button type="button" data-topic="Portraits" aria-pressed="false">Portraits</button>
+        <button type="button" data-topic="Campus" aria-pressed="false">Campus</button>
+        <button type="button" data-topic="Outdoors" aria-pressed="false">Outdoors</button>
+        <button type="button" data-topic="Friends" aria-pressed="false">Friends</button>
+        <button type="button" data-topic="Projects" aria-pressed="false">Projects</button>
+      </div>
+      <span class="collection-count" id="collection-count" role="status" aria-live="polite"></span>
+    </div>
+      </div>
+    </div>
+    <section class="gallery-composition" id="gallery-collection" aria-label="Image collection" tabindex="-1">
+      <div class="collection-intro">
+        <p class="page-eyebrow">A visual journal</p>
+        <h2>People, projects<br><span>&amp; moments in between.</span></h2>
+        <p>Snapshots of campus life, time outdoors, shared moments, and projects in action.</p>
+        <p class="open-instruction"><span aria-hidden="true">+</span> Click to open the image for a closer look.</p>
+      </div>
+      <!-- gallery:cards:start -->
+      <button type="button" class="photo-tile" data-position="1" data-title="In white" data-category="Portraits" data-caption="A quiet portrait in white." aria-label="Open image: In white">
+        <img src="../assets/img/gallery/portrait-in-white.jpg" alt="A portrait in a white panjabi against a warm, softly blurred background." loading="eager" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Portraits</span><span class="photo-title">In white</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <button type="button" class="photo-tile" data-position="2" data-title="A monochrome moment" data-category="Campus" data-caption="A campus moment captured in black and white." aria-label="Open image: A monochrome moment">
+        <img src="../assets/img/gallery/monochrome-moment.jpg" alt="A black-and-white portrait in a white shirt and lanyard, with a tall building in the background." loading="lazy" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Campus</span><span class="photo-title">A monochrome moment</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <button type="button" class="photo-tile" data-position="3" data-title="Golden hour" data-category="Outdoors" data-caption="Taking a moment under the evening sky." aria-label="Open image: Golden hour">
+        <img src="../assets/img/gallery/golden-hour.jpg" alt="A seated outdoor portrait beneath a glowing orange sunset sky." loading="lazy" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Outdoors</span><span class="photo-title">Golden hour</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <button type="button" class="photo-tile" data-position="4" data-title="A quiet break" data-category="Outdoors" data-caption="A pause in the shade, surrounded by greenery." aria-label="Open image: A quiet break">
+        <img src="../assets/img/gallery/quiet-break.jpg" alt="Relaxing on a white garden swing surrounded by green trees and leaves." loading="lazy" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Outdoors</span><span class="photo-title">A quiet break</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <button type="button" class="photo-tile" data-position="5" data-title="Campus days" data-category="Campus" data-caption="A snapshot beside the CIS Project Based Learning display." aria-label="Open image: Campus days">
+        <img src="../assets/img/gallery/campus-days.jpg" alt="Standing beside a CIS Project Based Learning sign on a brick wall." loading="lazy" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Campus</span><span class="photo-title">Campus days</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <button type="button" class="photo-tile" data-position="6" data-title="Project in action" data-category="Projects" data-caption="Bringing code and hardware together in a working project display." aria-label="Open image: Project in action">
+        <img src="../assets/img/gallery/project-in-action.jpg" alt="Presenting an electronics prototype with sensors, a keypad, model building, and laptop." loading="lazy" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Projects</span><span class="photo-title">Project in action</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <button type="button" class="photo-tile" data-position="7" data-title="On the bridge" data-category="Outdoors" data-caption="A walk across the bridge, with green surroundings all around." aria-label="Open image: On the bridge">
+        <img src="../assets/img/gallery/on-the-bridge.jpg" alt="An outdoor portrait in sunglasses and a black hoodie on a suspension bridge." loading="lazy" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Outdoors</span><span class="photo-title">On the bridge</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <button type="button" class="photo-tile" data-position="8" data-title="An evening together" data-category="Friends" data-caption="An evening group photograph under the trees." aria-label="Open image: An evening together">
+        <img src="../assets/img/gallery/evening-together.jpg" alt="A large group gathered for an evening photograph beneath warmly lit trees." loading="lazy" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Friends</span><span class="photo-title">An evening together</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <button type="button" class="photo-tile" data-position="9" data-title="Poolside" data-category="Outdoors" data-caption="A refreshing moment in the water." aria-label="Open image: Poolside">
+        <img src="../assets/img/gallery/poolside.jpg" alt="Relaxing in a swimming pool in a blue sports jersey." loading="lazy" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Outdoors</span><span class="photo-title">Poolside</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <button type="button" class="photo-tile" data-position="10" data-title="Shared moments" data-category="Friends" data-caption="A playful moment together in matching jerseys." aria-label="Open image: Shared moments">
+        <img src="../assets/img/gallery/shared-moments.jpg" alt="Two people in matching blue sports jerseys, one sitting on the other&#39;s shoulders outdoors." loading="lazy" decoding="async">
+        <span class="photo-tile-caption"><span><span class="photo-topic">Friends</span><span class="photo-title">Shared moments</span></span><span class="photo-open" aria-hidden="true">+</span></span>
+      </button>
+      <!-- gallery:cards:end -->
+    </section>
+  </main>
+  <footer class="gallery-page-footer"><span>MD Kazi Jawadul Islam</span><a href="../#gallery">Return to portfolio</a></footer>
+  <dialog class="gallery-lightbox" id="photo-viewer" aria-labelledby="photo-viewer-title" aria-describedby="photo-viewer-caption">
+    <div class="gallery-lightbox-panel">
+      <button class="gallery-lightbox-close" id="photo-viewer-close" type="button" aria-label="Close image" autofocus>×</button>
+      <figure>
+        <img id="photo-viewer-image" alt="">
+        <figcaption>
+          <span class="gallery-card-category" id="photo-viewer-category"></span>
+          <h3 id="photo-viewer-title"></h3>
+          <p id="photo-viewer-caption"></p>
+        </figcaption>
+      </figure>
+      <div class="gallery-lightbox-controls">
+        <button class="gallery-arrow" id="photo-viewer-previous" type="button" aria-label="Previous image">←</button>
+        <span class="gallery-count" id="photo-viewer-count" aria-live="polite"></span>
+        <button class="gallery-arrow" id="photo-viewer-next" type="button" aria-label="Next image">→</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,306 @@
+/* The Project Theatre: the approved pearl, navy and violet/cyan composition. */
+#cs-motion .cs-atelier { position:relative; isolation:isolate; overflow:hidden; background:radial-gradient(ellipse at 25% 75%,#e9e8fa77,transparent 55%),#f5f6fc; color:#111c33; padding:clamp(38px,4vw,64px) 0 28px; }
+#cs-motion .cs-atelier-shell { display:grid; width:min(100%,1664px); margin:auto; padding:0 clamp(18px,2.6vw,48px); }
+#cs-motion .cs-atelier-heading { order:0; }
+#cs-motion .cs-theatre { order:1; }
+#cs-motion .cs-project-selector { order:2; min-width:0; }
+#cs-motion .cs-theatre-bottom { order:3; }
+#cs-motion .cs-theatre-story { order:4; scroll-margin-top:var(--cs-nav-clearance,100px); }
+#cs-motion .cs-theatre:focus-visible { outline:3px solid #9779e5; outline-offset:4px; }
+#cs-motion .cs-atelier-heading { display:flex; align-items:center; justify-content:space-between; gap:28px; padding:0 24px 30px; }
+#cs-motion .cs-atelier-heading h2 { margin:0; font:400 clamp(48px,6vw,94px)/.94 Georgia,'Times New Roman',serif; letter-spacing:-.055em; }
+#cs-motion .cs-atelier-heading h2 em { font-weight:400; color:#8866d2; background:linear-gradient(110deg,#ab91e7,#7551cd 90%); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+#cs-motion .cs-theatre-invitation { text-align:right; align-self:end; padding-bottom:7px; }
+#cs-motion .cs-theatre-invitation p { margin:0 0 17px; font-size:clamp(14px,1.3vw,20px); color:#394967; }
+#cs-motion .cs-theatre-invitation>span { display:inline-flex; align-items:center; gap:22px; border:1px solid #a48ade; border-radius:50px; padding:11px 20px; font-size:13px; color:#273659; }
+#cs-motion .cs-theatre-invitation>span>span { font-size:23px; line-height:1; }
+#cs-motion .cs-theatre { display:grid; grid-template-columns:minmax(0,2.35fr) minmax(0,1fr); align-items:center; gap:clamp(12px,2.5vw,38px); padding:clamp(26px,2.6vw,40px) clamp(24px,2.5vw,38px) 58px 16px; min-height:510px; border:1px solid #485581; border-radius:24px; background:radial-gradient(ellipse at 13% 65%,#14354c66,transparent 54%),linear-gradient(120deg,#111d37,#080f20 60%,#101c37); box-shadow:inset 0 1px 0 #c4caff0d; color:#f3f1fc; }
+#cs-motion .cs-atelier-exhibit { position:relative; min-width:0; padding:0 44px; }
+#cs-motion .cs-atelier-scene { position:relative; aspect-ratio:1.77; cursor:grab; touch-action:pan-y; user-select:none; -webkit-user-select:none; --drag-x:0px; }
+#cs-motion .cs-atelier-scene.is-dragging { cursor:grabbing; }
+#cs-motion .cs-atelier-browser { position:absolute; inset:0; z-index:2; padding:6px; border:1px solid #7d91b477; border-radius:14px; background:linear-gradient(135deg,#253650,#10192f 65%); box-shadow:0 18px 35px #0006,0 1px 1px #e2eaff30 inset; transform:translateX(var(--drag-x)); transition:width .55s cubic-bezier(.2,.8,.2,1),left .55s cubic-bezier(.2,.8,.2,1),transform .35s; width:100%; left:0; }
+#cs-motion .cs-atelier-browser-bar { height:21px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 5px 5px; font-size:7px; letter-spacing:1.2px; color:#b9c4da; white-space:nowrap; overflow:hidden; }
+#cs-motion .cs-atelier-browser-bar>[data-work-address] { overflow:hidden; text-overflow:ellipsis; }
+#cs-motion .cs-atelier-browser-dots { display:flex; gap:5px; flex-shrink:0; }
+#cs-motion .cs-atelier-browser-dots i { width:6px; height:6px; border-radius:50%; background:#d9d7f1; }
+#cs-motion .cs-atelier-browser-dots i:nth-child(2) { background:#c5cbe7; }
+#cs-motion .cs-atelier-browser-dots i:nth-child(3) { background:#96d4e0; }
+#cs-motion .cs-atelier-image-window { height:calc(100% - 21px); overflow:hidden; border-radius:3px 3px 8px 8px; background:#eae6df; }
+#cs-motion .cs-atelier-main-image { display:block; width:100%; height:100%; object-fit:cover; object-position:top; pointer-events:none; }
+#cs-motion .cs-atelier-ghost { position:absolute; inset:5% -4% 5% 8%; padding:23px 6px 6px; border:1px solid #a9b9ef4a; border-radius:12px; background:#324057; opacity:.45; transform:translateX(var(--drag-x)); transition:opacity .4s; overflow:hidden; pointer-events:none; }
+#cs-motion .cs-atelier-ghost img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; border-radius:4px; }
+#cs-motion .cs-atelier-ghost-two { inset:10% -7% 10% 16%; opacity:.2; }
+#cs-motion .cs-atelier-arrow { position:absolute; top:50%; transform:translateY(-50%); z-index:5; width:38px; height:38px; display:grid; place-items:center; padding:0 0 4px; border:1px solid #a0b9e445; border-radius:50%; background:#0c172bcc; color:#e6eafa; font:300 32px/1 Georgia,serif; transition:background .2s,border-color .2s; }
+#cs-motion .cs-atelier-arrow:hover { background:#304664; border-color:#9adddf; }
+#cs-motion .cs-atelier-prev { left:0; }
+#cs-motion .cs-atelier-next { right:-16px; }
+#cs-motion .cs-atelier-intro { min-width:0; padding:0 0 0 8px; }
+#cs-motion .cs-atelier-project-number { font-size:10px; letter-spacing:2px; color:#c7c5e6; }
+#cs-motion .cs-atelier-intro h3 { font:400 clamp(34px,4.3vw,66px)/1.02 Georgia,'Times New Roman',serif; letter-spacing:-.035em; margin:18px 0 14px; max-width:340px; text-wrap:balance; color:#f1effa; }
+#cs-motion .cs-atelier-intro p { font-size:clamp(14px,1.35vw,19px); line-height:1.55; margin:0; color:#b9c3dc; max-width:360px; }
+#cs-motion .cs-atelier-disciplines { display:flex; flex-wrap:wrap; gap:7px; margin:20px 0 25px; }
+#cs-motion .cs-atelier-disciplines span { border:1px solid #adb2da88; border-radius:30px; padding:6px 11px; font-size:10px; color:#e0e2f5; white-space:nowrap; }
+#cs-motion .cs-theatre-devices { display:flex; padding:3px; border:1px solid #52617f; border-radius:30px; background:#1b2941; }
+#cs-motion .cs-theatre-devices button { display:flex; align-items:center; justify-content:center; gap:9px; flex:1; min-height:38px; border:0; border-radius:26px; background:transparent; color:#b7c4df; font-size:12px; transition:background .2s,color .2s; }
+#cs-motion .cs-theatre-devices button[aria-pressed="true"] { color:#142044; background:linear-gradient(130deg,#f4f2ff,#dddafa); box-shadow:0 0 12px #c4bef122; }
+#cs-motion .cs-theatre-devices svg { width:16px; height:16px; }
+#cs-motion .cs-atelier-enter { display:flex; align-items:center; gap:18px; width:100%; background:none; border:0; color:#f7f5ff; padding:20px 0 17px; font-size:clamp(17px,1.6vw,24px); text-align:left; }
+#cs-motion .cs-atelier-enter-circle { display:grid; place-items:center; flex:0 0 clamp(48px,4.6vw,68px); aspect-ratio:1; border-radius:50%; background:linear-gradient(135deg,#a4f9fb,#10d5ec); color:#102139; font-size:31px; box-shadow:0 6px 28px #00d8e622; transition:transform .3s,box-shadow .3s; }
+#cs-motion .cs-atelier-enter:hover .cs-atelier-enter-circle { transform:rotate(-35deg); box-shadow:0 7px 30px #00d8e642; }
+#cs-motion .cs-theatre-story-toggle { width:100%; display:flex; align-items:center; justify-content:space-between; gap:18px; border:0; border-top:1px solid #7584a744; background:none; color:#bfc8de; padding:15px 0 0; font-size:13px; min-height:44px; }
+#cs-motion .cs-theatre-story-toggle:hover { color:#9fe8ed; }
+#cs-motion .cs-theatre-story-toggle>span:last-child { transition:transform .3s; }
+#cs-motion .cs-theatre-story-toggle[aria-expanded="true"]>span:last-child { transform:rotate(90deg); }
+#cs-motion .cs-atelier[data-preview-device="mobile"] .cs-atelier-browser { width:28%; left:36%; border-radius:23px; padding:6px; }
+#cs-motion .cs-atelier[data-preview-device="mobile"] .cs-atelier-browser-bar { justify-content:center; height:12px; }
+#cs-motion .cs-atelier[data-preview-device="mobile"] .cs-atelier-browser-bar>* { display:none; }
+#cs-motion .cs-atelier[data-preview-device="mobile"] .cs-atelier-browser-bar::after { content:''; width:35%; height:4px; border-radius:8px; background:#080e1d; }
+#cs-motion .cs-atelier[data-preview-device="mobile"] .cs-atelier-image-window { height:calc(100% - 12px); border-radius:9px 9px 16px 16px; }
+#cs-motion .cs-atelier[data-preview-device="mobile"] .cs-atelier-ghost-one { inset:6% 18% 6% 18%; opacity:.22; }
+#cs-motion .cs-atelier[data-preview-device="mobile"] .cs-atelier-ghost-two { opacity:.1; }
+#cs-motion .cs-project-selector { position:relative; z-index:3; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:-22px 24px 0; }
+#cs-motion .cs-project-selector>button { position:relative; min-width:0; padding:12px 16px 15px; border:2px solid #fff; border-radius:17px; color:#14223e; background:linear-gradient(135deg,#f8f8ffef,#e6eafbdb); box-shadow:0 0 0 1px #c4cee066,0 9px 26px #45468c0a,inset 0 2px 0 #ffffff; text-align:left; transition:transform .3s,box-shadow .3s; }
+#cs-motion .cs-project-selector>button::before { content:''; position:absolute; inset:-2px; border-radius:inherit; border:2px solid transparent; background:linear-gradient(120deg,#b689fb,#04d8ee) border-box; mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0); mask-composite:exclude; -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; opacity:0; transition:opacity .3s; pointer-events:none; }
+#cs-motion .cs-project-selector>button[aria-selected="true"]::before { opacity:1; }
+#cs-motion .cs-project-selector>button[aria-selected="true"] { box-shadow:0 8px 28px #626bdc1c,inset 0 2px 0 white; }
+#cs-motion .cs-project-selector>button:hover { transform:translateY(-5px); box-shadow:0 12px 30px #1a2c4c1a; }
+#cs-motion .cs-project-ticket-title { display:flex; align-items:center; gap:12px; padding:0 0 12px; font-size:14px; min-height:33px; }
+#cs-motion .cs-project-ticket-title>span:first-child { color:#9c9dc9; padding-right:12px; border-right:1px solid #b3afd646; font-size:16px; font-weight:400; }
+#cs-motion .cs-project-selector>button[aria-selected="true"] .cs-project-ticket-title>span:first-child { color:#8056db; }
+#cs-motion .cs-project-ticket-title b { font-weight:600; font-size:clamp(11px,1vw,15px); white-space:nowrap; }
+#cs-motion .cs-project-selected-icon { margin-left:auto; color:#6b68af; font-size:15px; opacity:0; }
+#cs-motion .cs-project-selector>button:hover .cs-project-selected-icon { opacity:1; }
+#cs-motion .cs-project-thumbnail { display:block; aspect-ratio:2.12; overflow:hidden; border:1px solid #c5c8d83d; border-radius:6px; background:#e8e7f0; }
+#cs-motion .cs-project-thumbnail img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; pointer-events:none; }
+#cs-motion .cs-theatre-bottom { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; min-height:72px; margin:0 24px; gap:15px; }
+#cs-motion .cs-theatre-bottom>img { width:112px; height:46px; object-fit:contain; }
+#cs-motion .cs-theatre-bottom>[data-project-count] { justify-self:end; color:#777e9c; font-size:10px; letter-spacing:2px; }
+#cs-motion .cs-theatre-dots { display:flex; gap:5px; }
+#cs-motion .cs-theatre-dots button { display:grid; place-items:center; border:0; background:none; padding:0 4px; width:32px; height:44px; }
+#cs-motion .cs-theatre-dots span { width:23px; height:5px; border-radius:10px; background:#dbdeee; transition:background .3s; }
+#cs-motion .cs-theatre-dots button[aria-pressed="true"] span { background:linear-gradient(90deg,#a9a0ef,#00d4e5); }
+#cs-motion .cs-theatre-story { margin:4px 24px 15px; padding-top:20px; border-top:1px solid #d9dbea; }
+#cs-motion .cs-theatre-story[hidden] { display:none; }
+#cs-motion .cs-atelier-chapter-rail { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
+#cs-motion .cs-atelier-chapter-rail>button { display:flex; gap:12px; align-items:center; min-height:64px; text-align:left; padding:12px; border:1px solid #d7daea; border-radius:10px; background:transparent; color:#68718b; }
+#cs-motion .cs-atelier-chapter-rail>button[aria-selected="true"] { border-color:#a28cda; background:#eae6f6; color:#28314d; }
+#cs-motion .cs-atelier-chapter-number { font:italic 23px Georgia,serif; color:#887aa3; }
+#cs-motion .cs-atelier-chapter-rail b { display:block; font-size:12px; font-weight:500; }
+#cs-motion .cs-atelier-chapter-rail small { display:block; font-size:10px; margin-top:5px; line-height:1.4; }
+#cs-motion .cs-atelier-tab-arrow { margin-left:auto; }
+#cs-motion .cs-atelier-details { display:grid; grid-template-columns:1fr 1.5fr auto; gap:28px; align-items:center; padding:28px 0 10px; }
+#cs-motion .cs-atelier-description>span { color:#76658c; font-size:9px; letter-spacing:1px; }
+#cs-motion .cs-atelier-description h4 { font:400 26px/1.2 Georgia,serif; margin:12px 0 0; }
+#cs-motion .cs-atelier-detail-body p { font-size:13px; line-height:1.8; color:#60708a; margin:0; }
+#cs-motion .cs-atelier-capabilities { display:flex; flex-wrap:wrap; gap:8px 14px; margin-top:12px; font-size:10px; color:#76648f; }
+#cs-motion .cs-atelier-capabilities span::before { content:'+'; margin-right:5px; }
+#cs-motion .cs-atelier-live-link { display:flex; align-items:center; gap:18px; background:none; border:0; border-bottom:1px solid #aca2c7; padding:13px 0; color:#594575; font-size:12px; }
+#cs-motion .cs-work-status { position:absolute; width:1px; height:1px; clip-path:inset(50%); overflow:hidden; }
+#cs-motion .cs-atelier button { cursor:pointer; font-family:inherit; }
+#cs-motion .cs-atelier button:focus-visible { outline:3px solid #9779e5; outline-offset:4px; }
+#cs-motion .cs-project-viewer { width: min(1500px,calc(100vw - 48px)); max-width: none; height: calc(100dvh - 48px); max-height: none; margin: auto; padding: 0; border: 1px solid #59728f50; border-radius: 16px; overflow: hidden; background: #10192a; color: #e3ebf7; box-shadow: 0 30px 100px #0008; }
+#cs-motion .cs-project-viewer[open] { display: grid; grid-template-rows: 68px 47px minmax(0,1fr) 32px; }
+#cs-motion .cs-project-viewer::backdrop { background: #060c18db; backdrop-filter: blur(14px); }
+#cs-motion .cs-project-viewer-header { display: flex; align-items: center; gap: 20px; padding: 0 22px; border-bottom: 1px solid #b1c8e718; }
+#cs-motion .cs-project-viewer-identity { display: flex; align-items: center; gap: 12px; margin-right: auto; }
+#cs-motion .cs-project-viewer-dot { width: 6px; height: 6px; border-radius: 50%; background: #34d4dc; box-shadow: 0 0 14px #34d4dc6b; }
+#cs-motion .cs-project-viewer-identity small { display: block; color: #8597b2; letter-spacing: 1.6px; font-size: 6px; }
+#cs-motion .cs-project-viewer h2 { margin: 4px 0 0; font-family: Georgia,serif; font-size: 20px; font-weight: 400; line-height: 1.1; color: #e6e8f7; }
+#cs-motion .cs-project-viewer-modes { display: flex; gap: 3px; border: 1px solid #90acd123; border-radius: 6px; padding: 3px; }
+#cs-motion .cs-project-viewer-modes > button { width: 36px; height: 28px; display: grid; place-items: center; background: none; color: #7a90ac; border: 0; border-radius: 3px; }
+#cs-motion .cs-project-viewer-modes > button[aria-pressed="true"] { background: #b0b3f21a; color: #acf5ed; }
+#cs-motion .cs-project-viewer-modes svg { width: 15px; height: 15px; }
+#cs-motion .cs-project-standalone { font-size: 9px; color: #a6b5cc; text-decoration: none; white-space: nowrap; }
+#cs-motion .cs-project-standalone span { margin-left: 8px; color: #8ad7db; }
+#cs-motion .cs-project-close { width: 36px; height: 36px; border-radius: 50%; background: #a9c0e20a; border: 1px solid #90acd126; color: #b8c6db; font-size: 25px; display: grid; place-items: center; padding: 0; line-height: 1; }
+#cs-motion .cs-project-close:hover { background: #a9c0e21a; color: white; }
+#cs-motion .cs-project-viewer-nav { display: flex; align-items: center; gap: 22px; padding: 0 24px; }
+#cs-motion .cs-project-viewer-nav > button { height: 100%; padding: 0; border: 0; border-bottom: 2px solid transparent; color: #8da0bc; background: none; font-size: 10px; }
+#cs-motion .cs-project-viewer-nav > button[aria-current="page"] { border-bottom-color: #8b78d9; color: #e7e5f5; }
+#cs-motion .cs-project-viewer-nav > span { margin-left: auto; color: #7185a0; font-size: 7px; }
+#cs-motion .cs-project-viewer-body { position: relative; display: flex; align-items: stretch; justify-content: center; background: radial-gradient(ellipse at center,#223353,#0b1322 75%); min-height: 0; padding: 0; transition: padding .3s; }
+#cs-motion .cs-project-frame { display: block; width: 100%; height: 100%; border: 0; background: #f6f1e8; z-index: 1; }
+#cs-motion .cs-project-viewer-body[data-device="mobile"] { padding: 12px 0; }
+#cs-motion .cs-project-viewer-body[data-device="mobile"] .cs-project-frame { width: min(390px,100%); border: 5px solid #46526b; border-radius: 22px; }
+#cs-motion .cs-project-loading { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 17px; background: #10192a; color: #a4adc5; font-family: Georgia,serif; font-size: 24px; pointer-events: none; }
+#cs-motion .cs-project-loading > span { display: block; width: 25px; height: 25px; border: 1px solid #8e7cc63b; border-top-color: #ad9ddf; border-radius: 50%; animation: cs-project-loader 1s linear infinite; }
+#cs-motion .cs-project-viewer-footer { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 0 23px; color: #6e829e; font-size: 6px; letter-spacing: 1px; }
+
+html.cs-project-open { overflow:hidden; }
+#cs-motion .cs-project-loading[hidden] { display:none; }
+#cs-motion .cs-project-viewer button { cursor:pointer; }
+#cs-motion .cs-project-viewer button:focus-visible,#cs-motion .cs-project-viewer a:focus-visible { outline:2px solid #b5a2ff; outline-offset:3px; }
+#cs-motion .cs-project-viewer-nav>button { font-size:12px; white-space:nowrap; }
+#cs-motion .cs-project-viewer-modes>button { height:34px; }
+@keyframes cs-project-loader { to { transform:rotate(360deg); } }
+@media (max-width:1100px) {
+  #cs-motion .cs-atelier-shell { padding-inline:24px; }
+  #cs-motion .cs-atelier-heading { padding-inline:12px; }
+  #cs-motion .cs-theatre { grid-template-columns:minmax(0,1.9fr) minmax(0,1fr); gap:22px; min-height:435px; padding:28px 25px 48px 12px; }
+  #cs-motion .cs-atelier-exhibit { padding:0 28px; }
+  #cs-motion .cs-atelier-arrow { width:32px; height:32px; font-size:27px; }
+  #cs-motion .cs-atelier-prev { left:-3px; }
+  #cs-motion .cs-atelier-next { right:-13px; }
+  #cs-motion .cs-atelier-intro h3 { margin-top:14px; font-size:43px; }
+  #cs-motion .cs-atelier-intro p { font-size:14px; }
+  #cs-motion .cs-atelier-disciplines { gap:5px; margin:16px 0; }
+  #cs-motion .cs-atelier-disciplines span { padding:5px 8px; font-size:9px; }
+  #cs-motion .cs-project-selector { margin-inline:16px; gap:9px; }
+  #cs-motion .cs-project-selector>button { padding:10px; border-radius:13px; }
+  #cs-motion .cs-project-ticket-title { gap:8px; padding-bottom:8px; }
+  #cs-motion .cs-project-ticket-title>span:first-child { padding-right:8px; font-size:13px; }
+  #cs-motion .cs-project-selected-icon { display:none; }
+  #cs-motion .cs-atelier-details { grid-template-columns:1fr 1.5fr; gap:20px; }
+  #cs-motion .cs-atelier-live-link { grid-column:2; justify-self:start; }
+}
+@media (max-width:850px) {
+  #cs-motion .cs-atelier-heading { align-items:end; }
+  #cs-motion .cs-atelier-heading h2 { font-size:62px; }
+  #cs-motion .cs-theatre-invitation { max-width:210px; }
+  #cs-motion .cs-theatre-invitation p { line-height:1.5; }
+  #cs-motion .cs-theatre { grid-template-columns:1fr; gap:30px; padding:32px 30px 50px; }
+  #cs-motion .cs-atelier-exhibit { padding:0 38px; }
+  #cs-motion .cs-atelier-prev { left:-3px; }
+  #cs-motion .cs-atelier-next { right:-3px; }
+  #cs-motion .cs-atelier-intro { display:grid; grid-template-columns:1fr 1fr; gap:0 30px; padding:0 10px; }
+  #cs-motion .cs-atelier-project-number { grid-column:1; }
+  #cs-motion .cs-atelier-intro h3 { grid-column:1; grid-row:2; margin:12px 0 10px; }
+  #cs-motion .cs-atelier-intro p { grid-column:1; grid-row:3/5; }
+  #cs-motion .cs-atelier-disciplines { grid-column:1; grid-row:5; margin-bottom:0; }
+  #cs-motion .cs-theatre-devices { grid-column:2; grid-row:2; align-self:start; margin-top:12px; }
+  #cs-motion .cs-atelier-enter { grid-column:2; grid-row:3; padding:12px 0; }
+  #cs-motion .cs-theatre-story-toggle { grid-column:2; grid-row:4/6; align-self:start; }
+  #cs-motion .cs-project-selector { margin-inline:12px; grid-template-columns:repeat(4,200px); overflow-x:auto; padding:3px 3px 12px; scroll-snap-type:x mandatory; scroll-padding:3px; scrollbar-width:thin; scrollbar-color:#b4a4d4 transparent; }
+  #cs-motion .cs-project-selector>button { scroll-snap-align:start; }
+  #cs-motion .cs-project-ticket-title b { font-size:12px; }
+  #cs-motion .cs-atelier-chapter-rail { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:600px) {
+  #cs-motion .cs-atelier { padding:35px 0 18px; }
+  #cs-motion .cs-atelier-shell { padding-inline:14px; }
+  #cs-motion .cs-atelier-heading { display:block; padding:0 8px 24px; }
+  #cs-motion .cs-atelier-heading h2 { font-size:clamp(44px,11.8vw,65px); }
+  #cs-motion .cs-theatre-invitation { display:flex; align-items:center; justify-content:space-between; gap:10px; max-width:none; text-align:left; margin-top:19px; padding:0; }
+  #cs-motion .cs-theatre-invitation p { font-size:11px; margin:0; max-width:160px; }
+  #cs-motion .cs-theatre-invitation>span { font-size:10px; padding:7px 10px; gap:7px; white-space:nowrap; }
+  #cs-motion .cs-theatre-invitation>span>span { font-size:18px; }
+  #cs-motion .cs-theatre { padding:26px 18px 43px; gap:25px; border-radius:20px; }
+  #cs-motion .cs-atelier-exhibit { padding:0 17px; }
+  #cs-motion .cs-atelier-browser { padding:4px; border-radius:9px; }
+  #cs-motion .cs-atelier-browser-bar { height:15px; font-size:5px; padding:0 2px 3px; letter-spacing:.4px; }
+  #cs-motion .cs-atelier-browser-dots { gap:3px; }
+  #cs-motion .cs-atelier-browser-dots i { width:4px; height:4px; }
+  #cs-motion .cs-atelier-image-window { height:calc(100% - 15px); border-radius:2px 2px 5px 5px; }
+  #cs-motion .cs-atelier-ghost { padding:13px 4px 4px; border-radius:8px; }
+  #cs-motion .cs-atelier-arrow { width:30px; height:36px; font-size:25px; background:#101c33; }
+  #cs-motion .cs-atelier-prev { left:-11px; }
+  #cs-motion .cs-atelier-next { right:-11px; }
+  #cs-motion .cs-atelier-intro { display:block; padding:0 3px; }
+  #cs-motion .cs-atelier-project-number { font-size:9px; letter-spacing:1.5px; }
+  #cs-motion .cs-atelier-intro h3 { font-size:43px; max-width:none; margin:12px 0; }
+  #cs-motion .cs-atelier-intro p { font-size:14px; max-width:none; }
+  #cs-motion .cs-atelier-disciplines { margin:17px 0 20px; gap:8px; }
+  #cs-motion .cs-atelier-disciplines span { font-size:10px; padding:6px 10px; }
+  #cs-motion .cs-theatre-devices { margin:0; }
+  #cs-motion .cs-theatre-devices button { min-height:40px; }
+  #cs-motion .cs-atelier-enter { font-size:22px; padding:18px 0; }
+  #cs-motion .cs-atelier-enter-circle { flex-basis:53px; }
+  #cs-motion .cs-theatre-story-toggle { padding-top:15px; font-size:13px; }
+  #cs-motion .cs-atelier[data-preview-device="mobile"] .cs-atelier-scene { aspect-ratio:1.2; }
+  #cs-motion .cs-atelier[data-preview-device="mobile"] .cs-atelier-browser { width:40%; left:30%; border-radius:16px; padding:4px; }
+  #cs-motion .cs-project-selector { margin-inline:8px; grid-template-columns:repeat(4,minmax(205px,62vw)); gap:10px; }
+  #cs-motion .cs-project-selector>button:hover { transform:none; }
+  #cs-motion .cs-project-ticket-title b { font-size:13px; }
+  #cs-motion .cs-project-thumbnail { aspect-ratio:2; }
+  #cs-motion .cs-theatre-bottom { margin-inline:10px; min-height:62px; gap:8px; }
+  #cs-motion .cs-theatre-bottom>img { width:88px; height:36px; }
+  #cs-motion .cs-theatre-dots { gap:0; }
+  #cs-motion .cs-theatre-dots button { width:28px; }
+  #cs-motion .cs-theatre-dots span { width:18px; }
+  #cs-motion .cs-theatre-bottom>[data-project-count] { font-size:9px; letter-spacing:1px; }
+  #cs-motion .cs-theatre-story { margin-inline:10px; }
+  #cs-motion .cs-atelier-chapter-rail>button { padding:10px; gap:8px; }
+  #cs-motion .cs-atelier-chapter-rail small { display:none; }
+  #cs-motion .cs-atelier-chapter-rail b { font-size:11px; }
+  #cs-motion .cs-atelier-tab-arrow { display:none; }
+  #cs-motion .cs-atelier-details { grid-template-columns:1fr; gap:18px; padding-top:22px; }
+  #cs-motion .cs-atelier-live-link { grid-column:1; }
+  #cs-motion .cs-project-viewer { width:100vw; height:100dvh; border:0; border-radius:0; }
+  #cs-motion .cs-project-viewer[open] { grid-template-rows:64px 44px minmax(0,1fr) 29px; }
+  #cs-motion .cs-project-viewer-header { gap:10px; padding-inline:12px; }
+  #cs-motion .cs-project-viewer-identity { gap:7px; }
+  #cs-motion .cs-project-viewer h2 { font-size:16px; }
+  #cs-motion .cs-project-viewer-modes { display:none; }
+  #cs-motion .cs-project-viewer-nav { gap:14px; padding:0 12px; overflow-x:auto; }
+  #cs-motion .cs-project-viewer-nav>button { font-size:11px; flex-shrink:0; }
+  #cs-motion .cs-project-viewer-nav>span { display:none; }
+  #cs-motion .cs-project-standalone { font-size:10px; }
+  #cs-motion .cs-project-close { flex:0 0 34px; }
+  #cs-motion .cs-project-viewer-body[data-device="mobile"] { padding:0; }
+  #cs-motion .cs-project-viewer-body[data-device="mobile"] .cs-project-frame { width:100%; border:0; border-radius:0; }
+  #cs-motion .cs-project-viewer-footer { padding-inline:12px; font-size:6px; letter-spacing:.4px; }
+}
+/* Budget desktop rows against the usable browser height, including the fixed nav.
+   The story remains an extra, naturally sized row when visitors open it. */
+@media (min-width:1000px) and (min-height:650px) {
+  #cs-motion #cs-work.cs-atelier {
+    --work-heading-height:clamp(80px,13svh,132px);
+    --work-ticket-height:clamp(92px,15svh,152px);
+    --work-bottom-height:40px;
+    --work-vertical-padding:24px;
+    --work-ticket-overlap:16px;
+    --work-stage-height:calc(100svh - var(--cs-nav-clearance,100px) - var(--work-vertical-padding) - var(--work-heading-height) - var(--work-ticket-height) - var(--work-bottom-height) + var(--work-ticket-overlap));
+    padding:calc(var(--cs-nav-clearance,100px) + 12px) 0 12px;
+    scroll-margin-top:0;
+    min-height:100svh;
+  }
+  #cs-motion .cs-atelier-shell { width:min(100%,1664px,calc((100svh - var(--cs-nav-clearance,100px)) * 1.95)); }
+  #cs-motion .cs-atelier-heading { height:var(--work-heading-height); padding:0 20px 16px; align-items:center; }
+  #cs-motion .cs-atelier-heading h2 { font-size:clamp(40px,5.6svh,64px); }
+  #cs-motion .cs-theatre-invitation { align-self:center; padding-bottom:0; }
+  #cs-motion .cs-theatre-invitation p { font-size:clamp(14px,1.8svh,18px); margin-bottom:10px; }
+  #cs-motion .cs-theatre-invitation>span { padding:7px 17px; font-size:12px; }
+  #cs-motion .cs-theatre { height:var(--work-stage-height); min-height:0; grid-template-columns:minmax(0,2fr) minmax(290px,1fr); padding:20px 28px 36px 16px; gap:24px; }
+  #cs-motion .cs-atelier-exhibit { height:100%; min-height:0; display:grid; align-items:center; padding:0 36px; }
+  #cs-motion .cs-atelier-scene { width:min(100%,calc((var(--work-stage-height) - 60px) * 1.77)); margin:auto; }
+  #cs-motion .cs-atelier-next { right:-10px; }
+  #cs-motion .cs-atelier-intro { padding-left:4px; }
+  #cs-motion .cs-atelier-intro h3 { font-size:clamp(30px,4.5svh,44px); max-width:none; margin:10px 0 8px; }
+  #cs-motion .cs-atelier-intro p { font-size:clamp(13px,1.65svh,16px); line-height:1.45; max-width:none; }
+  #cs-motion .cs-atelier-disciplines { margin:12px 0 14px; gap:6px; }
+  #cs-motion .cs-atelier-disciplines span { padding:4px 9px; font-size:10px; }
+  #cs-motion .cs-theatre-devices button { min-height:34px; }
+  #cs-motion .cs-atelier-enter { padding:12px 0 10px; gap:14px; font-size:clamp(17px,2.2svh,21px); }
+  #cs-motion .cs-atelier-enter-circle { flex-basis:clamp(42px,5svh,52px); font-size:27px; }
+  #cs-motion .cs-theatre-story-toggle { min-height:34px; padding-top:8px; font-size:12px; }
+  #cs-motion .cs-project-selector { height:var(--work-ticket-height); margin:calc(-1 * var(--work-ticket-overlap)) 22px 0; }
+  #cs-motion .cs-project-selector>button { display:flex; flex-direction:column; min-height:0; padding:9px 13px 11px; }
+  #cs-motion .cs-project-ticket-title { flex:none; min-height:25px; padding-bottom:7px; }
+  #cs-motion .cs-project-ticket-title b { font-size:13px; }
+  #cs-motion .cs-project-ticket-title>span:first-child { font-size:13px; }
+  #cs-motion .cs-project-thumbnail { flex:1; min-height:0; width:100%; aspect-ratio:auto; }
+  #cs-motion .cs-theatre-bottom { height:var(--work-bottom-height); min-height:0; }
+  #cs-motion .cs-theatre-bottom>img { width:88px; height:32px; }
+  #cs-motion .cs-theatre-dots button { height:32px; }
+  #cs-motion .cs-theatre-bottom>[data-project-count] { font-size:9px; }
+}
+@media (min-width:1000px) and (min-height:650px) and (max-height:740px) {
+  #cs-motion #cs-work.cs-atelier { --work-heading-height:54px; --work-ticket-height:86px; --work-bottom-height:32px; --work-vertical-padding:16px; padding-top:calc(var(--cs-nav-clearance,100px) + 8px); padding-bottom:8px; }
+  #cs-motion .cs-atelier-heading { padding-bottom:12px; }
+  #cs-motion .cs-atelier-heading h2 { font-size:32px; line-height:1.05; white-space:nowrap; }
+  #cs-motion .cs-atelier-heading h2 br { display:none; }
+  #cs-motion .cs-atelier-heading h2 em::before { content:' '; }
+  #cs-motion .cs-theatre-invitation { display:flex; align-items:center; gap:14px; }
+  #cs-motion .cs-theatre-invitation p { font-size:12px; margin:0; max-width:155px; }
+  #cs-motion .cs-theatre-invitation>span { gap:10px; padding:5px 10px; font-size:10px; }
+  #cs-motion .cs-atelier-intro h3 { font-size:30px; }
+  #cs-motion .cs-atelier-project-number { font-size:9px; }
+  #cs-motion .cs-atelier-disciplines { margin:10px 0; }
+  #cs-motion .cs-project-selector>button { padding:6px 10px 8px; }
+  #cs-motion .cs-project-ticket-title { min-height:22px; padding-bottom:5px; gap:7px; }
+  #cs-motion .cs-project-ticket-title b { font-size:11px; }
+  #cs-motion .cs-project-ticket-title>span:first-child { padding-right:7px; font-size:11px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #cs-motion .cs-atelier *,#cs-motion .cs-project-viewer * { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+}

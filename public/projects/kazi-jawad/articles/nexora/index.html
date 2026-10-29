@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEXORA — Multi-Business Operating Platform | Kazi Jawad</title>
+  <meta name="description" content="One workspace for multiple businesses, connected operations, and accountable decisions.">
+  <meta name="theme-color" content="#f5f6f8">
+  <meta property="og:title" content="NEXORA — Multi-Business Operating Platform">
+  <meta property="og:description" content="One workspace for multiple businesses, connected operations, and accountable decisions.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../css/article-reader.css">
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <header class="reader-nav">
+    <a class="reader-brand" href="../../"><span class="brand-mark" aria-hidden="true">KJ</span>Kazi Jawad</a>
+    <a class="reader-back" href="../../#articles">← All projects</a>
+  </header>
+  <main class="reader-surface">
+    <article class="reader-article" id="article">
+      <header>
+        <p class="reader-kicker">Articles &amp; Projects / 01</p>
+        <h1>NEXORA — Multi-Business Operating Platform</h1>
+        <p class="reader-deck">One workspace for multiple businesses, connected operations, and accountable decisions.</p>
+        <div class="reader-meta">
+          <div class="reader-author">
+            <img src="../../assets/img/author.jpg" alt="" width="38" height="38">
+            <div><span>Written by</span><strong>MD Kazi Jawadul Islam</strong></div>
+          </div>
+          <div class="reader-tags"><span class="reader-tag">Software &amp; Business Systems</span><span class="reader-tag">3 min read</span></div>
+        </div>
+      </header>
+      <figure class="reader-hero">
+        <img src="../../assets/img/projects/nexora.png" alt="NEXORA project cover showing its multi-business platform identity and frontend prototype scope" fetchpriority="high">
+        <figcaption>NEXORA platform overview from the project documentation.</figcaption>
+      </figure>
+      <div class="reader-copy">
+        <p>Running several businesses means moving between different teams, currencies, records, and approval processes. NEXORA explores how those separate operations can fit into a shared workspace while preserving each business’s identity and access boundaries.</p>
+<p>The project is a browser-based ERP frontend prototype. It brings together a group overview, entity-specific workspaces, operational modules, and governance workflows. Its seeded companies and transactions demonstrate the experience; they are fictional examples rather than live business records.</p>
+        <section><h2>1. A group view with room for each business</h2><p>The Group Command Center gives group-level users a consolidated view of multiple entities. Each business also has its own operational context, including its currency, modules, and records. The demo covers manufacturing, retail, and advisory services across three example companies.</p>
+<p>This structure makes it possible to explore two related questions: how an individual company is operating, and how the group looks as a whole. Entity switching is central to the interface, so users can understand which business they are working in before acting on its data.</p></section>
+<section><h2>2. Connected operational workflows</h2><p>NEXORA groups finance, inventory, sales, procurement, and people operations into a common application. The finance area includes accounts, journals, and customer and supplier invoices. Other modules explore warehouses, purchasing, payroll, leave, and approvals.</p>
+<p>The intercompany workspace models transactions between entities. A trade creates linked records on both sides, supporting balance comparison, reconciliation, dispute handling, and group-level eliminations. Nexora Studio extends the concept with onboarding templates for different types of business.</p></section>
+<section><h2>3. Governance as part of the experience</h2><p>Access Passport demonstrates entity access requests, approval states, and time-limited access. Role and field-level controls explore how different people should see and use the same system. A purchase-order workflow also illustrates separation of duties by preventing the creator from approving their own order.</p>
+<p>Audit Vault uses a SHA-256 hash chain to demonstrate tamper detection, with a verifier and a tampering simulation. These are learning and interface features in a client-side prototype. Because the browser owns both the data and the code, they do not provide the protection of a server-enforced permission system or a protected audit store.</p></section>
+<section><h2>4. How the prototype is structured</h2><p>The interface uses React, TypeScript, Vite, and Tailwind CSS, with Lucide icons and Motion for interaction. An application shell and shared provider coordinate the active entity, role, and module state. Seed data and localStorage support the demonstration without a backend.</p>
+<p>Modules connect through shared state and workflows instead of calling one another directly. This keeps the prototype’s responsibilities understandable and provides a starting point for introducing real services later.</p></section>
+<section><h2>5. The path beyond the prototype</h2><p>The documentation identifies a substantial production roadmap: a backend API, a persistent database with tenant isolation, real identity and session management, server-side authorization, and a protected append-only audit system.</p>
+<p>Financial workflows would also need rigorous accounting rules, reconciliation, period closing, currency handling, reporting, and automated validation. NEXORA’s current contribution is a connected product experience that makes those future requirements visible and reviewable.</p></section>
+        <aside class="reader-source" aria-label="Original documentation">
+          <p>Explore the complete diagrams and technical notes in the original project documentation.</p>
+          <a href="../documents/NEXORA_Project_Documentation.pdf">Read the original PDF <span>↗ 19 pages</span></a>
+        </aside>
+        <nav class="reader-pagination" aria-label="More project articles">
+          <a href="../flipbook-catalogue/"><span>← Previous project</span><strong>3D Flipbook Catalogue</strong></a>
+          <a href="../security-system/"><span>Next project →</span><strong>Tracking &amp; Security System</strong></a>
+        </nav>
+      </div>
+    </article>
+    <footer class="reader-footer">Kazi Jawad · Ideas, experiments &amp; projects</footer>
+  </main>
+</body>
+</html>

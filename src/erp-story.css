@@ -1,0 +1,93 @@
+#cs-motion .cs-erp-story { position: relative; color: #f4f5fc; background: #080f1e; isolation: isolate; overflow: hidden; --story-progress: 0; }
+#cs-motion .cs-story-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#cs-motion .cs-story-shell { width: min(100%, 1680px); min-height: min(100svh, 1100px); margin: auto; padding: 0 clamp(24px, 5vw, 88px); display: grid; grid-template-rows: minmax(550px, 1fr) auto; }
+#cs-motion .cs-story-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #c0d9ff16; color: #8c9ab4; font-size: 9px; letter-spacing: 2px; position: relative; z-index: 3; }
+#cs-motion .cs-story-header b { font-weight: 500; color: #bc9fff; margin-right: 12px; }
+#cs-motion .cs-story-brand { display: block; position: relative; width: 118px; height: 42px; overflow: hidden; background: #080f1e; }
+#cs-motion .cs-story-brand img { display: block; position: absolute; width: 146px; max-width: none; top: -48px; left: -14px; filter: contrast(1.2); mix-blend-mode: lighten; }
+#cs-motion .cs-story-stage { position: relative; min-width: 0; }
+#cs-motion .cs-story-grid { position: absolute; top: 9%; right: 2%; width: 120px; height: 110px; background-image: radial-gradient(#9d87e947 1px, transparent 1px); background-size: 10px 10px; opacity: .4; mask-image: linear-gradient(145deg,#000,transparent); z-index: 1; }
+#cs-motion .cs-story-scene { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .9s ease, visibility .9s; pointer-events: none; }
+#cs-motion .cs-story-scene.is-active { opacity: 1; visibility: visible; }
+#cs-motion .cs-story-visual { position: absolute; left: 30%; right: calc(-1 * clamp(24px, 5vw, 88px)); top: 0; bottom: 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 24%), linear-gradient(0deg, transparent, #000 18%, #000 85%, transparent); mask-composite: intersect; }
+#cs-motion .cs-story-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #080f1e80, transparent 48%), linear-gradient(0deg, #080f1e4d, transparent 40%); }
+#cs-motion .cs-story-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 58% center; transform: scale(1.045); animation: cs-story-camera 6.2s linear both; animation-play-state: paused; }
+#cs-motion .cs-story-scene.is-active .cs-story-visual img { animation-play-state: running; }
+#cs-motion .cs-erp-story[data-playing="false"] .cs-story-visual img { animation-play-state: paused; }
+#cs-motion .cs-story-copy { position: absolute; left: 0; top: 12%; width: 48%; max-width: 650px; z-index: 2; opacity: 0; transform: translateY(20px); transition: opacity .6s .12s, transform .8s .1s; }
+#cs-motion .cs-story-scene.is-active .cs-story-copy { opacity: 1; transform: translateY(0); }
+#cs-motion .cs-story-kicker { margin: 0 0 23px; display: flex; align-items: center; gap: 9px; color: #a8b3c9; font-size: 8px; line-height: 1.6; letter-spacing: 1.7px; }
+#cs-motion .cs-story-kicker > span { width: 5px; height: 5px; flex: 0 0 5px; border-radius: 50%; background: #00dceb; box-shadow: 0 0 12px #00dceb60; }
+#cs-motion .cs-story-copy h3 { margin: 0; font-size: clamp(40px, 4.25vw, 72px); line-height: 1.09; font-weight: 500; letter-spacing: -.055em; color: #f4f5fc; }
+#cs-motion .cs-story-copy h3 em { font-style: normal; background: linear-gradient(100deg, #d8b6ff 0%, #9a7cff 37%, #469fff 70%, #00dceb 100%); background-clip: text; -webkit-text-fill-color: transparent; }
+#cs-motion .cs-story-description { color: #9caac2; margin: 22px 0 0; max-width: 355px; font-size: 13px; line-height: 1.85; }
+#cs-motion .cs-story-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 21px; }
+#cs-motion .cs-story-tags > span { padding: 6px 10px; border: 1px solid #b8caee24; border-radius: 4px; background: #080f1e55; font-size: 9px; color: #b5c3d8; }
+#cs-motion .cs-story-note { position: absolute; right: 1%; bottom: 11%; display: flex; align-items: center; gap: 12px; padding: 17px 20px; border: 1px solid #b7dfff26; border-radius: 10px; background: linear-gradient(120deg,#132b3dc9,#111a2cc9); box-shadow: 0 10px 50px #0004; backdrop-filter: blur(15px); transform: translateY(15px); transition: transform 1s .2s; z-index: 2; }
+#cs-motion .cs-story-scene.is-active .cs-story-note { transform: translateY(0); }
+#cs-motion .cs-story-note-icon { width: 33px; height: 33px; border: 1px solid #00dceb25; border-radius: 9px; display: grid; place-items: center; color: #65d5e6; background: #00dceb08; }
+#cs-motion .cs-story-note-icon svg { width: 16px; height: 16px; }
+#cs-motion .cs-story-note small { display: block; color: #6ed1df; font-size: 7px; letter-spacing: 1.6px; margin-bottom: 6px; }
+#cs-motion .cs-story-note strong { display: block; color: #d0daec; font-size: 10px; font-weight: 400; }
+#cs-motion .cs-story-actions { position: absolute; left: 0; bottom: 9%; display: flex; align-items: center; gap: 23px; z-index: 3; }
+#cs-motion .cs-story-demo { display: inline-flex; gap: 23px; align-items: center; background: #baf7f5; color: #082331; border: 0; border-radius: 30px; padding: 14px 22px; font-size: 11px; font-weight: 600; transition: background .2s, transform .2s; }
+#cs-motion .cs-story-demo:hover { background: #e1ffff; transform: translateY(-2px); }
+#cs-motion .cs-story-quote { padding: 10px 0; display: flex; gap: 12px; align-items: center; font-size: 11px; border: 0; background: none; color: #c5cee1; }
+#cs-motion .cs-story-quote:hover { color: #00dceb; }
+#cs-motion .cs-story-edition { position: absolute; bottom: 3%; right: 0; font-size: 7px; letter-spacing: 2px; color: #7585a2; }
+#cs-motion .cs-story-footer { position: relative; padding-bottom: 20px; z-index: 3; }
+#cs-motion .cs-story-playback { display: flex; align-items: center; gap: 18px; margin: 0 0 18px; color: #7587a7; }
+#cs-motion .cs-story-count { font-size: 10px; letter-spacing: 1.8px; white-space: nowrap; }
+#cs-motion .cs-story-count b { color: #c0a0fa; font-weight: 500; }
+#cs-motion .cs-story-playback-label { font-size: 7px; letter-spacing: 1.8px; }
+#cs-motion .cs-story-play { margin-left: auto; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; padding: 0; color: #bfcde5; border: 1px solid #a1bde52e; background: #0f192b; }
+#cs-motion .cs-story-play svg { width: 16px; height: 16px; }
+#cs-motion .cs-story-play:hover { border-color: #00dceb; color: #00dceb; }
+#cs-motion .cs-story-play-icon { display: none; }
+#cs-motion .cs-story-play[aria-pressed="true"] .cs-story-play-icon { display: block; }
+#cs-motion .cs-story-play[aria-pressed="true"] .cs-story-pause-icon { display: none; }
+#cs-motion .cs-story-tabs { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 17px; }
+#cs-motion .cs-story-tabs > button { position: relative; background: none; border: 0; border-radius: 0; text-align: left; color: #7e8ba4; padding: 16px 0 12px; font-size: 10px; white-space: nowrap; transition: color .25s; }
+#cs-motion .cs-story-tabs > button small { font-size: 8px; margin-right: 8px; opacity: .6; }
+#cs-motion .cs-story-tabs > button[aria-selected="true"] { color: #edf5ff; }
+#cs-motion .cs-story-tabs > button:hover { color: #a6edff; }
+#cs-motion .cs-story-track { display: block; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #7083a533; overflow: hidden; }
+#cs-motion .cs-story-track i { display: block; height: 100%; background: linear-gradient(90deg,#ad8bff,#00dceb); transform-origin: left; transform: scaleX(0); }
+#cs-motion .cs-story-tabs > button[aria-selected="true"] .cs-story-track i { transform: scaleX(max(.025, var(--story-progress))); }
+#cs-motion .cs-story-tabs > button.is-complete .cs-story-track i { transform: scaleX(1); opacity: .5; }
+#cs-motion .cs-story-baseline { display: flex; justify-content: space-between; gap: 16px; color: #667690; font-size: 8px; margin-top: 19px; }
+@keyframes cs-story-camera { from { transform: scale(1.045) translateX(0); } to { transform: scale(1.105) translateX(-.5%); } }
+@media(min-width:1500px) { #cs-motion .cs-story-description { max-width: 420px; font-size: 15px; } #cs-motion .cs-story-shell { grid-template-rows: minmax(650px,1fr) auto; } }
+@media(max-width:1100px) { #cs-motion .cs-story-copy { top: 10%; width: 51%; } #cs-motion .cs-story-copy h3 { font-size: clamp(36px,4.5vw,48px); } #cs-motion .cs-story-description { max-width: 310px; font-size: 12px; } #cs-motion .cs-story-note { right: 0; bottom: 15%; padding: 13px; } #cs-motion .cs-story-tabs { gap: 10px; } #cs-motion .cs-story-tabs > button { font-size: 9px; } #cs-motion .cs-story-tabs > button small { display: none; } }
+@media(max-width:900px) {
+  #cs-motion .cs-story-shell { min-height: 100svh; padding-inline: 24px; grid-template-rows: minmax(600px,1fr) auto; }
+  #cs-motion .cs-story-header { font-size: 7px; letter-spacing: 1.2px; }
+  #cs-motion .cs-story-header b { margin-right: 5px; }
+  #cs-motion .cs-story-brand { width: 94px; height: 33px; }
+  #cs-motion .cs-story-brand img { width: 116px; top: -38px; left: -11px; }
+  #cs-motion .cs-story-copy { top: 28px; width: 100%; max-width: 600px; }
+  #cs-motion .cs-story-copy h3 { font-size: clamp(34px,7vw,48px); line-height: 1.07; }
+  #cs-motion .cs-story-kicker { margin-bottom: 15px; font-size: 6.5px; letter-spacing: 1.4px; }
+  #cs-motion .cs-story-description { margin-top: 16px; max-width: 370px; font-size: 11px; line-height: 1.75; }
+  #cs-motion .cs-story-tags { margin-top: 13px; gap: 5px; }
+  #cs-motion .cs-story-tags > span { padding: 5px 8px; font-size: 8px; }
+  #cs-motion .cs-story-visual { left: -24px; right: -24px; top: 245px; bottom: 48px; mask-image: linear-gradient(0deg,transparent,#000 16%,#000 82%,transparent); mask-composite: add; }
+  #cs-motion .cs-story-visual img { object-fit: cover; object-position: center 50%; }
+  #cs-motion .cs-story-visual::after { background: linear-gradient(0deg,#080f1e70,transparent 50%); }
+  #cs-motion .cs-story-note { bottom: 79px; right: 0; padding: 10px 12px; gap: 9px; border-radius: 8px; }
+  #cs-motion .cs-story-note-icon { width: 27px; height: 27px; }
+  #cs-motion .cs-story-note strong { font-size: 8px; }
+  #cs-motion .cs-story-note small { font-size: 6px; letter-spacing: 1px; margin-bottom: 4px; }
+  #cs-motion .cs-story-actions { bottom: 10px; gap: 24px; }
+  #cs-motion .cs-story-demo { font-size: 10px; padding: 13px 18px; gap: 15px; }
+  #cs-motion .cs-story-quote { font-size: 10px; }
+  #cs-motion .cs-story-edition { display: none; }
+  #cs-motion .cs-story-footer { padding-top: 18px; padding-bottom: 20px; }
+  #cs-motion .cs-story-playback { margin-bottom: 15px; gap: 12px; }
+  #cs-motion .cs-story-playback-label { font-size: 6px; letter-spacing: 1.3px; }
+  #cs-motion .cs-story-tabs { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 5px 14px; }
+  #cs-motion .cs-story-tabs > button { min-height: 42px; padding: 13px 0 9px; font-size: 9px; }
+  #cs-motion .cs-story-baseline { font-size: 6px; margin-top: 12px; gap: 8px; }
+}
+@media(max-width:380px) { #cs-motion .cs-story-shell { padding-inline: 20px; grid-template-rows: minmax(590px,1fr) auto; } #cs-motion .cs-story-header { font-size: 6px; } #cs-motion .cs-story-copy h3 { font-size: 32px; } #cs-motion .cs-story-actions { gap: 16px; } #cs-motion .cs-story-demo { padding-inline: 15px; gap: 10px; } #cs-motion .cs-story-description { max-width: 270px; } #cs-motion .cs-story-visual { left: -20px; right: -20px; top: 248px; } }
+@media(prefers-reduced-motion:reduce) { #cs-motion .cs-story-scene, #cs-motion .cs-story-copy, #cs-motion .cs-story-note { transition: none; } #cs-motion .cs-story-visual img { animation: none; transform: none; } }

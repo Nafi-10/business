@@ -1,0 +1,259 @@
+/* Screen-aware proportions. Content keeps its natural height when space is limited. */
+.landing-page main>section[id]{scroll-margin-top:calc(var(--nav-clearance) - 18px)}
+.landing-page .new-arrivals,.landing-page .brand-gallery,.landing-page .offers-section{padding-block:32px 24px}
+.landing-page .arrivals-heading-row,.landing-page .brand-gallery-heading{margin-bottom:24px}
+.landing-page .brand-gallery-foot{margin-top:24px;padding-top:20px}
+.landing-page .gifting-section{padding-block:26px 24px}
+.landing-page .gift-edit{margin-top:30px}
+.landing-page .maison-promises{min-height:68px;padding-block:14px}
+.maison-footer{padding-top:42px}
+.footer-invitation{padding-bottom:30px}
+.footer-directory{padding-block:30px}
+.footer-signature{font-size:clamp(48px,8vw,120px);margin-bottom:22px;padding-top:20px}
+
+/* The collection's own masthead stays with this page only. */
+.collection-page{--collection-header-height:90px}
+.collection-page .collection-header{position:sticky;top:0;z-index:40;height:var(--collection-header-height);margin:0;padding-inline:5%;background:#f8f5f0f5;backdrop-filter:blur(16px);box-shadow:0 4px 18px #49372e08}
+.collection-page #collection-main,.collection-page #fragrances{scroll-margin-top:calc(var(--collection-header-height) + 16px)}
+.collection-intro{margin-top:24px;min-height:0;padding-bottom:28px}
+.collection-intro-copy{padding-block:24px}
+.collection-intro-art{min-height:300px}
+.collection-intro-copy>p:not(.eyebrow){font-size:13px;color:#715644}
+.collection-shop{padding-block:32px}
+.collection-shop-heading{margin-bottom:20px}
+.collection-filterbar{padding-block:12px}
+.collection-families{padding-block:14px 20px}
+.collection-grid{gap:28px 24px}
+.collection-card:nth-child(3n+2){padding-top:0}
+.collection-end{margin-top:32px}
+.collection-search input,.collection-select select,.collection-families button{font-size:12px}
+.collection-select span,#collection-count{font-size:10px;color:#715644}
+.collection-card-brand{font-size:10px;letter-spacing:1px}
+.collection-card-type{font-size:11px;color:#715644}
+.collection-card-price small{font-size:9px;color:#715644}
+.collection-add{font-size:11px;min-height:40px}
+
+/* Shared rhythm on the longer shopping pages; collections and forms remain scrollable. */
+/* The Offers masthead retains its flow space while its visible rows become slimmer. */
+.privilege-page{--privilege-masthead-height:155px;--privilege-pinned-height:104px}
+.privilege-page .p-masthead{position:sticky;top:0;z-index:40;height:var(--privilege-masthead-height);pointer-events:none}
+.privilege-page .p-masthead .p-header,.privilege-page .p-masthead .p-nav{background:#f8f5f0f5;backdrop-filter:blur(16px);pointer-events:auto;transition:height .3s cubic-bezier(.2,.7,.2,1)}
+.privilege-page .p-masthead .p-header{height:105px}
+.privilege-page .p-masthead .p-nav{height:50px;padding-block:0;align-items:center;font-size:12px;border-bottom:1px solid var(--p-line);transition:height .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.privilege-page .p-masthead .wordmark>span:first-child{transition:font-size .3s,letter-spacing .3s}
+.privilege-page .p-masthead .wordmark-subtitle{transition:margin .3s,font-size .3s,letter-spacing .3s}
+.privilege-page .p-masthead.is-compact .p-header{height:64px}
+.privilege-page .p-masthead.is-compact .p-nav{height:40px;box-shadow:0 6px 20px #49372e12}
+.privilege-page .p-masthead.is-compact .wordmark>span:first-child{font-size:26px;letter-spacing:4px}
+.privilege-page .p-masthead.is-compact .wordmark-subtitle{font-size:6px;letter-spacing:3px;margin-top:5px}
+.privilege-page #privilege-main,.privilege-page main>section[id]{scroll-margin-top:calc(var(--privilege-pinned-height) + 14px)}
+@media(max-width:760px){
+  .privilege-page{--privilege-masthead-height:148px;--privilege-pinned-height:102px}
+  .privilege-page .p-masthead .p-header{height:100px}
+  .privilege-page .p-masthead .p-nav{height:48px;font-size:11px;gap:24px}
+  .privilege-page .p-masthead.is-compact .p-header{height:62px}
+  .privilege-page .p-masthead.is-compact .wordmark>span:first-child{font-size:22px;letter-spacing:2px}
+}
+@media(max-width:360px){.privilege-page .p-masthead.is-compact .wordmark>span:first-child{font-size:20px;letter-spacing:1.5px}}
+@media(prefers-reduced-motion:reduce){.privilege-page .p-masthead *{transition:none}}
+
+.g-section,.p-section{padding-block:42px}
+.g-section-heading,.p-section-heading{margin-bottom:25px}
+.g-builder{padding-block:42px}
+.g-help{padding-block:42px}
+.g-collection-intro{padding-block:38px 30px}
+.g-footer,.p-footer{padding-top:32px;gap:24px}
+.p-members{padding-block:42px}
+.p-terms{padding-block:40px}
+.p-spotlight-copy{padding-block:30px}
+
+@media(min-width:1100px){
+  /* The first view includes the announcement, logo, navigation and service strip. */
+  .landing-page .hero{height:auto;min-height:0;max-height:none;padding-block:28px 64px}
+  .landing-page .hero-content{padding-top:0;width:48%;max-width:640px}
+  .landing-page h1{font-size:clamp(50px,7.4svh,76px);margin-block:18px;line-height:.98}
+  .landing-page .hero-description{font-size:15px;line-height:1.7;margin-bottom:18px}
+  .landing-page .hero-footnote{margin-top:16px}
+  .landing-page .hero-eyebrow{margin-top:0}
+  .landing-page .carousel-controls{bottom:17px}
+  .landing-page .fragrance-caption{bottom:25px}
+
+  /* Each editorial chapter fits below the pinned navigation on laptop displays. */
+  .landing-page .new-arrivals,.landing-page .brand-gallery,.landing-page .offers-section{padding-block:clamp(18px,2.6svh,28px)}
+  .landing-page .arrivals-heading-row{margin-bottom:18px}
+  .landing-page .arrivals-heading-row h2{font-size:clamp(38px,5.4svh,52px)}
+  .landing-page .arrivals-heading-aside{gap:28px}
+  .landing-page .arrival-stage{min-height:0;height:clamp(380px,calc(100svh - 310px),600px);display:flex;align-items:center}
+  .landing-page .arrival-copy{padding:55px 0 65px 4.5%;width:40%}
+  .landing-page .arrival-copy .eyebrow{margin-bottom:10px}
+  .landing-page #arrival-name{font-size:clamp(50px,7svh,72px);margin-bottom:12px}
+  .landing-page .new-arrivals[data-product="baccarat-rouge"] #arrival-name{font-size:clamp(43px,6svh,60px)}
+  .landing-page .arrival-subtitle{font-size:23px;margin-bottom:12px}
+  .landing-page .arrival-description{font-size:13px;line-height:1.7;margin-bottom:14px;max-width:390px}
+  .landing-page .arrival-format{margin-bottom:16px}
+  .landing-page .arrival-edition{top:20px;left:4.5%}
+  .landing-page .arrival-profile{top:30%;right:3%;width:16%}
+  .landing-page .arrival-profile h4{margin-bottom:12px}
+  .landing-page .arrival-stage-bottom{bottom:16px;left:4.5%}
+  .landing-page .arrival-selector{min-height:74px;padding:12px 10px}
+  .landing-page .arrival-selector img{height:46px;width:28px}
+  .landing-page .selector-label strong{font-size:21px}
+  .landing-page .selector-label small{margin-bottom:4px}
+  .landing-page .arrival-section-foot{margin-top:12px}
+
+  .landing-page .brand-gallery-heading{margin-bottom:20px}
+  .landing-page .brand-gallery h2{font-size:clamp(36px,5.4svh,52px);line-height:1.02}
+  .landing-page .brand-gallery .eyebrow{margin-bottom:12px}
+  .landing-page .brand-panels{gap:28px}
+  .landing-page .brand-art{aspect-ratio:auto;height:clamp(180px,calc(100svh - 490px),390px);margin-inline:0;flex-shrink:0}
+  .landing-page .brand-art-label{bottom:22px;font-size:10px;letter-spacing:2px}
+  .landing-page .brand-feature-copy,.landing-page .brand-feature:nth-child(even) .brand-feature-copy{min-height:0;height:158px;padding:14px 0 0}
+  .landing-page .brand-feature:nth-child(even) .brand-feature-copy{padding:0 0 14px}
+  .landing-page .brand-feature h3{font-size:clamp(26px,2vw,32px);margin-block:7px}
+  .landing-page .brand-feature p{font-size:13px;line-height:1.7;max-width:280px;margin-bottom:9px}
+  .landing-page .brand-index{font-size:9px}
+  .landing-page .brand-discover{padding-bottom:5px}
+  .landing-page .brand-gallery-foot{margin-top:16px;padding-top:16px}
+  .landing-page .brand-gallery-foot p{font-size:25px}
+  .landing-page .brand-gallery-foot p span{margin-top:4px}
+
+  .landing-page .gifting-section{padding-block:20px}
+  .landing-page .gifting-topline{padding-bottom:14px}
+  .landing-page .gifting-layout{min-height:0;grid-template-columns:43% 57%}
+  .landing-page .gifting-copy{padding-block:20px}
+  .landing-page .gifting-copy>.eyebrow{margin-bottom:18px}
+  .landing-page .gifting-copy h2{font-size:clamp(52px,7.4svh,74px);margin-bottom:18px}
+  .landing-page .gifting-intro{margin-bottom:20px;line-height:1.7}
+  .landing-page .gift-edit{margin-top:24px;max-width:470px}
+  .landing-page .gift-edit-label{margin-bottom:12px}
+  .landing-page .gift-choice{padding-block:10px 4px}
+  .landing-page .gift-choice>span{margin-bottom:7px}
+  .landing-page .gift-choice strong{font-size:22px}
+  .landing-page .gifting-visual{padding:0 0 16px 18px}
+  .landing-page .gift-stage{width:min(100%,calc(100svh - 290px));margin:0 auto}
+  .landing-page .gift-fragrance{margin:-6% 2% 0;padding-top:14px}
+  .landing-page .gift-fragrance h3{font-size:29px}
+  .landing-page .gifting-footer{padding-top:14px;gap:22px}
+  .landing-page .gifting-footer>p{font-size:22px}
+  .landing-page .gifting-footer em{font-size:19px}
+  .landing-page .gifting-footer>div{gap:20px}
+
+  /* A slender timepiece above the offer leaves room for every product detail. */
+  .landing-page .offers-heading-row{padding-bottom:16px;gap:32px}
+  .landing-page .offers-heading-row h2{font-size:clamp(36px,5.2svh,49px)}
+  .landing-page .offers-heading-row .eyebrow{margin-bottom:8px}
+  .landing-page .offer-showcase{min-height:0;grid-template-columns:1fr 1fr;gap:16px 6%;padding-block:16px}
+  .landing-page .offer-story{display:contents}
+  .landing-page .offer-timepiece{grid-column:1/-1;max-width:none;display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;gap:25px;padding:12px 22px}
+  .landing-page .offer-time-heading{margin:0}
+  .landing-page .offer-time-copy h3{font-size:25px}
+  .landing-page .offer-clock-label{margin-bottom:4px}
+  .landing-page .offer-countdown{gap:12px}
+  .landing-page .offer-flap{height:48px;border-radius:20px 20px 3px 3px}
+  .landing-page .offer-flap>span{font-size:33px}
+  .landing-page .offer-flap:after{bottom:7px}
+  .landing-page .offer-time-unit>span{margin-top:5px;font-size:9px}
+  .landing-page .offer-deadline{margin:0;text-align:right;line-height:1.7;font-size:11px}
+  .landing-page .offer-story .offer-copy{padding:0;max-width:560px;grid-column:1}
+  .landing-page .offer-brand{margin-bottom:9px}
+  .landing-page .offer-copy h3{font-size:clamp(43px,6svh,62px);margin-bottom:11px;max-width:none}
+  .landing-page .offer-format{margin-bottom:12px}
+  .landing-page .offer-description{max-width:480px;margin-bottom:12px;line-height:1.65}
+  .landing-page .offer-notes{font-size:18px;gap:8px 17px}
+  .landing-page .offer-benefit{margin-block:14px;gap:16px}
+  .landing-page .offer-saving-value{font-size:43px}
+  .landing-page .offer-percent{font-size:21px}
+  .landing-page .offer-benefit small{font-size:16px;margin-top:4px}
+  .landing-page .offer-discover{min-height:44px}
+  .landing-page .offer-art{grid-column:2;grid-row:2;align-self:center}
+  .landing-page .offer-stage{max-width:clamp(240px,calc(100svh - 450px),440px)}
+  .landing-page .offer-scene-index{top:0}
+  .landing-page .offer-scene-caption{margin:0}
+  .landing-page .offer-scene-caption>span:first-child{font-size:24px}
+  .landing-page .offer-carousel-bar{min-height:66px}
+  .landing-page .offer-selectors button{padding-block:12px}
+  .landing-page .offer-selectors button>span{top:16px}
+  .landing-page .offer-selectors strong{font-size:22px}
+  .landing-page .offer-selectors small{margin-top:4px}
+  .landing-page .offers-footnote{margin-top:12px}
+
+  .footer-invitation h2{font-size:clamp(56px,7svh,74px);margin-bottom:18px}
+  .footer-kicker{margin-bottom:16px}
+  .footer-invitation-copy>p:not(.footer-kicker){margin-bottom:20px}
+  .footer-seal{width:145px;height:165px}
+  .footer-seal strong{font-size:61px;letter-spacing:-8px;margin:14px 0 8px}
+  .footer-seal>span{font-size:6px;letter-spacing:1px}
+  .footer-atelier>p{font-size:25px;margin-top:16px}
+  .footer-directory h3{margin-bottom:12px}
+  .footer-links{gap:9px}
+
+  .collection-intro{max-width:1520px;grid-template-columns:1fr 43%;gap:5%;align-items:center}
+  .collection-intro h1{font-size:clamp(54px,7.5svh,82px)}
+  .collection-intro-art{height:clamp(270px,38svh,370px);min-height:0}
+  .collection-intro .eyebrow{margin-bottom:18px;font-size:10px}
+  .collection-jump{margin-top:22px;font-size:12px}
+  .collection-card-visual{aspect-ratio:1.08}
+  .g-hero{height:calc(100svh - 191px);min-height:480px;max-height:640px}
+  .g-hero-copy{padding-top:40px}
+  .g-path{min-height:clamp(280px,43svh,390px)}
+  .p-hero{height:clamp(470px,calc(100svh - 188px),640px)}
+  .p-hero-copy{padding-top:45px}
+  .p-category-art{height:clamp(200px,28svh,270px)}
+}
+
+@media(min-width:1100px) and (max-height:800px){
+  .landing-page .hero{padding-block:16px 48px}
+  .landing-page h1{font-size:clamp(46px,7svh,56px);margin-block:14px}
+  .landing-page .hero-description{font-size:14px;margin-bottom:14px}
+  .landing-page .scent-link{margin-top:6px;padding-block:7px}
+  .landing-page .hero-footnote{margin-top:10px}
+  .landing-page .arrivals-heading-row h2{font-size:38px}
+  .landing-page .new-arrivals{padding-block:16px}
+  .landing-page .arrival-section-foot{margin-top:9px}
+  .landing-page .offer-timepiece{padding-block:8px;gap:20px}
+  .landing-page .offer-time-copy h3{font-size:22px}
+  .landing-page .offer-flap{height:38px}
+  .landing-page .offer-flap>span{font-size:28px}
+  .landing-page .offer-time-unit>span{margin-top:3px}
+  .landing-page .offer-showcase{padding-block:10px;row-gap:10px}
+  .landing-page .offers-heading-row{padding-bottom:10px}
+  .landing-page .offer-copy h3{font-size:43px}
+  .landing-page .offer-selectors button{padding-block:9px}
+  .landing-page .offer-carousel-bar{min-height:60px}
+  .landing-page .offer-selectors strong{font-size:21px}
+  .landing-page .offer-selectors small{margin-top:3px}
+  .landing-page .offer-scene-caption>span:last-child{margin-top:5px}
+}
+
+/* On phones and zoomed layouts, natural document flow keeps every detail accessible. */
+@media(max-width:1099px){
+  .landing-page .brand-feature-copy,.landing-page .brand-feature:nth-child(even) .brand-feature-copy{min-height:0;padding-bottom:22px}
+  .landing-page .brand-feature:nth-child(even) .brand-feature-copy{order:0;padding-top:18px}
+  .landing-page .brand-panels{row-gap:24px}
+  .landing-page .brand-art{aspect-ratio:1}
+  .landing-page .brand-feature h3{margin-block:8px}
+  .landing-page .brand-gallery-foot{margin-top:12px}
+}
+@media(max-width:700px){
+  .collection-page{--collection-header-height:78px}
+  .collection-page .collection-header{padding-inline:4%;gap:6px}
+  .collection-intro{margin-top:15px;padding-bottom:25px}
+  .collection-intro-copy{padding-block:10px}
+  .collection-intro-art{min-height:270px}
+  .collection-intro-copy>p:not(.eyebrow){font-size:11px}
+  .collection-shop{padding-block:28px}
+  .collection-card:nth-child(even){padding-top:0}
+  .collection-grid{gap:24px 15px}
+  .collection-card-brand{font-size:9px;letter-spacing:.3px}
+  .collection-card-type{font-size:10px}
+  .collection-card-price small{font-size:8px}
+  .collection-select select{font-size:11px}
+  .collection-select span{font-size:8px}
+  .g-section,.p-section,.g-builder,.g-help{padding-block:30px}
+  .g-collection-intro{padding-block:28px}
+  .g-section-heading,.p-section-heading{margin-bottom:22px}
+  .g-path{min-height:290px}
+  .p-members,.p-terms{padding-block:30px}
+  .footer-invitation{padding-bottom:25px}
+  .footer-directory{padding-block:26px}
+}
