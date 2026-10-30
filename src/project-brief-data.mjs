@@ -6,6 +6,22 @@ const line = value => String(value ?? '').replace(/[\r\n]+/g,' ').trim();
 export function normalizeBrief(value={}) {
   return Object.fromEntries(['service','industry','goal','existing','budget','timeline','name','email'].map(key=>[key,key==='goal'?String(value[key]??'').trim():line(value[key])]));
 }
+export function readBriefDraft(raw){
+  try{
+    const value=JSON.parse(raw);if(!value||typeof value!=='object'||Array.isArray(value))return null;
+    const draft=normalizeBrief(value),limits={goal:1500,existing:300,name:100,email:254};
+    for(const [key,limit] of Object.entries(limits))draft[key]=draft[key].slice(0,limit);
+    for(const [key,allowed] of Object.entries({service:services,industry:sectors,budget:budgets,timeline:timelines}))if(!Object.hasOwn(allowed,draft[key]))draft[key]='';
+    return draft;
+  }catch{return null;}
+}
+export function mergeBriefContext(current,incoming){
+  const draft=normalizeBrief(current),context=normalizeBrief(incoming);
+  if(!context.goal||draft.goal.includes(context.goal))return draft;
+  const goal=[draft.goal,context.goal].filter(Boolean).join('\n\n');
+  if(goal.length>1500)return null;
+  return {...draft,goal,service:Object.hasOwn(services,context.service)?context.service:draft.service,industry:Object.hasOwn(sectors,context.industry)?context.industry:draft.industry};
+}
 export function validateBriefStep(step, value={}) {
   const data=normalizeBrief(value), errors={};
   if(step===0){

@@ -1,5 +1,5 @@
 const version=new URL(import.meta.url).search;
-const {sectors,products,filterCollection,carouselItems,readSaved}=await import(new URL('./collection-data.mjs'+version,import.meta.url));
+const {sectors,products,filterCollection,carouselItems,readSaved,changeSaved,savedProductsKey}=await import(new URL('./collection-data.mjs'+version,import.meta.url));
 const {productVisual}=await import(new URL('./collection-visuals.mjs'+version,import.meta.url));
 const root=document.querySelector('#cs-motion'),rows=root.querySelector('[data-cl-rows]'),dialog=document.querySelector('#cl-dialog');
 const search=root.querySelector('#cl-search'),mobile=matchMedia('(max-width:900px)'),reduced=matchMedia('(prefers-reduced-motion:reduce)');
@@ -19,7 +19,7 @@ function revealResults(){
 }
 const state={industry:'all',category:'all',query:'',savedOnly:false,saved:[]};
 const positions=new Map(),visibleByIndustry=new Map();
-let trigger=null,detailProduct=null,scrollTimer=0;
+let trigger=null,detailProduct=null,scrollTimer=0,savedForVisit=false;
 try{state.saved=readSaved(localStorage.getItem('canveliqsoft-collection-saved'));}catch{/* Browsing still works when storage is unavailable. */}
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons=()=>window.lucide?.createIcons();
@@ -28,7 +28,7 @@ const arrow=direction=>`<i data-lucide="arrow-${direction<0?'left':'right'}" ari
 const inquiryUrl=p=>`./index.html?collection=${encodeURIComponent(p.id)}#cs-contact`;
 const isSaved=p=>state.saved.includes(p.id);
 function saveButton(p){return `<button type="button" class="cl-save" data-save="${p.id}" aria-label="Save ${esc(p.name)}" aria-pressed="${isSaved(p)}"><i data-lucide="heart" aria-hidden="true"></i></button>`;}
-function card(p,featured){return `<article class="cl-card${featured?' is-featured':''}" data-product="${p.id}" aria-label="${esc(p.name)}"><div class="cl-card-top"><span class="cl-kind cl-kind-${p.category}">${esc(p.label.toUpperCase())}</span>${saveButton(p)}</div>${productVisual(p)}<div class="cl-card-body"><h3><button type="button" data-detail="${p.id}">${esc(p.name)}</button></h3><p class="cl-card-description">${esc(p.description)}</p><span class="cl-card-note">${p.category==='erp'?'Tailored quote':'Collection concept'}</span><div class="cl-card-actions">${p.category==='erp'?`<a class="cl-card-action" href="${inquiryUrl(p)}">Request a quote <span aria-hidden="true">↗</span></a>`:`<button class="cl-card-action" type="button" data-detail="${p.id}">${p.category==='design'?'Preview':'View product'} <span aria-hidden="true">↗</span></button>`}<button class="cl-card-details" type="button" data-detail="${p.id}" aria-label="Details for ${esc(p.name)}">Details</button></div></div></article>`;}
+function card(p,featured){const href=`./product.html?id=${encodeURIComponent(p.id)}`;return `<article class="cl-card${featured?' is-featured':''}" data-product="${p.id}" aria-label="${esc(p.name)}"><div class="cl-card-top"><span class="cl-kind cl-kind-${p.category}">${esc(p.label.toUpperCase())}</span>${saveButton(p)}</div>${productVisual(p)}<div class="cl-card-body"><h3><a href="${href}">${esc(p.name)}</a></h3><p class="cl-card-description">${esc(p.description)}</p><span class="cl-card-note">${p.id==='retail-design'?'Real project · Demo':p.category==='erp'?'Tailored quote':'Collection concept'}</span><div class="cl-card-actions"><a class="cl-card-action" href="${href}" aria-label="Click for Detail: ${esc(p.name)}">Click for Detail <span aria-hidden="true">↗</span></a><a class="cl-card-details" href="${href}" aria-label="Details for ${esc(p.name)}">Details</a></div></div></article>`;}
 function dots(id,list,index){return list.map((p,i)=>`<button type="button" data-select="${i}" data-industry="${id}" aria-label="Feature ${esc(p.name)}" aria-pressed="${i===index}"></button>`).join('');}
 function trackContent(list,index){return (mobile.matches?list:carouselItems(list,index)).map(p=>card(p,p.id===list[index]?.id)).join('');}
 function centerMobile(row,behavior='instant'){
@@ -87,8 +87,7 @@ function render(shouldAnnounce=true){
 function reset(){Object.assign(state,{industry:'all',category:'all',query:'',savedOnly:false});search.value='';positions.clear();render();}
 function save(id){
   if(!products.some(p=>p.id===id))return;
-  state.saved=state.saved.includes(id)?state.saved.filter(x=>x!==id):[...state.saved,id];
-  let persisted=true;try{localStorage.setItem('canveliqsoft-collection-saved',JSON.stringify(state.saved));}catch{persisted=false;}
+  const changed=changeSaved(id,state.saved,()=>localStorage,savedForVisit);state.saved=changed.saved;const persisted=changed.persisted;savedForVisit=!persisted;
   if(state.savedOnly)render(false);
   root.querySelector('[data-saved-count]').textContent=state.saved.length;
   document.querySelectorAll(`[data-save="${id}"]`).forEach(b=>b.setAttribute('aria-pressed',String(state.saved.includes(id))));
@@ -96,6 +95,15 @@ function save(id){
   announce(message);
   if(dialog.open)dialog.querySelector('[data-detail-status]').textContent=message;
 }
+function refreshSaved(){
+  if(savedForVisit)return;
+  try{state.saved=readSaved(localStorage.getItem(savedProductsKey));}catch{return;}
+  if(state.savedOnly)render(false);
+  root.querySelector('[data-saved-count]').textContent=state.saved.length;
+  document.querySelectorAll('[data-save]').forEach(button=>button.setAttribute('aria-pressed',String(state.saved.includes(button.dataset.save))));
+}
+window.addEventListener('storage',event=>{if(event.key===savedProductsKey||event.key===null)refreshSaved();});
+window.addEventListener('pageshow',refreshSaved);
 function openDetail(id,source){
   const p=products.find(p=>p.id===id);if(!p)return;
   trigger=source;detailProduct=p;
@@ -137,3 +145,4 @@ header.querySelector('[data-collection-search]').addEventListener('click',event=
 window.addEventListener('resize',()=>{if(!mobile.matches)setMenu(false);});
 window.addEventListener('scroll',()=>{if(scrollTimer)return;scrollTimer=requestAnimationFrame(()=>{header.classList.toggle('is-scrolled',scrollY>24);scrollTimer=0;});},{passive:true});
 header.classList.toggle('is-scrolled',scrollY>24);render(false);
+if(new URLSearchParams(location.search).get('search')==='1')setFilters(true,{focus:true});

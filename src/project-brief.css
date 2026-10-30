@@ -117,4 +117,9 @@
  #cs-motion .pb-form-bottom>span{min-width:0;max-width:145px;font-size:9px}
  #cs-motion .pb-continue{padding:11px 16px;gap:20px}
 }
+#cs-motion .pb-draft-context{padding:14px 16px;margin:12px 0 20px;border:1px solid #d8d1f3;border-radius:12px;background:#f2effc;color:#3f4260}
+#cs-motion .pb-draft-context p{margin:0 0 8px;font-size:13px;line-height:1.6}
+#cs-motion .pb-draft-context button,#cs-motion .pb-clear-draft{font:inherit;color:#6543bd;background:transparent;border:0;cursor:pointer;text-decoration:underline;text-underline-offset:4px;min-height:36px;padding:4px 0;font-size:12px}
+#cs-motion .pb-draft-context button:disabled{opacity:.6;cursor:default}
+#cs-motion .pb-clear-draft{color:#c9b5ff}
 @media(prefers-reduced-motion:reduce){#cs-motion .pb-socials a{transition:none}}

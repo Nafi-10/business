@@ -1,0 +1,114 @@
+<style>
+  #cs-loading-screen { display:none; }
+  html.cs-loading #cs-loading-screen {
+    --cl-duration:1800ms; position:fixed; inset:0; z-index:2147483000;
+    display:flex; align-items:center; justify-content:center; flex-direction:column;
+    overflow:hidden; isolation:isolate; box-sizing:border-box;
+    background:radial-gradient(ellipse at 32% 47%,#40336a2a,transparent 48%),radial-gradient(ellipse at 72% 48%,#003a5138,transparent 50%),#080f1e;
+    color:#f1f1fb; font-family:Arial,Helvetica,sans-serif;
+    animation:cl-exit var(--cl-duration) linear both;
+  }
+  #cs-loading-screen * { box-sizing:border-box; }
+  html.cs-loading #cs-motion { animation:cl-page-reveal 1800ms linear both; }
+  #cs-loading-screen .cl-grid { position:absolute; inset:0; background-image:linear-gradient(#94b9e309 1px,transparent 1px),linear-gradient(90deg,#94b9e309 1px,transparent 1px); background-size:54px 54px; mask-image:radial-gradient(ellipse at center,#0009,transparent 68%); }
+  #cs-loading-screen .cl-corner { position:absolute; width:16px; height:16px; border-color:#7797b849; border-style:solid; }
+  #cs-loading-screen .cl-corner.a { top:28px; left:28px; border-width:1px 0 0 1px; }
+  #cs-loading-screen .cl-corner.b { top:28px; right:28px; border-width:1px 1px 0 0; }
+  #cs-loading-screen .cl-corner.c { bottom:28px; left:28px; border-width:0 0 1px 1px; }
+  #cs-loading-screen .cl-corner.d { bottom:28px; right:28px; border-width:0 1px 1px 0; }
+  #cs-loading-screen .cl-scene { position:relative; width:min(86vw,520px); height:clamp(200px,32vh,300px); display:grid; place-items:center; perspective:800px; }
+  #cs-loading-screen .cl-halo { position:absolute; inset:10% 5%; border-radius:50%; background:linear-gradient(100deg,#8863fc35,#00cce02b); filter:blur(44px); animation:cl-halo 1300ms ease-out both; }
+  #cs-loading-screen .cl-orbit { position:absolute; width:92%; height:80%; border:1px solid #8a88e71c; border-radius:50%; transform:rotate(-18deg); animation:cl-orbit 900ms 100ms ease-out both; }
+  #cs-loading-screen .cl-orbit::after { content:""; position:absolute; width:4px; height:4px; border-radius:50%; top:23px; left:52px; background:#bfa8ff; box-shadow:0 0 14px #bfa8ff; }
+  #cs-loading-screen .cl-glass { --cl-x:-65px; --cl-rotate:-9deg; --cl-y:-13deg; position:absolute; width:66%; height:66%; border:1px solid #b6a7fd2c; border-radius:22px; background:linear-gradient(130deg,#70579712,#b3f6ff06); box-shadow:inset 0 1px 0 #ddd0ff16; animation:cl-glass 800ms 180ms cubic-bezier(.2,.7,.2,1) both; }
+  #cs-loading-screen .cl-glass.second { --cl-x:65px; --cl-rotate:9deg; --cl-y:13deg; border-color:#30d9ea1c; background:linear-gradient(140deg,#2448a509,#00b5dc0e); }
+  #cs-loading-screen .cl-logo { display:block; width:72%; height:auto; z-index:2; position:relative; filter:drop-shadow(0 12px 20px #0008); animation:cl-logo 670ms 380ms cubic-bezier(.2,.7,.2,1) both; }
+  #cs-loading-screen .cl-shine { position:absolute; z-index:3; width:38px; height:100px; background:linear-gradient(90deg,transparent,#c7fcff45,transparent); filter:blur(9px); opacity:0; pointer-events:none; animation:cl-shine 420ms 930ms ease-out both; }
+  #cs-loading-screen .cl-tile { position:absolute; left:50%; top:50%; width:22px; height:22px; border-radius:5px; border:1px solid #c8bfff77; background:linear-gradient(135deg,#dfcaff8c,#7453dc44); box-shadow:inset 2px 2px 5px #e4d7ff55,0 5px 20px #8160ff20; animation:cl-tile 650ms var(--cl-delay) cubic-bezier(.2,.7,.2,1) both; }
+  #cs-loading-screen .cl-tile:nth-of-type(even) { background:linear-gradient(135deg,#b5ffffb0,#0785ba55); border-color:#a4fbff66; }
+  #cs-loading-screen .cl-caption { position:relative; margin:12px 20px 0; text-align:center; animation:cl-caption 500ms 550ms ease-out both; }
+  #cs-loading-screen .cl-caption p { color:#d5dcf0; font-size:13px; letter-spacing:.2px; margin:0 0 20px; }
+  #cs-loading-screen .cl-caption em { font-family:Georgia,serif; color:#b8a1f6; font-size:17px; font-weight:400; }
+  #cs-loading-screen .cl-track { height:2px; width:166px; margin:auto; background:#adbef516; overflow:hidden; }
+  #cs-loading-screen .cl-track span { display:block; width:100%; height:100%; transform-origin:left; background:linear-gradient(90deg,#b79af8,#7153f8,#00dceb); animation:cl-progress 1300ms cubic-bezier(.4,0,.2,1) both; }
+  #cs-loading-screen .cl-signature { position:absolute; bottom:max(66px,env(safe-area-inset-bottom)); left:25px; right:25px; text-align:center; font-size:10px; letter-spacing:2.3px; color:#96a5c1; }
+  #cs-loading-screen .cl-signature span { padding:0 8px; color:#a08ac7; }
+  #cs-loading-screen .cl-beta { position:absolute; bottom:max(40px,env(safe-area-inset-bottom)); left:25px; right:25px; text-align:center; font-size:11px; letter-spacing:1.3px; color:#b9a4e9; }
+  @keyframes cl-exit { 0%,80.55% { opacity:1; visibility:visible; } 99.99% { visibility:visible; } 100% { opacity:0; visibility:hidden; pointer-events:none; } }
+  @keyframes cl-page-reveal { 0%,80.55% { visibility:hidden; } 80.56%,100% { visibility:visible; } }
+  @keyframes cl-halo { from { opacity:0; transform:scale(.35); } to { opacity:.85; transform:scale(1.2); } }
+  @keyframes cl-orbit { from { opacity:0; transform:rotate(-40deg) scale(.65); } to { opacity:1; transform:rotate(-18deg) scale(1); } }
+  @keyframes cl-glass { from { opacity:0; transform:translateX(var(--cl-x)) rotate(var(--cl-rotate)) scale(.75); } to { opacity:1; transform:translateX(0) rotate(var(--cl-rotate)) rotateY(var(--cl-y)) scale(1); } }
+  @keyframes cl-logo { from { opacity:0; clip-path:inset(0 100% 0 0); transform:translateY(10px) scale(.94); } to { opacity:1; clip-path:inset(0 0 0 0); transform:translateY(0) scale(1); } }
+  @keyframes cl-shine { 0% { opacity:0; transform:translateX(-150px) rotate(20deg); } 30% { opacity:1; } 100% { opacity:0; transform:translateX(150px) rotate(20deg); } }
+  @keyframes cl-tile { 0% { opacity:0; transform:translate(var(--cl-x),var(--cl-y)) rotate(var(--cl-r)) scale(.6); } 25% { opacity:1; } 65% { opacity:.8; } 100% { opacity:0; transform:translate(-10px,-10px) rotate(0) scale(.2); } }
+  @keyframes cl-caption { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes cl-progress { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+  @media (max-width:520px) {
+    #cs-loading-screen .cl-scene { width:90%; height:210px; }
+    #cs-loading-screen .cl-logo { width:77%; }
+    #cs-loading-screen .cl-signature { font-size:9px; letter-spacing:1.4px; }
+    #cs-loading-screen .cl-signature span { padding:0 5px; }
+  }
+  @media (max-height:520px) {
+    #cs-loading-screen .cl-scene { height:160px; width:min(72vw,340px); }
+    #cs-loading-screen .cl-caption { margin-top:0; }
+    #cs-loading-screen .cl-caption p { margin-bottom:14px; }
+    #cs-loading-screen .cl-signature { bottom:50px; }
+    #cs-loading-screen .cl-beta { bottom:28px; }
+    #cs-loading-screen .cl-corner.c, #cs-loading-screen .cl-corner.d { bottom:22px; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    html.cs-loading #cs-loading-screen, html.cs-loading #cs-motion { animation-duration:280ms; }
+    #cs-loading-screen .cl-scene *, #cs-loading-screen .cl-caption, #cs-loading-screen .cl-track span { animation:none; }
+    #cs-loading-screen .cl-tile, #cs-loading-screen .cl-shine { display:none; }
+    #cs-loading-screen .cl-glass { transform:rotate(var(--cl-rotate)); }
+  }
+</style>
+<div id="cs-loading-screen" role="status" aria-label="Opening CanveliqSoft">
+  <div class="cl-grid" aria-hidden="true"></div>
+  <i class="cl-corner a" aria-hidden="true"></i><i class="cl-corner b" aria-hidden="true"></i><i class="cl-corner c" aria-hidden="true"></i><i class="cl-corner d" aria-hidden="true"></i>
+  <div class="cl-scene" aria-hidden="true">
+    <div class="cl-halo"></div><div class="cl-orbit"></div><div class="cl-glass"></div><div class="cl-glass second"></div>
+    <img class="cl-logo" src="{{LOADER_LOGO}}" alt="" width="530" height="205" decoding="sync">
+    <div class="cl-shine"></div>
+    <i class="cl-tile" style="--cl-x:-160px;--cl-y:-80px;--cl-r:55deg;--cl-delay:0ms"></i>
+    <i class="cl-tile" style="--cl-x:-75px;--cl-y:-110px;--cl-r:-50deg;--cl-delay:35ms"></i>
+    <i class="cl-tile" style="--cl-x:140px;--cl-y:-90px;--cl-r:35deg;--cl-delay:70ms"></i>
+    <i class="cl-tile" style="--cl-x:165px;--cl-y:55px;--cl-r:-35deg;--cl-delay:105ms"></i>
+    <i class="cl-tile" style="--cl-x:65px;--cl-y:100px;--cl-r:60deg;--cl-delay:140ms"></i>
+    <i class="cl-tile" style="--cl-x:-160px;--cl-y:75px;--cl-r:-40deg;--cl-delay:175ms"></i>
+  </div>
+  <div class="cl-caption"><p>A little more <em>possibility.</em></p><div class="cl-track" aria-hidden="true"><span></span></div></div>
+  <div class="cl-signature">SYSTEMS <span>·</span> DESIGN <span>·</span> INTELLIGENCE</div>
+  <div class="cl-beta">Beta Version 1.00</div>
+</div>
+<script>
+  (() => {
+    const screen = document.getElementById('cs-loading-screen');
+    const root = document.documentElement;
+    // Direct links and history restores should take people to their destination.
+    const navigation = performance.getEntriesByType('navigation')[0];
+    if ((location.hash && location.hash !== '#cs-top') || navigation?.type === 'back_forward') {
+      screen.remove();
+      return;
+    }
+    const duration = matchMedia('(prefers-reduced-motion: reduce)').matches ? 280 : 1800;
+    let finished = false;
+    let timer;
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      root.classList.remove('cs-loading');
+      screen.remove();
+      window.removeEventListener('pageshow', restore);
+    };
+    const restore = event => { if (event.persisted) finish(); };
+    root.classList.add('cs-loading');
+    // Independent of network, WebGL, application modules and window.load.
+    timer = setTimeout(finish, duration);
+    screen.addEventListener('animationend', event => { if (event.target === screen) finish(); });
+    window.addEventListener('pageshow', restore);
+  })();
+</script>

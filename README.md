@@ -1,6 +1,8 @@
 # CanveliqSoft
 
-Complete editable website project, exported 30 October 2026. This package contains the latest landing page, Collection page, four embedded projects and the finished front/back team cards.
+Complete editable website project, exported 30 October 2026. This package contains the latest landing page, Collection page, individual detail pages for all 45 products, four embedded projects and the finished front/back team cards.
+
+The homepage now opens with the approved CanveliqSoft logo animation and “Beta Version 1.00”. It reveals the page after 1.8 seconds independently of asset loading, uses a 280 ms reveal with reduced motion, and skips the intro for direct section links and history restoration. Its source is `src/loading-screen.html`; the build embeds the logo so the intro needs no additional image request. With JavaScript disabled, the homepage appears directly.
 
 ## Start here
 
@@ -13,7 +15,7 @@ Complete editable website project, exported 30 October 2026. This package contai
    npm run dev
    ```
 
-5. Open **http://localhost:3001/**. The collection is at **http://localhost:3001/collection.html**.
+5. Open **http://localhost:3001/**. The collection is at **http://localhost:3001/collection.html**. For the Maison Velour Commerce UI Kit, open **http://localhost:3001/product.html?id=retail-design**.
 6. Stop the server with Ctrl+C.
 
 There are no npm package dependencies. `npm install` is optional; all website libraries and assets are included. The source remains HTML, CSS and JavaScript, with a small native Node build pipeline.
@@ -35,6 +37,7 @@ CanveliqSoft/
 ├── dist/                       Built website, ready for a static web host
 │   ├── index.html
 │   ├── collection.html
+│   ├── product.html
 │   ├── assets/
 │   └── projects/
 ├── docs/                       Design notes, artwork prompts and plans
@@ -42,7 +45,7 @@ CanveliqSoft/
 │   ├── assets/                 Logos, portraits, illustrations, fonts, libraries
 │   └── projects/               Four embedded project experiences
 ├── scripts/
-│   ├── build.mjs               Assembles both pages and copies all assets
+│   ├── build.mjs               Assembles all three pages and copies all assets
 │   ├── serve.mjs               Local development/preview server
 │   ├── check.mjs               JavaScript syntax checks
 │   └── test.mjs                Cross-platform test runner
@@ -82,6 +85,7 @@ All build paths are relative to this project, so it can be extracted anywhere. N
 | Pinned industry showcase | `showcase.*`, `showcase-premium.css`, `showcase-state.mjs` |
 | Extra industries | `industry-explorer.css`, `industry-explorer.js` |
 | Separate Collection page | `collection.page.html`, `collection.css`, `collection.js`, `collection-data.mjs`, `collection-visuals.mjs` |
+| Individual product pages | `product.page.html`, `product-page.css`, `product-page.js`, `product-page-data.mjs`, `product-page-view.mjs`, `product-page-visuals.mjs` |
 | ERP story | `erp-story.*` |
 | Project showcase | `portfolio.*`, `portfolio-projects.mjs`, `portfolio-stories.mjs` |
 | Delivery and support | `delivery.*`, `delivery-data.mjs` |
@@ -100,8 +104,12 @@ Run `npm run build` and upload the **contents of `dist/`** to a static web host.
 
 The site includes the interactive design, industry filters, product demos, comparisons, project experiences, delivery/support guidance, team cards and a multi-step project brief. Catalogue products and prices are illustrative. Live payments, order management, accounts and enquiry storage still need backend integration. A brief can be reviewed, downloaded or opened in an email draft; the website does not send it automatically.
 
+The latest product detail update provides one readable ten-block template for software, UI/UX kits, custom ERP and AI/chatbots across all nine industries. It includes an interactive fit check, saved products, related solutions, a sticky next-step bar and a prefilled project brief with tab-local draft restoration. The Commerce UI Kit uses the original Maison Velour project screenshots and credits Kazi Jawad. Software and chatbot interactions use sample data and scripted demonstrations.
+
+The loading fix places homepage styles in the document head, preserving their cascade order so the older layout does not flash during a slow load. The hero keeps its lightweight cube fallback visible until the first 3D frame has rendered.
+
 Some embedded project integrations and outgoing links use external services. The bundled server is for local development and preview, not production payment or account hosting.
 
 ## Verification
 
-Run `npm run check` and `npm test`. The original preview and this export were compared during packaging; `dist/index.html` and `dist/collection.html` preserve the same assembled page content. `SHA256SUMS.txt` records the export's delivered files and can be used to check archive contents before editing.
+Run `npm run check` and `npm test`. The original preview and this export are compared during packaging; `dist/index.html`, `dist/collection.html` and `dist/product.html` preserve the same assembled page content. The ZIP is checked for integrity and rebuilt after extraction. `SHA256SUMS.txt` records the export's delivered files and can be used to check archive contents before editing.

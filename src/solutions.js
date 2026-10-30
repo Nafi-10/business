@@ -1,6 +1,6 @@
 const { productDetailMarkup, purchasePreviewMarkup } = await import(new URL('./product-detail.mjs' + new URL(import.meta.url).search, import.meta.url));
 // Keep the data and controller on the same build fingerprint after a refresh.
-const { products, industries, filterProducts, demoReply, searchProducts } = await import(new URL('./solutions-data.mjs' + new URL(import.meta.url).search, import.meta.url));
+const { products, industries, filterProducts, demoReply, searchProducts, solutionDetailId } = await import(new URL('./solutions-data.mjs' + new URL(import.meta.url).search, import.meta.url));
 
 const section = document.querySelector('#cs-solutions');
 const grid = section.querySelector('[data-cc-grid]');
@@ -72,7 +72,8 @@ dialog.addEventListener('pointerdown',event => {backdropStart = event.target ===
 dialog.addEventListener('pointerup',event => {if(backdropStart && event.target === dialog)closePanel();backdropStart=false;});
 
 function showProduct(product,source) {
-  openPanel(productDetailMarkup(product,visual,searchSession),source,'product');
+  const id=solutionDetailId(product.id,state.industry);
+  if(id)location.assign(`./product.html?id=${id}`);
 }
 function selectProductTab(name,focus=false) {
   body.querySelectorAll('[data-pd-tab]').forEach(button=>{

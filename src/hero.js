@@ -1,5 +1,23 @@
 import * as THREE from './assets/three.module.min.js';
 
+// Shader/environment compilation can be a long task on integrated GPUs. Let
+// the bounded intro finish and paint the existing cube fallback first.
+if (document.documentElement.classList.contains('cs-loading')) {
+  await new Promise(resolve => {
+    const root = document.documentElement;
+    let timeout;
+    const observer = new MutationObserver(() => {
+      if (!root.classList.contains('cs-loading')) finish();
+    });
+    const finish = () => { observer.disconnect(); clearTimeout(timeout); resolve(); };
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
+    // Still initialize if a later error prevents the intro's JS cleanup;
+    // its independent CSS exit has already revealed the page by this point.
+    timeout = setTimeout(finish, 2000);
+  });
+  await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+}
+
 const canvas = document.querySelector('#cs-glass-cube');
 const stage = document.querySelector('.cs-cube-stage');
 const pauseButton = document.querySelector('.cs-cube-pause');
@@ -116,6 +134,8 @@ try {
       mesh.rotation.set(separate * z * .08, turn * y * .43, separate * x * y * .08);
     });
     renderer.render(scene, camera);
+    // Keep the lightweight visual until a real frame has reached the canvas.
+    if (!stage.classList.contains('cs-cube-ready')) stage.classList.add('cs-cube-ready');
     if ((!paused || dragging || Math.abs(targetX - rotationX) + Math.abs(targetY - rotationY) > .001) && visible && !document.hidden) frame = requestAnimationFrame(draw);
   }
   function wake() { if (!frame && visible && !document.hidden) { lastTime = 0; frame = requestAnimationFrame(draw); } }
@@ -167,8 +187,7 @@ try {
     if (frame) cancelAnimationFrame(frame);
     frame = 0; stage.classList.remove('cs-cube-ready');
   });
-  canvas.addEventListener('webglcontextrestored', () => { stage.classList.add('cs-cube-ready'); wake(); });
-  stage.classList.add('cs-cube-ready');
+  canvas.addEventListener('webglcontextrestored', wake);
   reflectPause(); resize();
 } catch (error) {
   console.warn('Glass cube: using the lightweight visual fallback.', error);

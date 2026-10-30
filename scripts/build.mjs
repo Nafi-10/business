@@ -49,11 +49,24 @@ export function build() {
   fragment = fragment.replaceAll('content.innerHTML=html;icons();', "content.innerHTML=html;icons();if(mode==='demo'){const industrySelect=content.querySelector('select');if(industrySelect)industrySelect.value=currentIndustry.charAt(0).toUpperCase()+currentIndustry.slice(1);}");
   fragment = fragment.replaceAll('const saved=window.openai', "root.addEventListener('cs:industry-change', e => setIndustry(e.detail, false));\n  const saved=window.openai");
   fragment = fragment.replaceAll("panel.scrollIntoView({behavior:'instant',block:'center'});", '');
-  let html = read('index.template.html').replace('{{CONTENT}}', () => fragment);
+  const logoData = readFileSync(path.join(publicRoot, 'assets/canveliqsoft-mark.svg')).toString('base64');
+  const loading = read('loading-screen.html').replace('{{LOADER_LOGO}}', 'data:image/svg+xml;base64,' + logoData);
+  let html = read('index.template.html').replace('{{CONTENT}}', () => loading + '\n' + fragment);
+  // Match the preview build: all base/override CSS must be known before first paint.
+  // Keep the cascade order; merely moving the external links would let the old
+  // inline styles override the finished design.
+  const headEnd = html.indexOf('</head>');
+  let head = html.slice(0, headEnd);
+  let body = html.slice(headEnd + '</head>'.length);
+  const stylePattern = /<style\b[^>]*>[\s\S]*?<\/style>|<link\b[^>]*\brel="stylesheet"[^>]*>/g;
+  const styles = [...body.matchAll(stylePattern)].map(match => match[0]);
+  body = body.replace(stylePattern, '');
+  head = head.replace('<script src="./assets/lucide.min.js">', () => styles.join('\n') + '\n<script src="./assets/lucide.min.js">');
+  html = head + '</head>' + body;
   const dependencies = {
     'delivery.js': ['delivery-data.mjs'],
     'solutions.js': ['solutions-data.mjs', 'product-detail.mjs'],
-    'project-brief.js': ['project-brief-data.mjs', 'collection-data.mjs'],
+    'project-brief.js': ['project-brief-data.mjs', 'collection-data.mjs', 'product-page-data.mjs'],
     'showcase.js': ['showcase-state.mjs'],
     'portfolio.js': ['portfolio-projects.mjs', 'portfolio-stories.mjs'],
   };
@@ -66,6 +79,10 @@ export function build() {
   for (const asset of ['collection.css', 'navigation.css', 'collection.js']) {
     collection = fingerprint(collection, asset, asset === 'collection.js' ? ['collection-data.mjs', 'collection-visuals.mjs'] : []);
   }
+  let product = read('product.page.html').replaceAll('{{PRODUCT_NAVIGATION}}', collectionNav);
+  for (const asset of ['product-page.css', 'navigation.css', 'product-page.js']) {
+    product = fingerprint(product, asset, asset === 'product-page.js' ? ['product-page-data.mjs','product-page-view.mjs','product-page-visuals.mjs','collection-data.mjs'] : []);
+  }
   // Only this package's generated dist may be replaced. Never follow a symlink.
   if (path.dirname(output) !== path.resolve(root) || path.basename(output) !== 'dist') throw new Error('Invalid build output.');
   if (existsSync(output) && lstatSync(output).isSymbolicLink()) throw new Error('Refusing to replace a symlinked dist folder.');
@@ -77,6 +94,7 @@ export function build() {
   }
   writeFileSync(path.join(output, 'index.html'), html);
   writeFileSync(path.join(output, 'collection.html'), collection);
-  console.log('Built dist/index.html and dist/collection.html with all assets and embedded projects.');
+  writeFileSync(path.join(output, 'product.html'), product);
+  console.log('Built homepage, Collection and product pages with all assets and embedded projects.');
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) build();

@@ -36,3 +36,11 @@ export function collectionInquiry(id){
 export function readSaved(raw){
   try{const value=JSON.parse(raw);return Array.isArray(value)?[...new Set(value.filter(id=>products.some(p=>p.id===id)))]:[];}catch{return [];}
 }
+export const savedProductsKey='canveliqsoft-collection-saved';
+export function changeSaved(id,fallback=[],getStorage=()=>globalThis.localStorage,visitOnly=false){
+  let saved=[...fallback],storage;
+  try{storage=getStorage();if(!visitOnly)saved=readSaved(storage.getItem(savedProductsKey));}catch{/* Keep this visit usable when storage is blocked. */}
+  if(!products.some(p=>p.id===id))return {saved,persisted:false};
+  saved=saved.includes(id)?saved.filter(value=>value!==id):[...saved,id];
+  try{storage.setItem(savedProductsKey,JSON.stringify(saved));return {saved,persisted:true};}catch{return {saved,persisted:false};}
+}

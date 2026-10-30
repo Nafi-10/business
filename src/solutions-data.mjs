@@ -5,6 +5,11 @@ export const industries = [
   ['textile','Textile'], ['fashion','Fashion Designing'], ['tourism','Tourism'], ['sports','Sports'],
 ];
 const everyIndustry = industries.map(([id]) => id);
+export function solutionDetailId(productId,industry='all'){
+  const category=new Map([['industry-erp','erp'],['assist-ai','ai']]).get(productId);
+  if(category)return `${everyIndustry.includes(industry)?industry:'retail'}-${category}`;
+  return new Map([['stockflow','retail-software'],['commerce-ui','retail-design']]).get(productId)||null;
+}
 export const products = [
   {
     id:'stockflow', name:'StockFlow', category:'software', label:'Ready-made software',

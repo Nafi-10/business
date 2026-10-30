@@ -1,8 +1,21 @@
-const {validateBriefStep,normalizeBrief,formatBrief,briefEmailUrl,services,sectors,budgets,timelines}=await import(new URL('./project-brief-data.mjs'+new URL(import.meta.url).search,import.meta.url));
+const {validateBriefStep,normalizeBrief,formatBrief,briefEmailUrl,services,sectors,budgets,timelines,readBriefDraft,mergeBriefContext}=await import(new URL('./project-brief-data.mjs'+new URL(import.meta.url).search,import.meta.url));
 const root=document.querySelector('#cs-motion'), section=document.querySelector('#cs-contact'), form=section.querySelector('#pb-form'), review=section.querySelector('.pb-review');
 const fields=[...form.querySelectorAll('[data-pb-panel]')], progress=[...form.querySelectorAll('[data-pb-step]')];
 let step=0;
 const data=()=>normalizeBrief(Object.fromEntries(new FormData(form)));
+const draftKey='canveliqsoft-project-brief-tab',contextPanel=section.querySelector('[data-pb-context]');
+let pendingContext=null;
+function applyDraft(draft){for(const [name,value] of Object.entries(draft))if(form.elements[name])form.elements[name].value=value;}
+function saveDraft(){try{sessionStorage.setItem(draftKey,JSON.stringify(data()));}catch{section.querySelector('[data-pb-draft-note]').textContent='Your answers stay on this page. Browser storage is unavailable, so keep this tab open.';}}
+try{const draft=readBriefDraft(sessionStorage.getItem(draftKey));if(draft)applyDraft(draft);}catch{/* The form remains usable without browser storage. */}
+form.addEventListener('input',saveDraft);form.addEventListener('change',saveDraft);
+window.addEventListener('pageshow',event=>{
+  // History traversal can restore old native form values after pageshow.
+  // Reconcile on the next task; changes are already saved on input/change.
+  setTimeout(()=>{try{const draft=readBriefDraft(sessionStorage.getItem(draftKey));if(draft)applyDraft(draft);else if(event.persisted)form.reset();if(event.persisted){contextPanel.hidden=true;pendingContext=null;showStep(0,false);}}catch{/* Retain the current page when storage is blocked. */}},0);
+});
+section.querySelector('[data-pb-clear-draft]').addEventListener('click',()=>{form.reset();contextPanel.hidden=true;pendingContext=null;try{sessionStorage.removeItem(draftKey);}catch{}showStep(0);});
+section.querySelector('[data-pb-add-context]').addEventListener('click',()=>{const merged=mergeBriefContext(data(),pendingContext||{});if(merged){applyDraft(merged);contextPanel.hidden=true;pendingContext=null;saveDraft();showStep(0);}else{contextPanel.querySelector('[data-pb-context-note]').textContent='Your existing brief is kept. Shorten it below before adding this solution.';}});
 function focusInView(element){
   element.focus({preventScroll:true});
   const bounds=element.getBoundingClientRect();
@@ -50,6 +63,10 @@ function prefill(d={}){
     if(Object.hasOwn(services,d.service))form.elements.service.value=d.service;
     if(Object.hasOwn(sectors,d.industry))form.elements.industry.value=d.industry;
     if(typeof d.goal==='string')form.elements.goal.value=d.goal.slice(0,1500);
+    saveDraft();
+  }else if(typeof d.goal==='string'&&!form.elements.goal.value.includes(d.goal)){
+    pendingContext=d;contextPanel.hidden=false;
+    contextPanel.querySelector('[data-pb-context-note]').textContent='Your previous brief is kept. Add this solution when you’re ready; your existing notes will stay.';
   }
   showStep(0);
 }
@@ -57,7 +74,7 @@ root.addEventListener('cs:brief-prefill',event=>prefill(event.detail||{}));
 showStep(0,false);
 const collectionId=new URLSearchParams(location.search).get('collection');
 if(collectionId){
-  const {collectionInquiry}=await import(new URL('./collection-data.mjs'+new URL(import.meta.url).search,import.meta.url));
-  const inquiry=collectionInquiry(collectionId);
+  const {productInquiry}=await import(new URL('./product-page-data.mjs'+new URL(import.meta.url).search,import.meta.url));
+  const inquiry=productInquiry(collectionId,Object.fromEntries(new URLSearchParams(location.search)));
   if(inquiry)prefill(inquiry);
 }
