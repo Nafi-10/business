@@ -3,12 +3,17 @@ import { createReadStream, existsSync, realpathSync, statSync, watch } from 'nod
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build, output, source, publicRoot } from './build.mjs';
+import { createBriefHandler } from './brief-api.mjs';
 
 const types = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.mjs':'text/javascript; charset=utf-8', '.json':'application/json', '.svg':'image/svg+xml', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.avif':'image/avif', '.gif':'image/gif', '.ico':'image/x-icon', '.woff':'font/woff', '.woff2':'font/woff2', '.ttf':'font/ttf', '.mp4':'video/mp4', '.webm':'video/webm', '.mp3':'audio/mpeg', '.pdf':'application/pdf', '.wasm':'application/wasm', '.glb':'model/gltf-binary' };
-export function createStaticServer(directory = output) {
+export function createStaticServer(directory = output, options = {}) {
   const base = realpathSync(directory);
   const inside = file => file.startsWith(base + path.sep);
-  return createServer((request, response) => {
+  const briefDirectory = path.resolve(options.briefDirectory || process.env.BRIEF_DATA_DIR || path.join(path.dirname(output),'data/project-briefs'));
+  if(briefDirectory===base||inside(briefDirectory))throw new Error('Brief storage must be outside the public web directory.');
+  const handleBrief=createBriefHandler({directory:briefDirectory});
+  return createServer(async (request, response) => {
+    if(await handleBrief(request,response))return;
     const fail = (status, message) => { response.writeHead(status, { 'Content-Type':'text/plain; charset=utf-8' }); response.end(message); };
     if (!['GET', 'HEAD'].includes(request.method)) { response.setHeader('Allow', 'GET, HEAD'); return fail(405, 'Method not allowed'); }
     let pathname;

@@ -7,6 +7,7 @@
   "engines": { "node": ">=22" },
   "scripts": {
     "dev": "node scripts/serve.mjs --watch",
+    "briefs": "node scripts/briefs.mjs",
     "start": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/serve.mjs",

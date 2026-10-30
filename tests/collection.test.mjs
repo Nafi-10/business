@@ -1,6 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {filterCollection, carouselItems, collectionInquiry, readSaved} from '../src/collection-data.mjs';
+import * as collectionData from '../src/collection-data.mjs';
+
+test('every industry custom entry opens a correctly prefilled brief',()=>{
+  assert.equal(typeof collectionData.customBriefUrl,'function');
+  for(const sector of collectionData.sectors){
+    const url=new URL(collectionData.customBriefUrl(sector.id,'design'),'http://localhost/');
+    assert.equal(url.pathname,'/custom-brief.html');assert.equal(url.searchParams.get('industry'),sector.id);assert.equal(url.searchParams.get('service'),'design');
+  }
+  assert.equal(collectionData.customBriefUrl('__proto__'),null);
+});
 
 test('search combines industry, category and all query words',()=>{
   const found=filterCollection({industry:'retail',category:'erp',query:' RETAIL  operations '});

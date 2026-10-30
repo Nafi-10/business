@@ -11,6 +11,10 @@ export const sectors = [
   {id:'sports',name:'Sports',line:'Your club. Your team. One workspace.',icon:'trophy',modules:['Members','Events','Schedule'],names:['ClubFlow','Sports UI Kit','Sports ERP','Team Assistant','EventDesk'],descriptions:['Bring your club administration together.','Digital experiences with team spirit.','Connect club and team operations.','Help members find club information.','Plan the moments that bring people together.']},
 ];
 export const categories = {software:'Software',design:'UI/UX kit',erp:'Custom ERP',ai:'AI & chatbots'};
+export function customBriefUrl(industry,service='') {
+  if(!sectors.some(s=>s.id===industry))return null;
+  return `./custom-brief.html?industry=${encodeURIComponent(industry)}`+(Object.hasOwn(categories,service)?`&service=${encodeURIComponent(service)}`:'');
+}
 const kinds=['software','design','erp','ai','software'];
 const suffixes=['software','design','erp','ai','workspace'];
 export const products=sectors.flatMap(sector=>sector.names.map((name,index)=>({
@@ -22,7 +26,8 @@ export const products=sectors.flatMap(sector=>sector.names.map((name,index)=>({
 const clean=text=>String(text??'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
 export function filterCollection({industry='all',category='all',query='',savedOnly=false,saved=[]}={}){
   const words=clean(query).split(/\s+/).filter(Boolean),set=new Set(saved);
-  return products.filter(p=>(industry==='all'||p.industry===industry)&&(category==='all'||p.category===category)&&(!savedOnly||set.has(p.id))&&words.every(word=>clean(`${p.name} ${p.industryName} ${p.label} ${p.description} ${p.modules.join(' ')}`).includes(word)));
+  // ERP IDs remain valid detail-page links; their collection slot now offers all custom service types.
+  return products.filter(p=>(industry==='all'||p.industry===industry)&&(category==='all'||p.category===category||(p.category==='erp'&&Object.hasOwn(categories,category)))&&(!savedOnly||set.has(p.id))&&words.every(word=>clean(`${p.name} ${p.industryName} ${p.label} ${p.description} ${p.modules.join(' ')} ${p.category==='erp'?'Custom solutions bespoke software UI/UX design chatbot':''}`).includes(word)));
 }
 export function carouselItems(items,selected){
   const n=items.length;if(!n)return [];

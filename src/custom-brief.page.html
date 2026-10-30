@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1428"><meta name="description" content="Share your project idea with CanveliqSoft. A guided brief for custom software, UI/UX design, ERP and chatbots, shaped around your industry.">
+<title>Share your idea — CanveliqSoft</title>
+<link rel="icon" href="./assets/canveliqsoft-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./custom-brief.css"><link rel="stylesheet" href="./navigation.css">
+<script defer src="./assets/lucide.min.js"></script><script type="module" src="./custom-brief.js"></script>
+</head><body><div id="cs-motion" data-page="custom-brief">
+<a class="cb-skip" href="#brief-content">Skip to project brief</a>
+{{BRIEF_NAVIGATION}}
+<main class="cs-page cb-page" id="brief-content">
+  <header class="cb-intro">
+    <a class="cb-back-link" href="./collection.html">← Back to collection</a>
+    <div class="cb-intro-row"><div><p class="cb-eyebrow">BUILT AROUND YOUR BUSINESS</p><h1>Your idea.<br><em>Our next discovery.</em></h1></div><p>You know the challenge.<br>Help us understand it, so we can research<br class="cb-desktop"> the right way forward.</p></div>
+  </header>
+  <div class="cb-resume" data-resume hidden role="status"><div><strong>A previous brief is saved on this device.</strong><p>Resume it, or start a separate brief for this enquiry.</p></div><div><button type="button" class="cb-button" data-resume-yes>Resume brief</button><button type="button" class="cb-text-button" data-resume-no>Start fresh</button></div></div>
+  <div class="cb-shell" data-shell>
+    <aside class="cb-rail" aria-label="Project brief progress">
+      <div class="cb-rail-heading"><span class="cb-spark" aria-hidden="true">✳</span><div><p class="cb-eyebrow">YOUR PROJECT BRIEF</p><h2>A little clarity.<br>A lot of possibility.</h2></div></div>
+      <div class="cb-progress"><div class="cb-progress-label"><span data-progress-label>Step 1 of 7</span><span data-progress-percent>0%</span></div><div class="cb-progress-track" role="progressbar" aria-label="Form progress" aria-valuemin="0" aria-valuemax="7" aria-valuenow="1"><span data-progress-bar></span></div></div>
+      <nav class="cb-steps" aria-label="Brief steps" data-steps></nav>
+      <div class="cb-rail-note"><i data-lucide="lightbulb" aria-hidden="true"></i><p>No technical brief needed.<br>Describe things in your own words. “Not sure” is a useful answer too.</p></div>
+      <div class="cb-rail-bottom"><button type="button" class="cb-save" data-save><i data-lucide="bookmark" aria-hidden="true"></i> Save for later</button><p data-draft-note role="status">Answers stay in this tab. Save for later to keep them on this device.</p><button type="button" class="cb-text-button" data-clear>Clear saved answers</button></div>
+    </aside>
+    <div class="cb-workspace">
+      <div class="cb-context"><label for="cb-service">What would you like to build?<select id="cb-service"><option value="">Choose a service</option></select></label><label for="cb-industry">Your industry<select id="cb-industry"><option value="">Choose an industry</option></select></label></div>
+      <form id="cb-form" novalidate>
+        <div class="cb-step-header"><p class="cb-eyebrow" data-step-kicker>01 / THE STARTING POINT</p><h2 id="cb-step-title" tabindex="-1">Tell us what matters.</h2><p data-step-description>A few details about your business and the problem you want to solve.</p></div>
+        <div class="cb-route" data-route hidden></div>
+        <p class="cb-error-summary" id="cb-error-summary" role="alert" hidden></p>
+        <div class="cb-fields" data-fields></div>
+        <section class="cb-attachments" data-attachments hidden aria-labelledby="cb-files-title"><h3 id="cb-files-title">Supporting files <span>Optional</span></h3><p>Wireframes, a process sketch or sanitised screenshots. Up to 3 PDF, PNG, JPEG or TXT files, 5 MB total.</p><label class="cb-upload" for="cb-files"><i data-lucide="paperclip" aria-hidden="true"></i><span>Add reference files</span><input type="file" id="cb-files" accept=".pdf,.png,.jpg,.jpeg,.txt" multiple></label><ul data-file-list></ul><p class="cb-field-error" data-file-error role="alert"></p><p class="cb-small">Share only material you are authorised to share. Keep customer records, passwords and confidential source code out of this form.</p></section>
+        <div data-review hidden></div>
+        <div class="cb-consent" data-consent-wrap hidden><label><input type="checkbox" id="cb-consent"><span>I understand that CanveliqSoft will use this brief and my contact details to assess my enquiry and discuss the project.</span></label><details><summary>How your brief is used</summary><p>Your answers and optional files are saved privately for project review. They are not published or added to a marketing list. To ask about correction or deletion, email <a href="mailto:kazijawadulislam@gmail.com">kazijawadulislam@gmail.com</a> and include your brief reference. Sending a brief does not place an order or confirm a quote.</p></details></div>
+        <div class="cb-form-footer"><button type="button" class="cb-text-button" data-back>← Back</button><span data-next-note>Next: service requirements</span><button type="submit" class="cb-button cb-primary" data-next>Continue <span aria-hidden="true">↗</span></button></div>
+        <p class="cb-form-note" data-form-note>Required questions are marked *. You can review everything before sending.</p>
+        <div class="cb-retry-tools" data-retry-tools hidden><button type="button" class="cb-text-button" data-download>Download my brief</button><button type="button" class="cb-text-button" data-new-submission hidden>Send changes as a new brief</button></div>
+      </form>
+      <noscript><p class="cb-noscript">Enable JavaScript to complete the guided brief. You can also <a href="mailto:kazijawadulislam@gmail.com">email us your project idea</a>.</p></noscript>
+    </div>
+  </div>
+  <section class="cb-success" data-success hidden aria-labelledby="cb-success-title"><span class="cb-success-icon" aria-hidden="true">✓</span><p class="cb-eyebrow">YOUR NEXT CHAPTER STARTS HERE</p><h2 id="cb-success-title" tabindex="-1">Your idea is <em>in good hands.</em></h2><p>Your brief has been saved for review.</p><strong class="cb-reference" data-reference></strong><p data-receipt-detail></p><ol><li><span>01</span><strong>Review & clarify</strong><p>We read your brief and identify anything we need to understand better.</p></li><li><span>02</span><strong>Research the approach</strong><p>We explore the workflow, requirements and possible solutions.</p></li><li><span>03</span><strong>A prepared conversation</strong><p>We contact you to discuss the next step. A quote follows an agreed scope.</p></li></ol><div class="cb-success-actions"><button class="cb-button cb-primary" type="button" data-download>Download your brief</button><a class="cb-button" href="./collection.html">Return to collection ↗</a></div></section>
+  <section class="cb-after" aria-label="What happens next"><div><p class="cb-eyebrow">THOUGHTFUL BEFORE WE BUILD</p><h2>Good solutions start<br>with <em>better understanding.</em></h2></div><div class="cb-after-flow"><span>Share your brief</span><b aria-hidden="true">→</b><span>Research & clarify</span><b aria-hidden="true">→</b><span>Meet with a plan</span></div></section>
+</main>
+<footer class="cb-footer"><a href="./index.html"><img src="./assets/canveliqsoft-mark.svg" alt="CanveliqSoft" width="124" height="48"></a><p>Where systems and design meet intelligence.</p><a href="mailto:kazijawadulislam@gmail.com">Prefer a conversation? Email us ↗</a></footer>
+</div><dialog class="cb-clear-dialog" data-clear-dialog aria-labelledby="cb-clear-title"><h2 id="cb-clear-title">Start with a clean brief?</h2><p>This removes the draft saved in this browser and the answers on this page. Submitted briefs are kept for your enquiry.</p><div><button type="button" class="cb-button" data-clear-cancel>Keep my answers</button><button type="button" class="cb-button cb-primary" data-clear-confirm>Clear draft</button></div></dialog></body></html>

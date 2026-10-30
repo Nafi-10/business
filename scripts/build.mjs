@@ -83,6 +83,9 @@ export function build() {
   for (const asset of ['product-page.css', 'navigation.css', 'product-page.js']) {
     product = fingerprint(product, asset, asset === 'product-page.js' ? ['product-page-data.mjs','product-page-view.mjs','product-page-visuals.mjs','collection-data.mjs'] : []);
   }
+  const briefNav=collectionNav.replace(/<button[^>]*data-collection-search[\s\S]*?<\/button>/, '<a class="cs-nav-search" href="./collection.html?search=1" aria-label="Search collection"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>Search</span></a>');
+  let brief=read('custom-brief.page.html').replace('{{BRIEF_NAVIGATION}}',briefNav);
+  for(const asset of ['custom-brief.css','navigation.css','custom-brief.js'])brief=fingerprint(brief,asset,asset==='custom-brief.js'?['custom-brief-data.mjs']:[]);
   // Only this package's generated dist may be replaced. Never follow a symlink.
   if (path.dirname(output) !== path.resolve(root) || path.basename(output) !== 'dist') throw new Error('Invalid build output.');
   if (existsSync(output) && lstatSync(output).isSymbolicLink()) throw new Error('Refusing to replace a symlinked dist folder.');
@@ -95,6 +98,7 @@ export function build() {
   writeFileSync(path.join(output, 'index.html'), html);
   writeFileSync(path.join(output, 'collection.html'), collection);
   writeFileSync(path.join(output, 'product.html'), product);
-  console.log('Built homepage, Collection and product pages with all assets and embedded projects.');
+  writeFileSync(path.join(output, 'custom-brief.html'), brief);
+  console.log('Built homepage, Collection, product and custom brief pages with all assets and embedded projects.');
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) build();

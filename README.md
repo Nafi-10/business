@@ -1,6 +1,6 @@
 # CanveliqSoft
 
-Complete editable website project, exported 30 October 2026. This package contains the latest landing page, Collection page, individual detail pages for all 45 products, four embedded projects and the finished front/back team cards.
+Complete editable website project, updated 30 October 2026. This package contains the landing page, Collection page, individual detail pages for all 45 products, four embedded projects, front/back team cards and the industry-aware custom-project brief.
 
 The homepage now opens with the approved CanveliqSoft logo animation and “Beta Version 1.00”. It reveals the page after 1.8 seconds independently of asset loading, uses a 280 ms reveal with reduced motion, and skips the intro for direct section links and history restoration. Its source is `src/loading-screen.html`; the build embeds the logo so the intro needs no additional image request. With JavaScript disabled, the homepage appears directly.
 
@@ -34,10 +34,11 @@ Open http://localhost:3002/ instead. The server listens on your computer only. D
 CanveliqSoft/
 ├── .github/workflows/check.yml  Automated build/syntax/test checks
 ├── deliverables/               Desktop and mobile design screenshots
-├── dist/                       Built website, ready for a static web host
+├── dist/                       Built frontend (brief submission needs the server)
 │   ├── index.html
 │   ├── collection.html
 │   ├── product.html
+│   ├── custom-brief.html
 │   ├── assets/
 │   └── projects/
 ├── docs/                       Design notes, artwork prompts and plans
@@ -45,7 +46,9 @@ CanveliqSoft/
 │   ├── assets/                 Logos, portraits, illustrations, fonts, libraries
 │   └── projects/               Four embedded project experiences
 ├── scripts/
-│   ├── build.mjs               Assembles all three pages and copies all assets
+│   ├── build.mjs               Assembles all four pages and copies all assets
+│   ├── brief-api.mjs           Private custom-project submission endpoint
+│   ├── briefs.mjs              Local research inbox
 │   ├── serve.mjs               Local development/preview server
 │   ├── check.mjs               JavaScript syntax checks
 │   └── test.mjs                Cross-platform test runner
@@ -71,6 +74,7 @@ CanveliqSoft/
 | `npm start` | Serve the existing build, building first if needed |
 | `npm run check` | Check source, script and test JavaScript syntax |
 | `npm test` | Rebuild and run the automated tests |
+| `npm run briefs` | List privately saved custom-project enquiries |
 
 All build paths are relative to this project, so it can be extracted anywhere. No Python installation is required for this export. Build replaces only this package's generated `dist` folder; keep edits in `src` and `public`.
 
@@ -98,11 +102,11 @@ The current team section uses independent manual flips. Its new illustrations an
 
 ## Hosting
 
-Run `npm run build` and upload the **contents of `dist/`** to a static web host. Keep the `assets` and `projects` folders beside `index.html`. Do not upload `src` as the website root. A local HTTP server or static host is required; opening the HTML with `file://` prevents JavaScript modules and some embedded project features from working.
+Run `npm run build` to generate **`dist/`**. Keep the `assets` and `projects` folders beside `index.html`. Do not upload `src` as the website root. Static hosting supports the frontend; custom-project submissions additionally require the Node server and persistent private storage. See [Custom client brief](docs/custom-client-brief.md) for deployment and inbox instructions. Opening HTML with `file://` prevents JavaScript modules and some embedded project features from working.
 
 ## Current functionality
 
-The site includes the interactive design, industry filters, product demos, comparisons, project experiences, delivery/support guidance, team cards and a multi-step project brief. Catalogue products and prices are illustrative. Live payments, order management, accounts and enquiry storage still need backend integration. A brief can be reviewed, downloaded or opened in an email draft; the website does not send it automatically.
+The site includes the interactive design, industry filters, product demos, comparisons, project experiences, delivery/support guidance and team cards. The third card in each industry opens a seven-step custom-project brief for four services across nine industries. Submitted custom briefs are stored privately by the included Node server, with a receipt shown only after saving. Use `npm run briefs` to review enquiries locally. The homepage's shorter brief remains an email-draft option. Neither flow sends email automatically. Catalogue products and prices remain illustrative; live payments, order management and customer accounts still need backend integration.
 
 The latest product detail update provides one readable ten-block template for software, UI/UX kits, custom ERP and AI/chatbots across all nine industries. It includes an interactive fit check, saved products, related solutions, a sticky next-step bar and a prefilled project brief with tab-local draft restoration. The Commerce UI Kit uses the original Maison Velour project screenshots and credits Kazi Jawad. Software and chatbot interactions use sample data and scripted demonstrations.
 
