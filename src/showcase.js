@@ -33,6 +33,14 @@ pageRoot.addEventListener('cs:explorer-open', () => {
   wheelGate.reset();
 });
 
+// Industry choices made in the hero, collection, or modal select the matching
+// chapter here, keeping the guided industry story in step with the visitor.
+pageRoot.addEventListener('cs:industry-change', event => {
+  const id = typeof event.detail === 'string' ? event.detail : event.detail?.industry;
+  const index = chapters.findIndex(chapter => chapter.industry === id);
+  if (index > 0 && index !== current) render(index);
+});
+
 function render(index, animate = true) {
   if (index === current && section.dataset.initialized) return;
   current = index;

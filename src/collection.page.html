@@ -20,6 +20,10 @@
       <p class="cl-intro-copy">Software, design, ERP &amp; AI.<br class="cl-mobile-break"> Explore what moves your business forward.</p>
       <span class="cl-concept"><i aria-hidden="true"></i> A curated collection of possibilities <span>·</span> Sample products</span>
     </section>
+    <section class="cl-intent" aria-label="Choose how to explore the collection">
+      <a class="cl-intent-option is-selected" href="#collection-results"><span class="cl-intent-icon"><i data-lucide="grid-2x2" aria-hidden="true"></i></span><span><strong>I know what I need</strong><small>Explore ready-made products and concepts</small></span><span class="cl-intent-arrow" aria-hidden="true">↘</span></a>
+      <a class="cl-intent-option" href="./custom-brief.html"><span class="cl-intent-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span><span><strong>I have a project idea</strong><small>Get help shaping a custom solution</small></span><span class="cl-intent-arrow" aria-hidden="true">↗</span></a>
+    </section>
     <button class="cl-filter-toggle" type="button" data-cl-filter-toggle aria-expanded="false" aria-controls="cl-filter-panel"><i data-lucide="sliders-horizontal" aria-hidden="true"></i> Filters <span data-cl-filter-count hidden>0</span></button>
     <aside class="cl-discovery cl-filter-panel" id="cl-filter-panel" aria-labelledby="cl-filter-title">
       <header class="cl-filter-heading"><div><span>MAKE IT YOURS</span><h2 id="cl-filter-title"><i data-lucide="sliders-horizontal" aria-hidden="true"></i> Your collection</h2></div><button type="button" class="cl-filter-close" data-cl-filter-close aria-label="Close collection filters">✕</button></header>
@@ -37,7 +41,7 @@
       <button class="cl-filter-done" type="button" data-cl-filter-done>Show results <span aria-hidden="true">↗</span></button>
     </aside>
     <p class="cl-sr" data-cl-status role="status" aria-live="polite"></p>
-    <div class="cl-rows" data-cl-rows></div>
+    <div class="cl-rows" id="collection-results" data-cl-rows></div>
     <div class="cl-empty" data-cl-empty hidden><i data-lucide="search" aria-hidden="true"></i><h2>A different possibility awaits.</h2><p data-empty-message>Try another search or explore the full collection.</p><button class="cl-button" type="button" data-cl-reset>Explore all collections <span aria-hidden="true">↗</span></button></div>
     <noscript><div class="cl-empty"><h2>Your next project starts here.</h2><p>Enable JavaScript to browse the interactive collection, or talk to us about your industry.</p><a href="./custom-brief.html">Share your idea →</a></div></noscript>
     <section class="cl-bespoke" aria-labelledby="cl-bespoke-title"><div class="cl-bespoke-mark" aria-hidden="true">✳</div><div><p class="cl-eyebrow">SOMETHING UNIQUELY YOURS</p><h2 id="cl-bespoke-title">Can’t find your fit?<br><em>Let’s build it together.</em></h2></div><p>Every business has its own way of working.<br>Let’s shape the right solution around yours.</p><a class="cl-button cl-button-cyan" href="./custom-brief.html">Share your idea <span aria-hidden="true">↗</span></a></section>

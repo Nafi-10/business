@@ -53,13 +53,20 @@ export function createStaticServer(directory = output, options = {}) {
   });
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const args = process.argv.slice(2), portIndex = args.indexOf('--port');
-  const port = portIndex >= 0 ? Number(args[portIndex + 1]) : 3001;
-  if (!Number.isInteger(port) || port < 0 || port > 65535) { console.error('Use --port with a number from 0 to 65535.'); process.exit(1); }
+  const args = process.argv.slice(2);
+  const port = 3001;
+  const requestedPortIndex = args.indexOf('--port');
+  if (requestedPortIndex >= 0) {
+    const requestedPort = Number(args[requestedPortIndex + 1]);
+    if (!Number.isInteger(requestedPort) || requestedPort !== 3001) {
+      console.error('This project runs on a single port: 3001. Stop the conflicting process and try again.');
+      process.exit(1);
+    }
+  }
   const development = args.includes('--watch');
   if (development || !existsSync(path.join(output, 'index.html'))) build();
   const server = createStaticServer();
-  server.on('error', error => { console.error(`${error.message}\nTry --port 3002 if the port is occupied.`); process.exitCode = 1; });
+  server.on('error', error => { console.error(`${error.message}\nPort 3001 is already in use. Stop the conflicting process and try again.`); process.exitCode = 1; });
   const watchers = [];
   let timer;
   server.listen(port, '127.0.0.1', () => {

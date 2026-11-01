@@ -1,0 +1,105 @@
+/* Final visual polish for the redesigned homepage; keep original content and controls intact. */
+#cs-motion .cc-collection{background:radial-gradient(ellipse at 90% 8%,rgba(203,228,255,.7),transparent 36%),radial-gradient(ellipse at 0 74%,rgba(230,215,255,.54),transparent 34%),linear-gradient(135deg,#fbfaff,#f3f4ff 56%,#f7faff)}
+#cs-motion .cc-collection .cc-heading h2{max-width:800px;line-height:.96;letter-spacing:-.055em}
+#cs-motion #cs-services{background:linear-gradient(135deg,#f6f6ff,#eef6ff 54%,#f8f8ff)}
+#cs-motion #cs-erp-story{background:radial-gradient(ellipse at 50% 0,rgba(66,76,192,.22),transparent 46%),linear-gradient(135deg,#070e24,#0b1538 62%,#10103c)}
+#cs-motion #cs-work{background:radial-gradient(ellipse at 80% 20%,rgba(50,70,171,.17),transparent 38%),linear-gradient(180deg,#071022,#090f21)}
+#cs-motion #cs-delivery{background:radial-gradient(ellipse at 90% 40%,rgba(61,47,143,.18),transparent 35%),linear-gradient(135deg,#081022,#0c1530)}
+#cs-motion #cs-buyers{background:radial-gradient(ellipse at 20% 90%,rgba(198,216,255,.42),transparent 35%),linear-gradient(135deg,#faf9ff,#eff3ff)}
+#cs-motion #cs-contact{background:radial-gradient(ellipse at 85% 12%,rgba(87,73,192,.2),transparent 35%),linear-gradient(135deg,#081022,#0c1530)}
+#cs-motion footer{background:linear-gradient(180deg,#0a132b,#070d1c)}
+@media(max-width:720px){#cs-motion .cc-collection .cc-heading h2{font-size:clamp(2.5rem,11vw,4rem)}}
+
+/* Keep the home-page hero controls and key information inside a laptop viewport. */
+@media(min-width:1200px) and (min-height:760px){
+  #cs-motion .cs-premium-hero .cs-hero-shell{padding-top:82px}
+  #cs-motion .cs-premium-hero .cs-hero-copy{transform:translateY(-34px)}
+  #cs-motion .cs-premium-hero .cs-hero-showcase{transform:translate(var(--pointer-x),calc(var(--pointer-y) - 64px))}
+  #cs-motion .cs-premium-hero .cs-hero-workflow-picker{left:-2%;right:-4%;bottom:15%;justify-items:stretch}
+  #cs-motion .cs-premium-hero .cs-hero-workflow-picker .cs-hero-industries{flex-wrap:nowrap;gap:3px;padding:6px}
+  #cs-motion .cs-premium-hero .cs-hero-workflow-picker .cs-hero-industries button{min-width:0;padding-inline:5px;font-size:11px;gap:7px}
+  #cs-motion .cs-premium-hero .cs-board-controls{right:14%;bottom:-1%}
+  #cs-motion .cs-premium-hero .cs-hero-workflow-picker>p{margin-top:3px}
+}
+
+/* Industry Explorer: one clear laptop-screen overview with the workflow, dashboard, and proof points visible together. */
+@media(min-width:1200px) and (min-height:760px){
+  #cs-motion #cs-services{min-height:100svh;display:flex;align-items:center;padding:clamp(22px,3.4svh,38px) max(28px,calc((100vw - 1360px)/2))}
+  #cs-motion #cs-services .cis-shell{display:grid;grid-template-rows:auto auto minmax(300px,1fr) auto;gap:12px;width:min(100%,1360px);max-height:calc(100svh - 48px)}
+  #cs-motion #cs-services .cis-heading{align-items:flex-end;gap:32px;margin:0}
+  #cs-motion #cs-services .cis-eyebrow{margin-bottom:9px;font-size:9px}
+  #cs-motion #cs-services .cis-heading h2{font-size:clamp(2.45rem,3.2vw,3.55rem);line-height:.98}
+  #cs-motion #cs-services .cis-intro{max-width:520px;margin:11px 0 0;font-size:13px;line-height:1.45}
+  #cs-motion #cs-services .cis-link{margin-top:11px;font-size:11px}
+  #cs-motion #cs-services .cis-heading-note{min-width:225px;padding-top:9px;padding-bottom:4px}
+  #cs-motion #cs-services .cis-note-orbit{width:42px;height:42px;flex:0 0 42px}
+  #cs-motion #cs-services .cis-tabs{gap:5px;margin:0;padding:5px;border-radius:14px}
+  #cs-motion #cs-services .cis-tabs button{min-height:43px;padding:7px 11px;font-size:11px}
+  #cs-motion #cs-services .cis-dashboard-wrap{min-height:0;height:100%;padding:12px;border-radius:20px}
+  #cs-motion #cs-services .cis-dashboard{height:100%;min-height:0;grid-template-columns:160px minmax(0,1fr)}
+  #cs-motion #cs-services .cis-sidebar{gap:5px;padding:14px 12px}
+  #cs-motion #cs-services .cis-brand-mark{width:30px;height:30px;margin-bottom:12px}
+  #cs-motion #cs-services .cis-sidebar>span{min-height:29px;font-size:10px}
+  #cs-motion #cs-services .cis-main{padding:12px 14px}
+  #cs-motion #cs-services .cis-appbar{min-height:38px;margin-bottom:9px;padding-bottom:8px}
+  #cs-motion #cs-services .cis-dashboard-grid{height:calc(100% - 48px);grid-template-rows:minmax(0,1fr) minmax(0,.85fr);gap:8px}
+  #cs-motion #cs-services .cis-widget{padding:10px 12px}
+  #cs-motion #cs-services .cis-widget>header{margin-bottom:8px;font-size:10px}
+  #cs-motion #cs-services .cis-stat-grid{gap:6px;margin-bottom:7px}
+  #cs-motion #cs-services .cis-stat-grid>div{padding:8px}
+  #cs-motion #cs-services .cis-stat-grid strong{margin:5px 0;font-size:19px}
+  #cs-motion #cs-services .cis-activity{min-height:29px}
+  #cs-motion #cs-services .cis-team-row{padding:7px 0}
+  #cs-motion #cs-services .cis-team-foot{margin-top:5px;padding-top:7px}
+  #cs-motion #cs-services .cis-chart{height:48px}
+  #cs-motion #cs-services .cis-proof-row{gap:9px;margin:0}
+  #cs-motion #cs-services .cis-proof-row article{gap:10px;padding:12px 14px;border-radius:12px}
+  #cs-motion #cs-services .cis-proof-row article>span{width:31px;height:31px;flex-basis:31px;border-radius:10px}
+  #cs-motion #cs-services .cis-proof-row h3{margin-bottom:4px;font-size:11px}
+  #cs-motion #cs-services .cis-proof-row p{font-size:10px;line-height:1.4}
+}
+
+/* Delivery & Support: compact the timeline, handover preview, and support choices into one readable desktop screen. */
+@media(min-width:1200px) and (min-height:760px){
+  #cs-motion #cs-delivery{min-height:100svh;display:flex;align-items:center;padding:clamp(20px,3svh,32px) 0 clamp(14px,2svh,22px)}
+  #cs-motion #cs-delivery .ds-shell{display:grid;grid-template-rows:auto minmax(330px,1fr) auto auto;gap:0;height:calc(100svh - clamp(34px,5svh,54px));max-height:980px}
+  #cs-motion #cs-delivery .ds-heading{align-items:flex-end;gap:24px;margin:0 16px 15px}
+  #cs-motion #cs-delivery .ds-eyebrow{margin-bottom:10px;font-size:9px}
+  #cs-motion #cs-delivery .ds-heading h2{font-size:clamp(2.35rem,3.6vw,3.65rem);line-height:.98}
+  #cs-motion #cs-delivery .ds-journey-choice{max-width:370px;flex-basis:310px}
+  #cs-motion #cs-delivery .ds-journey-choice>p{margin-bottom:10px;font-size:13px}
+  #cs-motion #cs-delivery .ds-switch button{min-height:38px;padding:8px 10px;font-size:11px}
+  #cs-motion #cs-delivery .ds-timeline-row{gap:18px;padding:14px 25px 0}
+  #cs-motion #cs-delivery .ds-timeline button{gap:9px;font-size:11px}
+  #cs-motion #cs-delivery .ds-timeline button::after{margin-right:9px}
+  #cs-motion #cs-delivery .ds-step-number{width:38px;height:38px;flex-basis:38px;font-size:13px}
+  #cs-motion #cs-delivery .ds-hint{font-size:9px;padding-left:14px}
+  #cs-motion #cs-delivery .ds-stage{min-height:0;height:100%;grid-template-columns:.95fr 1.05fr;padding:14px 26px 18px;gap:16px}
+  #cs-motion #cs-delivery .ds-stage-eyebrow{margin-bottom:9px;font-size:8px}
+  #cs-motion #cs-delivery .ds-copy h3{margin-bottom:10px;font-size:clamp(29px,2.5vw,39px)}
+  #cs-motion #cs-delivery .ds-description{margin-bottom:14px;font-size:12px;line-height:1.55}
+  #cs-motion #cs-delivery .ds-checks{gap:8px;margin-bottom:15px;font-size:11px}
+  #cs-motion #cs-delivery .ds-checks li::before{width:22px;height:22px;flex-basis:22px}
+  #cs-motion #cs-delivery .ds-outline{min-height:39px;padding:9px 18px;font-size:11px}
+  #cs-motion #cs-delivery .ds-art{height:clamp(260px,32svh,350px)}
+  #cs-motion #cs-delivery .ds-document{padding:15px 13px}
+  #cs-motion #cs-delivery .ds-document svg{width:25px;height:25px;margin-bottom:8px}
+  #cs-motion #cs-delivery .ds-document>span{font-size:clamp(13px,1vw,16px)}
+  #cs-motion #cs-delivery .ds-document b{margin-top:12px}
+  #cs-motion #cs-delivery .ds-folder-front span{font-size:clamp(22px,2vw,30px)}
+  #cs-motion #cs-delivery .ds-beyond{grid-template-columns:220px 1fr;gap:20px;margin:14px 8px 0;padding-top:13px}
+  #cs-motion #cs-delivery .ds-support-intro h3{margin-bottom:6px;font-size:clamp(25px,2.1vw,32px)}
+  #cs-motion #cs-delivery .ds-support-intro p{font-size:11px;line-height:1.4}
+  #cs-motion #cs-delivery .ds-support-grid{gap:9px}
+  #cs-motion #cs-delivery .ds-support-card summary{min-height:76px;padding:12px;gap:10px}
+  #cs-motion #cs-delivery .ds-support-icon{width:34px;height:34px;flex-basis:34px}
+  #cs-motion #cs-delivery .ds-support-icon svg{width:18px;height:18px}
+  #cs-motion #cs-delivery .ds-support-card strong{font-size:13px}
+  #cs-motion #cs-delivery .ds-support-card small{margin-top:4px;font-size:9px;line-height:1.4}
+  #cs-motion #cs-delivery .ds-support-card summary>i{font-size:16px}
+  #cs-motion #cs-delivery .ds-bottom{margin:12px 8px 0;gap:15px;padding-bottom:8px}
+  #cs-motion #cs-delivery .ds-bottom p{font-size:9px}
+  #cs-motion #cs-delivery .ds-primary{min-height:39px;padding:9px 20px;font-size:11px}
+}
+@media(min-width:1200px) and (min-height:760px){#cs-motion #cs-delivery .ds-workspace{display:grid;grid-template-rows:auto minmax(0,1fr);min-height:0}#cs-motion #cs-delivery .ds-stage{height:100%;min-height:0}}
+@media(max-width:1199px){#cs-motion #cs-services,#cs-motion #cs-delivery{min-height:0}}

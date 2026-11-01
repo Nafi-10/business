@@ -38,7 +38,7 @@ export function build() {
   const logo = nav.match(/<img[^>]*>/)?.[0];
   if (!logo) throw new Error('Navigation logo missing.');
   const story = read('erp-story.html').replaceAll('{{STORY_LOGO}}', logo);
-  fragment = once(fragment, /<section class="cs-section" id="cs-services".*?(?=<section class="cs-section cs-demo-split")/s, read('showcase.html') + '\n' + story + '\n', 'showcase');
+  fragment = once(fragment, /<section class="cs-section" id="cs-services".*?(?=<section class="cs-section cs-demo-split")/s, read('industry-showcase.html') + '\n' + story + '\n', 'industry explorer');
   fragment = fragment.replaceAll('href="#cs-erp"', 'href="#cs-erp-story"');
   const portfolio = ['portfolio.html', 'delivery.html', 'buyer-guide.html', 'vision.html'].map(read).join('\n');
   fragment = once(fragment, /<section class="cs-section cs-demo-split".*?<\/section>/s, portfolio, 'portfolio');
@@ -64,13 +64,14 @@ export function build() {
   head = head.replace('<script src="./assets/lucide.min.js">', () => styles.join('\n') + '\n<script src="./assets/lucide.min.js">');
   html = head + '</head>' + body;
   const dependencies = {
+    'hero.js': ['hero-data.mjs'],
     'delivery.js': ['delivery-data.mjs'],
     'solutions.js': ['solutions-data.mjs', 'product-detail.mjs'],
     'project-brief.js': ['project-brief-data.mjs', 'collection-data.mjs', 'product-page-data.mjs'],
     'showcase.js': ['showcase-state.mjs'],
     'portfolio.js': ['portfolio-projects.mjs', 'portfolio-stories.mjs'],
   };
-  const assets = ['commerce-design.css', 'project-brief.css', 'project-brief.js', 'buyer-guide.css', 'buyer-guide.js', 'delivery.css', 'delivery.js', 'solutions.css', 'solutions.js', 'hero.css', 'showcase.css', 'showcase-premium.css', 'industry-explorer.css', 'industry-explorer.js', 'erp-story.css', 'portfolio.css', 'vision.css', 'navigation.css', 'contact.css', 'context-menu.css', 'hero.js', 'showcase.js', 'erp-story.js', 'portfolio.js', 'vision.js', 'navigation.js', 'contact.js', 'context-menu.js'];
+  const assets = ['commerce-design.css', 'project-brief.css', 'project-brief.js', 'buyer-guide.css', 'buyer-guide.js', 'delivery.css', 'delivery.js', 'solutions.css', 'solutions.js', 'industry-showcase.css', 'industry-showcase.js', 'site-redesign.css', 'hero.css', 'showcase.css', 'showcase-premium.css', 'industry-explorer.css', 'industry-explorer.js', 'erp-story.css', 'portfolio.css', 'vision.css', 'navigation.css', 'contact.css', 'context-menu.css', 'hero.js', 'showcase.js', 'erp-story.js', 'portfolio.js', 'vision.js', 'navigation.js', 'contact.js', 'context-menu.js'];
   for (const asset of assets) html = fingerprint(html, asset, dependencies[asset]);
   let collectionNav = nav.replaceAll(' aria-current="page"', '').replaceAll('href="#cs-', 'href="./index.html#cs-');
   collectionNav = collectionNav.replaceAll('href="./collection.html"', 'href="./collection.html" aria-current="page"');
@@ -82,6 +83,10 @@ export function build() {
   let product = read('product.page.html').replaceAll('{{PRODUCT_NAVIGATION}}', collectionNav);
   for (const asset of ['product-page.css', 'navigation.css', 'product-page.js']) {
     product = fingerprint(product, asset, asset === 'product-page.js' ? ['product-page-data.mjs','product-page-view.mjs','product-page-visuals.mjs','collection-data.mjs'] : []);
+  }
+  let industry = read('industry.page.html').replaceAll('{{INDUSTRY_NAVIGATION}}', collectionNav);
+  for (const asset of ['industry-page.css', 'navigation.css', 'industry-page.js']) {
+    industry = fingerprint(industry, asset, asset === 'industry-page.js' ? ['industry-page-data.mjs','collection-data.mjs','product-page-data.mjs'] : []);
   }
   const briefNav=collectionNav.replace(/<button[^>]*data-collection-search[\s\S]*?<\/button>/, '<a class="cs-nav-search" href="./collection.html?search=1" aria-label="Search collection"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>Search</span></a>');
   let brief=read('custom-brief.page.html').replace('{{BRIEF_NAVIGATION}}',briefNav);
@@ -98,7 +103,8 @@ export function build() {
   writeFileSync(path.join(output, 'index.html'), html);
   writeFileSync(path.join(output, 'collection.html'), collection);
   writeFileSync(path.join(output, 'product.html'), product);
+  writeFileSync(path.join(output, 'industry.html'), industry);
   writeFileSync(path.join(output, 'custom-brief.html'), brief);
-  console.log('Built homepage, Collection, product and custom brief pages with all assets and embedded projects.');
+  console.log('Built homepage, Collection, industry guide, product and custom brief pages with all assets and embedded projects.');
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) build();

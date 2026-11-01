@@ -1,196 +1,42 @@
-import * as THREE from './assets/three.module.min.js';
-
-// Shader/environment compilation can be a long task on integrated GPUs. Let
-// the bounded intro finish and paint the existing cube fallback first.
-if (document.documentElement.classList.contains('cs-loading')) {
-  await new Promise(resolve => {
-    const root = document.documentElement;
-    let timeout;
-    const observer = new MutationObserver(() => {
-      if (!root.classList.contains('cs-loading')) finish();
-    });
-    const finish = () => { observer.disconnect(); clearTimeout(timeout); resolve(); };
-    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
-    // Still initialize if a later error prevents the intro's JS cleanup;
-    // its independent CSS exit has already revealed the page by this point.
-    timeout = setTimeout(finish, 2000);
-  });
-  await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
-}
-
-const canvas = document.querySelector('#cs-glass-cube');
-const stage = document.querySelector('.cs-cube-stage');
-const pauseButton = document.querySelector('.cs-cube-pause');
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-let paused = reducedMotion.matches;
-let visible = true;
-let frame = 0;
-let renderer;
-
-function reflectPause() {
-  pauseButton.setAttribute('aria-pressed', String(paused));
-  pauseButton.setAttribute('aria-label', paused ? 'Play cube animation' : 'Pause cube animation');
-  pauseButton.innerHTML = `<span aria-hidden="true">${paused ? '▷' : 'Ⅱ'}</span>`;
-}
-
-try {
-  renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, preserveDrawingBuffer: true, powerPreference: 'low-power' });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
-  renderer.setClearColor(0x08152b, 0);
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.12;
-  renderer.outputColorSpace = THREE.SRGBColorSpace;
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(34, 1, .1, 50);
-  camera.position.set(0, 0, 7.6);
-  const group = new THREE.Group();
-  scene.add(group);
-
-  // Studio light panels give the glass physical reflections without remote assets.
-  const studio = document.createElement('canvas');
-  studio.width = 2048; studio.height = 1024;
-  const ctx = studio.getContext('2d');
-  ctx.fillStyle = '#102445'; ctx.fillRect(0, 0, 2048, 1024);
-  const topGlow = ctx.createLinearGradient(0, 0, 0, 1024);
-  topGlow.addColorStop(0, '#6e96b8'); topGlow.addColorStop(.4, '#173961'); topGlow.addColorStop(.7, '#050d22'); topGlow.addColorStop(1, '#152b51');
-  ctx.fillStyle = topGlow; ctx.fillRect(0, 0, 2048, 1024);
-  ctx.fillStyle = '#eaffff'; ctx.fillRect(200, 100, 300, 360);
-  ctx.fillStyle = '#4bbcf5'; ctx.fillRect(530, 160, 100, 500);
-  ctx.fillStyle = '#ffffff'; ctx.fillRect(1150, 65, 470, 190);
-  ctx.fillStyle = '#bea6ff'; ctx.fillRect(1720, 230, 150, 510);
-  ctx.fillStyle = '#159deb'; ctx.fillRect(750, 600, 410, 65);
-  const envTexture = new THREE.CanvasTexture(studio);
-  envTexture.mapping = THREE.EquirectangularReflectionMapping;
-  envTexture.colorSpace = THREE.SRGBColorSpace;
-  const pmrem = new THREE.PMREMGenerator(renderer);
-  const envTarget = pmrem.fromEquirectangular(envTexture);
-  scene.environment = envTarget.texture;
-  envTexture.dispose(); pmrem.dispose();
-
-  scene.add(new THREE.HemisphereLight(0xc3e9ff, 0x141038, .45));
-  const key = new THREE.DirectionalLight(0xbcecff, 1.4);
-  key.position.set(-3, 5, 4); scene.add(key);
-  const rim = new THREE.DirectionalLight(0x087fff, 1.5);
-  rim.position.set(4, -1, -2); scene.add(rim);
-  const violet = new THREE.DirectionalLight(0x8b63ff, .7);
-  violet.position.set(-4, 0, 1); scene.add(violet);
-
-  // Rounded, solid glass cubies: 2 × 2 × 2, matching the reference silhouette.
-  const geometry = new THREE.BoxGeometry(1, 1, 1, 8, 8, 8);
-  const positions = geometry.attributes.position;
-  const vertex = new THREE.Vector3();
-  const inner = new THREE.Vector3();
-  const radius = .045;
-  for (let i = 0; i < positions.count; i++) {
-    vertex.fromBufferAttribute(positions, i);
-    inner.copy(vertex).clampScalar(-.5 + radius, .5 - radius);
-    vertex.sub(inner).normalize().multiplyScalar(radius).add(inner);
-    positions.setXYZ(i, vertex.x, vertex.y, vertex.z);
-  }
-  geometry.computeVertexNormals();
-  const cubies = [];
-  for (const x of [-1, 1]) for (const y of [-1, 1]) for (const z of [-1, 1]) {
-    const material = new THREE.MeshPhysicalMaterial({
-      color: x < 0 && y < 0 ? 0x8c9fe6 : y > 0 ? 0x8bd7ee : 0x4b91cd,
-      metalness: .1, roughness: .035, transmission: .9, thickness: 1.25,
-      transparent: true, opacity: .9,
-      ior: 1.46, clearcoat: 1, clearcoatRoughness: .05,
-      attenuationColor: new THREE.Color(x < 0 ? 0x4e60c3 : 0x2684ca), attenuationDistance: 1.5,
-      envMapIntensity: 2.6,
-    });
-    const mesh = new THREE.Mesh(geometry, material);
-    const home = new THREE.Vector3(x * .525, y * .525, z * .525);
-    mesh.position.copy(home);
-    group.add(mesh);
-    cubies.push({ mesh, home, x, y, z });
-  }
-
-  let rotationX = .38, rotationY = -.55;
-  let targetX = .38, targetY = -.55;
-  let dragging = false, lastX = 0, lastY = 0, manualUntil = 0;
-  let elapsed = 0, lastTime = 0;
-  const smoothstep = (value) => { const n = Math.max(0, Math.min(1, value)); return n * n * (3 - 2 * n); };
-
-  function draw(now = performance.now()) {
-    frame = 0;
-    const delta = lastTime ? Math.min((now - lastTime) / 1000, .05) : 0;
-    lastTime = now;
-    if (!paused && !dragging && visible && !document.hidden) elapsed += delta;
-    const phase = elapsed % 9;
-    const separate = smoothstep((phase - 1.7) / 1.8) * (1 - smoothstep((phase - 5.6) / 2));
-    const turn = smoothstep((phase - 2.2) / 2) * (1 - smoothstep((phase - 5.4) / 2));
-    if (!dragging && now > manualUntil && !paused) {
-      targetX = .38 + Math.sin(elapsed * .27) * .13;
-      targetY = -.57 + Math.sin(elapsed * .32) * .25;
-    }
-    rotationX += (targetX - rotationX) * .09;
-    rotationY += (targetY - rotationY) * .09;
-    group.rotation.set(rotationX, rotationY, -.1 + Math.sin(elapsed * .22) * .035);
-    group.position.y = Math.sin(elapsed * .7) * .055;
-    cubies.forEach(({ mesh, home, x, y, z }) => {
-      mesh.position.copy(home).multiplyScalar(1 + separate * .38);
-      mesh.position.y += separate * y * .09;
-      mesh.rotation.set(separate * z * .08, turn * y * .43, separate * x * y * .08);
-    });
-    renderer.render(scene, camera);
-    // Keep the lightweight visual until a real frame has reached the canvas.
-    if (!stage.classList.contains('cs-cube-ready')) stage.classList.add('cs-cube-ready');
-    if ((!paused || dragging || Math.abs(targetX - rotationX) + Math.abs(targetY - rotationY) > .001) && visible && !document.hidden) frame = requestAnimationFrame(draw);
-  }
-  function wake() { if (!frame && visible && !document.hidden) { lastTime = 0; frame = requestAnimationFrame(draw); } }
-  function resize() {
-    const { width, height } = stage.getBoundingClientRect();
-    if (!width || !height) return;
-    renderer.setSize(width, height, false);
-    camera.aspect = width / height;
-    // Fit the complete exploded silhouette inside the canvas at every aspect ratio.
-    camera.position.z = Math.max(6.8, 6.6 / camera.aspect);
-    camera.updateProjectionMatrix();
-    wake();
-  }
-  new ResizeObserver(resize).observe(stage);
-  new IntersectionObserver(([entry]) => {
-    visible = entry.isIntersecting;
-    if (visible) wake(); else if (frame) { cancelAnimationFrame(frame); frame = 0; }
-  }, { threshold: .02 }).observe(canvas);
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden && frame) { cancelAnimationFrame(frame); frame = 0; } else wake();
-  });
-
-  canvas.addEventListener('pointerdown', (event) => {
-    dragging = true; lastX = event.clientX; lastY = event.clientY;
-    canvas.setPointerCapture(event.pointerId); wake();
-  });
-  canvas.addEventListener('pointermove', (event) => {
-    if (!dragging) return;
-    targetY += (event.clientX - lastX) * .006;
-    targetX = THREE.MathUtils.clamp(targetX + (event.clientY - lastY) * .006, -.9, .9);
-    lastX = event.clientX; lastY = event.clientY; manualUntil = performance.now() + 5000; wake();
-  });
-  const stopDrag = () => { dragging = false; manualUntil = performance.now() + 5000; };
-  canvas.addEventListener('pointerup', stopDrag);
-  canvas.addEventListener('pointercancel', stopDrag);
-  function togglePause() { paused = !paused; reflectPause(); wake(); }
-  pauseButton.addEventListener('click', togglePause);
-  canvas.addEventListener('keydown', (event) => {
-    if (event.code === 'Space') { event.preventDefault(); togglePause(); return; }
-    if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) return;
-    event.preventDefault();
-    targetY += event.key === 'ArrowLeft' ? -.2 : event.key === 'ArrowRight' ? .2 : 0;
-    targetX = THREE.MathUtils.clamp(targetX + (event.key === 'ArrowUp' ? -.2 : event.key === 'ArrowDown' ? .2 : 0), -.9, .9);
-    manualUntil = performance.now() + 5000; wake();
-  });
-  reducedMotion.addEventListener('change', (event) => { paused = event.matches; reflectPause(); wake(); });
-  canvas.addEventListener('webglcontextlost', (event) => {
-    event.preventDefault();
-    if (frame) cancelAnimationFrame(frame);
-    frame = 0; stage.classList.remove('cs-cube-ready');
-  });
-  canvas.addEventListener('webglcontextrestored', wake);
-  reflectPause(); resize();
-} catch (error) {
-  console.warn('Glass cube: using the lightweight visual fallback.', error);
-  canvas.hidden = true;
-  document.querySelector('.cs-cube-controls').hidden = true;
+const version=new URL(import.meta.url).search;
+const {modules,previewFor,motionPolicy}=await import(new URL('./hero-data.mjs'+version,import.meta.url));
+const hero=document.querySelector('#cs-top');
+if(hero){
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)'),compact=matchMedia('(max-width:900px)'),fine=matchMedia('(hover:hover) and (pointer:fine)');
+ let policy=motionPolicy({reduced:reduced.matches,compact:compact.matches,saveData:navigator.connection?.saveData}),industry='manufacturing',module='software',pointerFrame=0;
+ function setText(selector,value){const node=hero.querySelector(selector);if(node)node.textContent=value;}
+ function selectIndustry(id,commit=false){
+  const data=previewFor(id);industry=Object.hasOwn({retail:1,manufacturing:1,healthcare:1,education:1,hospitality:1},id)?id:'manufacturing';
+  hero.dataset.industry=industry;hero.style.setProperty('--hero-accent',data.accent);
+  setText('[data-headline-lead]',data.headline[0]);setText('[data-headline-accent]',data.headline[1]);
+  setText('[data-industry-description]',data.description);setText('[data-primary-label]',data.primary);
+  setText('[data-snapshot-title]',data.snapshotTitle);setText('[data-snapshot-copy]',data.snapshotCopy);
+  setText('[data-board-context]',data.boardContext);setText('[data-board-title]',data.boardTitle);setText('[data-flow-title]',data.flowTitle);
+  data.metrics.forEach(([label,value,fill],i)=>{setText(`[data-metric-label="${i}"]`,label);setText(`[data-metric-value="${i}"]`,value);const node=hero.querySelector(`[data-metric-value="${i}"]`);node?.nextElementSibling?.style.setProperty('--fill',`${fill}%`);});
+  data.flow.forEach(([label,count],i)=>{setText(`[data-flow-step="${i}"]`,label);setText(`[data-flow-count="${i}"]`,count);});
+  data.resources.forEach((label,i)=>{setText(`[data-resource="${i}"]`,label);setText(`[data-resource-value="${i}"]`,`${data.resourcesPct[i]??data.resourcesPct?.[i]??0}%`);});
+  data.quality.names.forEach((name,i)=>{setText(`[data-quality-name="${i}"]`,name);setText(`[data-quality-value="${i}"]`,data.quality.values[i]);});
+  setText('[data-quality-total]',data.quality.total);setText('[data-quality-label]',data.quality.label);
+  setText('[data-resource-title]',data.resourcesTitle||'Resource availability');setText('[data-resource-caption]',`${data.resources.length} tracked`);
+  setText('[data-quality-title]',data.qualityTitle||'Workflow status');setText('[data-footer-status]',data.footerStatus||'Workflow status at a glance');
+  setText('[data-side-title]',data.side[0]);setText('[data-side-copy]',data.side[1]);setText('[data-quality-side-title]',data.side[2]);setText('[data-quality-side-copy]',data.side[3]);
+  hero.querySelectorAll('[data-resource-value]').forEach((node,i)=>{const fill=data.resourcesPct[i]||0;node.previousElementSibling?.querySelector('em')?.style.setProperty('--fill',`${fill}%`);});
+  hero.querySelectorAll('[data-hero-industry]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.heroIndustry===industry)));
+  hero.querySelectorAll('.cs-flow-step').forEach((step,i)=>{step.classList.toggle('is-teal',i===data.flow.length-2);step.classList.toggle('is-done',i===data.flow.length-1);});
+  if(commit)document.querySelector('#cs-motion')?.dispatchEvent(new CustomEvent('cs:industry-change',{detail:industry}));
+ }
+ function selectModule(id){const item=modules.find(entry=>entry.id===id);if(!item)return;module=id;hero.dataset.module=id;setText('[data-module-name]',item.name.toUpperCase());setText('[data-module-detail]',item.detail);hero.querySelectorAll('[data-hero-module]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.heroModule===id)));}
+ hero.querySelectorAll('[data-hero-industry]').forEach(button=>{button.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')selectIndustry(button.dataset.heroIndustry);});button.addEventListener('focus',()=>selectIndustry(button.dataset.heroIndustry));button.addEventListener('click',()=>selectIndustry(button.dataset.heroIndustry,true));});
+ hero.querySelectorAll('[data-hero-module]').forEach(button=>{button.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')selectModule(button.dataset.heroModule);});button.addEventListener('focus',()=>selectModule(button.dataset.heroModule));button.addEventListener('click',()=>selectModule(button.dataset.heroModule));});
+ const primary=hero.querySelector('.cs-hero-primary');
+ function resetMagnet(){primary?.style.setProperty('--mag-x','0px');primary?.style.setProperty('--mag-y','0px');}
+ primary?.addEventListener('pointermove',event=>{if(!fine.matches||!policy.ambient)return;const rect=primary.getBoundingClientRect();primary.style.setProperty('--mag-x',`${(event.clientX-rect.left-rect.width/2)*.045}px`);primary.style.setProperty('--mag-y',`${(event.clientY-rect.top-rect.height/2)*.08}px`);});
+ primary?.addEventListener('pointerleave',resetMagnet);primary?.addEventListener('blur',resetMagnet);
+ hero.addEventListener('pointermove',event=>{if(!fine.matches||!policy.ambient||event.pointerType!=='mouse')return;const rect=hero.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;if(!pointerFrame)pointerFrame=requestAnimationFrame(()=>{pointerFrame=0;hero.style.setProperty('--spot-x',`${x*100}%`);hero.style.setProperty('--spot-y',`${y*100}%`);hero.style.setProperty('--pointer-x',`${(x-.5)*10}px`);hero.style.setProperty('--pointer-y',`${(y-.5)*8}px`);});});
+ hero.addEventListener('pointerleave',()=>{hero.style.setProperty('--pointer-x','0px');hero.style.setProperty('--pointer-y','0px');});
+ const syncMotion=()=>{policy=motionPolicy({reduced:reduced.matches,compact:compact.matches,saveData:navigator.connection?.saveData});hero.classList.toggle('is-still',!policy.ambient);hero.classList.toggle('has-intro',policy.intro);};
+ reduced.addEventListener('change',syncMotion);compact.addEventListener('change',syncMotion);navigator.connection?.addEventListener?.('change',syncMotion);
+ selectIndustry('manufacturing');selectModule('software');syncMotion();
+ if(document.documentElement.classList.contains('cs-loading'))await new Promise(resolve=>{let timer;const observer=new MutationObserver(()=>{if(!document.documentElement.classList.contains('cs-loading'))finish();});const finish=()=>{clearTimeout(timer);observer.disconnect();resolve();};observer.observe(document.documentElement,{attributes:true,attributeFilter:['class']});timer=setTimeout(finish,2000);});
+ await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));hero.classList.add('is-ready');if(policy.intro)document.querySelector('.cs-site-header')?.classList.add('cs-nav-arrive');
 }

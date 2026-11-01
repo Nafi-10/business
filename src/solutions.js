@@ -10,6 +10,7 @@ const dialog = section.querySelector('#cc-dialog');
 const body = dialog.querySelector('[data-cc-dialog-body]');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const state = {industry:'all',goal:'all',category:'all'};
+let mode = 'products';
 let searchQuery = '';
 let searchSession = false;
 let visibleProducts = [];
@@ -156,6 +157,17 @@ function compare(source) {
 finder.addEventListener('submit',event=>{
   event.preventDefault();
   state.industry=finder.elements.industry.value;state.goal=finder.elements.goal.value;
+  if(state.industry!=='all')section.closest('#cs-motion').dispatchEvent(new CustomEvent('cs:industry-change',{detail:state.industry}));
+  if(mode==='custom'){
+    const goalLabels={inventory:'stock, orders, and inventory',experience:'customer experience',operations:'connected business operations',support:'customer support automation'};
+    const service=state.category!=='all'?state.category:({inventory:'erp',experience:'design',operations:'erp',support:'ai'}[state.goal]||'');
+    const industry=state.industry!=='all'?state.industry:'';
+    const need=goalLabels[state.goal];
+    const description=`I have a custom project idea${industry?` for ${finder.elements.industry.selectedOptions[0].text}`:''}${need?` focused on ${need}`:''}. I would like help shaping the right next step.`;
+    section.closest('#cs-motion').dispatchEvent(new CustomEvent('cs:brief-prefill',{detail:{service,industry,goal:description}}));
+    section.querySelector('.cc-custom-button').click();
+    return;
+  }
   render();
 });
 section.addEventListener('click',event=>{
@@ -208,6 +220,14 @@ body.addEventListener('submit',event=>{
   event.preventDefault();const input=event.target.elements.message;sendDemoMessage(input.value);input.value='';input.focus({preventScroll:true});
 });
 section.closest('#cs-motion').addEventListener('click', event => {
+  const modeButton=event.target.closest('[data-cc-mode]');
+  if(modeButton){
+    mode=modeButton.dataset.ccMode;
+    section.querySelectorAll('[data-cc-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button===modeButton)));
+    finder.querySelector('.cc-match').innerHTML=mode==='custom'?'Shape my project <span aria-hidden="true">↗</span>':'Find my match <span aria-hidden="true">↗</span>';
+    finder.setAttribute('aria-label',mode==='custom'?'Start a custom project brief':'Find your solution');
+    return;
+  }
   const searchButton = event.target.closest('[data-cc-search]');
   if (searchButton) { openSearch(searchButton); return; }
   const categoryLink = event.target.closest('[data-guide-category]');
@@ -217,6 +237,11 @@ section.closest('#cs-motion').addEventListener('click', event => {
   state.industry='all';state.goal='all';state.category=category;
   finder.elements.industry.value='all';finder.elements.goal.value='all';render();
   requestAnimationFrame(()=>section.querySelector('#cc-title').focus({preventScroll:true}));
+});
+section.closest('#cs-motion').addEventListener('cs:industry-change',event=>{
+  const id=typeof event.detail==='string'?event.detail:event.detail?.industry;
+  if(!id||![...finder.elements.industry.options].some(option=>option.value===id)||finder.elements.industry.value===id)return;
+  finder.elements.industry.value=id;state.industry=id;render(false);
 });
 function refreshPageLayout() {
   section.closest('#cs-motion').dispatchEvent(new CustomEvent('cs:layout-change'));

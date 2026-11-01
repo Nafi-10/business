@@ -2,36 +2,44 @@
 #cs-motion .cs-founder { --vision-ink:#0c162c; --vision-muted:#54617c; --vision-card-height:410px; position:relative; isolation:isolate; overflow:hidden; color:#f0f0fc; background:radial-gradient(ellipse at 18% 55%,#41396e32,transparent 50%),radial-gradient(ellipse at 86% 75%,#00657724,transparent 44%),#080f1e; scroll-margin-top:0; }
 #cs-motion #cs-vision.cs-founder { scroll-margin-top:0; }
 #cs-motion .cs-founder * { box-sizing:border-box; }
+#cs-motion .cs-founder { background:radial-gradient(ellipse at 51% 63%,#51418c42 0,transparent 36%),radial-gradient(ellipse at 9% 50%,#5a3d8330 0,transparent 34%),radial-gradient(ellipse at 91% 58%,#087f9134 0,transparent 39%),linear-gradient(180deg,#080e1c 0%,#0a1222 52%,#080f1e 100%); }
+#cs-motion .cs-founder::before { content:"";position:absolute;z-index:-1;inset:0;opacity:.34;pointer-events:none;background:linear-gradient(112deg,transparent 15%,#b69af711 38%,transparent 58%),radial-gradient(ellipse at 50% 100%,#06d7e515,transparent 52%),radial-gradient(ellipse at 50% 52%,#a281ff0c,transparent 58%); }
+#cs-motion .cs-founder::after { content:"";position:absolute;z-index:-1;inset:8% 2% 5%;pointer-events:none;opacity:.7;background:radial-gradient(ellipse at 50% 52%,transparent 0 28%,#b7a3ff18 28.12% 28.24%,transparent 28.4% 40%,#74e3ec12 40.12% 40.24%,transparent 40.4% 53%,#b7a3ff0d 53.12% 53.24%,transparent 53.4%),radial-gradient(circle at 11% 36%,#bba6ff 0 1px,transparent 3px),radial-gradient(circle at 89% 36%,#5de7ed 0 1px,transparent 3px),radial-gradient(circle at 23% 76%,#8d84ff 0 1px,transparent 3px),radial-gradient(circle at 77% 76%,#67dce9 0 1px,transparent 3px);mask-image:radial-gradient(ellipse at 50% 55%,#000 12%,transparent 78%); }
 #cs-motion .cs-founder-shell { max-width:1480px; margin:auto; padding:100px clamp(24px,5vw,80px) 24px; }
 #cs-motion .cs-founder-header { display:flex; align-items:end; justify-content:space-between; gap:32px; position:relative; z-index:2; }
-#cs-motion .cs-founder-eyebrow { display:block; margin-bottom:16px; color:#aaaac4; font-size:9px; letter-spacing:2.5px; }
-#cs-motion .cs-founder-header h2 { margin:0; font-size:clamp(42px,4.3vw,66px); line-height:1.03; letter-spacing:-2.5px; font-weight:450; color:#f0f0fc; }
-#cs-motion .cs-founder-header h2 em { font-family:Georgia,'Times New Roman',serif; font-weight:400; color:#bd9df5; }
-#cs-motion .cs-founder-header p { color:#a8b3ca; font-size:14px; line-height:1.8; margin:0 0 3px; }
-#cs-motion .cs-founder-gallery { position:relative; margin:14px -15px 0; padding:0 15px 25px; }
-#cs-motion .cs-founder-wire { position:absolute; top:0; left:0; right:0; height:100px; pointer-events:none; }
+#cs-motion .cs-founder-eyebrow { display:flex;align-items:center;gap:10px;margin-bottom:18px;color:#b7bfd3;font-size:9px;letter-spacing:2.7px; }
+#cs-motion .cs-founder-eyebrow::before { content:"";width:6px;height:6px;border-radius:50%;background:#55e2ec;box-shadow:0 0 13px #55e2ec99; }
+#cs-motion .cs-founder-header h2 { margin:0;font-size:clamp(44px,4.55vw,70px);line-height:.99;letter-spacing:-2.8px;font-weight:430;color:#f5f4fb;text-wrap:balance; }
+#cs-motion .cs-founder-header h2 em { font-family:Georgia,'Times New Roman',serif;font-weight:400;background:linear-gradient(100deg,#c4a6ff 10%,#ae8ef1 55%,#86dbe9 115%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent; }
+#cs-motion .cs-founder-header p { max-width:295px;padding:8px 0 8px 17px;border-left:1px solid #9b85cf75;color:#b8c3d8;font-size:13px;line-height:1.8;margin:0 2px 5px 0; }
+#cs-motion .cs-founder-gallery { position:relative;margin:20px -15px 0;padding:0 15px 28px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth; }
+#cs-motion .cs-founder-gallery::-webkit-scrollbar { display:none; }
+#cs-motion .cs-founder-wire { position:absolute;top:0;left:0;right:auto;width:125%;height:100px;pointer-events:none; }
 #cs-motion .cs-founder-wire svg { width:100%; height:100%; overflow:visible; }
-#cs-motion .cs-founder-wire path { fill:none; stroke:#7d8aa0; stroke-width:1.2; vector-effect:non-scaling-stroke; }
-#cs-motion .cs-founder-wire .cs-founder-wire-light { stroke:#c1d4ee; stroke-width:.4; transform:translateY(-1px); opacity:.5; }
-#cs-motion .cs-founder-wire>i { position:absolute; top:11px; left:0; height:5px; width:5px; border-radius:50%; background:#a5b8d4; box-shadow:0 0 10px #acb6e466; }
+#cs-motion .cs-founder-wire path { fill:none;stroke:#8b9dbb;stroke-width:1.15;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 5px #9e8be844); }
+#cs-motion .cs-founder-wire .cs-founder-wire-light { stroke:#d2c8fc;stroke-width:.45;transform:translateY(-1px);opacity:.66; }
+#cs-motion .cs-founder-wire>i { position:absolute;top:11px;left:0;height:6px;width:6px;border-radius:50%;background:#d2c5ff;box-shadow:0 0 0 4px #bfa8ff12,0 0 14px #ad9aff; }
 #cs-motion .cs-founder-wire>i:last-child { left:auto; right:0; }
-#cs-motion .cs-founder-hangers { position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(18px,2.5vw,36px); align-items:start; padding-top:0; }
-#cs-motion .cs-founder-hanger { --hang-top:37px; --cord-height:62px; --card-tilt:-1.2deg; position:relative; min-width:0; padding-top:var(--cord-height); margin-top:var(--hang-top); transform-origin:50% 0; transform:rotate(var(--card-tilt)); }
+#cs-motion .cs-founder-hangers { position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:125%;gap:clamp(18px,2.5vw,36px);align-items:start;padding-top:0; }
+#cs-motion .cs-founder-hanger { --hang-top:37px; --cord-height:62px; --card-tilt:-1.2deg;position:relative;min-width:0;padding-top:var(--cord-height);margin-top:var(--hang-top);transform-origin:50% 0;transform:rotate(var(--card-tilt));transition:translate .45s cubic-bezier(.2,.7,.2,1),filter .45s; }
+#cs-motion .cs-founder-hanger:hover,#cs-motion .cs-founder-hanger:focus-within { z-index:3;translate:0 -6px;filter:drop-shadow(0 12px 18px #0005); }
 #cs-motion .cs-founder-hanger:nth-child(2) { --hang-top:66px; --cord-height:76px; --card-tilt:1.2deg; }
 #cs-motion .cs-founder-hanger:nth-child(3) { --hang-top:66px; --cord-height:48px; --card-tilt:-1deg; }
 #cs-motion .cs-founder-hanger:nth-child(4) { --hang-top:37px; --cord-height:77px; --card-tilt:1.5deg; }
-#cs-motion .cs-founder-cord { position:absolute; width:1px; left:50%; top:0; height:calc(var(--cord-height) + 4px); background:linear-gradient(90deg,#73859c,#b6c3d1); box-shadow:1px 0 1px #0009; }
+#cs-motion .cs-founder-hanger:nth-child(5) { --hang-top:52px; --cord-height:64px; --card-tilt:-1.1deg; }
+#cs-motion .cs-founder-cord { position:absolute;width:1px;left:50%;top:0;height:calc(var(--cord-height) + 4px);background:linear-gradient(90deg,#73859c,#e3e7f5 48%,#7789a7);box-shadow:0 0 8px #99a7d64d,1px 0 1px #0009; }
 #cs-motion .cs-founder-cord::before { content:''; position:absolute; top:-3px; left:-3px; width:7px; height:7px; border:1px solid #9caec3; border-radius:50%; background:#0e1729; }
 #cs-motion .cs-founder-badge { position:relative; height:var(--vision-card-height); perspective:1300px; }
 #cs-motion .cs-founder-clip { position:absolute; z-index:4; left:calc(50% - 8px); top:-22px; width:16px; height:47px; border:2px solid #a3acbb; border-radius:9px 9px 5px 5px; background:linear-gradient(90deg,#a5afbc70,#e3e6ec66 45%,#35415190); box-shadow:inset 1px 0 1px #fff7,2px 2px 3px #0005; pointer-events:none; }
 #cs-motion .cs-founder-clip::after { content:''; position:absolute; width:7px; height:19px; left:2.5px; top:5px; border:1px solid #34445c; border-radius:4px; background:#17243899; }
 #cs-motion .cs-founder-card-inner { position:absolute; inset:0; transform-style:preserve-3d; transition:transform .95s cubic-bezier(.22,.7,.15,1); }
 #cs-motion .cs-founder-hanger.is-flipped .cs-founder-card-inner { transform:rotateY(180deg); }
-#cs-motion .cs-founder-face { position:absolute; inset:0; padding:32px 18px 0; border:1px solid #eef1ffc4; border-radius:13px; background:linear-gradient(140deg,#fff,#edf0fa 70%,#dae6f3); color:var(--vision-ink); backface-visibility:hidden; -webkit-backface-visibility:hidden; box-shadow:inset 0 0 0 4px #ffffff55,2px 9px 0 -6px #6d739a,0 18px 28px -10px #0008; overflow:hidden; display:flex; flex-direction:column; }
+#cs-motion .cs-founder-face { position:absolute;inset:0;padding:32px 18px 0;border:1px solid #f6f5ffd9;border-radius:15px;background:linear-gradient(145deg,#fff 0%,#f5f5fc 48%,#e5edf6 100%);color:var(--vision-ink);backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:inset 0 0 0 1px #fff,inset 0 0 0 5px #ffffff55,2px 10px 0 -6px #777ba1,0 22px 38px -15px #000b,0 0 30px #bc9eff12;overflow:hidden;display:flex;flex-direction:column; }
 #cs-motion .cs-founder-face::after { content:''; position:absolute; inset:0; background:linear-gradient(115deg,#fff5,transparent 35%,transparent 72%,#fff4); pointer-events:none; }
 #cs-motion .cs-founder-slot { position:absolute; width:39px; height:7px; border-radius:8px; top:13px; left:calc(50% - 19.5px); background:#0d1728; box-shadow:0 1px 0 #fff,0 -1px 1px #708094; }
 #cs-motion .cs-founder-id-top { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:6px; font-weight:600; letter-spacing:1.2px; color:#55627b; margin-bottom:14px; white-space:nowrap; }
-#cs-motion .cs-founder-photo { position:relative; height:228px; flex:1; min-height:0; overflow:hidden; border-radius:6px; background:radial-gradient(ellipse at 70% 12%,#b8daf5,transparent 64%),linear-gradient(125deg,#c7bbef,#e2e5f1 60%,#b0d4da); }
+#cs-motion .cs-founder-photo { position:relative;height:228px;flex:1;min-height:0;overflow:hidden;border-radius:8px;border:1px solid #ffffffb5;background:radial-gradient(ellipse at 70% 12%,#c8e5fa,transparent 64%),linear-gradient(125deg,#cbbbf2,#e8eaf4 60%,#b5e0e4);box-shadow:inset 0 0 0 1px #9da6ca18,0 5px 14px #25365612; }
+#cs-motion .cs-founder-photo::after { content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#ffffff12 0%,transparent 40%,#4d4b7b0b 100%); }
 #cs-motion .cs-founder-photo>span { position:absolute; left:7px; bottom:-25px; font:bold 190px/1 Georgia,serif; letter-spacing:-12px; color:#ffffff45; }
 #cs-motion .cs-founder-photo img { position:absolute; left:50%; top:6px; width:var(--portrait-width,100%); height:auto; max-width:none; transform:translateX(-50%); filter:drop-shadow(5px 3px 4px #1828482b); }
 #cs-motion .cs-founder-mohaimen { --portrait-width:78%; }
@@ -40,7 +48,7 @@
 #cs-motion .cs-founder-tazim .cs-founder-photo { background:radial-gradient(ellipse at 20% 10%,#d6cbf3,transparent 60%),linear-gradient(125deg,#bfcedf,#badde5); }
 #cs-motion .cs-founder-hridita .cs-founder-photo { background:radial-gradient(ellipse at 85% 20%,#c1e4e9,transparent 65%),linear-gradient(140deg,#d6c8eb,#d8dfef); }
 #cs-motion .cs-founder-id-name { height:100px; flex-shrink:0; padding:13px 0 10px; }
-#cs-motion .cs-founder-id-name h3 { font:500 clamp(22px,1.8vw,27px)/1.08 Georgia,'Times New Roman',serif; margin:0; color:#18213c; letter-spacing:-.6px; }
+#cs-motion .cs-founder-id-name h3 { font:500 clamp(22px,1.8vw,27px)/1.08 Georgia,'Times New Roman',serif;margin:0;color:#151e36;letter-spacing:-.75px; }
 #cs-motion .cs-founder-id-name p { margin:7px 0 0; font-size:11px; line-height:1.5; color:#5b6479; }
 #cs-motion .cs-founder-id-bottom { min-height:36px; flex-shrink:0; margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:8px; border-top:1px solid #8d9bb436; color:#526078; font-size:10px; letter-spacing:.2px; }
 #cs-motion .cs-founder-id-bottom>span:first-child { display:flex; align-items:center; gap:5px; }
@@ -66,7 +74,34 @@
 #cs-motion .cs-founder-flip { position:absolute; z-index:5; inset:0; width:100%; height:100%; border:0; padding:0; border-radius:13px; background:transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; }
 #cs-motion .cs-founder-hanger:hover .cs-founder-face { border-color:#d5c4ff; }
 #cs-motion .cs-founder-hanger:hover .cs-team-back { border-color:transparent; box-shadow:inset 0 0 0 3px #141e33,0 0 23px #7960df26,2px 9px 0 -6px #243354,0 20px 32px -10px #000a; }
-#cs-motion .cs-founder-footer { display:flex; justify-content:center; align-items:center; gap:24px; padding:14px 0 0; margin-top:16px; border-top:1px solid #95a1c329; }
+#cs-motion .cs-founder-hanger { scroll-snap-align:start; }
+#cs-motion .cs-founder-invitation-front { background:radial-gradient(ellipse at 50% 46%,#e4e2ff 0,#f7f7ff 44%,#e5f5fa 100%); }
+#cs-motion .cs-founder-invitation-art { position:relative;display:grid;place-items:center;flex:1;min-height:0;margin:5px -2px 0;overflow:hidden;border-radius:10px;background:radial-gradient(ellipse at 50% 50%,#b9a6ff70,transparent 45%),linear-gradient(145deg,#e9e3ff,#d8f4f6); }
+#cs-motion .cs-founder-invitation-art::before,#cs-motion .cs-founder-invitation-art::after { content:"";position:absolute;width:180px;height:180px;border:1px solid #9a7bed55;border-radius:50%;box-shadow:0 0 0 17px #9a7bed0a,0 0 0 35px #56cbd814; }
+#cs-motion .cs-founder-invitation-art::after { width:130px;height:130px;border-color:#40bfcf6b;transform:rotate(45deg) scaleX(.7);border-radius:28px; }
+#cs-motion .cs-founder-invitation-art>span { position:relative;z-index:1;color:#7657d9;font:100px/1 Georgia,serif;text-shadow:0 8px 28px #6652bc42; }
+#cs-motion .cs-founder-invitation-art>i { position:absolute;width:7px;height:7px;border-radius:50%;background:#39cdd8;box-shadow:0 0 15px #31c7d8; }
+#cs-motion .cs-founder-invitation-art>i:nth-of-type(1) { top:24%;left:21%; }
+#cs-motion .cs-founder-invitation-art>i:nth-of-type(2) { right:18%;top:35%;background:#9972ed; }
+#cs-motion .cs-founder-invitation-art>i:nth-of-type(3) { bottom:22%;left:34%;background:#9972ed; }
+#cs-motion .cs-founder-invitation .cs-founder-id-name h3 { font-size:clamp(21px,1.55vw,25px); }
+#cs-motion .cs-founder-invitation-back { background:radial-gradient(ellipse at 50% 55%,#273d68 0%,#111b31 63%,#10182a 100%) padding-box,linear-gradient(135deg,#53dce7,#a17bed 50%,#53dce7) border-box; }
+#cs-motion .cs-founder-invitation-orbit { position:relative;display:grid;place-items:center;flex:1;min-height:28px;color:#b89aff;font:52px/1 Georgia,serif; }
+#cs-motion .cs-founder-invitation-orbit::before,#cs-motion .cs-founder-invitation-orbit::after { content:"";position:absolute;width:130px;height:42px;border:1px solid #7a9de355;border-radius:50%;transform:rotate(-20deg); }
+#cs-motion .cs-founder-invitation-orbit::after { transform:rotate(35deg);border-color:#ad8df25c; }
+#cs-motion .cs-founder-invitation .cs-team-back-person { min-height:56px; }
+#cs-motion .cs-founder-invitation .cs-team-back-person>p { font-size:19px; }
+#cs-motion .cs-founder-invitation .cs-team-back-note { max-width:220px;align-self:center;padding-bottom:7px; }
+#cs-motion .cs-team-job-links { position:relative;z-index:6;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:10px 0 12px; }
+#cs-motion .cs-team-job-links a { display:grid;justify-items:center;gap:5px;padding:9px 3px 7px;border:1px solid #8da3cf35;border-radius:9px;background:#ffffff09;color:#eaf2ff;text-decoration:none;font-size:9px;line-height:1.2;transition:background .2s,border-color .2s,translate .2s; }
+#cs-motion .cs-team-job-links a:hover { background:#a286f526;border-color:#9b81efaa;translate:0 -2px; }
+#cs-motion .cs-team-job-links svg { width:17px;height:17px;color:#74e5ee; }
+#cs-motion .cs-founder-footer { display:flex;justify-content:space-between;align-items:center;gap:24px;padding:16px 18px 0;margin-top:17px;border-top:1px solid #aab4d22a; }
+#cs-motion .cs-founder-prompt { display:flex;align-items:center;gap:11px;margin:0;color:#aebbd2; }
+#cs-motion .cs-founder-prompt>span:first-child { width:32px;height:32px;display:grid;place-items:center;border:1px solid #8c79c55c;border-radius:50%;color:#c3a5ff;background:#9279d512;font-size:14px; }
+#cs-motion .cs-founder-prompt>span:last-child { display:grid;gap:4px; }
+#cs-motion .cs-founder-prompt strong { color:#d7dced;font-size:8px;font-weight:600;letter-spacing:1.6px; }
+#cs-motion .cs-founder-prompt small { color:#8998b3;font-size:10px; }
 #cs-motion .cs-founder-controls { display:flex; align-items:center; gap:20px; }
 #cs-motion .cs-founder-pages { display:flex; gap:6px; }
 #cs-motion .cs-founder-pages button { position:relative; padding:0; border:0; width:31px; height:44px; background:transparent; color:#91a0bc; font-size:9px; font-family:inherit; cursor:pointer; }
@@ -103,8 +138,8 @@
   #cs-motion .cs-founder-shell { padding:110px 32px 30px; }
   #cs-motion .cs-founder-header p { font-size:12px; }
   #cs-motion .cs-founder-gallery { margin-left:-32px; margin-right:-32px; padding:0 32px 28px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scroll-padding-inline:32px; scrollbar-width:thin; scrollbar-color:#70658d #131c2e; }
-  #cs-motion .cs-founder-wire { width:1240px; left:24px; }
-  #cs-motion .cs-founder-hangers { width:1220px; grid-template-columns:repeat(4,278px); gap:28px; padding:0 7px; }
+  #cs-motion .cs-founder-wire { width:1524px; left:24px; }
+  #cs-motion .cs-founder-hangers { width:1524px; grid-template-columns:repeat(5,278px); gap:28px; padding:0 7px; }
   #cs-motion .cs-founder-hanger { scroll-snap-align:center; }
   #cs-motion .cs-team-back-statement { font-size:26px; }
   #cs-motion .cs-team-back-person>p { font-size:22px; }
@@ -118,12 +153,13 @@
   #cs-motion .cs-founder-header h2 { font-size:clamp(35px,8.5vw,48px); letter-spacing:-1.6px; }
   #cs-motion .cs-founder-header p { margin-top:16px; font-size:12px; line-height:1.7; }
   #cs-motion .cs-founder-gallery { margin:22px -24px 0; padding:0 24px 25px; scroll-padding-inline:24px; }
-  #cs-motion .cs-founder-hangers { grid-template-columns:repeat(4,268px); width:1180px; gap:26px; padding:0 6px; }
-  #cs-motion .cs-founder-wire { width:1170px; left:24px; }
+  #cs-motion .cs-founder-hangers { grid-template-columns:repeat(5,268px); width:1476px; gap:26px; padding:0 6px; }
+  #cs-motion .cs-founder-wire { width:1476px; left:24px; }
   #cs-motion .cs-founder-hanger { --cord-height:35px; }
   #cs-motion .cs-founder-hanger:nth-child(2) { --cord-height:40px; }
   #cs-motion .cs-founder-hanger:nth-child(3) { --cord-height:27px; }
   #cs-motion .cs-founder-hanger:nth-child(4) { --cord-height:52px; }
+  #cs-motion .cs-founder-hanger:nth-child(5) { --hang-top:31px; --cord-height:41px; }
   #cs-motion .cs-founder-footer { display:flex; flex-direction:column; gap:16px; align-items:center; padding-top:20px; margin-top:16px; }
   #cs-motion .cs-founder-controls { gap:20px; }
 }

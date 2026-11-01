@@ -29,12 +29,13 @@ function turnCard(index){
   card.querySelector('[data-team-back]').setAttribute('aria-hidden',String(!flipped));
   const button=card.querySelector('[data-team-flip]');
   button.setAttribute('aria-pressed',String(flipped));
-  button.setAttribute('aria-label',flipped?`Show ${nameOf(card)}’s portrait`:`Rotate ${nameOf(card)}’s card`);
+  const invitation=card.classList.contains('cs-founder-invitation');
+  button.setAttribute('aria-label',flipped?(invitation?'Show the opportunity card front':`Show ${nameOf(card)}’s portrait`):(invitation?'Flip the opportunity card to see how to reach us':`Rotate ${nameOf(card)}’s card`));
   markSelected(index);
   const statement=card.querySelector('.cs-team-back-statement');
   const role=card.querySelector('.cs-team-back-person > span');
   status.lang='en';
-  status.textContent=flipped?`${nameOf(card)}, ${role.textContent}. ${statement.innerText.replace(/\s+/g,' ').trim()}`:`${nameOf(card)}. Portrait shown.`;
+  status.textContent=flipped?`${role.textContent}. ${statement.innerText.replace(/\s+/g,' ').trim()}`:(invitation?'Opportunity card shown.':`${nameOf(card)}. Portrait shown.`);
 }
 section.addEventListener('click',event=>{
   const button=event.target.closest('button');if(!button)return;

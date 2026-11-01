@@ -63,3 +63,15 @@
 @media(min-width:761px) and (max-width:900px){#cs-motion .cs-site-header .cs-nav-links{display:none}#cs-motion .cs-site-header .cs-menu{display:flex;flex:none;margin-left:0}#cs-motion .cs-nav-search{margin-left:auto}}
 @media(max-width:760px){#cs-motion .cs-nav-search{margin-left:auto;width:40px;min-width:40px;padding:10px}#cs-motion .cs-site-header .cs-nav .cs-btn{margin-left:0}}
 @media(max-width:420px){#cs-motion .cs-site-header .cs-nav>.cs-btn{display:none}#cs-motion .cs-site-header .cs-nav{gap:10px}}
+
+/* A restrained glass navigation surface, shared across the site. */
+#cs-motion .cs-site-header{background:#101a2cd4;border-color:#a7a4e536;backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%);box-shadow:0 8px 32px #00000024,inset 0 1px 0 #e8e0ff0d;transition:background .3s,border-color .3s,box-shadow .3s,transform .3s,top .3s}
+#cs-motion .cs-site-header::before{content:'';position:absolute;inset:-1px;padding:1px;border-radius:inherit;background:linear-gradient(115deg,#bd9afb5c,#c1d5fa12 40%,#63e4f04a 80%,#ae92ee3d);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none}
+#cs-motion .cs-site-header.is-scrolled{top:10px;transform:translateX(-50%) scale(.985);background:#0b1428b8;box-shadow:0 10px 32px #0208182b,inset 0 1px 0 #ffffff16}
+#cs-motion .cs-site-header .cs-nav{transition:height .3s,padding .3s}
+#cs-motion .cs-site-header.is-scrolled .cs-nav{height:64px}
+#cs-motion .cs-nav-links a[aria-current="page"]{background:linear-gradient(120deg,#a385ed33,#4fd9e520);box-shadow:inset 0 0 0 1px #b6a1f14d,0 0 18px #9c7efb0d;color:#f2eeff}
+#cs-motion .cs-site-header.cs-nav-arrive{animation:cs-nav-arrive .55s both}
+@keyframes cs-nav-arrive{from{opacity:0;translate:0 -10px}to{opacity:1;translate:0 0}}
+@media(max-width:760px){#cs-motion .cs-site-header.is-scrolled{top:8px}#cs-motion .cs-site-header.is-scrolled .cs-nav{height:58px}}
+@media(prefers-reduced-motion:reduce){#cs-motion .cs-site-header,#cs-motion .cs-site-header .cs-nav{transition:none;animation:none!important}}

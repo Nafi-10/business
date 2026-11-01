@@ -1,31 +1,75 @@
-<section class="cs-hero cs-glass-hero" id="cs-top" aria-labelledby="cs-hero-title">
+<section class="cs-hero cs-glass-hero cs-premium-hero" id="cs-top" aria-labelledby="cs-hero-title" data-module="software" data-industry="manufacturing">
+  <div class="cs-hero-atmosphere" aria-hidden="true"><div class="cs-hero-grid"></div><div class="cs-hero-spotlight"></div><div class="cs-hero-grain"></div></div>
   <div class="cs-hero-shell">
     {{NAVIGATION}}
     <div class="cs-hero-stage">
       <div class="cs-hero-copy">
-        <p class="cs-hero-eyebrow"><span></span> SOFTWARE. DESIGN. POSSIBILITY.</p>
-        <h1 id="cs-hero-title">Where systems<br>and design meet<br><span class="cs-brand-gradient">intelligence.</span></h1>
-        <p class="cs-hero-description">Software that simplifies. Design that inspires.<br>Intelligent solutions, built around your business.</p>
+        <p class="cs-hero-eyebrow"><span></span> SOFTWARE <i>•</i> ERP <i>•</i> DIGITAL DESIGN</p>
+        <h1 id="cs-hero-title"><span class="cs-headline-line"><span data-headline-lead>Production, people and progress</span></span><span class="cs-headline-line"><em class="cs-brand-gradient" data-headline-accent>connected.</em></span></h1>
+        <p class="cs-hero-description" data-industry-description>Connect work orders, materials and quality checks across your entire operation. Software designed for modern manufacturing teams.</p>
         <div class="cs-actions">
-          <a class="cs-btn" href="#cs-solutions">Explore software <span aria-hidden="true">↗</span></a>
-          <button class="cs-btn cs-hero-demo" type="button" data-open="demo">Book a demo <span aria-hidden="true">↗</span></button>
+          <a class="cs-btn cs-hero-primary" href="#cs-solutions"><span data-primary-label>Explore manufacturing solutions</span><span aria-hidden="true">↗</span></a>
+          <button class="cs-btn cs-hero-demo" type="button" data-open="demo"><span class="cs-demo-play" aria-hidden="true">▷</span> Plan a project <span aria-hidden="true">↗</span></button>
         </div>
-        <p class="cs-hero-detail">Ready-made software <span>·</span> UI/UX design <span>·</span> Custom ERP</p>
+        <div class="cs-hero-detail" aria-label="What you can expect"><span><b aria-hidden="true">◎</b><span><strong>Clear production view</strong><small>From orders to output.</small></span></span><span><b aria-hidden="true">◇</b><span><strong>Connected workflows</strong><small>People, materials, quality.</small></span></span><span><b aria-hidden="true">◌</b><span><strong>Support after launch</strong><small>Real people. Real help.</small></span></span></div>
       </div>
-      <div class="cs-cube-wrap">
-        <div class="cs-cube-glow" aria-hidden="true"></div>
-        <div class="cs-cube-stage" role="group" aria-label="Interactive glass cube">
-          <div class="cs-cube-fallback" aria-hidden="true"><div></div><div></div><div></div><div></div></div>
-          <canvas id="cs-glass-cube" tabindex="0" role="img" aria-label="Animated glass cube. Drag or use arrow keys to rotate. Press space to pause." aria-describedby="cs-cube-hint"></canvas>
+
+      <div class="cs-hero-showcase" aria-label="Illustrative manufacturing operations dashboard">
+        <div class="cs-showcase-halo" aria-hidden="true"></div>
+        <svg class="cs-factory-line" viewBox="0 0 760 390" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="factory-stroke" x1="90" y1="90" x2="680" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#ad86ff"/><stop offset=".55" stop-color="#4daeff"/><stop offset="1" stop-color="#39efff"/></linearGradient>
+            <linearGradient id="factory-floor" x1="130" y1="250" x2="640" y2="350" gradientUnits="userSpaceOnUse"><stop stop-color="#291b68"/><stop offset=".5" stop-color="#124e93"/><stop offset="1" stop-color="#087f9b"/></linearGradient>
+            <linearGradient id="factory-box" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#bfeaff"/><stop offset="1" stop-color="#426eea"/></linearGradient>
+            <filter id="factory-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <ellipse cx="392" cy="326" rx="318" ry="36" fill="#27c9ff" fill-opacity=".12" filter="url(#factory-glow)"/>
+          <path d="m64 288 258-130 370 74-265 134z" fill="url(#factory-floor)" fill-opacity=".45" stroke="url(#factory-stroke)" stroke-width="3" filter="url(#factory-glow)"/>
+          <path d="m111 275 211-106 318 64-215 107z" stroke="#83dfff" stroke-opacity=".72" stroke-width="3"/>
+          <path d="m152 281 221-111m-122 137 221-111m-122 137 221-111" stroke="#9be9ff" stroke-opacity=".52" stroke-width="2"/>
+          <path d="m131 298 312 64m-273-91 313 64m-273-91 313 64" stroke="#65d9ff" stroke-opacity=".42" stroke-width="2"/>
+          <path d="m225 239 53-27 64 13-53 29z" fill="url(#factory-box)" stroke="#cff7ff" stroke-width="2"/><path d="m225 239 64 15v38l-64-15z" fill="#2854b6" stroke="#82d9ff" stroke-width="2"/><path d="m289 254 53-29v37l-53 30z" fill="#173b87" stroke="#68d8ff" stroke-width="2"/>
+          <path d="m389 258 48-25 61 13-49 27z" fill="url(#factory-box)" stroke="#cff7ff" stroke-width="2"/><path d="m389 258 60 15v35l-60-15z" fill="#2854b6" stroke="#82d9ff" stroke-width="2"/><path d="m449 273 49-27v37l-49 25z" fill="#173b87" stroke="#68d8ff" stroke-width="2"/>
+          <g stroke="url(#factory-stroke)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" filter="url(#factory-glow)"><path d="m107 252 45-69 61-27 38 31-45 38"/><path d="m213 156 22-30 34 12 2 27"/></g>
+          <g fill="#142a58" stroke="#adceff" stroke-width="4"><circle cx="152" cy="183" r="15"/><circle cx="213" cy="156" r="13"/><circle cx="262" cy="187" r="12"/></g>
+          <path d="m253 163 15-19 12 5-11 24m-10-9 17 7" stroke="#5df4ff" stroke-width="5" stroke-linecap="round" filter="url(#factory-glow)"/>
+          <path d="m93 316 532 6" stroke="#56eaff" stroke-opacity=".9" stroke-width="4" filter="url(#factory-glow)"/>
+          <g fill="#60efff"><circle cx="113" cy="288" r="4"/><circle cx="317" cy="330" r="4"/><circle cx="554" cy="292" r="4"/><circle cx="672" cy="230" r="4"/></g>
+        </svg>
+
+        <article class="cs-plant-card cs-plant-card-live" aria-label="Production snapshot">
+          <div class="cs-plant-card-head"><span class="cs-dashboard-icon" aria-hidden="true">⌘</span><div><strong data-snapshot-title>Production</strong><small>Operations snapshot</small></div><span class="cs-live-dot">LIVE</span></div>
+          <p data-snapshot-copy>Work orders moving through the floor.</p>
+          <div class="cs-sparkline" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <a href="#cs-solutions">View workflow <span aria-hidden="true">→</span></a>
+        </article>
+
+        <div class="cs-operation-board">
+          <div class="cs-board-top"><div class="cs-board-brand"><span class="cs-board-mark" aria-hidden="true">▥</span><span>CanveliqSoft</span></div><span class="cs-board-context" data-board-context>Manufacturing workspace</span><span class="cs-board-range">This week <b aria-hidden="true">⌄</b></span></div>
+          <div class="cs-board-heading"><div><p class="cs-board-eyebrow"><span></span> ILLUSTRATIVE WORKFLOW</p><h2 data-board-title>Production overview</h2></div><span class="cs-board-period">Updated just now</span></div>
+          <div class="cs-board-metrics" aria-label="Example workflow metrics"><div><span data-metric-label="0">Work orders</span><strong data-metric-value="0">48</strong><i style="--fill:76%"></i></div><div><span data-metric-label="1">In progress</span><strong data-metric-value="1">26</strong><i style="--fill:58%"></i></div><div><span data-metric-label="2">Completed</span><strong data-metric-value="2">16</strong><i style="--fill:67%"></i></div><div><span data-metric-label="3">Needs attention</span><strong data-metric-value="3">6</strong><i style="--fill:23%"></i></div></div>
+          <div class="cs-workflow"><div class="cs-subhead"><strong data-flow-title>Work order flow</strong><span>Live overview <b aria-hidden="true">↗</b></span></div><div class="cs-flow-steps"><div class="cs-flow-step"><span>01</span><b aria-hidden="true">▤</b><strong data-flow-step="0">Planned</strong><small data-flow-count="0">12 orders</small></div><i aria-hidden="true">→</i><div class="cs-flow-step is-violet"><span>02</span><b aria-hidden="true">◇</b><strong data-flow-step="1">Materials</strong><small data-flow-count="1">10 orders</small></div><i aria-hidden="true">→</i><div class="cs-flow-step"><span>03</span><b aria-hidden="true">⚙</b><strong data-flow-step="2">In production</strong><small data-flow-count="2">20 orders</small></div><i aria-hidden="true">→</i><div class="cs-flow-step is-teal"><span>04</span><b aria-hidden="true">✓</b><strong data-flow-step="3">Quality check</strong><small data-flow-count="3">8 orders</small></div><i aria-hidden="true">→</i><div class="cs-flow-step is-done"><span>05</span><b aria-hidden="true">✓</b><strong data-flow-step="4">Completed</strong><small data-flow-count="4">16 orders</small></div></div></div>
+          <div class="cs-board-lower">
+            <div class="cs-stock-panel"><div class="cs-subhead"><strong data-resource-title>Material availability</strong><span data-resource-caption>4 tracked</span></div><div class="cs-stock-rows"><div><b aria-hidden="true">▧</b><span data-resource="0">Aluminum</span><i><em style="--fill:92%"></em></i><strong data-resource-value="0">92%</strong></div><div><b aria-hidden="true">▧</b><span data-resource="1">Electronics</span><i><em style="--fill:78%"></em></i><strong data-resource-value="1">78%</strong></div><div><b aria-hidden="true">▧</b><span data-resource="2">Fasteners</span><i><em style="--fill:64%"></em></i><strong data-resource-value="2">64%</strong></div><div><b aria-hidden="true">▧</b><span data-resource="3">Plastics</span><i><em style="--fill:88%"></em></i><strong data-resource-value="3">88%</strong></div></div></div>
+            <div class="cs-quality-panel"><div class="cs-subhead"><strong data-quality-title>Quality checkpoints</strong><span>Today</span></div><div class="cs-quality-content"><div class="cs-quality-ring"><span data-quality-total>24</span><small data-quality-label>checks</small></div><div class="cs-quality-legend"><p><i></i><span data-quality-name="0">Passed</span><b data-quality-value="0">18</b></p><p><i></i><span data-quality-name="1">In review</span><b data-quality-value="1">4</b></p><p><i></i><span data-quality-name="2">Follow-up</span><b data-quality-value="2">2</b></p></div></div></div>
+          </div>
+          <div class="cs-board-footer"><span><i></i><span data-footer-status>All lines reporting</span></span><span data-board-footnote>Illustrative sample data</span></div>
         </div>
-        <div class="cs-cube-controls"><span id="cs-cube-hint">DRAG TO EXPLORE</span><span class="cs-cube-divider"></span><button type="button" class="cs-cube-pause" aria-label="Pause cube animation" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+
+        <article class="cs-plant-card cs-plant-card-materials" aria-label="Connected inventory preview"><span class="cs-plant-card-symbol" aria-hidden="true">◇</span><div><strong data-side-title>Materials</strong><p data-side-copy>Keep parts and stock in view.</p></div><div class="cs-side-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><a href="#cs-solutions">View resources <span aria-hidden="true">→</span></a></article>
+        <article class="cs-plant-card cs-plant-card-quality" aria-label="Connected workflow preview"><span class="cs-plant-card-symbol" aria-hidden="true">✓</span><div><strong data-quality-side-title>Quality</strong><p data-quality-side-copy>Make every checkpoint visible.</p></div><div class="cs-side-wave" aria-hidden="true"><i></i></div><a href="#cs-solutions">View overview <span aria-hidden="true">→</span></a></article>
+
+        <div class="cs-hero-workflow-picker">
+          <div class="cs-hero-industries" role="group" aria-label="Choose your industry"><button type="button" data-hero-industry="retail" aria-pressed="false"><span aria-hidden="true">⌑</span>Retail</button><button type="button" data-hero-industry="manufacturing" aria-pressed="true"><span aria-hidden="true">▥</span>Manufacturing</button><button type="button" data-hero-industry="healthcare" aria-pressed="false"><span aria-hidden="true">♡</span>Healthcare</button><button type="button" data-hero-industry="education" aria-pressed="false"><span aria-hidden="true">⌂</span>Education</button><button type="button" data-hero-industry="hospitality" aria-pressed="false"><span aria-hidden="true">▤</span>Hospitality</button></div>
+          <p>Choose an industry to explore a workflow.</p>
+        </div>
+
+        <div class="cs-board-controls">
+          <div class="cs-module-buttons" role="group" aria-label="Choose a solution focus"><button type="button" data-hero-module="software" aria-pressed="true">Software</button><button type="button" data-hero-module="design" aria-pressed="false">UI/UX</button><button type="button" data-hero-module="erp" aria-pressed="false">ERP</button><button type="button" data-hero-module="ai" aria-pressed="false">AI</button></div>
+          <p><span class="cs-module-status" aria-hidden="true"></span><strong data-module-name>SOFTWARE</strong><span data-module-detail>Tools for the work your team does every day.</span></p>
+        </div>
       </div>
     </div>
-    <div class="cs-hero-bottom">
-      <p>ONE VISION. EVERY INDUSTRY.</p>
-      <div class="cs-hero-industries" aria-label="Industries we build for">
-        <span>Retail & commerce</span><span>Manufacturing</span><span>Healthcare</span><span>Education</span><span>Hospitality</span>
-      </div>
-    </div>
+    <div class="cs-hero-bottom" aria-hidden="true"></div>
   </div>
 </section>

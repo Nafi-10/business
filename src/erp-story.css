@@ -51,6 +51,7 @@
 #cs-motion .cs-story-tabs > button small { font-size: 8px; margin-right: 8px; opacity: .6; }
 #cs-motion .cs-story-tabs > button[aria-selected="true"] { color: #edf5ff; }
 #cs-motion .cs-story-tabs > button:hover { color: #a6edff; }
+#cs-motion .cs-story-tabs > button:hover:not([aria-selected="true"]) { color: #9aa8bf; }
 #cs-motion .cs-story-track { display: block; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #7083a533; overflow: hidden; }
 #cs-motion .cs-story-track i { display: block; height: 100%; background: linear-gradient(90deg,#ad8bff,#00dceb); transform-origin: left; transform: scaleX(0); }
 #cs-motion .cs-story-tabs > button[aria-selected="true"] .cs-story-track i { transform: scaleX(max(.025, var(--story-progress))); }
