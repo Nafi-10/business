@@ -289,8 +289,11 @@
   .ip-workflow{padding:24px 16px 16px}
 }
 @media(max-width:390px){
-  .ip-priority-grid{grid-template-columns:1fr 1fr}
+  .ip-priority-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ip-products{grid-template-columns:1fr}
+  .ip-priorities{margin-inline:-7px}
+  .ip-priority{min-width:0}
+  .ip-priority>strong{overflow-wrap:anywhere}
 }
 @media(min-width:761px) and (max-width:900px){
   #cs-motion[data-page=industry] .cs-site-header .cs-nav{height:56px;padding:7px 10px 7px 12px;gap:4px}
@@ -301,4 +304,41 @@
   #cs-motion[data-page=industry] .cs-site-header .cs-menu{display:none}
   #cs-motion[data-page=industry] .cs-site-header .cs-nav .cs-btn{min-height:36px;padding:7px 10px;gap:7px;font-size:9px}
 }
-@media(max-width:420px){.ip-hero h1{font-size:clamp(28px,8.5vw,34px)}}
+@media(max-width:620px){
+  :root{overflow-x:visible}
+  .ip-hero-art{display:block;min-height:0;overflow:clip;padding:16px 0 122px;margin-top:8px}
+  .ip-orbit{width:100%;height:72%;top:5%}
+  .ip-orbit-two{width:106%;height:82%;top:1%}
+  .ip-dash{width:calc(100% - 2px);padding:13px;border-radius:16px;transform:none}
+  .ip-dash-top{gap:7px;padding:2px 2px 12px}
+  .ip-dash-brand{min-width:0;gap:6px;overflow:hidden;font-size:10px;text-overflow:ellipsis;white-space:nowrap}
+  .ip-dash-brand svg{width:16px;height:16px}
+  .ip-dash-live{font-size:7px}
+  .ip-dash-tabs{display:flex;gap:7px;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .ip-dash-tabs::-webkit-scrollbar{display:none}
+  .ip-dash-tabs>span{flex:none}
+  .ip-dash-heading{gap:5px;padding:16px 3px 12px}
+  .ip-dash-heading>b{font-size:21px}
+  .ip-dash-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .ip-dash-grid article{min-width:0;min-height:118px;padding:9px 7px}
+  .ip-dash-grid article>span{align-items:flex-start;gap:4px;font-size:8px;line-height:1.35}
+  .ip-dash-grid article>span svg{width:13px;height:13px}
+  .ip-dash-grid article>strong{margin:14px 0 4px;font-size:11px;overflow-wrap:anywhere}
+  .ip-dash-grid article>small{font-size:8px;line-height:1.35}
+  .ip-dash-workflow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+  .ip-dash-workflow .ip-workflow-step{min-width:0;flex-direction:column;align-items:flex-start;gap:5px;padding:7px 5px}
+  .ip-dash-workflow .ip-workflow-step b{overflow:visible;font-size:8px;line-height:1.3;overflow-wrap:anywhere;white-space:normal}
+  .ip-dash-workflow .ip-workflow-connector{display:none}
+  .ip-flow{grid-template-columns:repeat(2,minmax(0,1fr));margin:24px 0 18px}
+  .ip-flow li{min-width:0;min-height:128px;padding:12px}
+  .ip-flow li>strong{font-size:13px;overflow-wrap:anywhere}
+  .ip-float-card{bottom:27px;width:calc(50% - 6px);min-height:82px;padding:9px;border-radius:10px;transform:none}
+  .ip-float-left{left:0;top:auto}
+  .ip-float-right{right:0}
+  .ip-float-card>span{gap:5px;font-size:7px}
+  .ip-float-card>strong{font-size:12px;margin:9px 0 4px;overflow-wrap:anywhere}
+  .ip-float-card>small{font-size:8px;line-height:1.35}
+  .ip-mini-chart{height:20px;margin-top:7px}
+  .ip-art-caption{right:0;bottom:5px;font-size:6px}
+}
+@media(max-width:420px){.ip-hero h1{font-size:clamp(38px,10vw,42px)}}

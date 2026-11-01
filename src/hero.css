@@ -200,3 +200,51 @@ html{scroll-behavior:smooth;background:#080f1e}body{margin:0}*,*::before,*::afte
 @media(max-width:1100px){#cs-motion .cs-premium-hero .cs-hero-bottom{grid-template-columns:1fr;gap:10px}#cs-motion .cs-premium-hero .cs-hero-bottom>p,#cs-motion .cs-premium-hero .cs-hero-industries{grid-column:1}#cs-motion .cs-premium-hero .cs-hero-bottom>p{grid-row:1}#cs-motion .cs-premium-hero .cs-hero-industries{grid-row:2}}
 @media(max-width:900px){#cs-motion .cs-premium-hero .cs-hero-shell{padding-inline:30px}#cs-motion .cs-premium-hero .cs-hero-detail{margin-top:26px}#cs-motion .cs-premium-hero .cs-factory-line{left:-1%;width:102%;bottom:0;opacity:.55}#cs-motion .cs-premium-hero .cs-operation-board{top:12%;left:7%;right:7%}#cs-motion .cs-premium-hero .cs-board-controls{right:6%;bottom:0}#cs-motion .cs-premium-hero .cs-hero-workflow-picker{left:7%;bottom:17%}#cs-motion .cs-premium-hero .cs-hero-workflow-picker .cs-hero-industries{flex-wrap:wrap;justify-content:center;border-radius:24px}}
 @media(max-width:600px){#cs-motion .cs-premium-hero .cs-hero-shell{padding-inline:20px}#cs-motion .cs-premium-hero .cs-hero-detail{margin-top:20px}#cs-motion .cs-premium-hero .cs-factory-line{display:none}#cs-motion .cs-premium-hero .cs-hero-bottom{grid-template-columns:1fr}#cs-motion .cs-premium-hero .cs-hero-workflow-picker{position:relative;inset:auto;gap:8px;margin-top:12px}#cs-motion .cs-premium-hero .cs-hero-workflow-picker>p{font-size:11px}#cs-motion .cs-premium-hero .cs-hero-workflow-picker .cs-hero-industries{gap:4px;padding:6px}#cs-motion .cs-premium-hero .cs-hero-workflow-picker .cs-hero-industries button{flex:1 1 30%;min-height:36px;padding:6px;font-size:10px}#cs-motion .cs-premium-hero .cs-board-controls{right:0}}
+@media(max-width:600px){
+  #cs-motion .cs-premium-hero .cs-hero-stage{grid-template-columns:minmax(0,1fr);grid-template-areas:"eyebrow" "headline" "description" "actions" "showcase" "detail";align-content:start;align-items:start;gap:0;padding:18px 0 14px}
+  #cs-motion .cs-premium-hero .cs-hero-copy{display:contents}
+  #cs-motion .cs-premium-hero .cs-hero-eyebrow{grid-area:eyebrow;margin:0 0 15px;font-size:9px;letter-spacing:1.5px}
+  #cs-motion .cs-premium-hero .cs-hero-copy h1{grid-area:headline;max-width:100%;font-size:clamp(38px,10.3vw,48px);letter-spacing:-.06em;line-height:1.02}
+  #cs-motion .cs-premium-hero .cs-hero-description{grid-area:description;margin-top:15px;font-size:14px;line-height:1.65}
+  #cs-motion .cs-premium-hero .cs-actions{grid-area:actions;gap:10px;margin-top:17px}
+  #cs-motion .cs-premium-hero .cs-actions .cs-btn{min-height:48px;padding:12px 17px;font-size:12px}
+  #cs-motion .cs-premium-hero .cs-hero-demo{gap:8px}
+  #cs-motion .cs-premium-hero .cs-demo-play{width:30px;height:30px}
+  #cs-motion .cs-premium-hero .cs-hero-showcase{grid-area:showcase;height:390px;margin-top:10px;transform:none}
+  #cs-motion .cs-premium-hero .cs-operation-board{top:8%;left:1%;right:1%;padding:12px 11px 10px;border-radius:16px;transform:none}
+  #cs-motion .cs-premium-hero .cs-board-top{gap:7px;padding-bottom:9px}
+  #cs-motion .cs-premium-hero .cs-board-brand{gap:5px;font-size:9px}
+  #cs-motion .cs-premium-hero .cs-board-context{font-size:7px}
+  #cs-motion .cs-premium-hero .cs-board-range{gap:6px;padding:6px;font-size:7px}
+  #cs-motion .cs-premium-hero .cs-board-heading{gap:6px;padding:12px 0 9px}
+  #cs-motion .cs-premium-hero .cs-board-heading h2{font-size:16px}
+  #cs-motion .cs-premium-hero .cs-board-period{font-size:7px}
+  #cs-motion .cs-premium-hero .cs-board-metrics{gap:4px}
+  #cs-motion .cs-premium-hero .cs-board-metrics>div{gap:4px;padding:7px 5px}
+  #cs-motion .cs-premium-hero .cs-board-metrics>div>span{font-size:7px}
+  #cs-motion .cs-premium-hero .cs-board-metrics strong{font-size:16px}
+  #cs-motion .cs-premium-hero .cs-board-metrics i{height:4px}
+  #cs-motion .cs-premium-hero .cs-workflow{margin-top:7px;padding:8px 7px}
+  #cs-motion .cs-premium-hero .cs-subhead{margin-bottom:6px}
+  #cs-motion .cs-premium-hero .cs-subhead>strong{font-size:8px}
+  #cs-motion .cs-premium-hero .cs-subhead>span{font-size:7px}
+  #cs-motion .cs-premium-hero .cs-flow-steps{gap:3px}
+  #cs-motion .cs-premium-hero .cs-flow-step{grid-template-columns:17px 1fr;column-gap:4px;row-gap:2px;min-height:49px;padding:5px 4px}
+  #cs-motion .cs-premium-hero .cs-flow-step>b{width:17px;height:20px;font-size:11px}
+  #cs-motion .cs-premium-hero .cs-flow-step>strong{font-size:7px}
+  #cs-motion .cs-premium-hero .cs-flow-step>small{font-size:6px}
+  #cs-motion .cs-premium-hero .cs-plant-card{width:118px;padding:8px}
+  #cs-motion .cs-premium-hero .cs-plant-card-live{top:0;left:0}
+  #cs-motion .cs-premium-hero .cs-plant-card-materials{top:3%;right:0}
+  #cs-motion .cs-premium-hero .cs-plant-card-quality{right:0;bottom:24%}
+  #cs-motion .cs-premium-hero .cs-board-controls{right:0;bottom:-1%}
+  #cs-motion .cs-premium-hero .cs-module-buttons button{min-height:36px;padding:8px 12px;font-size:9px}
+  #cs-motion .cs-premium-hero .cs-hero-workflow-picker{margin-top:8px}
+  #cs-motion .cs-premium-hero .cs-hero-workflow-picker .cs-hero-industries button{min-height:44px}
+  #cs-motion .cs-premium-hero .cs-hero-detail{grid-area:detail;display:grid;grid-template-columns:1fr;gap:9px;margin:8px 0 0}
+  #cs-motion .cs-premium-hero .cs-hero-detail>span>b{width:34px;height:34px;border-radius:10px}
+  #cs-motion .cs-premium-hero .cs-hero-detail strong{font-size:10px}
+  #cs-motion .cs-premium-hero .cs-hero-detail small{font-size:9px}
+  #cs-motion .cs-premium-hero.has-intro:not(.is-ready) .cs-hero-copy>*{opacity:0;animation:cs-premium-safety 0s 1800ms forwards}
+  #cs-motion .cs-premium-hero.has-intro.is-ready .cs-hero-copy>*{animation:cs-premium-rise .75s both}
+}

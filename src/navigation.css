@@ -63,6 +63,7 @@
 @media(min-width:761px) and (max-width:900px){#cs-motion .cs-site-header .cs-nav-links{display:none}#cs-motion .cs-site-header .cs-menu{display:flex;flex:none;margin-left:0}#cs-motion .cs-nav-search{margin-left:auto}}
 @media(max-width:760px){#cs-motion .cs-nav-search{margin-left:auto;width:40px;min-width:40px;padding:10px}#cs-motion .cs-site-header .cs-nav .cs-btn{margin-left:0}}
 @media(max-width:420px){#cs-motion .cs-site-header .cs-nav>.cs-btn{display:none}#cs-motion .cs-site-header .cs-nav{gap:10px}}
+@media(max-width:760px){#cs-motion .cs-site-header .cs-menu{width:44px;height:44px;padding:12px}#cs-motion .cs-nav-search{width:44px;min-width:44px;min-height:44px;padding:11px}}
 
 /* A restrained glass navigation surface, shared across the site. */
 #cs-motion .cs-site-header{background:#101a2cd4;border-color:#a7a4e536;backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%);box-shadow:0 8px 32px #00000024,inset 0 1px 0 #e8e0ff0d;transition:background .3s,border-color .3s,box-shadow .3s,transform .3s,top .3s}
